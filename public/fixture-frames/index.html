@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Scroll Animation</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+      min-height: 100%;
+    }
+
+    /* Custom premium scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1c1c1e;
+      border-radius: 4px;
+      border: 1px solid #2c2c2e;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2c2c2e;
+    }
+
+    /* Fixed full-screen container for canvas */
+    .canvas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Scroll container to define the scrolling height */
+    .scroll-container {
+      position: relative;
+      width: 100%;
+      height: 700vh; /* Control scrolling speed by adjusting height */
+      z-index: 2;
+      pointer-events: none; /* Let scroll events pass through */
+    }
+
+    /* Sleek Loading Overlay */
+    .loader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s;
+    }
+
+    .loader-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.05);
+      border-top: 2px solid #ffffff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-screen Canvas Viewer -->
+  <div class="canvas-container">
+    <canvas id="animation-canvas"></canvas>
+  </div>
+
+  <!-- Large Scroll Track -->
+  <div class="scroll-container"></div>
+
+  <!-- Loading indicator (Fades out when first frame is loaded) -->
+  <div class="loader-overlay" id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('animation-canvas');
+    const ctx = canvas.getContext('2d');
+    const loader = document.getElementById('loader');
+
+    const totalFrames = 239;
+    const images = [];
+    
+    // Animation state variables
+    let currentFrame = 0;
+    let targetFrame = 0;
+    let firstFrameLoaded = false;
+
+    // Helper to format frame filename
+    function getFrameUrl(index) {
+      const paddedIndex = String(index).padStart(4, '0');
+      return `./frame_${paddedIndex}.jpg`;
+    }
+
+    // High-DPI canvas resizing
+    function resizeCanvas() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      
+      ctx.resetTransform();
+      ctx.scale(dpr, dpr);
+      
+      // Force redraw when size changes
+      drawCurrentFrame();
+    }
+
+    // Cover scale drawing (similar to CSS object-fit: cover)
+    function drawImageCover(ctx, img) {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const imgRatio = img.width / img.height;
+      const canvasRatio = w / h;
+      
+      let drawWidth, drawHeight, drawX, drawY;
+
+      if (imgRatio > canvasRatio) {
+        // Image is wider than viewport
+        drawHeight = h;
+        drawWidth = h * imgRatio;
+        drawX = (w - drawWidth) / 2;
+        drawY = 0;
+      } else {
+        // Viewport is wider than image
+        drawWidth = w;
+        drawHeight = w / imgRatio;
+        drawX = 0;
+        drawY = (h - drawHeight) / 2;
+      }
+      
+      ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+    }
+
+    // Draw the closest available frame
+    function drawCurrentFrame() {
+      const frameIndex = Math.max(0, Math.min(totalFrames - 1, Math.round(currentFrame)));
+      
+      let img = images[frameIndex];
+      
+      // Fallback mechanism: if target frame isn't loaded, find closest loaded one
+      if (!img || !img.complete || img.naturalWidth === 0) {
+        let closest = -1;
+        let minDist = Infinity;
+        
+        for (let i = 0; i < totalFrames; i++) {
+          const testImg = images[i];
+          if (testImg && testImg.complete && testImg.naturalWidth > 0) {
+            const dist = Math.abs(i - frameIndex);
+            if (dist < minDist) {
+              minDist = dist;
+              closest = i;
+            }
+          }
+        }
+        
+        if (closest !== -1) {
+          img = images[closest];
+        }
+      }
+
+      if (img && img.complete && img.naturalWidth > 0) {
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        drawImageCover(ctx, img);
+      }
+    }
+
+    // Linear Interpolation loop for buttery-smooth scroll physics
+    function updateAnimation() {
+      // Lerp current frame towards the target frame (easing factor: 0.1)
+      const diff = targetFrame - currentFrame;
+      if (Math.abs(diff) > 0.001) {
+        currentFrame += diff * 0.1;
+        drawCurrentFrame();
+      }
+      requestAnimationFrame(updateAnimation);
+    }
+
+    // Scroll handler: map scroll position to target frame
+    function onScroll() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollHeight <= 0 ? 0 : scrollTop / scrollHeight;
+      targetFrame = scrollPercent * (totalFrames - 1);
+    }
+
+    // Preload first frame to render instantly
+    function init() {
+      window.addEventListener('resize', resizeCanvas);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      // Setup canvas size
+      resizeCanvas();
+
+      // Load Frame 0 first
+      const firstImg = new Image();
+      firstImg.src = getFrameUrl(0);
+      images[0] = firstImg;
+
+      firstImg.onload = () => {
+        firstFrameLoaded = true;
+        // Fade loader away as we can show frame 0
+        loader.classList.add('fade-out');
+        drawCurrentFrame();
+        
+        // Start animation loop
+        requestAnimationFrame(updateAnimation);
+        
+        // Preload rest of the frames in the background
+        preloadRemainingFrames();
+      };
+      
+      firstImg.onerror = () => {
+        // Fallback in case loading frame 0 fails, start loading others anyway
+        loader.classList.add('fade-out');
+        requestAnimationFrame(updateAnimation);
+        preloadRemainingFrames();
+      };
+    }
+
+    // Preload frames 1 to 191
+    function preloadRemainingFrames() {
+      for (let i = 1; i < totalFrames; i++) {
+        const img = new Image();
+        img.src = getFrameUrl(i);
+        images[i] = img;
+        
+        img.onload = () => {
+          // If the page is currently scrolled, trigger redraw to update intermediate frames
+          if (Math.abs(targetFrame - currentFrame) < 0.1 && Math.round(currentFrame) === i) {
+            drawCurrentFrame();
+          }
+        };
+      }
+    }
+
+    // Initialize on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
