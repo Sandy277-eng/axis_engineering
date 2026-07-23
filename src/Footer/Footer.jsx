@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -25,11 +26,11 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.columnHeader}>QUICK NAVIGATION</h4>
           <ul style={styles.linkList}>
-            <li><a href="#home" style={styles.footerLink}>Home</a></li>
-            <li><a href="#detron" style={styles.footerLink}>Detron Rotary Tables</a></li>
-            <li><a href="#fixtures" style={styles.footerLink}>Custom Fixtures</a></li>
-            <li><a href="#about" style={styles.footerLink}>About Axis Engineering</a></li>
-            <li><a href="#contact" style={styles.footerLink}>Contact Us</a></li>
+            <li><Link to="/" style={styles.footerLink}>Home</Link></li>
+            <li><Link to="/products/detron" style={styles.footerLink}>Detron Rotary Tables</Link></li>
+            <li><Link to="/products/fixtures" style={styles.footerLink}>Custom Fixtures</Link></li>
+            <li><Link to="/" style={styles.footerLink}>About Axis Engineering</Link></li>
+            <li><Link to="/contact" style={styles.footerLink}>Contact Us</Link></li>
           </ul>
         </div>
 
@@ -37,11 +38,11 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.columnHeader}>PRODUCT CATEGORIES</h4>
           <ul style={styles.linkList}>
-            <li><a href="#tilting-tables" style={styles.footerLink}>CNC Tilting Rotary Tables</a></li>
-            <li><a href="#4th-axis" style={styles.footerLink}>4th Axis Standard Indexers</a></li>
-            <li><a href="#5th-axis" style={styles.footerLink}>5th Axis High-Speed Tables</a></li>
-            <li><a href="#hydraulic-fixtures" style={styles.footerLink}>Hydraulic & Pneumatic Fixtures</a></li>
-            <li><a href="#pallet-changers" style={styles.footerLink}>Auto Pallet Changers & Tailstock</a></li>
+            <li><Link to="/products/detron/5th-axis" style={styles.footerLink}>CNC Tilting Rotary Tables</Link></li>
+            <li><Link to="/products/detron/4th-axis" style={styles.footerLink}>4th Axis Standard Indexers</Link></li>
+            <li><Link to="/products/detron/5th-axis" style={styles.footerLink}>5th Axis High-Speed Tables</Link></li>
+            <li><Link to="/products/fixtures" style={styles.footerLink}>Hydraulic & Pneumatic Fixtures</Link></li>
+            <li><Link to="/products/detron/auto-pallet-changer" style={styles.footerLink}>Auto Pallet Changers & Tailstock</Link></li>
           </ul>
         </div>
 
@@ -49,7 +50,7 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.columnHeader}>CONTACT DETAILS</h4>
           <div style={styles.contactItem}>
-            <span style={styles.icon}>🌍</span>
+            <span style={styles.icon}>🌐</span>
             <span>
               No. 78-B, 1st Floor, Geason Housing Colony,<br />
               1st Main Road, Ayanambakkam,<br />
@@ -58,7 +59,7 @@ export default function Footer() {
           </div>
 
           <div style={styles.contactItem}>
-            <span style={styles.icon}>📞</span>
+            <span style={styles.icon}>🕿</span>
             <span>
               +91 98849 12279 / +91 98849 12280<br />
               044 - 4746 8749
@@ -175,7 +176,9 @@ const styles = {
     margin: 0,
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px'
+    gap: '12px',
+    alignItems: 'flex-start',
+    textAlign: 'left'
   },
   footerLink: {
     color: '#cbd5e1',

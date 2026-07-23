@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import ScrollCanvas from '../animation/ScrollCanvas';
 import { gsap } from 'gsap';
@@ -13,6 +13,11 @@ export default function HomePage() {
   const heroSectionRef = useRef(null);
   const aboutSectionRef = useRef(null); // Ref for the sliding "About / Our Products" section
   const cardsContainerRef = useRef(null); // Ref for the sliding cards section
+
+  const scrollToProducts = (e) => {
+    if (e) e.preventDefault();
+    cardsContainerRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   // States for interactive cursor zoom tracking
   const [detronZoom, setDetronZoom] = useState({ scale: 1, x: 50, y: 50 });
@@ -112,7 +117,7 @@ export default function HomePage() {
           <div style={styles.topBarLeft}>
             <span style={styles.contactItem}>🕿 <strong>+91 98849 12279</strong></span>
             <span style={styles.contactItem}>
-              🌐 <button onClick={() => navigate('/contact')} style={styles.topContactBtn}>CONTACT US</button>
+              🌐 <Link to="/contact" style={styles.topContactLink}>CONTACT US</Link>
             </span>
           </div>
 
@@ -128,22 +133,24 @@ export default function HomePage() {
               <button style={styles.searchBtn}>🛒</button>
             </div>
             <a href="#resource-centre" style={styles.utilityLink}>RESOURCE CENTRE</a>
-            <a href="#register-warranty" style={styles.warrantyBtn}>REGISTER WARRANTY 🛡️</a>
+            <Link to="/contact" style={styles.warrantyBtn}>REGISTER WARRANTY 📝</Link>
           </div>
         </div>
 
         {/* MAIN NAVIGATION BAR */}
         <header style={styles.mainHeader}>
-          <div style={styles.logoGroup} onClick={() => navigate('/')}>
-            <span style={styles.logoMain}>AXIS</span>
-            <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
-          </div>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <div style={styles.logoGroup}>
+              <span style={styles.logoMain}>AXIS</span>
+              <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
+            </div>
+          </Link>
 
           <nav style={styles.navMenu}>
-            <a href="#discover" style={styles.navLink}>DISCOVER AXIS</a>
-            <button onClick={() => navigate('/products/detron')} style={styles.navLinkBtn}>PRODUCT RANGE</button>
-            <button onClick={() => navigate('/products/fixtures')} style={styles.navLinkBtn}>CUSTOM FIXTURES</button>
-            <button onClick={() => navigate('/contact')} style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</button>
+            <button onClick={scrollToProducts} style={styles.navLinkBtn}>DISCOVER AXIS</button>
+            <Link to="/products/detron" style={styles.navLink}>PRODUCT RANGE</Link>
+            <Link to="/products/fixtures" style={styles.navLink}>CUSTOM FIXTURES</Link>
+            <Link to="/contact" style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</Link>
           </nav>
         </header>
       </div>
@@ -163,8 +170,8 @@ export default function HomePage() {
           </p>
 
           <div style={styles.heroButtonContainer}>
-            <a href="#detron" style={styles.btnRedPrimary}>DISCOVER DETRON &gt;</a>
-            <button onClick={() => navigate('/contact')} style={styles.btnOutline}>GET IN TOUCH &gt;</button>
+            <button onClick={() => navigate('/products/detron')} style={styles.btnRedPrimary}>DETRON PRODUCTS &gt;</button>
+            <button onClick={() => navigate('/products/fixtures')} style={styles.btnOutline}>CUSTOM FIXTURES &gt;</button>
           </div>
         </div>
       </div>
@@ -196,8 +203,8 @@ export default function HomePage() {
               Our strong capabilities in Electrical, Mechatronics and Mechanical engineering, together with domain understanding and product knowledge, enable us to provide solutions from concept and detailed design through manufacturing and sourcing support. Over the years, we have supported our customers.
             </p>
 
-            <button onClick={() => navigate('/contact')} style={styles.aboutKnowMoreBtn}>
-              KNOW MORE
+            <button onClick={scrollToProducts} style={styles.aboutKnowMoreBtn}>
+              DISCOVER RANGE &gt;
             </button>
           </div>
         </section>
@@ -209,10 +216,10 @@ export default function HomePage() {
         <section ref={cardsContainerRef} style={styles.categorySection}>
 
           {/* DETRON PRODUCT CARD */}
-          <div
+          <Link
+            to="/products/detron"
             className="slide-card"
-            style={styles.categoryCard}
-            onClick={() => navigate('/products/detron')}
+            style={{ ...styles.categoryCard, textDecoration: 'none' }}
             onMouseMove={(e) => handleMouseMove(e, setDetronZoom)}
             onMouseLeave={() => handleMouseLeave(setDetronZoom)}
           >
@@ -236,17 +243,17 @@ export default function HomePage() {
                   Premium 4th & 5th axis CNC rotary tables built for ultra-rigid, high-accuracy indexing and heavy-duty machining efficiency.
                 </p>
               </div>
-              <a href="#detron-range" style={styles.cardRedButton}>
+              <span style={styles.cardRedButton}>
                 DISCOVER DETRON RANGE &gt;
-              </a>
+              </span>
             </div>
-          </div>
+          </Link>
 
           {/* CUSTOM FIXTURES CARD */}
-          <div
+          <Link
+            to="/products/fixtures"
             className="slide-card"
-            style={styles.categoryCard}
-            onClick={() => navigate('/products/fixtures')}
+            style={{ ...styles.categoryCard, textDecoration: 'none' }}
             onMouseMove={(e) => handleMouseMove(e, setFixtureZoom)}
             onMouseLeave={() => handleMouseLeave(setFixtureZoom)}
           >
@@ -274,7 +281,7 @@ export default function HomePage() {
                 EXPLORE FIXTURE SOLUTIONS &gt;
               </span>
             </div>
-          </div>
+          </Link>
 
         </section>
       </div>
@@ -373,6 +380,7 @@ const styles = {
   contactHeaderBtn: {
     backgroundColor: '#000000',
     color: '#ffffff',
+    textDecoration: 'none',
     border: 'none',
     padding: '8px 16px',
     borderRadius: '2px',

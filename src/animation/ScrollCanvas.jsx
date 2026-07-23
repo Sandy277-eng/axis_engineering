@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function ScrollCanvas({ totalFrames, folderPath = '/frames' }) {
+export default function ScrollCanvas({ totalFrames, folderPath = '/frames', digits = 4, startIndex = 0 }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,8 @@ export default function ScrollCanvas({ totalFrames, folderPath = '/frames' }) {
 
     // Zero-padded filename generator (e.g., frame_0000.jpg, frame_0001.jpg)
     const getFrameUrl = (index) => {
-      const paddedIndex = String(index).padStart(4, '0');
+      const frameNum = index + startIndex;
+      const paddedIndex = String(frameNum).padStart(digits, '0');
       return `${folderPath}/frame_${paddedIndex}.jpg`;
     };
 
@@ -139,7 +140,7 @@ export default function ScrollCanvas({ totalFrames, folderPath = '/frames' }) {
       window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(animId);
     };
-  }, [totalFrames, folderPath]);
+  }, [totalFrames, folderPath, digits, startIndex]);
 
   return (
     <canvas

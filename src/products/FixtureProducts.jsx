@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import ScrollCanvas from '../animation/ScrollCanvas';
 import { gsap } from 'gsap';
@@ -21,7 +21,6 @@ const BEST_PRACTICES = [
 ];
 
 export default function FixtureProducts() {
-  const navigate = useNavigate();
   const pageContainerRef = useRef(null);
   const cardsRef = useRef([]);
   const appraisalRef = useRef(null);
@@ -107,26 +106,28 @@ export default function FixtureProducts() {
             <div style={styles.topBarLeft}>
               <span style={styles.contactItem}>🕿 <strong>+91 98849 12279</strong></span>
               <span style={styles.contactItem}>
-                🌐 <button onClick={() => navigate('/contact')} style={styles.topContactBtn}>CONTACT US</button>
+                🌐 <Link to="/contact" style={styles.topContactLink}>CONTACT US</Link>
               </span>
             </div>
             <div style={styles.topBarRight}>
               <a href="#resource-centre" style={styles.utilityLink}>RESOURCE CENTRE</a>
-              <a href="#register-warranty" style={styles.warrantyBtn}>REGISTER WARRANTY 🛡️</a>
+              <Link to="/contact" style={styles.warrantyBtn}>REGISTER WARRANTY 🛡️</Link>
             </div>
           </div>
 
           <header style={styles.mainHeader}>
-            <div style={styles.logoGroup} onClick={() => navigate('/')}>
-              <span style={styles.logoMain}>AXIS</span>
-              <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
-            </div>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <div style={styles.logoGroup}>
+                <span style={styles.logoMain}>AXIS</span>
+                <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
+              </div>
+            </Link>
 
             <nav style={styles.navMenu}>
-              <button onClick={() => navigate('/')} style={styles.navLinkBtn}>HOME</button>
-              <button onClick={() => navigate('/products/detron')} style={styles.navLinkBtn}>DETRON PRODUCTS</button>
+              <Link to="/" style={styles.navLink}>HOME</Link>
+              <Link to="/products/detron" style={styles.navLink}>DETRON PRODUCTS</Link>
               <span style={styles.navLinkActive}>CUSTOM FIXTURES</span>
-              <button onClick={() => navigate('/contact')} style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</button>
+              <Link to="/contact" style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</Link>
             </nav>
           </header>
         </div>
@@ -375,6 +376,19 @@ const styles = {
   logoMain: { fontSize: '24px', fontWeight: '900', letterSpacing: '1.5px', color: '#000000' },
   logoSub: { fontSize: '9px', fontWeight: '800', letterSpacing: '1px', color: '#E30613' },
   navMenu: { display: 'flex', alignItems: 'center', gap: '28px' },
+  navLink: {
+    textDecoration: 'none',
+    color: '#0f172a',
+    fontWeight: '700',
+    fontSize: '12px',
+    letterSpacing: '0.5px'
+  },
+  topContactLink: {
+    color: '#ffffff',
+    fontWeight: '700',
+    fontSize: '11px',
+    textDecoration: 'underline'
+  },
   navLinkBtn: {
     background: 'none',
     border: 'none',
@@ -395,10 +409,9 @@ const styles = {
   contactHeaderBtn: {
     backgroundColor: '#000000',
     color: '#ffffff',
-    border: 'none',
+    textDecoration: 'none',
     padding: '8px 16px',
     borderRadius: '2px',
-    cursor: 'pointer',
     fontWeight: '700',
     fontSize: '12px'
   },

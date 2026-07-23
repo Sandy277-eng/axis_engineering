@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ScrollCanvas from '../animation/ScrollCanvas'; // Adjust path if needed
-import Footer from '../Footer/Footer'; // Adjust path if needed
 
 export default function ContactPage() {
   const navigate = useNavigate();
@@ -249,9 +248,6 @@ export default function ContactPage() {
         </div>
 
       </div>
-
-      {/* FOOTER INTEGRATED AT BOTTOM OF CONTACT PAGE */}
-      <Footer />
 
     </div>
   );

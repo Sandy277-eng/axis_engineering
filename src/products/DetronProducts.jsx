@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import ScrollCanvas from '../animation/ScrollCanvas';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,43 +10,43 @@ gsap.registerPlugin(ScrollTrigger);
 const PRODUCTS = [
   {
     id: '4th-axis',
-    tag: 'PRECISION INDEXING',
-    title: '4th Axis Rotary Tables',
-    desc: 'Compact, ultra-rigid single-axis rotary tables engineered for high-accuracy indexing on 3-axis machining centres.',
+    tag: 'HIGH ACCURACY',
+    title: '4th Axis Standard Indexers',
+    desc: 'Premium series designed for rigid, high-performance workpiece indexing on standard CNC milling centers.',
     img: '/images/products_detron/4th_axis.jpg'
   },
   {
     id: '5th-axis',
-    tag: 'MULTI-AXIS MACHINING',
-    title: '5th Axis Rotary Tables',
-    desc: 'Combined tilt & rotary units built for complex, multi-face component machining in a single setup.',
+    tag: 'MULTI-FACE INDEXING',
+    title: '5th Axis Tilt Rotary Tables',
+    desc: 'Sophisticated 2-axis tilting systems enabling single-setup multi-face component machining for high complexity.',
     img: '/images/products_detron/5th_axis.jpg'
   },
   {
-    id: 'accessories',
-    tag: 'SUPPORTING COMPONENTS',
-    title: 'Accessories',
-    desc: 'Clamping kits, tailstocks, chucks and workholding accessories that extend and complement the Detron range.',
-    img: '/images/products_detron/Accessories.jpg'
-  },
-  {
     id: 'auto-pallet-changer',
-    tag: 'AUTOMATED WORKFLOW',
-    title: 'Auto Pallet Changer',
-    desc: 'Automated pallet handling systems that cut idle spindle time and keep production running unattended.',
-    img: '/images/products_detron/Auto-Pallet-changer.jpg'
+    tag: 'MAXIMUM PRODUCTIVITY',
+    title: 'Auto Pallet Changers',
+    desc: 'Fast, reliable pallet changers minimizing spindle downtime and maximizing production run efficiency.',
+    img: '/images/products_detron/Auto-pallet-changer.jpg'
   },
   {
     id: 'special-application',
-    tag: 'CUSTOM ENGINEERED',
-    title: 'Special Application',
-    desc: 'Purpose-built rotary and indexing solutions engineered around a customer\u2019s specific component geometry.',
+    tag: 'BESPOKE INTEGRATION',
+    title: 'Special Applications',
+    desc: 'Bespoke indexing and clamping configurations tailored specifically for unique production line requirements.',
     img: '/images/products_detron/Special-Application.jpg'
   },
   {
+    id: 'accessories',
+    tag: 'SYSTEM ACCESSORIES',
+    title: 'Detron Accessories',
+    desc: 'Genuine sub-plates, tailstocks, manual/pneumatic chucks, and rotary joints to optimize setup versatility.',
+    img: '/images/products_detron/Accessories.jpg'
+  },
+  {
     id: 'intelligent-control',
-    tag: 'SMART SYSTEMS',
-    title: 'Intelligent Control',
+    tag: 'INTELLIGENT INTEGRATION',
+    title: 'Intelligent Control System',
     desc: 'Advanced control systems and software integration for real-time monitoring, diagnostics and precision tuning.',
     img: '/images/products_detron/Intelligent-control.jpg'
   }
@@ -59,7 +60,6 @@ const BEST_PRACTICES = [
 ];
 
 export default function DetronProducts() {
-  const navigate = useNavigate();
   const heroRef = useRef(null);
   const gridRef = useRef(null);
   const appraisalRef = useRef(null);
@@ -148,65 +148,77 @@ export default function DetronProducts() {
     <div style={styles.container}>
 
       {/* FIXED HEADER WRAPPER (matches homepage) */}
+      {/* FULL FIXED BACKGROUND FOR 3D CANVAS */}
+      <div style={styles.fixedBackgroundWrapper}>
+        <ScrollCanvas
+          totalFrames={240}
+          folderPath="/detron_products_page"
+          digits={5}
+          startIndex={1}
+        />
+        <div style={styles.backgroundOverlay} />
+      </div>
+
+      {/* FIXED HEADER WRAPPER (matches homepage) */}
       <div style={styles.fixedHeaderGroup}>
         <div style={styles.topBar}>
           <div style={styles.topBarLeft}>
-            <span style={styles.contactItem}>\uD83D\uDD3F <strong>+91 98849 12279</strong></span>
+            <span style={styles.contactItem}>📞 <strong>+91 98849 12279</strong></span>
             <span style={styles.contactItem}>
-              \uD83C\uDF10 <button onClick={() => navigate('/contact')} style={styles.topContactBtn}>CONTACT US</button>
+              🌐 <Link to="/contact" style={styles.topContactLink}>CONTACT US</Link>
             </span>
           </div>
           <div style={styles.topBarRight}>
             <a href="#resource-centre" style={styles.utilityLink}>RESOURCE CENTRE</a>
-            <a href="#register-warranty" style={styles.warrantyBtn}>REGISTER WARRANTY \uD83D\uDEE1\uFE0F</a>
+            <Link to="/contact" style={styles.warrantyBtn}>REGISTER WARRANTY 🛡️</Link>
           </div>
         </div>
 
         <header style={styles.mainHeader}>
-          <div style={styles.logoGroup} onClick={() => navigate('/')}>
-            <span style={styles.logoMain}>AXIS</span>
-            <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
-          </div>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <div style={styles.logoGroup}>
+              <span style={styles.logoMain}>AXIS</span>
+              <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
+            </div>
+          </Link>
 
           <nav style={styles.navMenu}>
-            <button onClick={() => navigate('/')} style={styles.navLinkBtn}>HOME</button>
+            <Link to="/" style={styles.navLink}>HOME</Link>
             <span style={styles.navLinkActive}>DETRON PRODUCTS</span>
-            <button onClick={() => navigate('/products/fixtures')} style={styles.navLinkBtn}>CUSTOM FIXTURES</button>
-            <button onClick={() => navigate('/contact')} style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</button>
+            <Link to="/products/fixtures" style={styles.navLink}>CUSTOM FIXTURES</Link>
+            <Link to="/contact" style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</Link>
           </nav>
         </header>
       </div>
 
-      {/* CINEMATIC HERO */}
-      <div ref={heroRef} style={styles.heroWrapper}>
-        <div
-          className="detron-hero-bg"
-          style={{
-            ...styles.heroBg,
-            backgroundImage: `url(/images/DETRON_CNC_rotary_table_product_202607230950.jpeg)`
-          }}
-        />
-        <div style={styles.heroGradient} />
+      {/* SCROLLABLE LAYOUT CONTENT */}
+      <div style={styles.scrollableContent}>
+        
+        {/* Spacer for Fixed Header */}
+        <div style={{ height: '140px' }} />
 
-        <div className="detron-hero-content" style={styles.heroContent}>
-          <span style={styles.heroBadge}>BRAND PARTNER</span>
-          <h1 style={styles.heroTitle}>
-            DETRON <span style={styles.heroRedHighlight}>PRODUCT RANGE</span>
-          </h1>
-          <p style={styles.heroDescription}>
-            Premium 4th & 5th axis CNC rotary tables, automation, and control systems engineered for
-            ultra-rigid, high-accuracy indexing and heavy-duty machining efficiency.
-          </p>
+        {/* CINEMATIC HERO */}
+        <div ref={heroRef} style={styles.heroWrapper}>
+          <div className="detron-hero-content" style={styles.heroContent}>
+            <span style={styles.heroBadge}>BRAND PARTNER</span>
+            <h1 style={styles.heroTitle}>
+              DETRON <span style={styles.heroRedHighlight}>PRODUCT RANGE</span>
+            </h1>
+            <p style={styles.heroDescription}>
+              Premium 4th & 5th axis CNC rotary tables, automation, and control systems engineered for
+              ultra-rigid, high-accuracy indexing and heavy-duty machining efficiency.
+            </p>
+          </div>
         </div>
-      </div>
 
       {/* PRODUCT GRID — 2 columns x 3 rows */}
       <section ref={gridRef} style={styles.productsGrid}>
         {PRODUCTS.map((product, index) => (
-          <div
+          <Link
             key={product.id}
+            to={`/products/detron/${product.id}`}
             className="detron-product-card"
-            style={styles.productCard}
+            style={{ ...styles.productCard, textDecoration: 'none' }}
             onMouseMove={(e) => handleMouseMove(e, index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
@@ -228,13 +240,14 @@ export default function DetronProducts() {
                 <h2 style={styles.cardTitle}>{product.title}</h2>
                 <p style={styles.cardText}>{product.desc}</p>
               </div>
-              <button onClick={() => navigate('/contact')} style={styles.cardRedButton}>
-                ENQUIRE NOW &gt;
-              </button>
+              <span style={styles.cardRedButton}>
+                DISCOVER RANGE &gt;
+              </span>
             </div>
-          </div>
+          </Link>
         ))}
       </section>
+      </div>
 
       {/* APPRAISAL / BEST PRACTICES PANEL */}
       <section ref={appraisalRef} style={styles.appraisalSection}>
@@ -337,6 +350,19 @@ const styles = {
   logoMain: { fontSize: '24px', fontWeight: '900', letterSpacing: '1.5px', color: '#000000' },
   logoSub: { fontSize: '9px', fontWeight: '800', letterSpacing: '1px', color: '#E30613' },
   navMenu: { display: 'flex', alignItems: 'center', gap: '28px' },
+  navLink: {
+    textDecoration: 'none',
+    color: '#0f172a',
+    fontWeight: '700',
+    fontSize: '12px',
+    letterSpacing: '0.5px'
+  },
+  topContactLink: {
+    color: '#ffffff',
+    fontWeight: '700',
+    fontSize: '11px',
+    textDecoration: 'underline'
+  },
   navLinkBtn: {
     background: 'none',
     border: 'none',
@@ -355,26 +381,48 @@ const styles = {
   contactHeaderBtn: {
     backgroundColor: '#000000',
     color: '#ffffff',
-    border: 'none',
+    textDecoration: 'none',
     padding: '8px 16px',
     borderRadius: '2px',
-    cursor: 'pointer',
     fontWeight: '700',
     fontSize: '12px'
+  },
+
+  /* SCROLLABLE CONTENT WRAPPER */
+  scrollableContent: {
+    position: 'relative',
+    zIndex: 10,
+    width: '100%'
+  },
+
+  /* FIXED BACKGROUND WRAPPER */
+  fixedBackgroundWrapper: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    zIndex: 0,
+    pointerEvents: 'none',
+    opacity: 0.22,
+    backgroundColor: '#000000'
+  },
+  backgroundOverlay: {
+    position: 'absolute',
+    inset: 0,
+    background: 'radial-gradient(circle at center, transparent 35%, #000000 90%)'
   },
 
   /* CINEMATIC HERO */
   heroWrapper: {
     position: 'relative',
-    height: '70vh',
-    minHeight: '480px',
+    height: '55vh',
+    minHeight: '380px',
     width: '100%',
-    overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000000',
-    paddingTop: '100px'
+    backgroundColor: 'transparent'
   },
   heroBg: {
     position: 'absolute',
@@ -418,7 +466,7 @@ const styles = {
     gridTemplateColumns: '1fr 1fr',
     gap: '32px',
     padding: '60px 32px',
-    backgroundColor: '#000000',
+    backgroundColor: 'transparent',
     borderTop: '1px solid #222'
   },
   productCard: {
