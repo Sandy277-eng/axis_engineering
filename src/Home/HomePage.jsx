@@ -84,7 +84,7 @@ export default function HomePage() {
 
     return () => {
       cancelAnimationFrame(refreshId);
-      pinTrigger.kill();
+      pinTrigger.kill(true);
       aboutCtx.revert();
       slideCtx.revert(); // Clean up GSAP animations on unmount
     };
@@ -141,8 +141,8 @@ export default function HomePage() {
 
           <nav style={styles.navMenu}>
             <a href="#discover" style={styles.navLink}>DISCOVER AXIS</a>
-            <a href="#detron" style={styles.navLink}>PRODUCT RANGE</a>
-            <a href="#fixtures" style={styles.navLink}>CUSTOM FIXTURES</a>
+            <button onClick={() => navigate('/products/detron')} style={styles.navLinkBtn}>PRODUCT RANGE</button>
+            <button onClick={() => navigate('/products/fixtures')} style={styles.navLinkBtn}>CUSTOM FIXTURES</button>
             <button onClick={() => navigate('/contact')} style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</button>
           </nav>
         </header>
@@ -246,6 +246,7 @@ export default function HomePage() {
           <div
             className="slide-card"
             style={styles.categoryCard}
+            onClick={() => navigate('/products/fixtures')}
             onMouseMove={(e) => handleMouseMove(e, setFixtureZoom)}
             onMouseLeave={() => handleMouseLeave(setFixtureZoom)}
           >
@@ -269,9 +270,9 @@ export default function HomePage() {
                   Tailored high-precision clamping and workholding fixtures designed specifically to match complex component geometries and increase productivity.
                 </p>
               </div>
-              <a href="#fixtures-solutions" style={styles.cardRedButton}>
+              <span style={styles.cardRedButton}>
                 EXPLORE FIXTURE SOLUTIONS &gt;
-              </a>
+              </span>
             </div>
           </div>
 
@@ -358,6 +359,17 @@ const styles = {
   logoSub: { fontSize: '9px', fontWeight: '800', letterSpacing: '1px', color: '#E30613' },
   navMenu: { display: 'flex', alignItems: 'center', gap: '28px' },
   navLink: { textDecoration: 'none', color: '#0f172a', fontWeight: '700', fontSize: '12px', letterSpacing: '0.5px' },
+  navLinkBtn: {
+    background: 'none',
+    border: 'none',
+    color: '#0f172a',
+    fontWeight: '700',
+    fontSize: '12px',
+    letterSpacing: '0.5px',
+    cursor: 'pointer',
+    padding: 0,
+    fontFamily: 'inherit'
+  },
   contactHeaderBtn: {
     backgroundColor: '#000000',
     color: '#ffffff',

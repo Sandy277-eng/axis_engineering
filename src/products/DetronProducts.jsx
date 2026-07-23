@@ -171,6 +171,7 @@ export default function DetronProducts() {
           <nav style={styles.navMenu}>
             <button onClick={() => navigate('/')} style={styles.navLinkBtn}>HOME</button>
             <span style={styles.navLinkActive}>DETRON PRODUCTS</span>
+            <button onClick={() => navigate('/products/fixtures')} style={styles.navLinkBtn}>CUSTOM FIXTURES</button>
             <button onClick={() => navigate('/contact')} style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</button>
           </nav>
         </header>
