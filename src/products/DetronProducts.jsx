@@ -27,7 +27,7 @@ const PRODUCTS = [
     tag: 'MAXIMUM PRODUCTIVITY',
     title: 'Auto Pallet Changers',
     desc: 'Fast, reliable pallet changers minimizing spindle downtime and maximizing production run efficiency.',
-    img: '/images/products_detron/Auto-pallet-changer.jpg'
+    img: '/images/products_detron/Auto-Pallet-changer.jpg'
   },
   {
     id: 'special-application',
