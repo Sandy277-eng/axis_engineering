@@ -66,7 +66,7 @@ export default function ContactPage() {
             
             <h2 style={styles.leftTitle}>Detron GX-200 Series</h2>
             <p style={styles.leftSubtitle}>
-              High-Precision 4th & 5th Axis CNC Rotary Tables
+              High-Precision 4 & 5 Axis CNC Rotary Tables
             </p>
 
             <div style={styles.specBox}>

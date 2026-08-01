@@ -16,7 +16,7 @@ export default function Footer() {
             style={styles.footerLogo}
           />
           <p style={styles.descriptionText}>
-            Leading supplier of high-precision CNC rotary tables, 4th & 5th axis indexers, and bespoke workholding fixtures engineered for complex manufacturing environments.
+            Leading supplier of high-precision CNC rotary tables, 4 & 5 axis indexers, and bespoke workholding fixtures engineered for complex manufacturing environments.
           </p>
           <div style={styles.tagline}>
             <span style={styles.tagDot}></span> Official Partner for Detron CNC Products
@@ -39,9 +39,9 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.columnHeader}>PRODUCT CATEGORIES</h4>
           <ul style={styles.linkList}>
-            <li><Link to="/products/detron/5th-axis" style={styles.footerLink}>CNC Tilting Rotary Tables</Link></li>
-            <li><Link to="/products/detron/4th-axis" style={styles.footerLink}>4th Axis Standard Indexers</Link></li>
-            <li><Link to="/products/detron/5th-axis" style={styles.footerLink}>5th Axis High-Speed Tables</Link></li>
+            <li><Link to="/products/detron/5-axis" style={styles.footerLink}>CNC Tilting Rotary Tables</Link></li>
+            <li><Link to="/products/detron/4-axis" style={styles.footerLink}>4 Axis Standard Indexers</Link></li>
+            <li><Link to="/products/detron/5-axis" style={styles.footerLink}>5 Axis High-Speed Tables</Link></li>
             <li><Link to="/products/fixtures" style={styles.footerLink}>Hydraulic & Pneumatic Fixtures</Link></li>
             <li><Link to="/products/detron/auto-pallet-changer" style={styles.footerLink}>Auto Pallet Changers & Tailstock</Link></li>
           </ul>

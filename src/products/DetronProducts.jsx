@@ -9,16 +9,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PRODUCTS = [
   {
-    id: '4th-axis',
+    id: '4-axis',
     tag: 'HIGH ACCURACY',
-    title: '4th Axis Standard Indexers',
+    title: '4 Axis Standard Indexers',
     desc: 'Premium series designed for rigid, high-performance workpiece indexing on standard CNC milling centers.',
     img: '/images/products_detron/4th_axis.jpg'
   },
   {
-    id: '5th-axis',
+    id: '5-axis',
     tag: 'MULTI-FACE INDEXING',
-    title: '5th Axis Tilt Rotary Tables',
+    title: '5 Axis Tilt Rotary Tables',
     desc: 'Sophisticated 2-axis tilting systems enabling single-setup multi-face component machining for high complexity.',
     img: '/images/products_detron/5th_axis.jpg'
   },
@@ -208,7 +208,7 @@ export default function DetronProducts() {
               DETRON <span style={styles.heroRedHighlight}>PRODUCT RANGE</span>
             </h1>
             <p style={styles.heroDescription}>
-              Premium 4th & 5th axis CNC rotary tables, automation, and control systems engineered for
+              Premium 4 & 5 axis CNC rotary tables, automation, and control systems engineered for
               ultra-rigid, high-accuracy indexing and heavy-duty machining efficiency.
             </p>
           </div>

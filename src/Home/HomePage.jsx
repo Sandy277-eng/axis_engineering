@@ -239,7 +239,7 @@ export default function HomePage() {
                 <span style={styles.cardTag}>BRAND PARTNER</span>
                 <h2 style={styles.cardTitle}>Detron Technology</h2>
                 <p style={styles.cardText}>
-                  Premium 4th & 5th axis CNC rotary tables built for ultra-rigid, high-accuracy indexing and heavy-duty machining efficiency.
+                  Premium 4 & 5 axis CNC rotary tables built for ultra-rigid, high-accuracy indexing and heavy-duty machining efficiency.
                 </p>
               </div>
               <span style={styles.cardRedButton}>

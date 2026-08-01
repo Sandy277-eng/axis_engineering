@@ -4,8 +4,8 @@ import Footer from '../Footer/Footer';
 
 // Comprehensive product specifications database extracted from the websites
 const PRODUCT_DATABASE = {
-  '4th-axis': {
-    title: '4th Axis Rotary Tables',
+  '4-axis': {
+    title: '4 Axis Rotary Tables',
     description: 'Compact, ultra-rigid single-axis rotary tables engineered for high-accuracy indexing on 3-axis machining centres.',
     folderPath: '/detron-frames/4th_axis',
     totalFrames: 240,
@@ -489,8 +489,8 @@ const PRODUCT_DATABASE = {
       }
     ]
   },
-  '5th-axis': {
-    title: '5th Axis Rotary Tables',
+  '5-axis': {
+    title: '5 Axis Rotary Tables',
     description: 'Combined tilt & rotary units built for complex, multi-face component machining in a single setup.',
     folderPath: '/detron-frames/5th_axis',
     totalFrames: 240,
@@ -749,7 +749,7 @@ const PRODUCT_DATABASE = {
         products: [
           {
             name: 'GTFAE-410XB',
-            badge: 'Industrial 5th-Axis Giant',
+            badge: 'Industrial 5-Axis Giant',
             description: 'Heavy industrial multi-axis positioning table, offering top-tier mechanical efficiency and hydraulic locking.',
             image: '/images/products_detron/5th_axis_pics/410mm/GTFAE-410XB.jpg',
             specs: {
@@ -1259,8 +1259,8 @@ export default function DetronProductDetailPage() {
 
   const getVideoUrl = (id) => {
     const mapping = {
-      '4th-axis': '/videos/4th_axis.mp4',
-      '5th-axis': '/videos/5th_axis.mp4',
+      '4-axis': '/videos/4th_axis.mp4',
+      '5-axis': '/videos/5th_axis.mp4',
       'auto-pallet-changer': '/videos/auto_pallet_changer.mp4',
       'special-application': '/videos/special_applications.mp4',
       'special-applications': '/videos/special_applications.mp4',
@@ -1270,7 +1270,7 @@ export default function DetronProductDetailPage() {
     return mapping[id] || '/videos/4th_axis.mp4';
   };
 
-  const productData = PRODUCT_DATABASE[productId] || PRODUCT_DATABASE['4th-axis'];
+  const productData = PRODUCT_DATABASE[productId] || PRODUCT_DATABASE['4-axis'];
 
   // Check screen width for responsive rendering
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
