@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
-import ScrollCanvas from '../animation/ScrollCanvas';
 
 // Comprehensive product specifications database extracted from the websites
 const PRODUCT_DATABASE = {
@@ -1258,6 +1257,19 @@ PRODUCT_DATABASE['special-application'] = PRODUCT_DATABASE['special-applications
 export default function DetronProductDetailPage() {
   const { productId } = useParams();
 
+  const getVideoUrl = (id) => {
+    const mapping = {
+      '4th-axis': '/videos/4th_axis.mp4',
+      '5th-axis': '/videos/5th_axis.mp4',
+      'auto-pallet-changer': '/videos/auto_pallet_changer.mp4',
+      'special-application': '/videos/special_applications.mp4',
+      'special-applications': '/videos/special_applications.mp4',
+      'accessories': '/videos/accessories.mp4',
+      'intelligent-control': '/videos/intelligent_control.mp4'
+    };
+    return mapping[id] || '/videos/4th_axis.mp4';
+  };
+
   const productData = PRODUCT_DATABASE[productId] || PRODUCT_DATABASE['4th-axis'];
 
   // Check screen width for responsive rendering
@@ -1317,8 +1329,11 @@ export default function DetronProductDetailPage() {
         <header style={styles.mainHeader}>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <div style={styles.logoGroup}>
-              <span style={styles.logoMain}>AXIS</span>
-              <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
+              <img
+                src="/logo_axis/logo%20axis.jpg.jpeg"
+                alt="Axis Engineering Solutions Logo"
+                style={styles.logoImage}
+              />
             </div>
           </Link>
 
@@ -1340,18 +1355,21 @@ export default function DetronProductDetailPage() {
         flexDirection: isMobile ? 'column' : 'row'
       }}>
         
-        {/* LEFT COLUMN: STICKY 3D SCROLL CANVAS ANIMATION */}
+        {/* LEFT COLUMN: STICKY 3D VIDEO PREVIEW */}
         <div style={isMobile ? styles.leftStickyColMobile : styles.leftFixedColDesktop}>
-          <ScrollCanvas
-            totalFrames={productData.totalFrames}
-            folderPath={productData.folderPath}
-            digits={5}
-            startIndex={1}
+          <video
+            key={productId}
+            src={getVideoUrl(productId)}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={styles.detailVideo}
           />
           <div style={styles.canvasGradOverlay} />
           <div style={styles.canvasLabelOverlay}>
             <span style={styles.canvasLabelIcon}>◈</span>
-            <span>SCROLL TO ROTATE 3D MODEL</span>
+            <span>CINEMATIC 3D ROTATION PREVIEW</span>
           </div>
         </div>
 
@@ -1514,9 +1532,8 @@ const styles = {
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     borderBottom: '1px solid #e2e8f0'
   },
-  logoGroup: { cursor: 'pointer', display: 'flex', flexDirection: 'column' },
-  logoMain: { fontSize: '24px', fontWeight: '900', letterSpacing: '1.5px', color: '#000000' },
-  logoSub: { fontSize: '9px', fontWeight: '800', letterSpacing: '1px', color: '#E30613' },
+  logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
+  logoImage: { height: '48px', width: 'auto', display: 'block', objectFit: 'contain' },
   navMenu: { display: 'flex', alignItems: 'center', gap: '28px' },
   navLink: {
     textDecoration: 'none',
@@ -1621,6 +1638,12 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  detailVideo: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    pointerEvents: 'none'
   },
 
   canvasGradOverlay: {

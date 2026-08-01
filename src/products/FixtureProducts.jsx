@@ -118,8 +118,11 @@ export default function FixtureProducts() {
           <header style={styles.mainHeader}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <div style={styles.logoGroup}>
-                <span style={styles.logoMain}>AXIS</span>
-                <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
+                <img
+                  src="/logo_axis/logo%20axis.jpg.jpeg"
+                  alt="Axis Engineering Solutions Logo"
+                  style={styles.logoImage}
+                />
               </div>
             </Link>
 
@@ -372,9 +375,8 @@ const styles = {
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     borderBottom: '1px solid #e2e8f0'
   },
-  logoGroup: { cursor: 'pointer', display: 'flex', flexDirection: 'column' },
-  logoMain: { fontSize: '24px', fontWeight: '900', letterSpacing: '1.5px', color: '#000000' },
-  logoSub: { fontSize: '9px', fontWeight: '800', letterSpacing: '1px', color: '#E30613' },
+  logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
+  logoImage: { height: '48px', width: 'auto', display: 'block', objectFit: 'contain' },
   navMenu: { display: 'flex', alignItems: 'center', gap: '28px' },
   navLink: {
     textDecoration: 'none',

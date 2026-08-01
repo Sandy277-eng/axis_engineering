@@ -10,10 +10,11 @@ export default function Footer() {
       <div style={styles.footerContent}>
         {/* COLUMN 1: BRAND & ABOUT */}
         <div style={styles.column}>
-          <div style={styles.brandTitle}>
-            AXIS <span style={{ color: '#E30613' }}>ENGINEERING</span>
-          </div>
-          <p style={styles.brandSubtitle}>SOLUTIONS PRIVATE LIMITED</p>
+          <img
+            src="/logo_axis/logo%20axis.jpg.jpeg"
+            alt="Axis Engineering Solutions"
+            style={styles.footerLogo}
+          />
           <p style={styles.descriptionText}>
             Leading supplier of high-precision CNC rotary tables, 4th & 5th axis indexers, and bespoke workholding fixtures engineered for complex manufacturing environments.
           </p>
@@ -120,18 +121,12 @@ const styles = {
     display: 'flex',
     flexDirection: 'column'
   },
-  brandTitle: {
-    fontSize: '22px',
-    fontWeight: '900',
-    letterSpacing: '1px',
-    color: '#ffffff'
-  },
-  brandSubtitle: {
-    fontSize: '9px',
-    fontWeight: '800',
-    color: '#94a3b8',
-    letterSpacing: '2px',
-    margin: '4px 0 16px 0'
+  footerLogo: {
+    height: '52px',
+    width: 'auto',
+    display: 'block',
+    objectFit: 'contain',
+    marginBottom: '16px'
   },
   descriptionText: {
     fontSize: '13px',

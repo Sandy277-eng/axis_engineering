@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
-import ScrollCanvas from '../animation/ScrollCanvas';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -27,17 +26,7 @@ export default function HomePage() {
     // Start at the top every time HomePage mounts (e.g. navigating back from /contact)
     window.scrollTo(0, 0);
 
-    // 1. PINNED HERO TRIGGER
-    const pinTrigger = ScrollTrigger.create({
-      trigger: heroSectionRef.current,
-      start: 'top top',
-      end: '+=400%',
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1
-    });
-
-    // 2. SLIDE FROM RIGHT ENTRANCE ANIMATION FOR THE ABOUT/PRODUCTS INTRO SECTION
+    // 1. SLIDE FROM RIGHT ENTRANCE ANIMATION FOR THE ABOUT/PRODUCTS INTRO SECTION
     const aboutCtx = gsap.context(() => {
       gsap.fromTo(
         aboutSectionRef.current,
@@ -59,7 +48,7 @@ export default function HomePage() {
       );
     });
 
-    // 3. SLIDE FROM RIGHT ENTRANCE ANIMATION FOR CARDS
+    // 2. SLIDE FROM RIGHT ENTRANCE ANIMATION FOR CARDS
     // Grabs all child divs (.slide-card) and animates them when container enters viewport
     const slideCtx = gsap.context(() => {
       gsap.fromTo(".slide-card",
@@ -89,7 +78,6 @@ export default function HomePage() {
 
     return () => {
       cancelAnimationFrame(refreshId);
-      pinTrigger.kill(true);
       aboutCtx.revert();
       slideCtx.revert(); // Clean up GSAP animations on unmount
     };
@@ -141,8 +129,11 @@ export default function HomePage() {
         <header style={styles.mainHeader}>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <div style={styles.logoGroup}>
-              <span style={styles.logoMain}>AXIS</span>
-              <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
+              <img
+                src="/logo_axis/logo%20axis.jpg.jpeg"
+                alt="Axis Engineering Solutions Logo"
+                style={styles.logoImage}
+              />
             </div>
           </Link>
 
@@ -155,9 +146,17 @@ export default function HomePage() {
         </header>
       </div>
 
-      {/* PINNED 3D ANIMATION HERO SECTION */}
+      {/* VIDEO HERO SECTION */}
       <div ref={heroSectionRef} style={styles.pinnedHeroWrapper}>
-        <ScrollCanvas totalFrames={239} folderPath="/frames" speed={0.05} />
+        <video
+          src="/videos/detron_home_page_animation.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={styles.heroVideo}
+        />
+        <div style={styles.heroVideoOverlay} />
 
         <div style={styles.heroTextOverlay}>
           <span style={styles.heroBadge}>THE WORLD'S LEADING CNC ROTARY TABLE SOLUTIONS</span>
@@ -333,6 +332,12 @@ const styles = {
     fontSize: '11px',
     textDecoration: 'underline'
   },
+  topContactLink: {
+    color: '#ffffff',
+    fontWeight: '700',
+    fontSize: '11px',
+    textDecoration: 'underline'
+  },
   searchBox: {
     display: 'flex',
     alignItems: 'center',
@@ -361,9 +366,8 @@ const styles = {
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     borderBottom: '1px solid #e2e8f0'
   },
-  logoGroup: { cursor: 'pointer', display: 'flex', flexDirection: 'column' },
-  logoMain: { fontSize: '24px', fontWeight: '900', letterSpacing: '1.5px', color: '#000000' },
-  logoSub: { fontSize: '9px', fontWeight: '800', letterSpacing: '1px', color: '#E30613' },
+  logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
+  logoImage: { height: '48px', width: 'auto', display: 'block', objectFit: 'contain' },
   navMenu: { display: 'flex', alignItems: 'center', gap: '28px' },
   navLink: { textDecoration: 'none', color: '#0f172a', fontWeight: '700', fontSize: '12px', letterSpacing: '0.5px' },
   navLinkBtn: {
@@ -398,6 +402,22 @@ const styles = {
     justifyContent: 'center',
     backgroundColor: '#000000',
     paddingTop: '100px'
+  },
+  heroVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    pointerEvents: 'none',
+    zIndex: 0
+  },
+  heroVideoOverlay: {
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.85) 100%)',
+    zIndex: 1
   },
   heroTextOverlay: {
     position: 'relative',

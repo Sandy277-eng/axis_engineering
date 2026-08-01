@@ -34,8 +34,11 @@ export default function ContactPage() {
       {/* HEADER NAV */}
       <header style={styles.header}>
         <div style={styles.logoGroup} onClick={handleBack}>
-          <span style={styles.logoMain}>AXIS</span>
-          <span style={styles.logoSub}>ENGINEERING SOLUTIONS</span>
+          <img
+            src="/logo_axis/logo%20axis.jpg.jpeg"
+            alt="Axis Engineering Solutions Logo"
+            style={styles.logoImage}
+          />
         </div>
         <button onClick={handleBack} style={styles.backBtn}>
           &larr; BACK TO HOME
@@ -278,9 +281,8 @@ const styles = {
     top: 0,
     zIndex: 100
   },
-  logoGroup: { cursor: 'pointer', display: 'flex', flexDirection: 'column' },
-  logoMain: { fontSize: '22px', fontWeight: '900', letterSpacing: '1.5px', color: '#ffffff' },
-  logoSub: { fontSize: '9px', fontWeight: '800', letterSpacing: '1px', color: ACCENT_COLOR },
+  logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
+  logoImage: { height: '44px', width: 'auto', display: 'block', objectFit: 'contain' },
   backBtn: {
     backgroundColor: ACCENT_COLOR,
     color: '#ffffff',
