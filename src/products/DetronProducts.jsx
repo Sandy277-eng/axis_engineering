@@ -148,7 +148,7 @@ export default function DetronProducts() {
         {
           y: 0,
           opacity: 1,
-          duration: 10.0,
+          duration: 2.0,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: appraisalRef.current,
@@ -164,8 +164,6 @@ export default function DetronProducts() {
 
   return (
     <div style={styles.container}>
-
-      {/* FIXED HEADER WRAPPER (matches homepage) */}
       {/* FULL FIXED BACKGROUND FOR 3D CANVAS */}
       <div style={styles.fixedBackgroundWrapper}>
         <ScrollCanvas
@@ -177,7 +175,7 @@ export default function DetronProducts() {
         <div style={styles.backgroundOverlay} />
       </div>
 
-      {/* FIXED HEADER WRAPPER (matches homepage) */}
+      {/* COMPACT & PROFESSIONAL FIXED HEADER WRAPPER (Exact match to HomePage) */}
       <div style={styles.fixedHeaderGroup}>
         <div style={styles.topBar}>
           <div style={styles.topBarLeft}>
@@ -193,15 +191,24 @@ export default function DetronProducts() {
         </div>
 
         <header style={styles.mainHeader}>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <div style={styles.logoGroup}>
+          {/* DUAL LOGO GROUP */}
+          <div style={styles.dualLogoGroup}>
+            <Link to="/" style={styles.logoLink}>
               <img
                 src="/logo_axis/logo%20axis.jpg.jpeg"
                 alt="Axis Engineering Solutions Logo"
                 style={styles.logoImage}
               />
-            </div>
-          </Link>
+            </Link>
+            <div style={styles.logoDivider} />
+            <Link to="/products/detron" style={styles.logoLink}>
+              <img
+                src="/logo_axis/logo_detron.jpg.png"
+                alt="Detron Logo"
+                style={styles.logoImageDetron}
+              />
+            </Link>
+          </div>
 
           <nav style={styles.navMenu}>
             <Link to="/" style={styles.navLink}>HOME</Link>
@@ -214,9 +221,8 @@ export default function DetronProducts() {
 
       {/* SCROLLABLE LAYOUT CONTENT */}
       <div style={styles.scrollableContent}>
-        
         {/* Spacer for Fixed Header */}
-        <div style={{ height: '140px' }} />
+        <div style={{ height: '80px' }} />
 
         {/* CINEMATIC HERO */}
         <div ref={heroRef} style={styles.heroWrapper}>
@@ -232,42 +238,42 @@ export default function DetronProducts() {
           </div>
         </div>
 
-      {/* PRODUCT GRID — 2 columns x 3 rows */}
-      <section ref={gridRef} style={styles.productsGrid}>
-        {PRODUCTS.map((product, index) => (
-          <Link
-            key={product.id}
-            to={`/products/detron/${product.id}`}
-            className={`detron-product-card ${index % 2 === 0 ? 'card-left' : 'card-right'}`}
-            style={{ ...styles.productCard, textDecoration: 'none' }}
-            onMouseMove={(e) => handleMouseMove(e, index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-          >
-            <div style={styles.imageWrapper}>
-              <img
-                src={product.img}
-                alt={product.title}
-                style={{
-                  ...styles.zoomableImage,
-                  transform: `scale(${zoomStates[index].scale})`,
-                  transformOrigin: `${zoomStates[index].x}% ${zoomStates[index].y}%`
-                }}
-              />
-            </div>
-
-            <div style={styles.cardContentOverlay}>
-              <div>
-                <span style={styles.cardTag}>{product.tag}</span>
-                <h2 style={styles.cardTitle}>{product.title}</h2>
-                <p style={styles.cardText}>{product.desc}</p>
+        {/* PRODUCT GRID — 2 columns x 3 rows */}
+        <section ref={gridRef} style={styles.productsGrid}>
+          {PRODUCTS.map((product, index) => (
+            <Link
+              key={product.id}
+              to={`/products/detron/${product.id}`}
+              className={`detron-product-card ${index % 2 === 0 ? 'card-left' : 'card-right'}`}
+              style={{ ...styles.productCard, textDecoration: 'none' }}
+              onMouseMove={(e) => handleMouseMove(e, index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+            >
+              <div style={styles.imageWrapper}>
+                <img
+                  src={product.img}
+                  alt={product.title}
+                  style={{
+                    ...styles.zoomableImage,
+                    transform: `scale(${zoomStates[index].scale})`,
+                    transformOrigin: `${zoomStates[index].x}% ${zoomStates[index].y}%`
+                  }}
+                />
               </div>
-              <span style={styles.cardRedButton}>
-                DISCOVER RANGE &gt;
-              </span>
-            </div>
-          </Link>
-        ))}
-      </section>
+
+              <div style={styles.cardContentOverlay}>
+                <div>
+                  <span style={styles.cardTag}>{product.tag}</span>
+                  <h2 style={styles.cardTitle}>{product.title}</h2>
+                  <p style={styles.cardText}>{product.desc}</p>
+                </div>
+                <span style={styles.cardRedButton}>
+                  DISCOVER RANGE &gt;
+                </span>
+              </div>
+            </Link>
+          ))}
+        </section>
       </div>
 
       {/* APPRAISAL / BEST PRACTICES PANEL */}
@@ -302,7 +308,6 @@ export default function DetronProducts() {
 
       {/* FOOTER */}
       <Footer />
-
     </div>
   );
 }
@@ -318,7 +323,7 @@ const styles = {
     padding: 0
   },
 
-  /* HEADER (same visual language as HomePage) */
+  /* HEADER STYLES (MATCHES HOMEPAGE ACCURATELY) */
   fixedHeaderGroup: {
     position: 'fixed',
     top: 0,
@@ -330,25 +335,16 @@ const styles = {
   topBar: {
     backgroundColor: '#0a0a0a',
     color: '#ffffff',
-    padding: '8px 32px',
+    padding: '6px 28px',
     fontSize: '11px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottom: '1px solid #222'
+    borderBottom: '1px solid #1c1c1c'
   },
-  topBarLeft: { display: 'flex', gap: '20px', alignItems: 'center' },
+  topBarLeft: { display: 'flex', gap: '18px', alignItems: 'center' },
   topBarRight: { display: 'flex', gap: '16px', alignItems: 'center' },
   contactItem: { color: '#f8fafc' },
-  topContactBtn: {
-    background: 'none',
-    border: 'none',
-    color: '#ffffff',
-    cursor: 'pointer',
-    fontWeight: '700',
-    fontSize: '11px',
-    textDecoration: 'underline'
-  },
   utilityLink: { color: '#e2e8f0', textDecoration: 'none', fontWeight: '600' },
   warrantyBtn: {
     backgroundColor: '#E30613',
@@ -363,19 +359,22 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '16px 32px',
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    borderBottom: '1px solid #e2e8f0'
+    padding: '8px 28px',
+    backgroundColor: 'rgba(255, 255, 255, 0.98)',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.15)'
   },
-  logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
-  logoImage: { height: '48px', width: 'auto', display: 'block', objectFit: 'contain' },
-  navMenu: { display: 'flex', alignItems: 'center', gap: '28px' },
+  dualLogoGroup: { display: 'flex', alignItems: 'center', gap: '16px' },
+  logoLink: { display: 'flex', alignItems: 'center' },
+  logoImage: { height: '32px', width: 'auto', objectFit: 'contain' },
+  logoImageDetron: { height: '28px', width: 'auto', objectFit: 'contain' },
+  logoDivider: { height: '24px', width: '1px', backgroundColor: '#cbd5e1' },
+  navMenu: { display: 'flex', alignItems: 'center', gap: '22px' },
   navLink: {
     textDecoration: 'none',
     color: '#0f172a',
     fontWeight: '700',
-    fontSize: '12px',
-    letterSpacing: '0.5px'
+    fontSize: '11px',
+    letterSpacing: '0.3px'
   },
   topContactLink: {
     color: '#ffffff',
@@ -383,29 +382,20 @@ const styles = {
     fontSize: '11px',
     textDecoration: 'underline'
   },
-  navLinkBtn: {
-    background: 'none',
-    border: 'none',
-    color: '#0f172a',
-    fontWeight: '700',
-    fontSize: '12px',
-    letterSpacing: '0.5px',
-    cursor: 'pointer'
-  },
   navLinkActive: {
     color: '#E30613',
     fontWeight: '800',
-    fontSize: '12px',
-    letterSpacing: '0.5px'
+    fontSize: '11px',
+    letterSpacing: '0.3px'
   },
   contactHeaderBtn: {
     backgroundColor: '#000000',
     color: '#ffffff',
     textDecoration: 'none',
-    padding: '8px 16px',
+    padding: '6px 14px',
     borderRadius: '2px',
     fontWeight: '700',
-    fontSize: '12px'
+    fontSize: '11px'
   },
 
   /* SCROLLABLE CONTENT WRAPPER */
@@ -443,18 +433,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'transparent'
-  },
-  heroBg: {
-    position: 'absolute',
-    inset: 0,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    filter: 'brightness(0.55) saturate(1.1)'
-  },
-  heroGradient: {
-    position: 'absolute',
-    inset: 0,
-    background: 'linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.85) 100%)'
   },
   heroContent: {
     position: 'relative',

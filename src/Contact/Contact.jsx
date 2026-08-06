@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import ScrollCanvas from '../animation/ScrollCanvas'; // Adjust path if needed
 
 export default function ContactPage() {
@@ -31,14 +31,25 @@ export default function ContactPage() {
   return (
     <div style={styles.pageContainer}>
       
-      {/* HEADER NAV */}
+      {/* HEADER NAV (WITH DUAL LOGOS) */}
       <header style={styles.header}>
-        <div style={styles.logoGroup} onClick={handleBack}>
-          <img
-            src="/logo_axis/logo%20axis.jpg.jpeg"
-            alt="Axis Engineering Solutions Logo"
-            style={styles.logoImage}
-          />
+        {/* DUAL LOGO GROUP */}
+        <div style={styles.dualLogoGroup} onClick={handleBack}>
+          <Link to="/" style={styles.logoLink}>
+            <img
+              src="/logo_axis/logo%20axis.jpg.jpeg"
+              alt="Axis Engineering Solutions Logo"
+              style={styles.logoImage}
+            />
+          </Link>
+          <div style={styles.logoDivider} />
+          <Link to="/products/detron" style={styles.logoLink}>
+            <img
+              src="/logo_axis/logo_detron.jpg.png"
+              alt="Detron Logo"
+              style={styles.logoImageDetron}
+            />
+          </Link>
         </div>
         <button onClick={handleBack} style={styles.backBtn}>
           &larr; BACK TO HOME
@@ -51,7 +62,6 @@ export default function ContactPage() {
         {/* ================= LEFT HALF: 3D CANVAS ANIMATION (SLOWER SPEED) ================= */}
         <div style={styles.leftHalf}>
           
-          {/* ScrollCanvas configured with slower speed (speed={0.015}) */}
           <ScrollCanvas 
             totalFrames={192} 
             folderPath="/contact-frames" 
@@ -114,7 +124,7 @@ export default function ContactPage() {
             {/* CONTACT CARDS */}
             <div style={styles.contactCardsContainer}>
               <div style={styles.contactCard}>
-                <div style={styles.cardIconBox}>📍</div>
+                <div style={styles.cardIconBox}>🗺️</div>
                 <div style={styles.cardDetail}>
                   <span style={styles.cardLabel}>OUR OFFICE LOCATION</span>
                   <span style={styles.cardText}>
@@ -124,7 +134,7 @@ export default function ContactPage() {
               </div>
 
               <div style={styles.contactCard}>
-                <div style={styles.cardIconBox}>📞</div>
+                <div style={styles.cardIconBox}>🕿</div>
                 <div style={styles.cardDetail}>
                   <span style={styles.cardLabel}>PHONE & WHATSAPP</span>
                   <span style={styles.cardText}>
@@ -134,7 +144,7 @@ export default function ContactPage() {
               </div>
 
               <div style={styles.contactCard}>
-                <div style={styles.cardIconBox}>✉️</div>
+                <div style={styles.cardIconBox}>🌐</div>
                 <div style={styles.cardDetail}>
                   <span style={styles.cardLabel}>OFFICIAL EMAIL</span>
                   <span style={styles.cardText}>
@@ -256,15 +266,15 @@ export default function ContactPage() {
   );
 }
 
-const ACCENT_COLOR = '#C0392B';
+const ACCENT_COLOR = '#E30613';
 
 const styles = {
   pageContainer: {
     minHeight: '100vh',
     width: '100%',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#050505',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-    color: '#0f172a',
+    color: '#ffffff',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between'
@@ -273,16 +283,19 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '14px 32px',
-    backgroundColor: '#0f172a',
-    color: '#ffffff',
+    padding: '12px 32px',
+    backgroundColor: 'rgba(255, 255, 255, 0.98)',
     borderBottom: `3px solid ${ACCENT_COLOR}`,
     position: 'sticky',
     top: 0,
     zIndex: 100
   },
   logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
-  logoImage: { height: '44px', width: 'auto', display: 'block', objectFit: 'contain' },
+  logoImage: { height: '32px', width: 'auto', display: 'block', objectFit: 'contain' },
+  logoImageDetron: { height: '28px', width: 'auto', display: 'block', objectFit: 'contain' },
+  logoDivider: { height: '24px', width: '1px', backgroundColor: '#cbd5e1', margin: '0 8px' },
+  dualLogoGroup: { display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' },
+  logoLink: { display: 'flex', alignItems: 'center' },
   backBtn: {
     backgroundColor: ACCENT_COLOR,
     color: '#ffffff',
@@ -305,13 +318,13 @@ const styles = {
   leftHalf: {
     flex: '1 1 500px',
     position: 'relative',
-    backgroundColor: '#0f172a',
+    backgroundColor: '#000000',
     color: '#ffffff',
     padding: '60px 48px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRight: '1px solid #1e293b',
+    borderRight: '1px solid #1a1a1a',
     overflow: 'hidden'
   },
   leftContentWrapper: {
@@ -341,19 +354,21 @@ const styles = {
   },
   leftSubtitle: { 
     fontSize: '15px', 
-    color: '#94a3b8', 
+    color: '#cbd5e1', 
     marginBottom: '32px', 
     fontWeight: '500',
     textShadow: '0 1px 5px rgba(0,0,0,0.5)'
   },
   specBox: {
-    backgroundColor: 'rgba(30, 41, 59, 0.8)',
+    backgroundColor: 'rgba(18, 18, 18, 0.8)',
     backdropFilter: 'blur(8px)',
     borderLeft: `4px solid ${ACCENT_COLOR}`,
     padding: '24px',
     borderRadius: '6px',
     marginBottom: '28px',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
+    boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+    border: '1px solid #222',
+    borderLeftWidth: '4px'
   },
   specHeading: { fontSize: '13px', fontWeight: '800', color: '#ffffff', marginBottom: '16px', letterSpacing: '0.5px', textTransform: 'uppercase' },
   specGrid: {
@@ -361,24 +376,24 @@ const styles = {
     gridTemplateColumns: '1fr 1fr',
     gap: '16px',
     marginBottom: '16px',
-    borderBottom: '1px solid rgba(51, 65, 85, 0.5)',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
     paddingBottom: '16px'
   },
   specItem: { display: 'flex', flexDirection: 'column' },
   specLabel: { fontSize: '11px', color: '#94a3b8', fontWeight: '600' },
-  specValue: { fontSize: '14px', color: '#f8fafc', fontWeight: '700', marginTop: '2px' },
+  specValue: { fontSize: '14px', color: '#ffffff', fontWeight: '700', marginTop: '2px' },
   specFooter: { fontSize: '12px', color: '#cbd5e1' },
   brandCallout: { 
     fontSize: '13px', 
-    color: '#94a3b8', 
+    color: '#cbd5e1', 
     lineHeight: '1.7',
     textShadow: '0 1px 3px rgba(0,0,0,0.5)'
   },
-
+  
   /* Right Half Styles */
   rightHalf: {
     flex: '1 1 520px',
-    backgroundColor: '#f8fafc',
+    backgroundColor: '#050505',
     padding: '60px 48px',
     display: 'flex',
     alignItems: 'center',
@@ -392,8 +407,8 @@ const styles = {
     textAlign: 'left'
   },
   formHeader: { marginBottom: '28px', textAlign: 'left' },
-  rightTitle: { fontSize: '30px', fontWeight: '800', color: '#0f172a', margin: 0 },
-  rightSubtitle: { fontSize: '14px', color: '#64748b', marginTop: '6px' },
+  rightTitle: { fontSize: '30px', fontWeight: '800', color: '#ffffff', margin: 0 },
+  rightSubtitle: { fontSize: '14px', color: '#cbd5e1', marginTop: '6px' },
 
   contactCardsContainer: {
     display: 'flex',
@@ -406,16 +421,16 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '16px',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#0a0a0a',
     padding: '16px 20px',
     borderRadius: '8px',
-    border: '1px solid #e2e8f0',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+    border: '1px solid #1a1a1a',
+    boxShadow: 'none',
     textAlign: 'left'
   },
   cardIconBox: {
     fontSize: '18px',
-    backgroundColor: '#f1f5f9',
+    backgroundColor: '#161616',
     width: '42px',
     height: '42px',
     borderRadius: '8px',
@@ -432,33 +447,34 @@ const styles = {
     flex: 1
   },
   cardLabel: { fontSize: '10px', fontWeight: '800', color: ACCENT_COLOR, letterSpacing: '0.8px' },
-  cardText: { fontSize: '13px', color: '#334155', fontWeight: '600', marginTop: '4px', lineHeight: '1.4', textAlign: 'left' },
+  cardText: { fontSize: '13px', color: '#e2e8f0', fontWeight: '600', marginTop: '4px', lineHeight: '1.4', textAlign: 'left' },
 
   form: { display: 'flex', flexDirection: 'column', gap: '18px', textAlign: 'left' },
   formRow: { display: 'flex', gap: '16px', flexWrap: 'wrap' },
   fieldGroup: { flex: 1, minWidth: '220px', display: 'flex', flexDirection: 'column', gap: '6px', textAlign: 'left' },
-  label: { fontSize: '12px', fontWeight: '700', color: '#334155', textAlign: 'left' },
+  label: { fontSize: '12px', fontWeight: '700', color: '#cbd5e1', textAlign: 'left' },
   input: {
     width: '100%',
     padding: '11px 14px',
     borderRadius: '6px',
-    border: '1px solid #cbd5e1',
-    backgroundColor: '#ffffff',
+    border: '1px solid #333333',
+    backgroundColor: '#121212',
+    color: '#ffffff',
     fontSize: '13px',
     outline: 'none',
     boxSizing: 'border-box'
   },
   phoneInputWrapper: {
     display: 'flex',
-    border: '1px solid #cbd5e1',
+    border: '1px solid #333333',
     borderRadius: '6px',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#121212',
     overflow: 'hidden'
   },
   countryDropdown: {
     position: 'relative',
-    backgroundColor: '#f1f5f9',
-    borderRight: '1px solid #cbd5e1',
+    backgroundColor: '#161616',
+    borderRight: '1px solid #333333',
     display: 'flex',
     alignItems: 'center',
     paddingRight: '6px'
@@ -470,7 +486,7 @@ const styles = {
     padding: '11px 20px 11px 10px',
     fontSize: '12px',
     fontWeight: '700',
-    color: '#0f172a',
+    color: '#ffffff',
     outline: 'none',
     cursor: 'pointer'
   },
@@ -478,7 +494,7 @@ const styles = {
     position: 'absolute',
     right: '8px',
     fontSize: '8px',
-    color: '#64748b',
+    color: '#94a3b8',
     pointerEvents: 'none'
   },
   phoneInput: {
@@ -487,7 +503,7 @@ const styles = {
     padding: '11px 14px',
     fontSize: '13px',
     outline: 'none',
-    color: '#0f172a',
+    color: '#ffffff',
     backgroundColor: 'transparent'
   },
   selectWrapper: { position: 'relative', display: 'flex', alignItems: 'center' },
@@ -496,9 +512,10 @@ const styles = {
     appearance: 'none',
     padding: '11px 14px',
     borderRadius: '6px',
-    border: '1px solid #cbd5e1',
+    border: '1px solid #333333',
     fontSize: '13px',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#121212',
+    color: '#ffffff',
     outline: 'none',
     cursor: 'pointer'
   },
@@ -506,7 +523,9 @@ const styles = {
     width: '100%',
     padding: '11px 14px',
     borderRadius: '6px',
-    border: '1px solid #cbd5e1',
+    border: '1px solid #333333',
+    backgroundColor: '#121212',
+    color: '#ffffff',
     fontSize: '13px',
     outline: 'none',
     resize: 'vertical',
@@ -524,6 +543,6 @@ const styles = {
     letterSpacing: '0.5px',
     cursor: 'pointer',
     marginTop: '6px',
-    boxShadow: '0 4px 12px rgba(192, 57, 43, 0.25)'
+    boxShadow: '0 4px 12px rgba(227, 6, 19, 0.25)'
   }
 };
