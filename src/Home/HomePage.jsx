@@ -3,12 +3,12 @@ import { useNavigate, Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Header from '../Header';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState('');
   const heroSectionRef = useRef(null);
   const aboutSectionRef = useRef(null); 
   const cardsContainerRef = useRef(null); 
@@ -105,57 +105,7 @@ export default function HomePage() {
   return (
     <div style={styles.container}>
       {/* COMPACT & PROFESSIONAL FIXED HEADER WRAPPER */}
-      <div style={styles.fixedHeaderGroup}>
-        <div style={styles.topBar}>
-          <div style={styles.topBarLeft}>
-            <span style={styles.contactItem}>🕿 <strong>+91 98849 12279</strong></span>
-            <span style={styles.contactItem}>
-              🌐 <Link to="/contact" style={styles.topContactLink}>CONTACT US</Link>
-            </span>
-          </div>
-
-          <div style={styles.topBarRight}>
-            <Link to="/about" style={styles.topAboutLink}>ABOUT</Link>
-            <div style={styles.searchBox}>
-              <input
-                type="text"
-                placeholder="Search products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                style={styles.searchInput}
-              />
-              <button style={styles.searchBtn}>🛒</button>
-            </div>
-          </div>
-        </div>
-
-        <header style={styles.mainHeader}>
-          <div style={styles.dualLogoGroup}>
-            <Link to="/" style={styles.logoLink}>
-              <img
-                src="/logo_axis/logo%20axis.jpg.jpeg"
-                alt="Axis Engineering Solutions Logo"
-                style={styles.logoImage}
-              />
-            </Link>
-            <div style={styles.logoDivider} />
-            <Link to="/products/detron" style={styles.logoLink}>
-              <img
-                src="/logo_axis/logo_detron.jpg.png"
-                alt="Detron Logo"
-                style={styles.logoImageDetron}
-              />
-            </Link>
-          </div>
-
-          <nav style={styles.navMenu}>
-            <button onClick={scrollToProducts} style={styles.navLinkBtn}>DISCOVER AXIS</button>
-            <Link to="/products/detron" style={styles.navLink}>PRODUCT RANGE</Link>
-            <Link to="/products/fixtures" style={styles.navLink}>CUSTOM FIXTURES</Link>
-            <Link to="/contact" style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</Link>
-          </nav>
-        </header>
-      </div>
+      <Header activePage="home" scrollToProducts={scrollToProducts} />
 
       {/* VIDEO HERO SECTION */}
       <div ref={heroSectionRef} style={styles.pinnedHeroWrapper}>
@@ -382,5 +332,53 @@ const styles = {
   panelHeading: { fontSize: '36px', fontWeight: '900', margin: '10px 0 5px 0', color: '#ffffff' },
   panelSubheading: { fontSize: '18px', fontWeight: '700', color: '#cccccc', marginBottom: '20px' },
   panelParagraph: { fontSize: '14px', color: '#e2e8f0', lineHeight: '1.7', marginBottom: '16px' },
-  panelButtonContainer: { marginTop: '24px' }
+  panelButtonContainer: { marginTop: '24px' },
+  suggestionDropdown: {
+    position: 'absolute',
+    top: '100%',
+    right: 0,
+    marginTop: '6px',
+    width: '280px',
+    backgroundColor: '#0a0a0a',
+    border: '1px solid #222222',
+    borderRadius: '4px',
+    boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
+    zIndex: 1000,
+    maxHeight: '320px',
+    overflowY: 'auto'
+  },
+  suggestionItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+    padding: '10px 14px',
+    borderBottom: '1px solid #1a1a1a',
+    cursor: 'pointer',
+    textAlign: 'left',
+    backgroundColor: 'transparent'
+  },
+  suggestionImg: {
+    width: '36px',
+    height: '36px',
+    objectFit: 'contain',
+    backgroundColor: '#111111',
+    borderRadius: '4px',
+    padding: '2px'
+  },
+  suggestionDetails: {
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'left'
+  },
+  suggestionName: {
+    fontSize: '12px',
+    fontWeight: '700',
+    color: '#ffffff'
+  },
+  suggestionCat: {
+    fontSize: '10px',
+    color: '#E30613',
+    fontWeight: '600',
+    marginTop: '2px'
+  }
 };

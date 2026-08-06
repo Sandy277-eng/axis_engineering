@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import Header from '../Header';
 
 // Comprehensive product specifications database extracted from the websites
 const PRODUCT_DATABASE = {
@@ -1311,40 +1312,7 @@ export default function DetronProductDetailPage() {
   return (
     <div style={styles.container}>
 
-      {/* FIXED HEADER WRAPPER */}
-      <div style={styles.fixedHeaderGroup}>
-        <div style={styles.topBar}>
-          <div style={styles.topBarLeft}>
-            <span style={styles.contactItem}>🕿 <strong>+91 98849 12279</strong></span>
-            <span style={styles.contactItem}>
-              🌐 <Link to="/contact" style={styles.topContactLink}>CONTACT US</Link>
-            </span>
-          </div>
-          <div style={styles.topBarRight}>
-            <a href="#resource-centre" style={styles.utilityLink}>RESOURCE CENTRE</a>
-            <Link to="/contact" style={styles.warrantyBtn}>REGISTER WARRANTY 🛡️</Link>
-          </div>
-        </div>
-
-        <header style={styles.mainHeader}>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <div style={styles.logoGroup}>
-              <img
-                src="/logo_axis/logo%20axis.jpg.jpeg"
-                alt="Axis Engineering Solutions Logo"
-                style={styles.logoImage}
-              />
-            </div>
-          </Link>
-
-          <nav style={styles.navMenu}>
-            <Link to="/" style={styles.navLink}>HOME</Link>
-            <Link to="/products/detron" style={styles.navLinkActive}>DETRON PRODUCTS</Link>
-            <Link to="/products/fixtures" style={styles.navLink}>CUSTOM FIXTURES</Link>
-            <Link to="/contact" style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</Link>
-          </nav>
-        </header>
-      </div>
+      <Header activePage="detron" />
 
       {/* HEADER SPACER */}
       <div style={{ height: '140px' }} />

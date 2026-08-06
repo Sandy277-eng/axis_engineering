@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PRODUCT_DATABASE } from './productData';
 import Footer from '../Footer/Footer';
+import Header from '../Header';
 
 const CATEGORY_ID = 'intelligent-control';
 
@@ -303,49 +304,7 @@ export default function IntelligentControl() {
         }
       `}</style>
 
-      {/* HEADER SECTION (WITH DUAL LOGOS) */}
-      <div style={styles.fixedHeaderGroup}>
-        <div style={styles.topBar}>
-          <div style={styles.topBarLeft}>
-            <span style={styles.contactItem}>🕿 <strong>+91 98849 12279</strong></span>
-            <span style={styles.contactItem}>
-              🌐 <Link to="/contact" style={styles.topContactLink}>CONTACT US</Link>
-            </span>
-          </div>
-          <div style={styles.topBarRight}>
-            <a href="#resource-centre" style={styles.utilityLink}>RESOURCE CENTRE</a>
-            <Link to="/contact" style={styles.warrantyBtn}>REGISTER WARRANTY 🛡️</Link>
-          </div>
-        </div>
-
-        <header style={styles.mainHeader}>
-          {/* DUAL LOGO GROUP */}
-          <div style={styles.dualLogoGroup}>
-            <Link to="/" style={styles.logoLink}>
-              <img
-                src="/logo_axis/logo%20axis.jpg.jpeg"
-                alt="Axis Engineering Solutions Logo"
-                style={styles.logoImage}
-              />
-            </Link>
-            <div style={styles.logoDivider} />
-            <Link to="/products/detron" style={styles.logoLink}>
-              <img
-                src="/logo_axis/logo_detron.jpg.png"
-                alt="Detron Logo"
-                style={styles.logoImageDetron}
-              />
-            </Link>
-          </div>
-
-          <nav style={styles.navMenu}>
-            <Link to="/" style={styles.navLink}>HOME</Link>
-            <Link to="/products/detron" style={styles.navLinkActive}>DETRON PRODUCTS</Link>
-            <Link to="/products/fixtures" style={styles.navLink}>CUSTOM FIXTURES</Link>
-            <Link to="/contact" style={styles.contactHeaderBtn}>CONTACT PANEL &gt;</Link>
-          </nav>
-        </header>
-      </div>
+      <Header activePage="detron" />
 
       {/* HEADER SPACER */}
       <div style={{ height: '140px' }} />
