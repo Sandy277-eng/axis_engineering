@@ -8,6 +8,7 @@ import ContactPage from './Contact/Contact';
 import DetronProducts from './products/DetronProducts';
 import FixtureProducts from './products/FixtureProducts';
 import DetronProductDetailPage from './products/DetronProductDetailPage';
+import AboutPage from './About/About'; // <-- Add this import
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} /> {/* <-- Add this route */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/products/detron" element={<DetronProducts />} />
           <Route path="/products/detron/:productId" element={<DetronProductDetailPage />} />

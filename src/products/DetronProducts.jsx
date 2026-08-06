@@ -95,24 +95,42 @@ export default function DetronProducts() {
       gsap.fromTo(
         '.detron-hero-content',
         { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', delay: 0.2 }
+        { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', delay: 1.2 }
       );
 
       // Slow Ken Burns drift on the hero background
       gsap.fromTo(
         '.detron-hero-bg',
         { scale: 1.08 },
-        { scale: 1, duration: 8, ease: 'none' }
+        { scale: 1, duration: 8, ease: 'none'}
       );
 
-      // Product cards: staggered fade + rise as the grid scrolls into view
+      // Left-side product cards: slide in from left
       gsap.fromTo(
-        '.detron-product-card',
-        { y: 60, opacity: 0 },
+        '.card-left',
+        { x: -100, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
           duration: 0.9,
+          ease: 'power3.out',
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+
+      // Right-side product cards: slide in from right
+      gsap.fromTo(
+        '.card-right',
+        { x: 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 2.0,
           ease: 'power3.out',
           stagger: 0.15,
           scrollTrigger: {
@@ -130,7 +148,7 @@ export default function DetronProducts() {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 10.0,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: appraisalRef.current,
@@ -220,7 +238,7 @@ export default function DetronProducts() {
           <Link
             key={product.id}
             to={`/products/detron/${product.id}`}
-            className="detron-product-card"
+            className={`detron-product-card ${index % 2 === 0 ? 'card-left' : 'card-right'}`}
             style={{ ...styles.productCard, textDecoration: 'none' }}
             onMouseMove={(e) => handleMouseMove(e, index)}
             onMouseLeave={() => handleMouseLeave(index)}
