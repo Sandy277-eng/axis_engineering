@@ -1,90 +1,65 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 export default function IntroSplash({ onComplete }) {
   const [visible, setVisible] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
+  const videoRef = useRef(null);
 
-  useEffect(() => {
-    // Start fading out the overall container at 2.4 seconds
-    const fadeTimer = setTimeout(() => {
-      setFadeOut(true);
-    }, 2400);
-
-    // Completely remove the splash screen from DOM at 3.0 seconds
-    const completeTimer = setTimeout(() => {
+  const handleFinish = () => {
+    setFadeOut(true);
+    setTimeout(() => {
       setVisible(false);
       if (onComplete) onComplete();
-    }, 3000);
+    }, 600);
+  };
+
+  useEffect(() => {
+    // Attempt playback when mounted
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // In case autoplay is blocked, wait fallback time
+      });
+    }
+
+    // Safety fallback timeout (e.g., 10 seconds max) in case video fails or gets stuck
+    const safetyTimer = setTimeout(() => {
+      handleFinish();
+    }, 10000);
 
     return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(completeTimer);
+      clearTimeout(safetyTimer);
     };
-  }, [onComplete]);
+  }, []);
 
   if (!visible) return null;
 
   return (
-    <div style={{
-      ...styles.overlay,
-      opacity: fadeOut ? 0 : 1,
-      pointerEvents: fadeOut ? 'none' : 'all'
-    }}>
+    <div
+      style={{
+        ...styles.overlay,
+        opacity: fadeOut ? 0 : 1,
+        pointerEvents: fadeOut ? 'none' : 'all',
+      }}
+    >
       <style>{`
-        @keyframes splashScale {
-          0% {
-            opacity: 0;
-            transform: scale(0.92);
-          }
-          15% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          80% {
-            opacity: 1;
-            transform: scale(1.03);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(1.06);
-          }
-        }
-        .splash-logo-container {
-          display: flex;
-          align-items: center;
-          gap: 32px;
-          animation: splashScale 2.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-        .splash-logo-axis {
-          height: 76px;
-          width: auto;
-          object-fit: contain;
-          border-radius: 4px;
-        }
-        .splash-logo-detron {
-          height: 64px;
-          width: auto;
-          object-fit: contain;
-        }
-        .splash-divider {
-          height: 60px;
-          width: 2px;
-          background-color: #cbd5e1;
+        .intro-video-player {
+          width: 100vw;
+          height: 100vh;
+          object-fit: cover;
+          display: block;
         }
       `}</style>
-      <div className="splash-logo-container">
-        <img
-          src="/logo_axis/logo%20axis.jpg.jpeg"
-          alt="Axis Engineering Solutions Logo"
-          className="splash-logo-axis"
-        />
-        <div className="splash-divider" />
-        <img
-          src="/logo_axis/logo_detron.jpg.png"
-          alt="Detron Logo"
-          className="splash-logo-detron"
-        />
-      </div>
+
+      <video
+        ref={videoRef}
+        src="/videos/intro/VID_20260808_221159.mp4"
+        className="intro-video-player"
+        autoPlay
+        muted
+        playsInline
+        onEnded={handleFinish}
+        onError={handleFinish}
+      />
     </div>
   );
 }
@@ -96,11 +71,15 @@ const styles = {
     left: 0,
     right: 0,
     bottom: 0,
+    width: '100vw',
+    height: '100vh',
     backgroundColor: '#000000',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 99999,
-    transition: 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1)'
+    transition: 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
+    overflow: 'hidden',
   }
 };
+
