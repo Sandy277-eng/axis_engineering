@@ -52,7 +52,7 @@ export default function IntroSplash({ onComplete }) {
 
       <video
         ref={videoRef}
-        src="/videos/intro/VID_20260808_221159.mp4"
+        src="/videos/intro/VID01.mp4"
         className="intro-video-player"
         autoPlay
         muted
