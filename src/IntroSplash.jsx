@@ -1,17 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 
 export default function IntroSplash({ onComplete }) {
   const [visible, setVisible] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
   const videoRef = useRef(null);
 
-  const handleFinish = () => {
+  const handleFinish = useCallback(() => {
     setFadeOut(true);
     setTimeout(() => {
       setVisible(false);
       if (onComplete) onComplete();
     }, 600);
-  };
+  }, [onComplete]);
 
   useEffect(() => {
     // Attempt playback when mounted
@@ -29,7 +29,7 @@ export default function IntroSplash({ onComplete }) {
     return () => {
       clearTimeout(safetyTimer);
     };
-  }, []);
+  }, [handleFinish]);
 
   if (!visible) return null;
 
