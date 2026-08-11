@@ -12,12 +12,16 @@ export default function HomePage() {
   const heroSectionRef = useRef(null);
   
   // Refs for About Section Animation
+  const aboutBgImageRef = useRef(null); // Ref for background industry image (First section)
   const aboutImageRef = useRef(null); 
   const aboutTextRef = useRef(null);
   const aboutContainerRef = useRef(null);
   
   const cardsContainerRef = useRef(null); 
+
+  // Refs for Detailed About Panel Section (Bottom section)
   const homeAboutPanelRef = useRef(null);
+  const panelBgImageRef = useRef(null); // Ref for background industry image (Second section)
 
   const scrollToProducts = (e) => {
     if (e) e.preventDefault();
@@ -30,16 +34,16 @@ export default function HomePage() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // ABOUT SECTION SLOW SLIDE ANIMATION (Image from Left, Text from Right)
+    // FIRST ABOUT SECTION SLOW SLIDE ANIMATION
     const aboutCtx = gsap.context(() => {
-      // Left Image Animation
+      // 1. Background Industry Image (Slides from Left behind content)
       gsap.fromTo(
-        aboutImageRef.current,
+        aboutBgImageRef.current,
         { x: '-100vw', opacity: 0 },
         {
           x: 0,
-          opacity: 1,
-          duration: 2.2, // Slower duration
+          opacity: 0.50, // Subtle background visibility
+          duration: 2.2,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: aboutContainerRef.current,
@@ -49,14 +53,31 @@ export default function HomePage() {
         }
       );
 
-      // Right Text Animation
+      // 2. Left Image Animation
+      gsap.fromTo(
+        aboutImageRef.current,
+        { x: '-100vw', opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 2.2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: aboutContainerRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+
+      // 3. Right Text Animation
       gsap.fromTo(
         aboutTextRef.current,
         { x: '100vw', opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 2.2, // Slower duration
+          duration: 2.2,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: aboutContainerRef.current,
@@ -85,7 +106,26 @@ export default function HomePage() {
       );
     }, cardsContainerRef);
 
+    // DETAILED ABOUT PANEL ANIMATIONS (PANEL CONTENT & BACKGROUND SLIDE)
     const detailedAboutCtx = gsap.context(() => {
+      // 1. Sliding Background Image for About Us Panel
+      gsap.fromTo(
+        panelBgImageRef.current,
+        { x: '-100vw', opacity: 0 },
+        {
+          x: 0,
+          opacity: 0.25, // Adjusted opacity for dark panel theme
+          duration: 2.2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: homeAboutPanelRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+
+      // 2. Panel Content Scroll Scrub Pop-in
       gsap.fromTo(
         '.about-panel-pop',
         { x: -120, opacity: 0, scale: 0.95 },
@@ -163,6 +203,15 @@ export default function HomePage() {
       {/* ABOUT / OUR PRODUCTS INTRO SECTION */}
       <div style={styles.aboutWrapperClip}>
         <section ref={aboutContainerRef} style={styles.aboutSectionBordered}>
+          {/* SLIDING BACKGROUND INDUSTRY IMAGE */}
+          <div ref={aboutBgImageRef} style={styles.aboutBgWrapper}>
+            <img
+              src="/logo_axis/axis_industry image.png"
+              alt="Industry Background"
+              style={styles.aboutBgImage}
+            />
+          </div>
+
           {/* SLIDE FROM LEFT: IMAGE */}
           <div ref={aboutImageRef} style={styles.aboutImageCol}>
             <img
@@ -268,9 +317,18 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* DETAILED SCRUB POPUP ABOUT PANEL */}
+      {/* DETAILED SCRUB POPUP ABOUT PANEL WITH BACKGROUND SLIDE */}
       <div style={styles.scrollWrapperClip} ref={homeAboutPanelRef}>
         <section style={styles.homeAboutPanel} className="about-panel-pop">
+          {/* SLIDING BACKGROUND INDUSTRY IMAGE FOR ABOUT US PANEL */}
+          <div ref={panelBgImageRef} style={styles.aboutBgWrapper}>
+            <img
+              src="/logo_axis/axis_industry image.png"
+              alt="Industry Background"
+              style={styles.aboutBgImage}
+            />
+          </div>
+
           <div style={styles.panelBlock}>
             <span style={styles.panelBadge}>COMPANY PROFILE</span>
             <h2 style={styles.panelHeading}>About Us</h2>
@@ -296,7 +354,6 @@ export default function HomePage() {
 const styles = {
   container: { position: 'relative', width: '100%', fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif', backgroundColor: '#000000', color: '#ffffff', margin: 0, padding: 0 },
   
-  /* FIXED HEADER STYLES */
   fixedHeaderGroup: { position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, width: '100%' },
   topBar: { backgroundColor: '#0a0a0a', color: '#ffffff', padding: '6px 28px', fontSize: '11px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1c1c1c' },
   topBarLeft: { display: 'flex', gap: '18px', alignItems: 'center' },
@@ -321,7 +378,6 @@ const styles = {
   btnRedPrimary: { backgroundColor: '#E30613', color: '#ffffff', padding: '12px 28px', border: 'none', borderRadius: '25px', cursor: 'pointer', textDecoration: 'none', fontWeight: '800', fontSize: '12px' },
   btnOutline: { backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#ffffff', padding: '12px 28px', borderRadius: '25px', fontWeight: '800', fontSize: '12px', border: '2px solid #ffffff', cursor: 'pointer' },
   
-  /* UPDATED ABOUT SECTION CONTAINER WITH BORDER AND ACCURATE ALIGNMENT */
   aboutWrapperClip: { width: '100%', overflowX: 'hidden', backgroundColor: '#ffffff', padding: '60px 24px' },
   aboutSectionBordered: { 
     position: 'relative', 
@@ -335,17 +391,35 @@ const styles = {
     maxWidth: '1300px', 
     margin: '0 auto',
     borderRadius: '12px',
-    border: '2px solid #e2e8f0', // Clean border around the entire container
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
+    border: '2px solid #e2e8f0',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
+    overflow: 'hidden'
   },
-  aboutImageCol: { flex: '1 1 420px', minWidth: '300px' },
+  
+  /* BACKGROUND SLIDING IMAGE STYLES */
+  aboutBgWrapper: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: 0,
+    pointerEvents: 'none'
+  },
+  aboutBgImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover'
+  },
+
+  aboutImageCol: { flex: '1 1 420px', minWidth: '300px', position: 'relative', zIndex: 1 },
   aboutImage: { width: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)', display: 'block' },
-  aboutTextCol: { flex: '1 1 420px', minWidth: '300px', color: '#0f172a', display: 'flex', flexDirection: 'column', justifyContent: 'center' },
+  aboutTextCol: { flex: '1 1 420px', minWidth: '300px', color: '#0f172a', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1 },
   aboutLogoRow: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' },
-  aboutLogoIcon: { color: '#E30613', fontSize: '26px', fontWeight: '900',marginLeft:'80px' },
+  aboutLogoIcon: { color: '#E30613', fontSize: '26px', fontWeight: '900', marginLeft: '80px' },
   aboutLogoTitle: { fontSize: '22px', fontWeight: '900' },
-  aboutLogoAxis: { color: '#E30613' ,marginLeft: '0px'},
-  aboutLogoRest: { color: '#334155',marginLeft: '03px' },
+  aboutLogoAxis: { color: '#E30613', marginLeft: '0px' },
+  aboutLogoRest: { color: '#334155', marginLeft: '3px' },
   aboutDescription: { fontSize: '15px', color: '#334155', lineHeight: '1.8', marginBottom: '24px' },
   aboutKnowMoreBtn: { backgroundColor: '#E30613', color: '#ffffff', border: 'none', padding: '12px 28px', borderRadius: '4px', fontWeight: '800', fontSize: '12px', letterSpacing: '0.5px', cursor: 'pointer' },
   
@@ -359,8 +433,18 @@ const styles = {
   cardTitle: { fontSize: '26px', fontWeight: '900', color: '#ffffff', margin: '8px 0 12px 0', textShadow: '0 2px 8px rgba(0,0,0,0.9)' },
   cardText: { fontSize: '14px', color: '#f1f5f9', lineHeight: '1.6', textShadow: '0 1px 5px rgba(0,0,0,0.9)', maxWidth: '90%' },
   cardRedButton: { color: '#E30613', fontWeight: '800', fontSize: '13px', textDecoration: 'none', display: 'inline-block', marginTop: '20px', textShadow: '0 1px 4px rgba(0,0,0,0.9)' },
-  homeAboutPanel: { padding: '80px 32px', backgroundColor: '#0a0a0a', borderTop: '1px solid #222', display: 'flex', justifyContent: 'center' },
-  panelBlock: { maxWidth: '900px', width: '100%' },
+  
+  /* UPDATED HOME ABOUT PANEL SECTION WITH RELATIVE POSITION & OVERFLOW CLIPPING */
+  homeAboutPanel: { 
+    position: 'relative',
+    overflow: 'hidden',
+    padding: '80px 32px', 
+    backgroundColor: '#0a0a0a', 
+    borderTop: '1px solid #222', 
+    display: 'flex', 
+    justifyContent: 'center' 
+  },
+  panelBlock: { maxWidth: '900px', width: '100%', position: 'relative', zIndex: 1 },
   panelBadge: { fontSize: '11px', color: '#E30613', fontWeight: '900', letterSpacing: '1.5px' },
   panelHeading: { fontSize: '36px', fontWeight: '900', margin: '10px 0 5px 0', color: '#ffffff' },
   panelSubheading: { fontSize: '18px', fontWeight: '700', color: '#cccccc', marginBottom: '20px' },

@@ -1,483 +1,637 @@
 export const PRODUCT_DATABASE = {
   '4-axis': {
     title: '4 Axis Rotary Tables',
-    description: 'Compact, ultra-rigid single-axis rotary tables engineered for high-accuracy indexing on 3-axis machining centres.',
+    description: 'Compact, ultra-rigid single-axis rotary tables engineered for high-accuracy indexing on 3-axis and 4-axis machining centres.',
     folderPath: '/detron-frames/4th_axis',
     totalFrames: 240,
     items: [
       {
-        size: 'Ø 125mm (compatible chuck Ø 5-6")',
+        size: 'Ø 125mm (compatible chuck SC-4", SC-5")',
         products: [
           {
             name: 'GXA-125S',
-            badge: 'Pneumatic Clamping, 220 N.m',
-            description: 'Excellent choice for compact CNC machines. Features premium rigid clamping torque and indexing accuracy in a small footprint.',
+            badge: 'Pneumatic Clamping (140 N.m)',
+            description: 'Compact pneumatic rotary table engineered for high-accuracy indexing on small CNC milling centers and tapping machines. Features patented dual-pneumatic piston braking and high-precision cross roller bearings.',
             image: '/images/products_detron/4th_axis_pics/120mm/125mmcompatiblechunk5-6.jpg',
             specs: {
-              'Table Diameter': 'Ø 125 mm',
-              'Center Height': '110 mm',
-              'Register Diameter': 'Ø 65 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 30 mm',
-              'Clamping Torque': '220 N.m (at 0.5 MPa)',
-              'Maximum Speed': '83.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '100 kg / 50 kg'
+              'Table Diameter': 'Ø 125 mm (4.92")',
+              'Center Height (Vertical)': '110 mm (4.33")',
+              'Table Height (Horizontal)': '155 mm (6.10")',
+              'Center Bore Diameter': 'Ø 30H7 (Ø 1.18H7)',
+              'Through-Bore Diameter': 'Ø 25 mm (Ø 0.98")',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque': '140 N.m (103.8 ft.lbs)',
+              'Transmission Ratio': '1 / 40',
+              'Max Table Speed': '66.6 min⁻¹ (at 2664 rpm motor speed)',
+              'Indexing Accuracy': '40 sec',
+              'Repeatability (ISO 230-2 / JIS B6192)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '50 kg / 100 kg (110 / 220 lbs)',
+              'Allowable Cutting Torque': '85 N.m (62.65 ft.lbs)',
+              'Net Weight': '32 kg (70.4 lbs)'
             }
           }
         ]
       },
       {
-        size: 'Ø 170mm (compatible chuck Ø 6-7")',
+        size: 'Ø 170mm (compatible chuck SK-6", SK-7", HCK-6")',
         products: [
           {
-            name: 'GXA-170S',
-            badge: 'Standard Pneumatic, 380 N.m',
-            description: 'Highly versatile mid-size rotary table. Standard choice for most 3-axis machining centers. Perfect balance of clamping rigidity and speed.',
+            name: 'GXA-170S / GXA-170H',
+            badge: 'Pneumatic 300 N.m / Hydraulic 450 N.m',
+            description: 'Highly versatile standard 4th axis rotary table with full gear depth dual lead worm drive. Available in both pneumatic (S) and hydraulic (H) high-power clamping options.',
             image: '/images/products_detron/4th_axis_pics/170mm/GXA-170S.jpg',
             specs: {
-              'Table Diameter': 'Ø 170 mm',
-              'Center Height': '135 mm',
-              'Register Diameter': 'Ø 60 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 40 mm',
-              'Clamping Torque': '380 N.m (at 0.5 MPa)',
-              'Maximum Speed': '44.4 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '150 kg / 75 kg'
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Table Height (Horizontal)': '175 mm (6.89")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 300 N.m (221 ft.lbs) / H: 450 N.m (332 ft.lbs)',
+              'Transmission Ratio': '1 / 60',
+              'Max Table Speed': '53.3 min⁻¹ (at 3200 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability (ISO 230-2 / JIS B6192)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 440 lbs)',
+              'Allowable Cutting Torque': '200 N.m (147.41 ft.lbs)',
+              'Net Weight': '51.5 kg (113.3 lbs)'
             }
           },
           {
-            name: 'GXA-170SL',
-            badge: 'Long Spindle, 380 N.m',
-            description: 'Extended spindle nose design allowing wider fixture layouts and easier tailstock setups on narrow machine tables.',
+            name: 'GXA-170SL / GXA-170HL',
+            badge: 'Motor Mounted at Left Side',
+            description: 'Left-hand motor mount configuration designed to avoid interference with machine tool columns, tool changers, or adjacent fixtures inside compact CNC envelopes.',
             image: '/images/products_detron/4th_axis_pics/170mm/GXA170SL.jpg',
             specs: {
-              'Table Diameter': 'Ø 170 mm',
-              'Center Height': '135 mm',
-              'Register Diameter': 'Ø 60 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 40 mm',
-              'Clamping Torque': '380 N.m (at 0.5 MPa)',
-              'Maximum Speed': '44.4 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '150 kg / 75 kg'
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Table Height (Horizontal)': '175 mm (6.89")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 300 N.m (221.1 ft.lbs) / H: 450 N.m (332 ft.lbs)',
+              'Transmission Ratio': '1 / 60',
+              'Max Table Speed': '53.3 min⁻¹ (at 3200 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability (ISO 230-2 / JIS B6192)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 440 lbs)',
+              'Allowable Cutting Torque': '200 N.m (147.41 ft.lbs)',
+              'Net Weight': '51.5 kg (113.3 lbs)'
             }
           },
           {
-            name: 'GXA-170SB',
-            badge: 'Rear-Motor Mount, 380 N.m',
-            description: 'Fitted with a rear-mounted motor casing to eliminate lateral interferences, maximizing active work envelope inside compact CNCs.',
+            name: 'GV-170SB',
+            badge: 'Rear Motor Mount, Super Multi-Pneumatic 250 N.m',
+            description: 'Rear backside motor configuration maximizing lateral table workspace for standard VMC machines. Equipped with super multiple brake mechanism.',
             image: '/images/products_detron/4th_axis_pics/170mm/GV-170SB.jpg',
             specs: {
-              'Table Diameter': 'Ø 170 mm',
-              'Center Height': '135 mm',
-              'Register Diameter': 'Ø 60 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 40 mm',
-              'Clamping Torque': '380 N.m (at 0.5 MPa)',
-              'Maximum Speed': '44.4 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '120 kg / 60 kg'
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'Super Multi-Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque': '250 N.m (184.25 ft.lbs)',
+              'Transmission Ratio': '1 / 90',
+              'Max Table Speed': '44.4 min⁻¹ (at 4000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '75 kg / 150 kg (165 / 330 lbs)',
+              'Allowable Cutting Torque': '170 N.m (125.29 ft.lbs)',
+              'Net Weight': '90 kg (198 lbs)'
             }
           },
           {
             name: 'DV-170P',
-            badge: 'High Speed, Pneumatic',
-            description: 'High-speed pneumatic model engineered for fast component indexing on high-production drill/tap milling setups.',
+            badge: 'Direct Drive Motor (DDM), 250 RPM High Speed',
+            description: 'Direct Drive torque motor rotary table delivering 250 RPM ultra-fast indexing and zero backlash. Equipped with high-precision optical encoder for direct feedback.',
             image: '/images/products_detron/4th_axis_pics/170mm/Dv170p.jpg',
             specs: {
-              'Table Diameter': 'Ø 170 mm',
-              'Center Height': '135 mm',
-              'Register Diameter': 'Ø 60 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 40 mm',
-              'Clamping Torque': '350 N.m',
-              'Maximum Speed': '66.6 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '150 kg / 75 kg'
+              'Table Diameter': 'STD: No table / OPT: Ø 170 mm (6.69")',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Center Bore Diameter': 'OPT: Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'Pneumatic 0.6 ~ 0.7 MPa (87 ~ 101.5 psi)',
+              'Clamping Torque': '230 N.m (169.51 ft.lbs)',
+              'Transmission Method': 'Direct Drive Motor (DDM)',
+              'Max Table Speed': '250 min⁻¹',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '4 sec',
+              'Allowable Load (Vert / Rotary Tailstock)': '30 kg / 70 kg (66 / 154 lbs)',
+              'Allowable Cutting Torque': '60 N.m (44.22 ft.lbs)',
+              'Cooling System': 'Air cooling',
+              'Net Weight': '47 kg (104 lbs)'
             }
           },
           {
-            name: 'RCX-170S',
-            badge: 'Economical Indexer',
-            description: 'Reliable, cost-effective indexing table designed specifically for standard job shop operations and basic angular setups.',
+            name: 'RCX-170S / RCX-170H',
+            badge: 'Roller Gear Cam Drive, Zero-Backlash, 83.3 RPM',
+            description: 'Zero-backlash roller gear cam drive table with dual lead cam shaft mechanism. Eliminates wear-out, achieving >80% transmission rate and exceptional surface finish.',
             image: '/images/products_detron/4th_axis_pics/170mm/RCX-170S.jpg',
             specs: {
-              'Table Diameter': 'Ø 170 mm',
-              'Center Height': '135 mm',
-              'Register Diameter': 'Ø 60 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 40 mm',
-              'Clamping Torque': '300 N.m',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '5 arc-sec',
-              'Max Load (Horiz/Vert)': '150 kg / 75 kg'
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Table Height (Horizontal)': '192 mm (7.6")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 300 N.m (221 ft.lbs) / H: 450 N.m (332 ft.lbs)',
+              'Transmission Ratio': '1 / 20',
+              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
+              'Cam Allowable Torque': '206 N.m (152 ft.lbs)',
+              'Net Weight': '55 kg (121 lbs)'
+            }
+          },
+          {
+            name: 'GXA-170S-2W-250',
+            badge: 'Multi-Spindle (2-Spindle), 250mm Pitch',
+            description: 'Dual-spindle 4th axis rotary table with 250mm spindle pitch for high-volume simultaneous multi-part machining on single machine cycle.',
+            image: '/images/products_detron/4th_axis_pics/170mm_multispindle_pitch_250/GXA-170S-2W-250.jpg',
+            specs: {
+              'Number of Spindles': '2',
+              'Spindle Pitch': '250 mm (9.84")',
+              'Table Diameter': 'Ø 170 mm (6.69") x 2',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Table Height (Horizontal)': '175 mm (6.89")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque': '300 N.m (221.1 ft.lbs)',
+              'Transmission Ratio': '1 / 90',
+              'Max Table Speed': '22.2 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '75 kg / 150 kg (165 / 330 lbs)',
+              'Allowable Cutting Torque': '200 N.m (147.41 ft.lbs)',
+              'Net Weight': '115 kg (253.5 lbs)'
             }
           }
         ]
       },
       {
-        size: 'Ø 210mm (compatible chuck Ø 8")',
+        size: 'Ø 210mm (compatible chuck SK-7", SK-8", HCK-6")',
         products: [
           {
-            name: 'GXA-210S',
-            badge: 'Pneumatic, 580 N.m',
-            description: 'Robust, medium-to-large indexing table designed to handle standard structural fixtures with extreme precision.',
+            name: 'GXA-210S / GXA-210H',
+            badge: 'Pneumatic 400 N.m / Hydraulic 600 N.m',
+            description: 'High rigidity 210mm rotary table featuring large Ø65mm through bore, patented dual-pneumatic piston or hydraulic clamping, and cross roller bearing system.',
             image: '/images/products_detron/4th_axis_pics/210mm/GXA-210S.jpg',
             specs: {
-              'Table Diameter': 'Ø 210 mm',
-              'Center Height': '160 mm',
-              'Register Diameter': 'Ø 90 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 50 mm',
-              'Clamping Torque': '580 N.m (at 0.5 MPa)',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '200 kg / 100 kg'
+              'Table Diameter': 'Ø 210 mm (8.27")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Table Height (Horizontal)': '175 mm (6.89")',
+              'Center Bore Diameter': 'Ø 65H7 (Ø 2.56H7)',
+              'Through-Bore Diameter': 'Ø 65 mm (Ø 2.56")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 400 N.m (295 ft.lbs) / H: 600 N.m (443 ft.lbs)',
+              'Transmission Ratio': '1 / 72',
+              'Max Table Speed': '53.3 min⁻¹ (at 3840 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability (ISO 230-2 / JIS B6192)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '125 kg / 250 kg (275 / 550 lbs)',
+              'Allowable Cutting Torque': '260 N.m (191.62 ft.lbs)',
+              'Net Weight': '60 kg (132 lbs)'
             }
           },
           {
             name: 'GVA-210SB',
-            badge: 'Rear Motor, 580 N.m',
-            description: 'Rear-motor mounting casing to optimize spindle axes spacing on double-table horizontal or vertical machining layouts.',
+            badge: 'Motor at Back, Super Multi-Pneumatic 400 N.m',
+            description: 'Backside motor mount configuration for 210mm tables to maximize longitudinal travel on machining center tables without lateral overhang.',
             image: '/images/products_detron/4th_axis_pics/210mm/GVA210SB.jpg',
             specs: {
-              'Table Diameter': 'Ø 210 mm',
-              'Center Height': '160 mm',
-              'Register Diameter': 'Ø 90 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 50 mm',
-              'Clamping Torque': '580 N.m',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '180 kg / 90 kg'
+              'Table Diameter': 'Ø 210 mm (8.27")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Center Bore Diameter': 'Ø 65H7 (Ø 2.6H7)',
+              'Through-Bore Diameter': 'Ø 65 mm (Ø 2.56")',
+              'Clamping Method / Pressure': 'Super Multi-Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque': '400 N.m (294.8 ft.lbs)',
+              'Transmission Ratio': '1 / 90',
+              'Max Table Speed': '44.4 min⁻¹ (at 4000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '125 kg / 250 kg (275 / 550 lbs)',
+              'Allowable Cutting Torque': '260 N.m (191.62 ft.lbs)',
+              'Net Weight': '84 kg (184.8 lbs)'
             }
           },
           {
-            name: 'GVA-210SL',
-            badge: 'Extended Spindle, 580 N.m',
-            description: 'Features an elongated spindle nose to simplify hydraulic fixture plumbing line connections and tooling support.',
+            name: 'GVA-210SL / GVA-210HL',
+            badge: 'Motor Mounted at Left Side, 300 / 450 N.m',
+            description: 'Left-side motor casing configuration for 210mm rotary tables, facilitating optimal machine enclosure clearances and multi-axis combinations.',
             image: '/images/products_detron/4th_axis_pics/210mm/GVA-210SL.jpg',
             specs: {
-              'Table Diameter': 'Ø 210 mm',
-              'Center Height': '160 mm',
-              'Register Diameter': 'Ø 90 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 50 mm',
-              'Clamping Torque': '580 N.m',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '200 kg / 100 kg'
+              'Table Diameter': 'Ø 210 mm (8.27")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Center Bore Diameter': 'Ø 65H7 (Ø 2.56H7)',
+              'Through-Bore Diameter': 'Ø 65 mm (Ø 2.56")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 300 N.m (221.1 ft.lbs) / H: 450 N.m (332 ft.lbs)',
+              'Transmission Ratio': '1 / 72',
+              'Max Table Speed': '53.3 min⁻¹ (at 3840 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '125 kg / 250 kg (275 / 550 lbs)',
+              'Allowable Cutting Torque': '260 N.m (191.62 ft.lbs)',
+              'Net Weight': '60 kg (132 lbs)'
+            }
+          },
+          {
+            name: 'RCX-210S / RCX-210H',
+            badge: 'Roller Gear Cam Drive, Zero-Backlash, 83.3 RPM',
+            description: 'Zero-backlash roller gear cam drive rotary table with dual lead cam shaft mechanism. Delivers smooth high-speed rotation and high cutting rigidity.',
+            image: '/images/products_detron/4th_axis_pics/210mm/GXA-210S.jpg',
+            specs: {
+              'Table Diameter': 'Ø 210 mm (8.27")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Table Height (Horizontal)': '192 mm (7.6")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 400 N.m (295 ft.lbs) / H: 600 N.m (443 ft.lbs)',
+              'Transmission Ratio': '1 / 24',
+              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
+              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
+              'Net Weight': '70 kg (154 lbs)'
             }
           }
         ]
       },
       {
-        size: 'Ø 255mm (compatible chuck Ø 9-10")',
+        size: 'Ø 255mm (compatible chuck SK-8", SK-9", HCK-8")',
         products: [
           {
-            name: 'GXA-250S',
-            badge: 'Pneumatic, 780 N.m',
-            description: 'Highly popular size for heavy duty machining. Equipped with high-rigidity pneumatic clamp discs for medium milling forces.',
+            name: 'GXA-250ES / GXA-250EH',
+            badge: 'Enlarged Worktable, P: 400 / H: 600 N.m',
+            description: 'Enlarged Ø255mm worktable based on the compact 210 series body. Provides larger mounting surface with pneumatic (400 N.m) or hydraulic (600 N.m) clamping.',
             image: '/images/products_detron/4th_axis_pics/255mm/GXA-250S.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height': '185 mm',
-              'Register Diameter': 'Ø 120 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 70 mm',
-              'Clamping Torque': '780 N.m (at 0.5 MPa)',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '300 kg / 150 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Table Height (Horizontal)': '190 mm (7.48")',
+              'Center Bore Diameter': 'Ø 65H7 (Ø 2.56H7)',
+              'Through-Bore Diameter': 'Ø 65 mm (Ø 2.56")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 400 N.m (295 ft.lbs) / H: 600 N.m (443 ft.lbs)',
+              'Transmission Ratio': '1 / 72',
+              'Max Table Speed': '53.3 min⁻¹ (at 3840 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability (ISO 230-2)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '125 kg / 250 kg (275 / 550 lbs)',
+              'Allowable Cutting Torque': '260 N.m (191.62 ft.lbs)',
+              'Net Weight': '66.3 kg (145.86 lbs)'
             }
           },
           {
             name: 'GXA-255H',
-            badge: 'Hydraulic Clamping, 1100 N.m',
-            description: 'Hydraulically locked indexer offering immense clamping torque. Recommended for heavy roughing milling cuts.',
+            badge: 'Ultra Big Spindle Bore (Ø100mm Thru), Hydraulic 900 N.m',
+            description: 'Heavy duty CNC rotary table with ultra-large Ø100mm through bore and integrated radial-axial bearing. Drum brake system delivers 900 N.m reliable clamping torque.',
             image: '/images/products_detron/4th_axis_pics/255mm/GXA255H.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height': '185 mm',
-              'Register Diameter': 'Ø 120 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 70 mm',
-              'Clamping Torque': '1100 N.m (at 2.0 MPa)',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '300 kg / 150 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '190 mm (7.48")',
+              'Table Height (Horizontal)': '210 mm (8.27")',
+              'Center Bore Diameter': 'Ø 140H7 (Ø 5.51H7)',
+              'Through-Bore Diameter': 'Ø 100 mm (Ø 3.94")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '900 N.m (663.3 ft.lbs)',
+              'Transmission Ratio': '1 / 120',
+              'Max Table Speed': '22.2 min⁻¹ (at 2664 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability (ISO 230-2)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '150 kg / 300 kg (330 / 660 lbs)',
+              'Allowable Cutting Torque': '550 N.m (405.35 ft.lbs)',
+              'Net Weight': '114 kg (251 lbs)'
             }
           },
           {
             name: 'GXA-255HL',
-            badge: 'Hydraulic Long Spindle',
-            description: 'Long-nose variant of the high-torque hydraulic table, ideal for wide faceplates and bridge tooling layouts.',
+            badge: 'Left-Side Motor Mount, Hydraulic 900 N.m',
+            description: 'Left-mounted motor version of the heavy duty GXA-255H rotary table with large Ø100mm through bore and integrated radial-axial bearing.',
             image: '/images/products_detron/4th_axis_pics/255mm/GXA255HL.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height': '185 mm',
-              'Register Diameter': 'Ø 120 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 70 mm',
-              'Clamping Torque': '1100 N.m',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '300 kg / 150 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '190 mm (7.48")',
+              'Table Height (Horizontal)': '210 mm (8.27")',
+              'Center Bore Diameter': 'Ø 140H7 (Ø 5.51H7)',
+              'Through-Bore Diameter': 'Ø 100 mm (Ø 3.94")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '900 N.m (663.3 ft.lbs)',
+              'Transmission Ratio': '1 / 120',
+              'Max Table Speed': '22.2 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '150 kg / 300 kg (330 / 660 lbs)',
+              'Allowable Cutting Torque': '550 N.m (405.35 ft.lbs)',
+              'Net Weight': '114 kg (251 lbs)'
             }
           },
           {
             name: 'GVA-255HBII',
-            badge: 'Hydraulic Rear Motor',
-            description: 'Rear-motor version with dual-clamping discs yielding high hydraulic braking torque while preserving transverse machine room.',
+            badge: 'Motor at Back, Hydraulic 900 N.m',
+            description: 'Backside motor casing version of 255mm class with consolidated spindle and integrated YRT bearing. Saves machine X-axis travel room.',
             image: '/images/products_detron/4th_axis_pics/255mm/GVA-255HBII.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height': '185 mm',
-              'Register Diameter': 'Ø 120 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 70 mm',
-              'Clamping Torque': '1100 N.m',
-              'Maximum Speed': '33.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '250 kg / 125 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '190 mm (7.48")',
+              'Center Bore Diameter': 'Ø 140H7 (Ø 5.51H7)',
+              'Through-Bore Diameter': 'Ø 100 mm (Ø 3.94")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '900 N.m (663.3 ft.lbs)',
+              'Transmission Ratio': '1 / 120',
+              'Max Table Speed': '22.2 min⁻¹ (at 2664 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '150 kg / 300 kg (330 / 660 lbs)',
+              'Allowable Cutting Torque': '550 N.m (405.35 ft.lbs)',
+              'Net Weight': '149 kg (328 lbs)'
             }
           },
           {
             name: 'RCX-255H',
-            badge: 'Hydraulic Budget Indexer',
-            description: 'Budget-friendly heavy indexing option with a hydraulic clamping brake. Excellent for production jig rotation.',
+            badge: 'Roller Gear Cam Drive, Zero-Backlash, Hydraulic 1270 N.m',
+            description: 'Zero-backlash roller gear cam drive table with Ø100mm through bore and high-rigidity consolidated spindle. Achieves 50 RPM rapid indexing speed.',
             image: '/images/products_detron/4th_axis_pics/255mm/RCX-255H.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height': '185 mm',
-              'Register Diameter': 'Ø 120 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 70 mm',
-              'Clamping Torque': '900 N.m',
-              'Maximum Speed': '25.0 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '5 arc-sec',
-              'Max Load (Horiz/Vert)': '300 kg / 150 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '190 mm (7.49")',
+              'Table Height (Horizontal)': '216.5 mm (8.5")',
+              'Center Bore Diameter': 'Ø 140H7 (Ø 5.51H7)',
+              'Through-Bore Diameter': 'Ø 100 mm (Ø 3.9")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '1270 N.m (937 ft.lbs)',
+              'Transmission Ratio': '1 / 48',
+              'Max Table Speed': '50 min⁻¹ (at 2400 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '150 kg / 300 kg (331 / 661 lbs)',
+              'Cam Allowable Torque': '800 N.m (590 ft.lbs)',
+              'Net Weight': '126 kg (278 lbs)'
             }
           },
           {
             name: 'DV-255PII',
-            badge: 'High Speed Pneumatic, 700 N.m',
-            description: 'Pneumatically clamped high-speed indexing table optimized for light milling and drilling operations.',
+            badge: 'Direct Drive Motor (DDM), 250 RPM High Speed',
+            description: 'Direct Drive built-in torque motor rotary table with optical encoder for direct feedback. Eliminates gears and backlash for high-speed tapping and contouring.',
             image: '/images/products_detron/4th_axis_pics/255mm/DV-255PII.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height': '185 mm',
-              'Register Diameter': 'Ø 120 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 70 mm',
-              'Clamping Torque': '700 N.m',
-              'Maximum Speed': '50.0 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '300 kg / 150 kg'
+              'Table Diameter': 'STD: No table / OPT: Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '160 mm (6.3")',
+              'Center Bore Diameter': 'OPT: Ø 50H7 (Ø 1.96H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'Pneumatic 0.5 ~ 0.7 MPa (72.5 ~ 101.5 psi)',
+              'Clamping Torque': '400 N.m (294.8 ft.lbs)',
+              'Transmission Method': 'Direct Drive Motor (DDM)',
+              'Max Table Speed': '250 min⁻¹',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '4 sec',
+              'Allowable Load (Vert / Tailstock)': '75 kg / 150 kg (165 / 330 lbs)',
+              'Allowable Cutting Torque': '70 N.m (51.6 ft.lbs)',
+              'Cooling System': 'Air cooling',
+              'Net Weight': '70 kg (154 lbs)'
             }
           },
           {
             name: 'CX-255H',
-            badge: 'Compact Spindle Hydraulic',
-            description: 'A compact-height variant containing low profile body lines for maximum vertical height clearance under vertical spindles.',
+            badge: 'Hirth Coupling Index Table, 3-Piece Coupling, 3000 N.m',
+            description: 'Heavy duty CNC index table equipped with 3-piece Hirth type coupling for high rigid positioning in 1° increments. Delivers massive 3000 N.m clamping torque.',
             image: '/images/products_detron/4th_axis_pics/255mm/CX-255H.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height': '180 mm',
-              'Register Diameter': 'Ø 120 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 70 mm',
-              'Clamping Torque': '1000 N.m',
-              'Maximum Speed': '25.0 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '300 kg / 150 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '190 mm (7.48")',
+              'Table Height (Horizontal)': '210 mm (8.27")',
+              'Center Bore Diameter': 'Ø 50H7 (Ø 1.97H7)',
+              'Through-Bore Diameter': 'Ø 50 mm (Ø 1.97")',
+              'Clamping Method / Pressure': 'Hydraulic 3.5 MPa (508 psi)',
+              'Clamping Torque': '3000 N.m (2211 ft.lbs)',
+              'Minimum Resolution / Index': '1°',
+              'Transmission Ratio': '1 / 120',
+              'Max Table Speed': '22.2 min⁻¹ (at 2664 rpm motor speed)',
+              'Indexing Accuracy': '8 sec',
+              'Repeatability': '2 sec',
+              'Allowable Load (Vert / Horiz)': '125 kg / 300 kg (275 / 660 lbs)',
+              'Drive Torque': '240 N.m (motor αiF4) / 480 N.m (motor αiF8)',
+              'Net Weight': '134 kg (295 lbs)'
             }
           }
         ]
       },
       {
-        size: 'Ø 320mm (compatible chuck Ø 12")',
+        size: 'Ø 320mm (compatible chuck SK-10", SK-12", HCK-10")',
         products: [
           {
             name: 'GXA-320H',
-            badge: 'Hydraulic Clamping, 1600 N.m',
-            description: 'Engineered for heavy-duty manufacturing and aerospace parts. Imposes exceptional hydraulic clamping torque and axial load capacity.',
+            badge: 'Ultra Big Spindle Bore (Ø140mm Thru), Hydraulic 1600 N.m',
+            description: 'Ultra big through-bore (Ø140mm) rotary table with radial-axial bearing, dual lead worm gear, and drum brake providing 1600 N.m high clamping torque.',
             image: '/images/products_detron/4th_axis_pics/320/GXA320H.jpg',
             specs: {
-              'Table Diameter': 'Ø 320 mm',
-              'Center Height': '210 mm',
-              'Register Diameter': 'Ø 150 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 90 mm',
-              'Clamping Torque': '1600 N.m (at 2.0 MPa)',
-              'Maximum Speed': '25.0 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '500 kg / 250 kg'
+              'Table Diameter': 'Ø 320 mm (12.60")',
+              'Center Height (Vertical)': '210 mm (8.27")',
+              'Table Height (Horizontal)': '235 mm (9.25")',
+              'Center Bore Diameter': 'Ø 180H7 (Ø 7.08H7)',
+              'Through-Bore Diameter': 'Ø 140 mm (Ø 5.51")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '1600 N.m (1179.2 ft.lbs)',
+              'Transmission Ratio': '1 / 120',
+              'Max Table Speed': '22.2 min⁻¹ (at 2664 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability (ISO 230-2)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '200 kg / 400 kg (440 / 880 lbs)',
+              'Allowable Cutting Torque': '780 N.m (574.86 ft.lbs)',
+              'Net Weight': '147 kg (323.4 lbs)'
             }
           },
           {
-            name: 'RCX-320EH',
-            badge: 'Standard Hydraulic Indexer',
-            description: 'Economical large hydraulic table ideal for rotating heavy castings or manufacturing machine parts.',
+            name: 'RCX-320H',
+            badge: 'Roller Gear Cam Drive, Zero-Backlash, Hydraulic 1600 N.m',
+            description: 'Zero-backlash roller gear cam rotary table with Ø140mm large through bore. High rigidity consolidated spindle with YRT bearing ensures maximum vibration absorption.',
             image: '/images/products_detron/4th_axis_pics/320/RCX-320EH.jpg',
             specs: {
-              'Table Diameter': 'Ø 320 mm',
-              'Center Height': '210 mm',
-              'Register Diameter': 'Ø 150 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 90 mm',
-              'Clamping Torque': '1300 N.m',
-              'Maximum Speed': '20.0 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '5 arc-sec',
-              'Max Load (Horiz/Vert)': '500 kg / 250 kg'
+              'Table Diameter': 'Ø 320 mm (12.59")',
+              'Center Height (Vertical)': '210 mm (8.26")',
+              'Table Height (Horizontal)': '235 mm (9.25")',
+              'Center Bore Diameter': 'Ø 180H7 (Ø 7.08H7)',
+              'Through-Bore Diameter': 'Ø 140 mm (Ø 5.5")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '1600 N.m (1180 ft.lbs)',
+              'Transmission Ratio': '1 / 48',
+              'Max Table Speed': '50 min⁻¹ (at 2400 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '200 kg / 400 kg (440 / 881 lbs)',
+              'Cam Allowable Torque': '1098 N.m (809 ft.lbs)',
+              'Net Weight': '161 kg (355 lbs)'
             }
           },
           {
             name: 'CX-320H',
-            badge: 'Low Profile Large Table',
-            description: 'Compact casing variant minimizing center height to support tall machining fixtures inside standard vertical mills.',
+            badge: 'Hirth Coupling Index Table, 3-Piece Coupling, 4000 N.m',
+            description: 'High rigidity CNC index table with 3-piece Hirth coupling system, 1° index resolution, and 4000 N.m hydraulic braking force for heavy roughing applications.',
             image: '/images/products_detron/4th_axis_pics/320/CX-320H.jpg',
             specs: {
-              'Table Diameter': 'Ø 320 mm',
-              'Center Height': '200 mm',
-              'Register Diameter': 'Ø 150 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 90 mm',
-              'Clamping Torque': '1500 N.m',
-              'Maximum Speed': '25.0 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '500 kg / 250 kg'
+              'Table Diameter': 'Ø 320 mm (12.60")',
+              'Center Height (Vertical)': '210 mm (8.27")',
+              'Table Height (Horizontal)': '235 mm (9.25")',
+              'Center Bore Diameter': 'Ø 70H7 (Ø 2.76H7)',
+              'Through-Bore Diameter': 'Ø 70 mm (Ø 2.76")',
+              'Clamping Method / Pressure': 'Hydraulic 3.5 MPa (508 psi)',
+              'Clamping Torque': '4000 N.m (2948 ft.lbs)',
+              'Minimum Resolution / Index': '1°',
+              'Transmission Ratio': '1 / 120',
+              'Max Table Speed': '22.2 min⁻¹ (at 2664 rpm motor speed)',
+              'Indexing Accuracy': '8 sec',
+              'Repeatability': '2 sec',
+              'Allowable Load (Vert / Horiz)': '175 kg / 350 kg (385 / 770 lbs)',
+              'Drive Torque': '720 N.m (530.2 ft.lbs)',
+              'Net Weight': '186 kg (410 lbs)'
             }
           }
         ]
       },
       {
-        size: 'Ø 400-500mm (compatible chuck Ø 12-16")',
+        size: 'Ø 400-500mm (compatible chuck SK-10", SK-12", SK-16")',
         products: [
           {
-            name: 'CX-400H',
-            badge: 'Large Scale Hydraulic, 2800 N.m',
-            description: 'Heavy duty indexing table. Employs premium rigid structure to handle severe radial milling loads.',
-            image: '/images/products_detron/4th_axis_pics/400-500/CX-400H.jpg',
+            name: 'GXA-400H',
+            badge: 'Ultra Big Spindle Bore (Ø180mm Thru), Hydraulic 3000 N.m',
+            description: 'Extra-large Ø180mm through bore table built for heavy machining components, valves, and oil & gas pipe coupling fixtures.',
+            image: '/images/products_detron/4th_axis_pics/400-500/GXA400H.jpg',
             specs: {
-              'Table Diameter': 'Ø 400 mm',
-              'Center Height': '255 mm',
-              'Register Diameter': 'Ø 200 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 120 mm',
-              'Clamping Torque': '2800 N.m (at 2.0 MPa)',
-              'Maximum Speed': '16.6 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '800 kg / 400 kg'
+              'Table Diameter': 'Ø 400 mm (15.75")',
+              'Center Height (Vertical)': '255 mm (10.04")',
+              'Table Height (Horizontal)': '255 mm (10.04")',
+              'Center Bore Diameter': 'Ø 220H7 (Ø 8.66H7)',
+              'Through-Bore Diameter': 'Ø 180 mm (Ø 7.09")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '3000 N.m (2211 ft.lbs)',
+              'Transmission Ratio': '1 / 144',
+              'Max Table Speed': '11.1 min⁻¹ (at 1600 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability (ISO 230-2)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '250 kg / 500 kg (550 / 1100 lbs)',
+              'Allowable Cutting Torque': '1700 N.m (1252.9 ft.lbs)',
+              'Net Weight': '253 kg (556.6 lbs)'
             }
           },
           {
-            name: 'GXA-500H',
-            badge: 'High Torque Giant, 3600 N.m',
-            description: 'Top-tier large table designed for heavy machine building, energy components and structural steel indexing.',
+            name: 'CX-400H',
+            badge: 'Hirth Coupling Index Table, 3-Piece Coupling, 5000 N.m',
+            description: '1° heavy indexer with 3-piece Hirth coupling and 5000 N.m clamping torque. Provides exceptional rigidity against radial and axial cutting loads.',
+            image: '/images/products_detron/4th_axis_pics/400-500/CX-400H.jpg',
+            specs: {
+              'Table Diameter': 'Ø 400 mm (15.75")',
+              'Center Height (Vertical)': '255 mm (10.04")',
+              'Table Height (Horizontal)': '255 mm (10.04")',
+              'Center Bore Diameter': 'Ø 110H7 (Ø 4.33H7)',
+              'Through-Bore Diameter': 'Ø 110 mm (Ø 4.33")',
+              'Clamping Method / Pressure': 'Hydraulic 3.5 MPa (508 psi)',
+              'Clamping Torque': '5000 N.m (3685 ft.lbs)',
+              'Minimum Resolution / Index': '1°',
+              'Transmission Ratio': '1 / 144',
+              'Max Table Speed': '11.1 min⁻¹ (at 1600 rpm motor speed)',
+              'Indexing Accuracy': '8 sec',
+              'Repeatability': '2 sec',
+              'Allowable Load (Vert / Horiz)': '200 kg / 500 kg (440 / 1100 lbs)',
+              'Drive Torque': '864 N.m (618.5 ft.lbs)',
+              'Net Weight': '350 kg (771 lbs)'
+            }
+          },
+          {
+            name: 'GXA-500HII / GXA-500HIIL',
+            badge: 'Ultra Big Spindle Bore (Ø220mm Thru), Hydraulic 3600 N.m',
+            description: 'Equipped with extra large bearings preloaded in radial and axial directions. Available in both right-mounted (GXA-500HII) and left-mounted (GXA-500HIIL) motor configurations.',
             image: '/images/products_detron/4th_axis_pics/400-500/GX-500H.jpg',
             specs: {
-              'Table Diameter': 'Ø 500 mm',
-              'Center Height': '310 mm',
-              'Register Diameter': 'Ø 250 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 150 mm',
-              'Clamping Torque': '3600 N.m',
-              'Maximum Speed': '11.1 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '1200 kg / 600 kg'
+              'Table Diameter': 'Ø 500 mm (19.68")',
+              'Center Height (Vertical)': '310 mm (12.20")',
+              'Table Height (Horizontal)': '280 mm (11.02")',
+              'Center Bore Diameter': 'Ø 260H7 (Ø 10.23H7)',
+              'Through-Bore Diameter': 'Ø 220 mm (Ø 8.66")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '3600 N.m (2655 ft.lbs)',
+              'Transmission Ratio': '1 / 180',
+              'Max Table Speed': '11.1 min⁻¹ (at 1998 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability (ISO 230-2)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '400 kg / 800 kg (881.8 / 1764 lbs)',
+              'Allowable Cutting Torque': '2500 N.m (1843.9 ft.lbs)',
+              'Net Weight': '404 kg (891 lbs)'
             }
           },
           {
             name: 'CX-500H',
-            badge: 'Low-Height 500mm Hydraulic',
-            description: 'Low center-of-gravity design for 500mm table class, maximizing structural headroom on large boring mills.',
+            badge: 'Hirth Coupling Index Table, 3-Piece Coupling, 10000 N.m',
+            description: 'Super heavy indexer with massive 10000 N.m hydraulic braking force, 3-piece Hirth coupling system, and Ø130mm through bore.',
             image: '/images/products_detron/4th_axis_pics/400-500/CX500H.jpg',
             specs: {
-              'Table Diameter': 'Ø 500 mm',
-              'Center Height': '300 mm',
-              'Register Diameter': 'Ø 250 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 150 mm',
-              'Clamping Torque': '3400 N.m',
-              'Maximum Speed': '11.1 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '1200 kg / 600 kg'
-            }
-          },
-          {
-            name: 'GXA-400H',
-            badge: 'Heavy Spindle, 2800 N.m',
-            description: 'Standard 400mm model designed for heavy industrial engineering and multi-spindle fixtures.',
-            image: '/images/products_detron/4th_axis_pics/400-500/GXA400H.jpg',
-            specs: {
-              'Table Diameter': 'Ø 400 mm',
-              'Center Height': '255 mm',
-              'Register Diameter': 'Ø 200 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 120 mm',
-              'Clamping Torque': '2800 N.m',
-              'Maximum Speed': '16.6 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (Horiz/Vert)': '800 kg / 400 kg'
+              'Table Diameter': 'Ø 500 mm (19.69")',
+              'Center Height (Vertical)': '310 mm (12.20")',
+              'Table Height (Horizontal)': '281 mm (11.06")',
+              'Center Bore Diameter': 'Ø 130H7 (Ø 5.12H7)',
+              'Through-Bore Diameter': 'Ø 130 mm (Ø 5.12")',
+              'Clamping Method / Pressure': 'Hydraulic 3.5 MPa (508 psi)',
+              'Clamping Torque': '10000 N.m (7370 ft.lbs)',
+              'Minimum Resolution / Index': '1°',
+              'Transmission Ratio': '1 / 180',
+              'Max Table Speed': '11.1 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '8 sec',
+              'Repeatability': '2 sec',
+              'Allowable Load (Vert / Horiz)': '400 kg / 600 kg (880 / 1320 lbs)',
+              'Drive Torque': '1080 N.m (795.3 ft.lbs)',
+              'Net Weight': '450 kg (992 lbs)'
             }
           }
         ]
       },
       {
-        size: 'Ø 630-800mm (compatible chuck Ø TBA)',
+        size: 'Ø 630-800mm (Ultra Big Spindle Bore)',
         products: [
           {
-            name: 'GX-630H',
-            badge: 'Super Heavy Duty, 6500 N.m',
-            description: 'Giant rotary table offering outstanding braking torque and load capacity. Engineered for massive gantry milling setups.',
+            name: 'GXA-630H / GXA-630HL',
+            badge: 'Ultra Big Spindle Bore (Ø265mm Thru), Hydraulic 5000 N.m',
+            description: 'Giant rotary table featuring Ø265mm through bore, 5000 N.m hydraulic clamping torque, and consolidated spindle structure for massive industrial workpieces.',
             image: '/images/products_detron/4th_axis_pics/680-800/GXA630H.jpg',
             specs: {
-              'Table Diameter': 'Ø 630 mm',
-              'Center Height': '410 mm',
-              'Register Diameter': 'Ø 350 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 200 mm',
-              'Clamping Torque': '6500 N.m (at 2.0 MPa)',
-              'Maximum Speed': '8.3 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '5 arc-sec',
-              'Max Load (Horiz/Vert)': '2500 kg / 1250 kg'
-            }
-          },
-          {
-            name: 'GXA-630EH',
-            badge: 'Standard 630mm Giant',
-            description: 'Excellent choice for heavy industrial applications, machining valves, engine blocks and turbine parts.',
-            image: '/images/products_detron/4th_axis_pics/680-800/GXA-630EH.jpg',
-            specs: {
-              'Table Diameter': 'Ø 630 mm',
-              'Center Height': '410 mm',
-              'Register Diameter': 'Ø 350 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 200 mm',
-              'Clamping Torque': '6000 N.m',
-              'Maximum Speed': '8.3 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '5 arc-sec',
-              'Max Load (Horiz/Vert)': '2500 kg / 1250 kg'
+              'Table Diameter': 'Ø 630 mm (24.80")',
+              'Center Height (Vertical)': '400 mm (15.74")',
+              'Table Height (Horizontal)': '315 mm (12.40")',
+              'Center Bore Diameter': 'Ø 305H7 (Ø 12H7)',
+              'Through-Bore Diameter': 'Ø 265 mm (Ø 10.43")',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque': '5000 N.m (3687.81 ft.lbs)',
+              'Transmission Ratio': '1 / 180',
+              'Max Table Speed': '11.1 min⁻¹ (at 1998 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability (ISO 230-2)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '450 kg / 800 kg (992.1 / 1764 lbs)',
+              'Allowable Cutting Torque': '4300 N.m (3171.5 ft.lbs)',
+              'Net Weight': '660 kg (1455 lbs)'
             }
           },
           {
             name: 'GX-800H',
-            badge: 'Ultra Giant Table, 8500 N.m',
-            description: 'The largest standard indexing option in the Detron lineup. Provides massive load limits and structural stiffness.',
+            badge: 'Ultra Giant Table (Ø240mm Thru), Hydraulic 5200 N.m',
+            description: 'The largest standard indexing option in the Detron lineup. Features Ø800mm faceplate, 5200 N.m hydraulic braking force, and 1500 kg horizontal load limit.',
             image: '/images/products_detron/4th_axis_pics/680-800/GX-800H.jpg',
             specs: {
-              'Table Diameter': 'Ø 800 mm',
-              'Center Height': '500 mm',
-              'Register Diameter': 'Ø 400 mm (H7)',
-              'Thru-Hole Diameter': 'Ø 250 mm',
-              'Clamping Torque': '8500 N.m',
-              'Maximum Speed': '5.5 RPM',
-              'Indexing Accuracy': '25 arc-sec',
-              'Repeatability': '6 arc-sec',
-              'Max Load (Horiz/Vert)': '4000 kg / 2000 kg'
+              'Table Diameter': 'Ø 800 mm (31.50")',
+              'Center Height (Vertical)': '480 mm (18.90")',
+              'Table Height (Horizontal)': '365 mm (14.37")',
+              'Center Bore Diameter': 'Ø 285H7 (Ø 11.22H7)',
+              'Through-Bore Diameter': 'Ø 240 mm (Ø 9.45")',
+              'Clamping Method / Pressure': 'Hydraulic 3.5 MPa (507.5 psi)',
+              'Clamping Torque': '5200 N.m (3835.32 ft.lbs)',
+              'Transmission Ratio': '1 / 180',
+              'Max Table Speed': '11.1 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability (ISO 230-2)': '6 sec (JIS B6330: 4 sec)',
+              'Allowable Load (Vert / Horiz)': '800 kg / 1500 kg (1764 / 3306 lbs)',
+              'Allowable Cutting Torque': '6860 N.m (5059.6 ft.lbs)',
+              'Net Weight': '1236 kg (2719.2 lbs)'
             }
           }
         ]
@@ -486,7 +640,7 @@ export const PRODUCT_DATABASE = {
   },
   '5-axis': {
     title: '5 Axis Rotary Tables',
-    description: 'Combined tilt & rotary units built for complex, multi-face component machining in a single setup.',
+    description: 'High precision tilt and rotary tables engineered for multi-face, complex 5-axis continuous and positional machining.',
     folderPath: '/detron-frames/5th_axis',
     totalFrames: 240,
     items: [
@@ -495,50 +649,68 @@ export const PRODUCT_DATABASE = {
         products: [
           {
             name: 'GFA-101S',
-            badge: 'Tilting Table, Dual-Pneumatic',
-            description: 'Ultra-compact multi-axis positioning table. Perfect for dental, medical and micro-component precision machining.',
+            badge: 'Tilting Table, Dual-Pneumatic (200 / 250 N.m)',
+            description: 'Ultra-compact 5-axis tilting rotary table for high-precision micro-machining, dental, medical, and aerospace parts.',
             image: '/images/products_detron/5th_axis_pics/100-125mm/GFA101S.jpg',
             specs: {
-              'Table Diameter': 'Ø 100 mm',
-              'Center Height (Flat)': '160 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '150 N.m / 250 N.m',
-              'Max Speed (Rot/Tilt)': '50.0 / 25.0 RPM',
-              'Indexing Accuracy': '20 arc-sec (Rotary)',
-              'Repeatability': '5 arc-sec',
-              'Max Load (0°-90°)': '20 kg / 10 kg'
+              'Table Diameter': 'Ø 100 mm (3.94")',
+              'Center Bore Diameter': 'Ø 30H7 (Ø 1.18H7)',
+              'Table Height (Horizontal)': '205 mm (8.07")',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Tilting Angle Range': '-25° to +110°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '200 N.m / 250 N.m (148 / 184 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:75 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '33.3 / 16.6 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '40 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '35 kg / 20 kg (77 / 44 lbs)',
+              'Allowable Cutting Torque': '85 N.m (62.65 ft.lbs)',
+              'Net Weight': '90 kg (198 lbs)'
             }
           },
           {
             name: 'GFA-125S',
-            badge: 'Standard 125mm Tilting Table',
-            description: 'Highly precise 5-axis unit designed for small vertical machining centers. Imparts extreme accuracy.',
+            badge: 'Standard 125mm Tilting Table (140 / 300 N.m)',
+            description: 'High-speed compact 5-axis tilting rotary table with dual lead worm drive and pneumatic clamping on both rotary and tilt axes.',
             image: '/images/products_detron/5th_axis_pics/100-125mm/GFA-125S.jpg',
             specs: {
-              'Table Diameter': 'Ø 125 mm',
-              'Center Height (Flat)': '180 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '220 N.m / 350 N.m',
-              'Max Speed (Rot/Tilt)': '50.0 / 25.0 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '30 kg / 15 kg'
+              'Table Diameter': 'Ø 125 mm (4.92")',
+              'Center Bore Diameter': 'Ø 30H7 (Ø 1.18H7)',
+              'Table Height (Horizontal)': '224.5 mm (8.84")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '140 N.m / 300 N.m (103 / 221 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '44.4 / 44.4 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '40 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '50 kg / 35 kg (110 / 77 lbs)',
+              'Allowable Cutting Torque': '85 N.m (62.65 ft.lbs)',
+              'Net Weight': '120 kg (264 lbs)'
             }
           },
           {
             name: 'GTFAS-125S',
-            badge: 'Compact 125mm Tilt Table',
-            description: 'Special compact-height casing version designed to optimize vertical spindle headroom.',
+            badge: 'Flat Supplemental Base Trunnion (140 / 900 N.m)',
+            description: 'Trunnion 5-axis table with flat supplemental base for lower center of gravity and high rigidity on standard 3-axis machining centers.',
             image: '/images/products_detron/5th_axis_pics/100-125mm/GTFAS-125S.jpg',
             specs: {
-              'Table Diameter': 'Ø 125 mm',
-              'Center Height (Flat)': '170 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '220 N.m / 350 N.m',
-              'Max Speed (Rot/Tilt)': '50.0 / 25.0 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '30 kg / 15 kg'
+              'Table Diameter': 'Ø 125 mm (4.92")',
+              'Center Bore Diameter': 'Ø 30H7 (Ø 1.18H7)',
+              'Table Height (Horizontal)': '180 mm (7.09")',
+              'Center Height (Vertical)': '180 mm (7.09")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Pneumatic 0.5 ~ 0.6 MPa (72.5 ~ 87 psi)',
+              'Clamping Torque (Rot / Tilt)': '140 N.m / 900 N.m (103.26 / 663.8 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '33.3 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '40 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '30 kg / 30 kg (66 / 66 lbs)',
+              'Allowable Cutting Torque': '85 N.m (62.69 ft.lbs)',
+              'Net Weight': '142 kg (312.4 lbs)'
             }
           }
         ]
@@ -547,35 +719,47 @@ export const PRODUCT_DATABASE = {
         size: 'Ø 170mm',
         products: [
           {
-            name: 'GFA-170S',
-            badge: 'Pneumatic Tilt Table, 450 N.m',
-            description: 'The standard choice for medium-sized 5-axis indexing. Rigid pneumatic brake disc ensures structural stability.',
+            name: 'GFA-170SII / GFA-170HII',
+            badge: 'P: 300/400 N.m / H: 450/700 N.m',
+            description: 'Compact 170mm 5-axis tilting rotary table with patented dual-pneumatic piston or hydraulic clamping and high precision cross roller bearing.',
             image: '/images/products_detron/5th_axis_pics/170mm/GFA-170S.jpg',
             specs: {
-              'Table Diameter': 'Ø 170 mm',
-              'Center Height (Flat)': '215 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '380 N.m / 550 N.m',
-              'Max Speed (Rot/Tilt)': '44.4 / 16.6 RPM',
-              'Indexing Accuracy': '15 arc-sec (Rotary)',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '60 kg / 30 kg'
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Table Height (Horizontal)': '260 mm (10.24")',
+              'Center Height (Vertical)': '190 mm (7.48")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
+              'Clamping Torque (Rot / Tilt)': 'P: 300 / 400 N.m (H: 450 / 700 N.m)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '33.3 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '75 kg / 50 kg (165 / 110 lbs)',
+              'Allowable Cutting Torque': '200 N.m (147.4 ft.lbs)',
+              'Net Weight': '180 kg (396 lbs)'
             }
           },
           {
             name: 'GTFAE-170SL',
-            badge: 'Long Faceplate Tilt Table',
-            description: 'Extended faceplate version providing a wider tooling mounting deck for custom clamping rigs.',
+            badge: 'Trunnion 5th Axis with Enlarged Swing',
+            description: 'Trunnion-style 170mm 5-axis table with enlarged swing envelope and tilting motor at back of table for maximum workroom.',
             image: '/images/products_detron/5th_axis_pics/170mm/GTFAE-170SL.jpg',
             specs: {
-              'Table Diameter': 'Ø 170 mm',
-              'Center Height (Flat)': '215 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '380 N.m / 550 N.m',
-              'Max Speed (Rot/Tilt)': '44.4 / 16.6 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '60 kg / 30 kg'
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Table Height (Horizontal)': '240 mm (9.45")',
+              'Center Height (Vertical)': '240 mm (9.45")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (72.5 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '300 N.m / 400 N.m (221 / 294.7 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '22.2 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '75 kg / 50 kg (165 / 110 lbs)',
+              'Allowable Cutting Torque': '200 N.m (147.4 ft.lbs)',
+              'Net Weight': '275 kg (606.3 lbs)'
             }
           }
         ]
@@ -584,35 +768,47 @@ export const PRODUCT_DATABASE = {
         size: 'Ø 210mm',
         products: [
           {
-            name: 'GFA-210S',
-            badge: 'Pneumatic Tilt Table, 580 N.m',
-            description: 'Highly versatile trunnion-style table, offering exceptional torsional rigidity for heavy indexing loads.',
+            name: 'GFA-210S / GFA-210H',
+            badge: 'P: 400/600 N.m / H: 600/800 N.m',
+            description: 'Compact 5th axis with tilting motor mounted at the back of table. High precision cross roller bearing and hydraulic or pneumatic brake disc.',
             image: '/images/products_detron/5th_axis_pics/210mm/GFA-210S.jpg',
             specs: {
-              'Table Diameter': 'Ø 210 mm',
-              'Center Height (Flat)': '245 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '580 N.m / 800 N.m',
-              'Max Speed (Rot/Tilt)': '33.3 / 16.6 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '80 kg / 40 kg'
+              'Table Diameter': 'Ø 210 mm (8.26")',
+              'Center Bore Diameter': 'Ø 65H7 (Ø 2.55H7)',
+              'Table Height (Horizontal)': '280 mm (11.0")',
+              'Center Height (Vertical)': '210 mm (8.26")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (362.5 psi)',
+              'Clamping Torque (Rot / Tilt)': 'P: 400 / 600 N.m (H: 600 / 800 N.m)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '33.3 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 50 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '100 kg / 70 kg (220 / 154 lbs)',
+              'Allowable Cutting Torque': '250 N.m (184 ft.lbs)',
+              'Net Weight': '230 kg (507 lbs)'
             }
           },
           {
             name: 'GTFAE-210S',
-            badge: 'Hydraulic Tilt Table, 900 N.m',
-            description: 'Equipped with a hydraulic braking system on the tilt axis, ensuring zero displacement during aggressive side milling.',
+            badge: 'CNC Trunnion Tilting Table (400 / 600 N.m)',
+            description: 'Trunnion 5th axis with flat supplemental base and tilting motor at back of table. Equipped with hydraulic clamp by air booster converter built-in.',
             image: '/images/products_detron/5th_axis_pics/210mm/GTFAE-210S.jpg',
             specs: {
-              'Table Diameter': 'Ø 210 mm',
-              'Center Height (Flat)': '245 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '580 N.m / 1000 N.m',
-              'Max Speed (Rot/Tilt)': '33.3 / 16.6 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '85 kg / 45 kg'
+              'Table Diameter': 'Ø 210 mm (8.27")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Table Height (Horizontal)': '375 mm (14.76")',
+              'Center Height (Vertical)': '375 mm (14.76")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.7 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '400 N.m / 600 N.m (295 / 442.48 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '33.3 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '100 kg / 70 kg (220 / 154.3 lbs)',
+              'Allowable Cutting Torque': '260 N.m (191.6 ft.lbs)',
+              'Net Weight': '455 kg (1001 lbs)'
             }
           }
         ]
@@ -621,51 +817,47 @@ export const PRODUCT_DATABASE = {
         size: 'Ø 255mm',
         products: [
           {
-            name: 'GFA-255H',
-            badge: 'Hydraulic Clamping, 1400 N.m',
-            description: 'High-torque hydraulic tilting rotary table designed for heavy production parts and multi-side castings.',
+            name: 'GFA-255H / GFA-255HB',
+            badge: 'Hydraulic Clamping 900 / 900 N.m',
+            description: 'High rigidity tilting rotary table with radial-axial bearings and hydraulic brake. GFA-255HB features tilting motor mounted at the back of table.',
             image: '/images/products_detron/5th_axis_pics/255mm/GFA255H.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height (Flat)': '285 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1100 N.m / 1600 N.m',
-              'Max Speed (Rot/Tilt)': '33.3 / 11.1 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '120 kg / 60 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Bore Diameter': 'Ø 140H7 (Ø 5.51H7)',
+              'Table Height (Horizontal)': '325 mm (12.8")',
+              'Center Height (Vertical)': '225 mm (8.86")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque (Rot / Tilt)': '900 N.m / 900 N.m (663.8 / 663.8 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '22.2 / 16.6 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 50 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '120 kg / 90 kg (264 / 166.33 lbs)',
+              'Allowable Cutting Torque': '370 N.m (272.9 ft.lbs)',
+              'Net Weight': '320 kg (704 lbs) / HB: 347 kg (765 lbs)'
             }
           },
           {
-            name: 'GFA-255HB',
-            badge: 'Compact Casing Hydraulic',
-            description: 'Narrow width casing variant, optimizing space inside mid-sized 3-axis CNC vertical mills converting to 5-axis.',
-            image: '/images/products_detron/5th_axis_pics/255mm/GFA-255HB.jpg',
-            specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height (Flat)': '285 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1100 N.m / 1600 N.m',
-              'Max Speed (Rot/Tilt)': '33.3 / 11.1 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '100 kg / 50 kg'
-            }
-          },
-          {
-            name: 'GTFAE-255SBLS',
-            badge: 'Heavy Trunnion Dual Clamping',
-            description: 'Equipped with dual support brackets on the tilt axis to secure massive clamping bridges.',
+            name: 'GTFAE-255SBL(S)',
+            badge: 'Trunnion 5th Axis with Enlarged Swing (400 / 600 N.m)',
+            description: 'Trunnion 5-axis table with sub-table option, tilting motor at back of table, and hydraulic brake equipped with radial-axial bearings.',
             image: '/images/products_detron/5th_axis_pics/255mm/GTFAE-255SBLS.jpg',
             specs: {
-              'Table Diameter': 'Ø 255 mm',
-              'Center Height (Flat)': '285 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1100 N.m / 2000 N.m',
-              'Max Speed (Rot/Tilt)': '33.3 / 11.1 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '150 kg / 75 kg'
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Table Height (Horizontal)': '360 mm (14.17")',
+              'Center Height (Vertical)': '360 mm (14.17")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (72.5 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '400 N.m / 600 N.m (295 / 442.48 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '22.2 / 16.6 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '100 kg / 75 kg (220 / 165 lbs)',
+              'Allowable Cutting Torque': '250 N.m (182.5 ft.lbs)',
+              'Net Weight': '560 kg (1235 lbs)'
             }
           }
         ]
@@ -674,67 +866,69 @@ export const PRODUCT_DATABASE = {
         size: 'Ø 320mm',
         products: [
           {
-            name: 'GFA320H',
-            badge: 'Large Scale Hydraulic, 2400 N.m',
-            description: 'Engineered for aircraft components and heavy machine tooling. Imparts immense structural stiffness.',
+            name: 'GFA-320H',
+            badge: 'Hydraulic Clamping 1600 / 1600 N.m',
+            description: 'Heavy duty 5-axis tilting rotary table with radial-axial bearings and hydraulic brake. Built for large machining centers and aerospace components.',
             image: '/images/products_detron/5th_axis_pics/320mm/GFA320H.jpg',
             specs: {
-              'Table Diameter': 'Ø 320 mm',
-              'Center Height (Flat)': '345 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1600 N.m / 3000 N.m',
-              'Max Speed (Rot/Tilt)': '25.0 / 8.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '200 kg / 100 kg'
+              'Table Diameter': 'Ø 320 mm (12.60")',
+              'Center Bore Diameter': 'Ø 180H7 (Ø 7.09H7)',
+              'Table Height (Horizontal)': '355 mm (13.98")',
+              'Center Height (Vertical)': '255 mm (10.04")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque (Rot / Tilt)': '1600 N.m / 1600 N.m (1179.2 / 1179.2 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:120 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '22.2 / 16.6 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 50 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '200 kg / 150 kg (440 / 330 lbs)',
+              'Allowable Cutting Torque': '780 N.m (569.4 ft.lbs)',
+              'Net Weight': '470 kg (1037 lbs)'
             }
           },
           {
-            name: 'GTFAE-320H',
-            badge: 'Extended Spindle Tilt Table',
-            description: 'Special model with an extended rotary table nose to easily receive standard zero-point chucks.',
-            image: '/images/products_detron/5th_axis_pics/320mm/GTFAE-320H.jpg',
-            specs: {
-              'Table Diameter': 'Ø 320 mm',
-              'Center Height (Flat)': '345 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1600 N.m / 3000 N.m',
-              'Max Speed (Rot/Tilt)': '25.0 / 8.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '200 kg / 100 kg'
-            }
-          },
-          {
-            name: 'GTFAE-320XB',
-            badge: 'Heavy Structural Trunnion',
-            description: 'Built for high axial workloads. Features a rugged casting bed that minimizes vibration during indexing.',
+            name: 'GTFAE-320XB / GTFAE-320H',
+            badge: 'Trunnion 5th Axis (750 / 1500 N.m)',
+            description: 'Trunnion 5-axis table with flat supplemental base and built-in air-booster converter for hydraulic clamp.',
             image: '/images/products_detron/5th_axis_pics/320mm/GTFAE-320XB.jpg',
             specs: {
-              'Table Diameter': 'Ø 320 mm',
-              'Center Height (Flat)': '345 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1600 N.m / 3400 N.m',
-              'Max Speed (Rot/Tilt)': '25.0 / 8.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '220 kg / 110 kg'
+              'Table Diameter': 'Ø 320 mm (12.60")',
+              'Center Bore Diameter': 'Ø 50H7 (Ø 1.97H7)',
+              'Table Height (Horizontal)': '365 mm (14.37")',
+              'Center Height (Vertical)': '365 mm (14.37")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'P: 0.6~0.7 MPa (87~101.5 psi) / H: 5 MPa (725 psi)',
+              'Clamping Torque (Rot / Tilt)': '750 N.m / 1500 N.m (553.17 / 1106.25 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:100 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '25 / 16.6 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '200 kg / 200 kg (440 / 440 lbs)',
+              'Allowable Cutting Torque': '550 N.m (401.5 ft.lbs)',
+              'Net Weight': '700 kg (1540 lbs) / H: 610 kg (1342 lbs)'
             }
           },
           {
-            name: 'GTFAE-320XBL',
-            badge: 'Dual-Support Bracket 320mm',
-            description: 'Dual-clamp support variant designed specifically to support extra wide, double-clamping jigs.',
+            name: 'GTFAE-320XBL(S)',
+            badge: 'Trunnion 5th Axis with Enlarged Swing (750 / 1500 N.m)',
+            description: 'Enlarged swing trunnion 5th axis with sub-table option and built-in air booster converter.',
             image: '/images/products_detron/5th_axis_pics/320mm/GTFAE-320XBL.jpg',
             specs: {
-              'Table Diameter': 'Ø 320 mm',
-              'Center Height (Flat)': '345 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1600 N.m / 3400 N.m',
-              'Max Speed (Rot/Tilt)': '25.0 / 8.3 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '250 kg / 125 kg'
+              'Table Diameter': 'Ø 320 mm (12.60")',
+              'Center Bore Diameter': 'Ø 50H7 (Ø 1.97H7)',
+              'Table Height (Horizontal)': '365 mm (14.37")',
+              'Center Height (Vertical)': '365 mm (14.37")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.6 ~ 0.7 MPa (87 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '750 N.m / 1500 N.m (553.17 / 1106.25 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:100 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '25 / 16.6 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '200 kg / 100 kg (440 / 220 lbs)',
+              'Allowable Cutting Torque': '550 N.m (401.5 ft.lbs)',
+              'Net Weight': '750 kg (1653 lbs)'
             }
           }
         ]
@@ -744,50 +938,68 @@ export const PRODUCT_DATABASE = {
         products: [
           {
             name: 'GTFAE-410XB',
-            badge: 'Industrial 5-Axis Giant',
-            description: 'Heavy industrial multi-axis positioning table, offering top-tier mechanical efficiency and hydraulic locking.',
+            badge: 'Industrial 5-Axis Trunnion (1600 / 2000 N.m)',
+            description: 'Heavy industrial multi-axis positioning table, offering top-tier mechanical efficiency, full gear depth dual lead worm drive, and hydraulic clamping with air booster.',
             image: '/images/products_detron/5th_axis_pics/410mm/GTFAE-410XB.jpg',
             specs: {
-              'Table Diameter': 'Ø 410 mm',
-              'Center Height (Flat)': '430 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '2800 N.m / 5200 N.m',
-              'Max Speed (Rot/Tilt)': '16.6 / 5.5 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '400 kg / 200 kg'
+              'Table Diameter': 'Ø 410 mm (16.14")',
+              'Center Bore Diameter': 'Ø 70H7 (Ø 2.76H7)',
+              'Table Height (Horizontal)': '411 mm (16.18")',
+              'Center Height (Vertical)': '411 mm (16.18")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.6 ~ 0.7 MPa (87 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '1600 N.m / 2000 N.m (1180 / 1475 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:120 / 1:150',
+              'Max Table Speed (Rot / Tilt)': '16.6 / 11.1 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '300 kg / 300 kg (661 / 661 lbs)',
+              'Allowable Cutting Torque': '780 N.m (569.4 ft.lbs)',
+              'Net Weight': '940 kg (2068 lbs)'
             }
           },
           {
-            name: 'GTFAE-410HLS',
-            badge: 'Long Spindle 410mm',
-            description: 'Extended spindle version built for heavy mold and die machining, allowing high clearance for deep milling.',
+            name: 'GTFAE-410HL(S)',
+            badge: 'Enlarged Swing Trunnion up to 820mm (1600 / 2000 N.m)',
+            description: 'Extended swing version with swing up to 820mm, sub-table option, and hydraulic 5 MPa clamping for large mold & die parts.',
             image: '/images/products_detron/5th_axis_pics/410mm/GTFAE-410HLS.jpg',
             specs: {
-              'Table Diameter': 'Ø 410 mm',
-              'Center Height (Flat)': '430 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '2800 N.m / 5200 N.m',
-              'Max Speed (Rot/Tilt)': '16.6 / 5.5 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '400 kg / 200 kg'
+              'Table Diameter': 'Ø 410 mm (16.14")',
+              'Center Bore Diameter': 'Ø 70H7 (Ø 2.76H7)',
+              'Table Height (Horizontal)': '370 mm (14.57")',
+              'Center Height (Vertical)': '370 mm (14.57")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque (Rot / Tilt)': '1600 N.m / 2000 N.m (1180 / 1475 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:120 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '16.6 / 11.1 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '200 kg / 150 kg (440 / 330 lbs)',
+              'Allowable Cutting Torque': '780 N.m (569.4 ft.lbs)',
+              'Net Weight': '850 kg (1860 lbs)'
             }
           },
           {
-            name: 'GTFAE-410XBLS',
-            badge: 'High Torque Dual Bracket',
-            description: 'Features massive side-support brackets for maximum rigidity during heavy cutting of steel and titanium castings.',
+            name: 'GTFAE-410XBL(S)',
+            badge: 'Enlarged Swing Trunnion with Sub-Table (1600 / 2000 N.m)',
+            description: 'Enlarged swing 410mm trunnion table with built-in air booster, radial-axial bearings, and sub-table option.',
             image: '/images/products_detron/5th_axis_pics/410mm/GTFAE-410XBLS.jpg',
             specs: {
-              'Table Diameter': 'Ø 410 mm',
-              'Center Height (Flat)': '430 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '2800 N.m / 6000 N.m',
-              'Max Speed (Rot/Tilt)': '16.6 / 5.5 RPM',
-              'Indexing Accuracy': '15 arc-sec',
-              'Repeatability': '4 arc-sec',
-              'Max Load (0°-90°)': '450 kg / 225 kg'
+              'Table Diameter': 'Ø 410 mm (16.14")',
+              'Center Bore Diameter': 'Ø 70H7 (Ø 2.76H7)',
+              'Table Height (Horizontal)': '411 mm (16.18")',
+              'Center Height (Vertical)': '411 mm (16.18")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.6 ~ 0.7 MPa (87 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '1600 N.m / 2000 N.m (1180 / 1475 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:120 / 1:150',
+              'Max Table Speed (Rot / Tilt)': '16.6 / 11.1 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '200 kg / 150 kg (440 / 330 lbs)',
+              'Allowable Cutting Torque': '780 N.m (569.4 ft.lbs)',
+              'Net Weight': '1020 kg (2175 lbs)'
             }
           }
         ]
@@ -797,34 +1009,46 @@ export const PRODUCT_DATABASE = {
         products: [
           {
             name: 'GTFAE-500XB',
-            badge: 'Massive Trunnion Table, 6800 N.m',
-            description: 'Super large tilting rotary table designed for horizontal boring mills and large portal machining centers.',
+            badge: 'Trunnion 5th Axis (2500 / 3000 N.m)',
+            description: 'Super large tilting rotary table with 2 sets of built-in air-boosters, full gear depth dual lead worm drive, and 500 kg allowable load.',
             image: '/images/products_detron/5th_axis_pics/500mm/GTFAE-500XB.jpg',
             specs: {
-              'Table Diameter': 'Ø 500 mm',
-              'Center Height (Flat)': '500 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '3600 N.m / 6800 N.m',
-              'Max Speed (Rot/Tilt)': '11.1 / 4.4 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '5 arc-sec',
-              'Max Load (0°-90°)': '600 kg / 300 kg'
+              'Table Diameter': 'Ø 500 mm (19.69")',
+              'Center Bore Diameter': 'Ø 70H7 (Ø 2.76H7)',
+              'Table Height (Horizontal)': '460 mm (18.11")',
+              'Center Height (Vertical)': '460 mm (18.11")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.6 ~ 0.7 MPa (87 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '2500 N.m / 3000 N.m (1844 / 2213 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:120 / 1:180',
+              'Max Table Speed (Rot / Tilt)': '16.6 / 11.1 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '500 kg / 500 kg (1102 / 1102 lbs)',
+              'Allowable Cutting Torque': '1700 N.m (1254 ft.lbs)',
+              'Net Weight': '1270 kg (2794 lbs)'
             }
           },
           {
             name: 'GTFAE-500XBL',
-            badge: 'Ultra Heavy Dual Bracket 500mm',
-            description: 'Top-tier large multi-axis table offering maximum structural clearance and heavy load rating.',
+            badge: 'Enlarged Swing Trunnion 500mm (2500 / 3000 N.m)',
+            description: 'Enlarged swing 500mm trunnion table with built-in air-booster converter and sub-table option.',
             image: '/images/products_detron/5th_axis_pics/500mm/GTFAE-500XBL.jpg',
             specs: {
-              'Table Diameter': 'Ø 500 mm',
-              'Center Height (Flat)': '500 mm',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '3600 N.m / 8000 N.m',
-              'Max Speed (Rot/Tilt)': '11.1 / 4.4 RPM',
-              'Indexing Accuracy': '20 arc-sec',
-              'Repeatability': '5 arc-sec',
-              'Max Load (0°-90°)': '700 kg / 350 kg'
+              'Table Diameter': 'Ø 500 mm (19.69")',
+              'Center Bore Diameter': 'Ø 70H7 (Ø 2.76H7)',
+              'Table Height (Horizontal)': '460 mm (18.11")',
+              'Center Height (Vertical)': '460 mm (18.11")',
+              'Tilting Angle Range': '-120° to +30°',
+              'Clamping Method / Pressure': 'Pneumatic 0.6 ~ 0.7 MPa (87 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '2500 N.m / 3000 N.m (1843.75 / 2212.5 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:120 / 1:180',
+              'Max Table Speed (Rot / Tilt)': '16.6 / 11.1 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '15 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '300 kg / 250 kg (660 / 550 lbs)',
+              'Allowable Cutting Torque': '1700 N.m (1241 ft.lbs)',
+              'Net Weight': '1270 kg (2800 lbs)'
             }
           }
         ]
@@ -833,33 +1057,51 @@ export const PRODUCT_DATABASE = {
         size: 'GFA Compact Type, Multi-Spindle',
         products: [
           {
-            name: 'GFA-125S-2W_240',
-            badge: 'Twin Spindle, 240mm Pitch',
-            description: 'Multi-spindle solutions designed for simultaneous batch production on a single tilt-rotary assembly.',
+            name: 'GFA-125S-2W-240',
+            badge: 'Twin Spindle, 240mm Pitch (140 / 300 N.m)',
+            description: 'Dual-spindle 5-axis tilting rotary table with 240mm spindle pitch for high-volume batch production on a single tilt-rotary assembly.',
             image: '/images/products_detron/5th_axis_pics/GFA_contact_type_multispindle/GFA-125S-2W_240.jpg',
             specs: {
               'Number of Spindles': '2',
-              'Spindle Spacing': '240 mm',
-              'Table Diameter': 'Ø 125 mm x 2',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '220 N.m x 2 / 450 N.m',
-              'Max Speed (Rot/Tilt)': '50.0 / 25.0 RPM',
-              'Max Load (Flat)': '40 kg (total)'
+              'Spindle Pitch': '240 mm (9.45")',
+              'Table Diameter': 'Ø 125 mm (4.92") x 2',
+              'Max Work Swing': '195 mm (7.68")',
+              'Table Height (Horizontal)': '224.5 mm (8.84")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '140 N.m / 300 N.m (103.26 / 221 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '22.2 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '40 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '35 kg / 20 kg (77 / 44 lbs)',
+              'Allowable Cutting Torque': '85 N.m (62.645 ft.lbs)',
+              'Net Weight': '172 kg (379 lbs)'
             }
           },
           {
             name: 'GFA-170S-2W-300',
-            badge: 'Twin Spindle, 300mm Pitch',
-            description: 'High efficiency dual spindle setup supporting wider workpiece geometries for automated mass production.',
+            badge: 'Twin Spindle, 300mm Pitch (300 / 600 N.m)',
+            description: 'Dual-spindle 5-axis tilting rotary table with 300mm spindle pitch and pneumatic braking for double output production cycles.',
             image: '/images/products_detron/5th_axis_pics/GFA_contact_type_multispindle/GFA-170S-2W-300.jpg',
             specs: {
               'Number of Spindles': '2',
-              'Spindle Spacing': '300 mm',
-              'Table Diameter': 'Ø 170 mm x 2',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '380 N.m x 2 / 700 N.m',
-              'Max Speed (Rot/Tilt)': '44.4 / 16.6 RPM',
-              'Max Load (Flat)': '80 kg (total)'
+              'Spindle Pitch': '300 mm (11.81")',
+              'Table Diameter': 'Ø 170 mm (6.69") x 2',
+              'Max Work Swing': '285 mm (11.22")',
+              'Table Height (Horizontal)': '250 mm (9.84")',
+              'Center Height (Vertical)': '220 mm (8.66")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '300 N.m / 600 N.m (221.26 / 442.5 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '25 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '40 kg / 30 kg (88 / 66 lbs)',
+              'Allowable Cutting Torque': '200 N.m (147.512 ft.lbs)',
+              'Net Weight': '355 kg (783 lbs)'
             }
           }
         ]
@@ -869,32 +1111,50 @@ export const PRODUCT_DATABASE = {
         products: [
           {
             name: 'GTFAE-210S-2W-320',
-            badge: 'Twin-Spindle Trunnion 320mm Pitch',
-            description: 'High-efficiency trunnion design supporting twin-spindle machining. Dramatically reduces cycle times.',
+            badge: 'Twin-Spindle Trunnion 320mm Pitch (400 / 900 N.m)',
+            description: 'High-efficiency trunnion design supporting twin-spindle machining with 320mm pitch and flat supplemental base for lower gravity.',
             image: '/images/products_detron/5th_axis_pics/GFA_trunnion_type_multispindle/GTFAE-210S-2W-320.jpg',
             specs: {
               'Number of Spindles': '2',
-              'Spindle Spacing': '320 mm',
-              'Table Diameter': 'Ø 210 mm x 2',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '580 N.m x 2 / 1200 N.m',
-              'Max Speed (Rot/Tilt)': '33.3 / 16.6 RPM',
-              'Max Load (Flat)': '120 kg (total)'
+              'Spindle Pitch': '320 mm (12.60")',
+              'Table Diameter': 'Ø 210 mm (8.27") x 2',
+              'Max Work Swing': '310 mm (12.20")',
+              'Table Height (Horizontal)': '270 mm (10.63")',
+              'Center Height (Vertical)': '270 mm (10.63")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Pneumatic 0.55 ~ 0.7 MPa (79.8 ~ 101.5 psi)',
+              'Clamping Torque (Rot / Tilt)': '400 N.m / 900 N.m (295 / 663.8 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '25 / 22.2 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '50 kg / 40 kg (110 / 88 lbs)',
+              'Allowable Cutting Torque': '250 N.m (184 ft.lbs)',
+              'Net Weight': '469 kg (1034 lbs)'
             }
           },
           {
             name: 'GTFAE-255H-2W-400',
-            badge: 'Twin-Spindle Trunnion 400mm Pitch',
-            description: 'Large twin-spindle trunnion layout built for massive batch milling tasks. Offers superb rigidity.',
+            badge: 'Twin-Spindle Trunnion 400mm Pitch, Hydraulic (900 / 2500 N.m)',
+            description: 'Large twin-spindle trunnion layout with 400mm pitch and hydraulic 5 MPa clamping. Built for massive batch milling tasks with high rigidity.',
             image: '/images/products_detron/5th_axis_pics/GFA_trunnion_type_multispindle/GTFAE-255H-2W-400.jpg',
             specs: {
               'Number of Spindles': '2',
-              'Spindle Spacing': '400 mm',
-              'Table Diameter': 'Ø 255 mm x 2',
-              'Tilt Range': '-30° to +110°',
-              'Clamping Torque (Rot/Tilt)': '1100 N.m x 2 / 2400 N.m',
-              'Max Speed (Rot/Tilt)': '33.3 / 11.1 RPM',
-              'Max Load (Flat)': '200 kg (total)'
+              'Spindle Pitch': '400 mm (15.75")',
+              'Table Diameter': 'Ø 255 mm (10.04") x 2',
+              'Max Work Swing': '390 mm (15.35")',
+              'Table Height (Horizontal)': '370 mm (14.57")',
+              'Center Height (Vertical)': '370 mm (14.57")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725.0 psi)',
+              'Clamping Torque (Rot / Tilt)': '900 N.m / 2500 N.m (663.8 / 1843 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:90 / 1:120',
+              'Max Table Speed (Rot / Tilt)': '22.2 / 20.0 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '100 kg / 75 kg (220 / 165 lbs)',
+              'Allowable Cutting Torque': '550 N.m (405 ft.lbs)',
+              'Net Weight': '856 kg (1887 lbs)'
             }
           }
         ]
@@ -908,66 +1168,85 @@ export const PRODUCT_DATABASE = {
     totalFrames: 240,
     items: [
       {
-        size: 'CVR series (Vertical layout)',
+        size: 'CVR series (Vertical layout - Fixed Column VMC)',
         products: [
           {
             name: 'CVR-660',
-            badge: '660x400 mm Pallet, 300kg Load',
-            description: 'Vertical rotary auto-pallet changer enabling seamless loading and unloading during active machining cycles.',
+            badge: '660 x 500 mm Pallet, 200kg x 2 Load',
+            description: 'Vertical rotary auto-pallet changer with 180° swing exchange. Easy installation directly mounted on machine base, featuring taper cone positioning with ±0.005mm repeatability.',
             image: '/images/products_detron/Auto_pallet_changer/CVR/CVR600.jpg',
             specs: {
-              'Pallet Size': '660 x 400 mm',
-              'Maximum Load': '300 kg per pallet',
-              'Pallet Change Time': '8.5 seconds',
+              'Pallet Size': '660 x 500 mm (25.98 x 19.69")',
               'Number of Pallets': '2',
-              'Operating Method': 'Hydraulic rotation drive',
-              'Repeatability': '±0.005 mm'
+              'Pallet Change Method': '180° Swing',
+              'T-Slot Size': '14H8 (0.55H8)',
+              'Drive Method / Pressure': 'Hydraulic 6 MPa (870 psi)',
+              'Pallet Clamping Force': '36,850 N (8269.14 lbs)',
+              'Cutting Load Resistant Capacity': '2940 N.m (2166.78 ft.lbs)',
+              'Pallet Positioning Method': 'Taper cone',
+              'Allowable Loading Capacity': '200 kg x 2 (440 lbs x 2)',
+              'Lifting Force': '35,280 N (7916.83 lbs)',
+              'Repeatability': '±0.005 mm',
+              'Net Weight (Pallet Exchanger / Pallet / Sub-pallet)': '550 kg / 170 kg x 2 / 105 kg'
             }
           },
           {
             name: 'CVR-850',
-            badge: '850x500 mm Pallet, 500kg Load',
-            description: 'Large scale CVR model built to handle heavy castings and automated structural milling layouts.',
+            badge: '850 x 500 mm Pallet, 300kg x 2 Load',
+            description: 'Large scale CVR model built to handle heavy castings and automated structural milling layouts on vertical machining centers with fixed columns.',
             image: '/images/products_detron/Auto_pallet_changer/CVR/CVR850.jpg',
             specs: {
-              'Pallet Size': '850 x 500 mm',
-              'Maximum Load': '500 kg per pallet',
-              'Pallet Change Time': '12.0 seconds',
+              'Pallet Size': '850 x 500 mm (33.46 x 19.69")',
               'Number of Pallets': '2',
-              'Operating Method': 'Hydraulic rotation drive',
-              'Repeatability': '±0.005 mm'
+              'Pallet Change Method': '180° Swing',
+              'T-Slot Size': '18H8 (0.71H8)',
+              'Drive Method / Pressure': 'Hydraulic 6 MPa (870 psi)',
+              'Pallet Clamping Force': '36,850 N (8269.14 lbs)',
+              'Cutting Load Resistant Capacity': '2940 N.m (2166.78 ft.lbs)',
+              'Pallet Positioning Method': 'Taper cone',
+              'Allowable Loading Capacity': '300 kg x 2 (660 lbs x 2)',
+              'Lifting Force': '35,280 N (7916.83 lbs)',
+              'Repeatability': '±0.005 mm',
+              'Net Weight (Pallet Exchanger / Pallet / Sub-pallet)': '550 kg / 190 kg x 2 / 105 kg'
             }
           },
           {
             name: 'CVR-10D',
-            badge: 'Dual pallet horizontal interface',
-            description: 'High reliability indexing changer designed to pair with heavy machine building operations.',
+            badge: '1000 x 500 mm Pallet, 300kg x 2 Load',
+            description: 'Heavy duty 1000mm pallet changer designed for large component mass production and multi-part fixture tooling.',
             image: '/images/products_detron/Auto_pallet_changer/CVR/CVR-10D.jpg',
             specs: {
-              'Pallet Size': 'Ø 500 mm',
-              'Maximum Load': '250 kg per pallet',
-              'Pallet Change Time': '10.0 seconds',
+              'Pallet Size': '1000 x 500 mm (39.37 x 19.69")',
               'Number of Pallets': '2',
-              'Operating Method': 'Pneumatic / Hydraulic index'
+              'Pallet Change Method': '180° Swing',
+              'T-Slot Size': '18H8 (0.71H8)',
+              'Drive Method / Pressure': 'Hydraulic 6 MPa (870 psi)',
+              'Pallet Clamping Force': '36,850 N (8269.14 lbs)',
+              'Cutting Load Resistant Capacity': '2940 N.m (2166.78 ft.lbs)',
+              'Pallet Positioning Method': 'Taper cone',
+              'Allowable Loading Capacity': '300 kg x 2 (660 lbs x 2)',
+              'Lifting Force': '35,280 N (7916.83 lbs)',
+              'Repeatability': '±0.005 mm',
+              'Net Weight (Pallet Exchanger / Pallet / Sub-pallet)': '550 kg / 220 kg x 2 / 105 kg'
             }
           }
         ]
       },
       {
-        size: 'SVR series (Integrated clamping)',
+        size: 'SVC series (Roller Cam Type - Movable Column VMC)',
         products: [
           {
-            name: 'SVC-7050II',
-            badge: '700x500 mm Pallet, 400kg Load',
-            description: 'Integrated SVR multi-pallet clamping unit designed for heavy industrial milling and long untended production runs.',
+            name: 'SVC-7050II / SVC-10065II',
+            badge: 'Roller Cam Type Pallet Changer, 3.5 sec Fast Cycle',
+            description: 'Roller cam transmission performs backlash-free operation without wear-out and stabilizes fast pallet changes in 3.5 seconds. Driven by servo motor with encoder for accurate positioning on movable column VMCs.',
             image: '/images/products_detron/Auto_pallet_changer/SVR/SVC10065II.jpg',
             specs: {
-              'Pallet Size': '700 x 500 mm',
-              'Maximum Load': '400 kg per pallet',
-              'Pallet Change Time': '9.5 seconds',
-              'Number of Pallets': '2',
-              'Operating Method': 'Hydraulic index',
-              'Repeatability': '±0.003 mm'
+              'Transmission Method': 'Roller gear cam drive',
+              'Pallet Change Cycle Time': '3.5 seconds',
+              'Applied Machine Type': 'Machining center with column movable',
+              'Drive System': 'Servo motor with encoder positioning',
+              'Structure': 'Flat structure with through-bore diameter Ø60mm',
+              'Pallet Size Models': 'SVC-7050II (700 x 500 mm) / SVC-10065II (1000 x 650 mm)'
             }
           }
         ]
@@ -985,13 +1264,13 @@ export const PRODUCT_DATABASE = {
         products: [
           {
             name: 'Detron i4.0-RT Intelligent Data Box',
-            badge: 'IoT Connected Sensor Unit',
-            description: 'Connects machining centers with IoT networks. Features real-time sensory monitoring, clamping checks, and performance logging.',
+            badge: 'Industry 4.0 IoT Hardware Integration',
+            description: 'Industry 4.0 real-time machine table sensor system monitoring clamping status, temperature, vibrations, and cycle diagnostic telemetry.',
             image: '/images/products_detron/Inteligent_control/Detron_i4.0-RT_intellegent_data_box.jpg',
             specs: {
               'Sensor Inputs': 'Temperature, Pressure, Vibration, Clamp state',
               'Interface': 'Wi-Fi, Ethernet, RS-485',
-              'Protocol compatibility': 'MTConnect, OPC UA, Modbus TCP',
+              'Protocol Compatibility': 'MTConnect, OPC UA, Modbus TCP',
               'Power Input': 'DC 24V',
               'Casing Material': 'Industrial Aluminium Alloy (IP67)'
             }
@@ -1002,32 +1281,46 @@ export const PRODUCT_DATABASE = {
         size: 'Single Axis Controllers',
         products: [
           {
-            name: 'SAC III Series Controller',
-            badge: 'Standard Single Axis Drive',
-            description: 'Provides independent control of indexer setups. Features programmable presets, M-code triggers, and clear diagnostic panels.',
+            name: 'SAC Series Single Axis Control',
+            badge: 'Single Axis Controller for CNC Machine',
+            description: 'Provides indexing application for CNC machines without an integrated 4th axis function. Programs can be input directly and triggered via machine M-code commands.',
             image: '/images/products_detron/Inteligent_control/detron_sac_pro_single_axis_controller.jpg',
             specs: {
-              'Control Axes': '1 (Rotary / Tilting)',
-              'Feedback Interface': 'Incremental / Absolute Encoder',
-              'Programming Code': 'Simple M-code trigger / G-code subset',
-              'Program capacity': '99 presets',
-              'Display Panel': '7-inch LCD resistive touch panel'
+              'Control Axes': 'Single Axis (4th Axis Indexing)',
+              'Power Input': 'AC 220V',
+              'Compatibility': 'Compatible with any brand of NC control (FANUC, Mitsubishi, Siemens, Heidenhain, etc.)',
+              'Program Input': 'Direct keypad input on SAC unit',
+              'Command Trigger': 'CNC M-code interface signals',
+              'Connection': 'Direct connect to pneumatic / hydraulic solenoid valves'
             }
           }
         ]
       },
       {
-        size: 'System Guidance Charts',
+        size: 'System Integration Guidance',
         products: [
           {
-            name: 'System Connection Layout',
-            badge: 'Connection Schematic setup',
-            description: 'Detailed schematic setups demonstrating how Detron smart tables integrate with FANUC, Siemens, Mitsubishi, and custom CNC controllers.',
+            name: 'Schematic Diagram & Cable Connection',
+            badge: 'Japan NC & EU NC Wiring Schematics',
+            description: 'Standard military connectors (MS3102A/MS3108A) for Japanese CNC systems (FANUC/Mitsubishi) and adherent-type EU connectors with Lapp cables for Siemens and Heidenhain.',
             image: '/images/products_detron/Inteligent_control/guidance/01.jpg',
             specs: {
-              'CNC compatibility': 'FANUC, Siemens, Mitsubishi, Heidenhain, Fagor',
-              'Bus systems': 'Profinet, EtherCAT, CC-Link, DeviceNet',
-              'Safety standard': 'ISO 13849-1 (PLd)'
+              'Japan NC System': 'Standard military connector (FANUC / Mitsubishi)',
+              'European NC System': 'Adherent-type connector (Siemens / Heidenhain)',
+              'Standard Cable Length': 'Inner section: 2.5M / Outer section: 3.5M - 4.0M',
+              'Optical Scale Connection': 'Renishaw A-977-0575 / Siemens SMC40 module'
+            }
+          },
+          {
+            name: 'Rotary Table Selection Guidance',
+            badge: 'Machining Interference & Condition Guidelines',
+            description: 'Engineering guidelines for calculating workpiece cutting forces (FXL), eccentric loads, moment of inertia, and checking X, Y, Z axis machine clearance envelopes.',
+            image: '/images/products_detron/Inteligent_control/guidance/02.jpg',
+            specs: {
+              'Workpiece Diameter': 'Within rotary table diameter limits',
+              'Workpiece Weight': 'Within allowable loading range (Horizontal / Vertical)',
+              'Indexing Processing': 'FXL value within clamping torque threshold',
+              'Interference Checks': 'X-axis stroke clearance, Y-axis splashguard clearance, Z-axis tool change clearance'
             }
           }
         ]
@@ -1044,15 +1337,29 @@ export const PRODUCT_DATABASE = {
         size: 'Tailstock Support',
         products: [
           {
-            name: 'Pneumatic / Hydraulic Tailstock',
-            badge: 'TS-135 / TS-170 / TS-210',
-            description: 'Provides strong tail support for long structural parts, preventing component bending under heavy radial milling cuts.',
+            name: 'ST Series Quill Tailstock (Manual, Pneumatic & Hydraulic)',
+            badge: 'ST-T / ST-TP / ST-TH (125 to 400)',
+            description: 'Manual (ST-T) and pneumatic/hydraulic (ST-TP/ST-TH) quill tailstocks with MT3/MT4 quill tapers and 50mm effective quill stroke for cylindrical workpiece support.',
             image: '/images/products_detron/accessories/Tailstock.jpg',
             specs: {
-              'Center Height': '135 mm / 170 mm / 210 mm',
-              'Stroke': '50 mm',
-              'Clamping force': '4.5 kN (at 0.5 MPa)',
-              'Brake action': 'Pneumatic or Hydraulic options'
+              'Models Available': 'ST-125T/TP, ST-170T/TP/H, ST-210T/TP/H, ST-255T/TH, ST-320T/TH, ST-400T/TH',
+              'Center Height': '110 mm, 135 mm, 160 mm, 190 mm, 210 mm, 255 mm',
+              'Quill Taper': 'Standard MT3 / Optional MT4',
+              'Effective Quill Stroke': '50 mm (100 mm total withdraw stroke)',
+              'Max Operating Pressure': '2.0 MPa'
+            }
+          },
+          {
+            name: 'SR Series Rotary Tailstock (Pneumatic & Hydraulic)',
+            badge: 'SR-P / SR-H (125 to 500)',
+            description: 'Braked rotary tailstocks for non-cylindrical workpieces and bridge plates. Clamping torque up to 2400 N.m with pneumatic or hydraulic braking.',
+            image: '/images/products_detron/accessories/Tailstock.jpg',
+            specs: {
+              'Models Available': 'SR-125P, SR-170P/H, SR-210P/H, SR-255H, SR-320H, SR-400H, SR-500H',
+              'Center Height': '110 mm, 135 mm, 160 mm, 190 mm, 210 mm, 255 mm, 350 mm',
+              'Clamping Torque': '70 N.m up to 2400 N.m',
+              'Clamping Method': 'Pneumatic 0.55~0.7 MPa / Hydraulic 2.5~5 MPa',
+              'Through-Bore Diameter': 'Ø30H7 to Ø220H7'
             }
           }
         ]
@@ -1061,111 +1368,95 @@ export const PRODUCT_DATABASE = {
         size: 'Clamping Chucks',
         products: [
           {
-            name: 'Precision Scroll Chuck Assembly',
-            badge: '3-Jaw chuck with Spindle adapter',
-            description: 'Precision hydraulic and manual chuck adapters designed to mount securely on Detron spindle faces.',
+            name: 'Manual & Hydraulic Scroll Chucks (SC, SK & HCK Series)',
+            badge: 'Manual SC / Powerful SK / Hydraulic HCK',
+            description: 'Complete range of 3-jaw manual scroll chucks (SC-4" to SC-5"), 3-jaw powerful scroll chucks (SK-6" to SK-16"), and non-through-hole hydraulic chucks (HCK-6" to HCK-10") with custom flange plates.',
             image: '/images/products_detron/accessories/Chuck.jpg',
             specs: {
-              'Chuck Size': '6-inch / 8-inch / 10-inch',
-              'Mounting nose': 'A2-5 / A2-6 / A2-8',
-              'Clamping system': '3-jaw self-centering scroll'
+              'Manual Chucks': 'SC-4" (Ø3-90mm), SC-5" (Ø3-110mm)',
+              'Powerful 3-Jaw Chucks': 'SK-6" (Ø3-160mm), SK-7" (Ø8-180mm), SK-8" (Ø8-190mm), SK-9" (Ø11-220mm), SK-10" (Ø12-260mm), SK-12" (Ø15-300mm), SK-16" (Ø30-400mm)',
+              'Hydraulic Chucks': 'HCK-6", HCK-8", HCK-10"',
+              'Mounting': 'Dedicated flange plate adapter for Detron spindle nose'
             }
           }
         ]
       },
       {
-        size: 'Air Booster Units',
+        size: 'Air Booster & Hydraulic Power Units',
         products: [
           {
-            name: 'ABR-50 Pressure Unit',
-            badge: '5x Pressure multiplier',
-            description: 'Boosts shop air pressure up to 5x. Ensures maximum clamping torque for pneumatic brake systems on rotary tables.',
+            name: 'ABR-50 Air Booster Unit',
+            badge: 'Air-to-Oil Pressure Booster for GXA-H',
+            description: 'Recommended for hydraulic table applications (GXA-H series) and SR-H hydraulic tailstocks in machine setups without existing hydraulic power packs.',
             image: '/images/products_detron/accessories/Air-booster-Unit-ABR-50.jpg',
             specs: {
-              'Input Pressure': '0.3 - 0.7 MPa',
-              'Output Pressure': '1.5 - 3.5 MPa',
-              'Pressure Ratio': '1 : 5',
-              'Tank Capacity': '10 Liters'
+              'Application': 'GXA-H series NC tables and SR-H hydraulic tailstocks',
+              'Function': 'Pneumatic air to hydraulic oil pressure multiplication',
+              'Standard Equipped': 'Pressure regulator, gauge and reservoir'
             }
-          }
-        ]
-      },
-      {
-        size: 'Hydraulic Power Units',
-        products: [
+          },
           {
-            name: 'HTK Series Power Pack',
-            badge: 'Compact hydraulic station',
-            description: 'Compact hydraulic pressure stations designed to actuate clamp/unclamp commands reliably.',
+            name: 'HTK Series Hydraulic Power Unit',
+            badge: 'Hydraulic Power Pack for GXA-H & CX-H',
+            description: 'Applied for GXA-H and CX-H series rotary tables and recommended for applications with hydraulic chucks or multi-port hydraulic fixtures.',
             image: '/images/products_detron/accessories/Hydraulic-power-unit-HTK-series.jpg',
             specs: {
-              'Motor Rating': '0.75 kW',
-              'Operating Pressure': '5.0 - 7.0 MPa',
-              'Tank Capacity': '10 Liters / 20 Liters',
-              'Solenoid valve voltage': 'AC 220V / DC 24V'
+              'Application': 'GXA-H & CX-H series rotary tables & hydraulic fixtures',
+              'Pump Pressure': 'Hydraulic 3.5 ~ 7.0 MPa',
+              'Solenoid Valve Voltage': 'DC 24V / AC 110V / AC 220V',
+              'Tank Capacity': 'Compact oil reservoir with cooling'
             }
           }
         ]
       },
       {
-        size: 'Magnetic Workholding',
+        size: 'Encoders & Servo Compatibility',
         products: [
           {
-            name: 'MagVise Magnetic Plate',
-            badge: 'Electro-permanent clamp',
-            description: 'Electro-permanent magnetic clamps for quick, distortion-free workpiece clamping on indexing setups.',
+            name: 'High Precision Optical Scale (Heidenhain / Renishaw / Fagor)',
+            badge: '±2.5" to ±5" Direct Angular Position Feedback',
+            description: 'High-end European optical encoders (Heidenhain RCN/ECN, Renishaw, Fagor) recommended for 5-axis tilting axes and high-precision indexing applications.',
+            image: '/images/products_detron/accessories/Encoder.jpg',
+            specs: {
+              'Brands': 'Heidenhain (RCN 2390/2380/2310, ECN 2190/2180), Renishaw, Fagor',
+              'Accuracy': '±2.5 arc-seconds / ±5 arc-seconds / ±10 arc-seconds',
+              'Signal Transferrer': 'Renishaw A-977-0575 / Siemens SMC40',
+              'Application': 'Recommended option for tilting axis on 5-axis tables and DDM models'
+            }
+          },
+          {
+            name: '4th & 5th Axis Compatible Servo Motors',
+            badge: 'FANUC / Mitsubishi / Siemens / Yaskawa / Heidenhain',
+            description: 'Seamless motor and drive integration for FANUC (αiF/βis), Mitsubishi (HG series), Yaskawa (SGMXG/SGMAG), Siemens (1FK7/1FK2), Heidenhain (QSY), and Fagor (FKM).',
+            image: '/images/products_detron/accessories/Servo-Motor.jpg',
+            specs: {
+              'FANUC Compatibility': 'αiF2, αiF4, αiF8, αiF12, αiF22, βis4, βis8, βis12, βis22',
+              'Mitsubishi Compatibility': 'HG-54, HG-75, HG-104, HG-154, HG-204, HG-303, HG-354',
+              'Siemens Compatibility': '1FK7042, 1FK7060, 1FK7063, 1FK7083, 1FK7084, 1FK2205, 1FK2206, 1FK2208',
+              'Yaskawa Compatibility': 'SGMXJ-08, SGMXG-09, SGMXG-13, SGMXG-20, SGMXG-30, SGMXG-44, SGMAG-30',
+              'Heidenhain / Fagor': 'QSY-96A, QSY-116C/E/J, QSY-155B/C/D, FKM22, FKM42, FKM64'
+            }
+          },
+          {
+            name: 'Fixture Plate, Base & Raiser Blocks',
+            badge: 'Suggested Dimensions of Fixture & Base Plate',
+            description: 'Custom bridge units, fixture plates, flange plates, raiser blocks, L-blocks, and hydraulic distributors engineered to match machine stroke dimensions.',
+            image: '/images/products_detron/accessories/Bridge-Unit.jpg',
+            specs: {
+              'Components': 'CNC rotary table, support rotary tailstock, flange plate, fixture plate, raiser blocks, L blocks, base plate',
+              'Center Height Permissible Error': 'Within ±0.01 mm',
+              'Compatibility': 'GXA, CX, RCX series rotary tables from 125mm to 400mm'
+            }
+          },
+          {
+            name: 'MagVise Magnetic Workholding',
+            badge: 'Electro-Permanent Magnetic Clamping Plate',
+            description: 'Electro-permanent magnetic chucks providing rapid, 5-face clear tool access clamping without mechanical clamps.',
             image: '/images/products_detron/accessories/MagVise-Magnetic-Workholding.jpg',
             specs: {
               'Clamping Force': 'Up to 1600 kg per plate',
-              'Input Voltage': 'AC 380V pulse control',
-              'IP rating': 'IP68 immersion proof'
-            }
-          }
-        ]
-      },
-      {
-        size: 'Rotary Encoders',
-        products: [
-          {
-            name: 'Absolute Spindle Encoder',
-            badge: 'Heidenhain / Renishaw ±2" Accuracy',
-            description: 'Spindle-mounted encoders yielding positioning accuracies down to ±2 arc-seconds.',
-            image: '/images/products_detron/accessories/Encoder.jpg',
-            specs: {
-              'Accuracy': '±2 arc-sec / ±5 arc-sec',
-              'Output Protocol': 'EnDat 2.2 / Fanuc / Mitsubishi',
-              'Resolution': '23 bits absolute'
-            }
-          }
-        ]
-      },
-      {
-        size: 'Servo Motors & Drives',
-        products: [
-          {
-            name: 'CNC Servo Motor Adapter',
-            badge: 'FANUC / Siemens / Mitsubishi',
-            description: 'Configurable with any industrial servo motor to match your existing CNC machining center controller.',
-            image: '/images/products_detron/accessories/Servo-Motor.jpg',
-            specs: {
-              'Motor compatibility': 'FANUC α/β, Siemens 1FK7, Yaskawa SGM7, Mitsubishi HF',
-              'Gear Ratio': '1/90 / 1/120 / 1/180 options'
-            }
-          }
-        ]
-      },
-      {
-        size: 'Spindle Bridge Units',
-        products: [
-          {
-            name: 'Custom Tailstock Bridge Unit',
-            badge: 'Fixture mounting bridge plate',
-            description: 'Provides bridging plates to mount multi-component fixtures between the indexer and tailstock.',
-            image: '/images/products_detron/accessories/Bridge-Unit.jpg',
-            specs: {
-              'Plate Width': 'Custom (300 to 1200 mm)',
-              'Material': 'Industrial Casting GGG40 / Steel plate',
-              'Trunnion support bearing': 'Heavy duty radial roller type'
+              'Operation': 'Electric pulse activation (permanent magnet holding)',
+              'Safety': 'Maintains full clamping force even in complete power outage'
             }
           }
         ]
@@ -1183,45 +1474,45 @@ export const PRODUCT_DATABASE = {
         products: [
           {
             name: 'GXA-S with Pneumatic 5C Collet Chuck',
-            badge: 'Pneumatic collet clamp system',
-            description: 'Custom workholding designed for high-speed indexing of small shaft or tube parts using quick clamping collets.',
+            badge: 'Pneumatic 5C Collet Clamping System',
+            description: 'Custom rotary table configuration equipped with integrated 5C collet clamping fixture for high-speed automated clamping of small shaft or tubular workpieces.',
             image: '/images/products_detron/special_application/GXA-S-with-pneumatic-5C-collet-chuck.jpg',
             specs: {
               'Collet Standard': '5C / 16C / 3C options',
               'Clamping Force': '12 kN (at 0.5 MPa)',
-              'Actuation': 'Drawbar pneumatic cylinder'
+              'Actuation': 'Drawbar pneumatic cylinder system'
             }
           }
         ]
       },
       {
-        size: 'Fixture Interfaces',
+        size: 'Tool Holder & Fixture Interfaces',
         products: [
           {
-            name: 'GFA-H with BT-40/50 Spindle Interface',
-            badge: 'BT-taper fixture interface block',
-            description: 'Tilting rotary table fitted with custom BT taper receivers, allowing quick fixture tooling changes.',
+            name: 'GFA-H with BT-40 / BT-50 / HSK / CAPTO Tool Holder Interface',
+            badge: 'Modular Tool Holder & Fixture Receiver',
+            description: 'Tilting rotary table fitted with custom BT-40/50, HSK, or CAPTO tooling receivers, enabling quick fixture swapping with ultra-precise repeatability.',
             image: '/images/products_detron/special_application/GFA-H-with-BT-4050-fixture-interface.jpg',
             specs: {
-              'Taper standard': 'BT-40 / BT-50 / HSK-A63',
-              'Fixture release method': 'Hydraulic release pin system',
-              'Indexing layout': 'Four-jaw tooling block'
+              'Taper Interface Options': 'BT-40, BT-50, HSK-A63, CAPTO C6',
+              'Clamping Mechanism': 'Hydraulic release pin / disc spring drawbar',
+              'Application': 'Automated quick-change pallet and tooling fixtures'
             }
           }
         ]
       },
       {
-        size: 'Multi-Pass Distributors',
+        size: 'Hydraulic Distributors & Rotary Joints',
         products: [
           {
-            name: 'GXA Spindle with Kitagawa Chuck & 2-Port Distributor',
-            badge: 'Rotary joint hydraulic distributor',
-            description: 'Fitted with hydraulic rotary joints to run hydraulic lines directly into rotating clamp fixtures.',
+            name: 'GXA Spindle with Kitagawa Chuck & Rotary Joint Distributor',
+            badge: 'Multi-Port Rotary Joint Fluid Distributor',
+            description: 'Rotary table equipped with 2-port to 6-port rotary joints for passing hydraulic or pneumatic pressure through the rotating spindle to actuate chucks or fixtures.',
             image: '/images/products_detron/special_application/GXA-wit-interface-for-Kitakawa-chuck-and-2P-distributor.jpg',
             specs: {
-              'Fluid Ports': '2 / 4 ports',
-              'Maximum fluid pressure': '15.0 MPa',
-              'Piping standard': 'G 1/4" / G 3/8"'
+              'Fluid Ports': '2 / 4 / 6 / 8 ports',
+              'Max Fluid Pressure': '15.0 MPa (Hydraulic) / 1.0 MPa (Air)',
+              'Pipe Size': 'G 1/4" / G 1/8"'
             }
           }
         ]
@@ -1231,13 +1522,13 @@ export const PRODUCT_DATABASE = {
         products: [
           {
             name: 'GFA with Quick-Change Mold Interface',
-            badge: 'Zero-point clamping mould table',
-            description: 'Special 5-axis setup optimized for high-volume automotive molding applications, supporting zero-point fixtures.',
+            badge: 'Zero-Point Clamping & Rapid Mold Exchange',
+            description: 'Special 5-axis configuration adapted for quick-change mold clamping systems (EROWA, SCHUNK) to ease modulation of parts holding in mass production.',
             image: '/images/products_detron/special_application/GFA-with-interface-for-quick-change-mold.jpg',
             specs: {
-              'Table Layout': 'Zero-point reference indexing pin layout',
-              'Mold locking force': '25 kN per pin',
-              'Axis pitch alignment': '±0.003 mm'
+              'Fixture Interface': 'EROWA / SCHUNK quick mold changing device compatible',
+              'Positioning Repeatability': '±0.002 mm',
+              'Application': 'High-mix automotive and electronic component molds'
             }
           }
         ]

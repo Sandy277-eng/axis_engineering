@@ -239,7 +239,7 @@ export default function DetronProducts() {
       <section ref={appraisalRef} style={styles.appraisalSection}>
         <div style={styles.appraisalLeft}>
           <img
-            src="/images/products_detron/4th_axis.jpg"
+            src="/images/detron.jpeg"
             alt="Advanced Application Technology"
             style={styles.appraisalImage}
           />

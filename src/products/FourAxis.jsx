@@ -37,11 +37,11 @@ export default function FourAxis() {
 
   // Other categories for Related Products
   const RELATED_CATEGORIES = [
-    { id: '5-axis', title: '5 Axis Tilt Rotary Tables', img: '/images/products_detron/5th_axis.jpg' },
-    { id: 'auto-pallet-changer', title: 'Auto Pallet Changers', img: '/images/products_detron/Auto-Pallet-changer.jpg' },
-    { id: 'special-application', title: 'Special Applications', img: '/images/products_detron/Special-Application.jpg' },
-    { id: 'accessories', title: 'Detron Accessories', img: '/images/products_detron/Accessories.jpg' },
-    { id: 'intelligent-control', title: 'Intelligent Control System', img: '/images/products_detron/Intelligent-control.jpg' }
+    { id: '5-axis', title: '5 Axis Tilt Rotary Tables', img: '/images/products_detron/5th_axis.png' },
+    { id: 'auto-pallet-changer', title: 'Auto Pallet Changers', img: '/images/products_detron/Auto-Pallet-changer.png' },
+    { id: 'special-application', title: 'Special Applications', img: '/images/products_detron/Special-Application.png' },
+    { id: 'accessories', title: 'Detron Accessories', img: '/images/products_detron/Accessories.png' },
+    { id: 'intelligent-control', title: 'Intelligent Control System', img: '/images/products_detron/Intelligent-control.png' }
   ];
 
   return (

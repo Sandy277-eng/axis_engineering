@@ -41,11 +41,11 @@ export default function FiveAxis() {
       });
 
   const RELATED_CATEGORIES = [
-    { id: '4-axis', title: '4 Axis Standard Indexers', img: '/images/products_detron/4th_axis.jpg' },
-    { id: 'auto-pallet-changer', title: 'Auto Pallet Changers', img: '/images/products_detron/Auto-Pallet-changer.jpg' },
-    { id: 'special-application', title: 'Special Applications', img: '/images/products_detron/Special-Application.jpg' },
-    { id: 'accessories', title: 'Detron Accessories', img: '/images/products_detron/Accessories.jpg' },
-    { id: 'intelligent-control', title: 'Intelligent Control System', img: '/images/products_detron/Intelligent-control.jpg' }
+    { id: '4-axis', title: '4 Axis Standard Indexers', img: '/images/products_detron/4th_axis.png' },
+    { id: 'auto-pallet-changer', title: 'Auto Pallet Changers', img: '/images/products_detron/Auto-Pallet-changer.png' },
+    { id: 'special-application', title: 'Special Applications', img: '/images/products_detron/Special-Application.png' },
+    { id: 'accessories', title: 'Detron Accessories', img: '/images/products_detron/Accessories.png' },
+    { id: 'intelligent-control', title: 'Intelligent Control System', img: '/images/products_detron/Intelligent-control.png' }
   ];
 
   return (

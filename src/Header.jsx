@@ -49,11 +49,11 @@ export default function Header({ activePage, scrollToProducts }) {
   }, []);
 
   const MEGA_MENU_ITEMS = [
-    { title: '4TH AXIS', image: '/images/products_detron/4th_axis.jpg', link: '/products/detron/4-axis' },
-    { title: '4TH / 5TH AXIS', image: '/images/products_detron/5th_axis.jpg', link: '/products/detron/5-axis' },
-    { title: 'PALLET CHANGERS', image: '/images/products_detron/Auto-Pallet-changer.jpg', link: '/products/detron/auto-pallet-changer' },
-    { title: 'SPECIAL APPLICATIONS', image: '/images/products_detron/Special-Application.jpg', link: '/products/detron/special-application' },
-    { title: 'ACCESSORIES', image: '/images/products_detron/Accessories.jpg', link: '/products/detron/accessories' }
+    { title: '4TH AXIS', image: '/images/products_detron/4th_axis.png', link: '/products/detron/4-axis' },
+    { title: '4TH / 5TH AXIS', image: '/images/products_detron/5th_axis.png', link: '/products/detron/5-axis' },
+    { title: 'PALLET CHANGERS', image: '/images/products_detron/Auto-Pallet-changer.png', link: '/products/detron/auto-pallet-changer' },
+    { title: 'SPECIAL APPLICATIONS', image: '/images/products_detron/Special-Application.png', link: '/products/detron/special-application' },
+    { title: 'ACCESSORIES', image: '/images/products_detron/Accessories.png', link: '/products/detron/accessories' }
   ];
 
   return (

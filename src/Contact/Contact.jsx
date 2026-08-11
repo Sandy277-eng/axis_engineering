@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import ScrollCanvas from '../animation/ScrollCanvas'; // Adjust path if needed
+import { gsap } from 'gsap';
 
 export default function ContactPage() {
   const navigate = useNavigate();
+  const leftContentRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Entrance transition for the left column content
+    gsap.fromTo(
+      leftContentRef.current,
+      { opacity: 0, x: -50 },
+      { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out' }
+    );
   }, []);
 
   const [countryCode, setCountryCode] = useState('+91');
@@ -33,7 +41,6 @@ export default function ContactPage() {
       
       {/* HEADER NAV (WITH DUAL LOGOS) */}
       <header style={styles.header}>
-        {/* DUAL LOGO GROUP */}
         <div style={styles.dualLogoGroup} onClick={handleBack}>
           <Link to="/" style={styles.logoLink}>
             <img
@@ -59,54 +66,52 @@ export default function ContactPage() {
       {/* MAIN TWO-HALF SPLIT VIEW */}
       <div style={styles.splitWrapper}>
         
-        {/* ================= LEFT HALF: 3D CANVAS ANIMATION (SLOWER SPEED) ================= */}
+        {/* ================= LEFT HALF: FEATURED IMAGE & ABOUT CONTENT ================= */}
         <div style={styles.leftHalf}>
-          
-          <ScrollCanvas 
-            totalFrames={192} 
-            folderPath="/contact-frames" 
-            speed={0.015} 
-          />
-
-          {/* OVERLAY CONTENT */}
-          <div style={styles.leftContentWrapper}>
-            <div style={styles.badgeRow}>
-              <span style={styles.badge}>FEATURED PRODUCT</span>
-            </div>
+          <div ref={leftContentRef} style={styles.leftContentWrapper}>
             
-            <h2 style={styles.leftTitle}>Detron GX-200 Series</h2>
-            <p style={styles.leftSubtitle}>
-              High-Precision 4 & 5 Axis CNC Rotary Tables
-            </p>
-
-            <div style={styles.specBox}>
-              <h3 style={styles.specHeading}>Key Technical Specifications</h3>
-              <div style={styles.specGrid}>
-                <div style={styles.specItem}>
-                  <span style={styles.specLabel}>Table Diameter</span>
-                  <span style={styles.specValue}>200 mm</span>
-                </div>
-                <div style={styles.specItem}>
-                  <span style={styles.specLabel}>Indexing Accuracy</span>
-                  <span style={styles.specValue}>15 arc-sec</span>
-                </div>
-                <div style={styles.specItem}>
-                  <span style={styles.specLabel}>Clamping Torque</span>
-                  <span style={styles.specValue}>310 Nm</span>
-                </div>
-                <div style={styles.specItem}>
-                  <span style={styles.specLabel}>Max Spindle Speed</span>
-                  <span style={styles.specValue}>41.6 rpm</span>
-                </div>
-              </div>
-              <div style={styles.specFooter}>
-                <strong>Construction:</strong> Ultra-rigid hydraulic/pneumatic locking
+            {/* FEATURED IMAGE CONTAINER */}
+            <div style={styles.imageCard}>
+              <img
+                src="/images/axis.jpg"
+                alt="Axis Engineering Solutions Facility"
+                style={styles.featuredImage}
+              />
+              <div style={styles.imageOverlayGradient} />
+              <div style={styles.imageTag}>
+                <span>AUTHORIZED DETRON PARTNER</span>
               </div>
             </div>
 
-            <p style={styles.brandCallout}>
-              Axis Engineering Solutions is the official authorized partner for Detron products in India, providing complete integration, turnkey support, and bespoke fixture designs.
-            </p>
+            {/* DESCRIPTION CONTENT */}
+            <div style={styles.aboutTextContainer}>
+              <h2 style={styles.leftTitle}>Axis Engineering Solutions</h2>
+              <p style={styles.leftSubtitle}>
+                Pioneering Precision Engineering & Industrial Workholding Solutions
+              </p>
+
+              <p style={styles.descriptionParagraph}>
+                With deep domain expertise spanning Electrical, Mechatronics, and Mechanical Engineering, Axis Engineering Solutions provides end-to-end support—from initial component conceptualization and detailed CAD design to turnkey manufacturing integration and sourcing.
+              </p>
+
+              <p style={styles.descriptionParagraph}>
+                As the authorized distributor and technical partner for <strong>Detron Machinery Co., Ltd.</strong> in India, we deliver world-class 4th & 5th axis CNC rotary tables, bespoke hydraulic/pneumatic clamping fixtures, and reliable after-sales technical service.
+              </p>
+
+              {/* HIGHLIGHT BADGES */}
+              <div style={styles.highlightsGrid}>
+                <div style={styles.highlightCard}>
+                  <span style={styles.highlightTitle}>Turnkey Engineering</span>
+                  <span style={styles.highlightSub}>Concept to Commissioning</span>
+                </div>
+                <div style={styles.highlightCard}>
+                  <span style={styles.highlightTitle}>Precision Testing</span>
+                  <span style={styles.highlightSub}>Strict In-House Standards</span>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
@@ -290,7 +295,6 @@ const styles = {
     top: 0,
     zIndex: 100
   },
-  logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
   logoImage: { height: '32px', width: 'auto', display: 'block', objectFit: 'contain' },
   logoImageDetron: { height: '28px', width: 'auto', display: 'block', objectFit: 'contain' },
   logoDivider: { height: '24px', width: '1px', backgroundColor: '#cbd5e1', margin: '0 8px' },
@@ -314,11 +318,11 @@ const styles = {
     minHeight: 'calc(100vh - 60px)'
   },
   
-  /* Left Half Styles */
+  /* LEFT HALF (NEW IMAGE SHOWCASE & DESCRIPTION) */
   leftHalf: {
     flex: '1 1 500px',
     position: 'relative',
-    backgroundColor: '#000000',
+    backgroundColor: '#0a0a0a',
     color: '#ffffff',
     padding: '60px 48px',
     display: 'flex',
@@ -328,69 +332,93 @@ const styles = {
     overflow: 'hidden'
   },
   leftContentWrapper: {
-    position: 'relative',
-    zIndex: 10,
     maxWidth: '560px',
     width: '100%',
     textAlign: 'left'
   },
-  badgeRow: { marginBottom: '16px' },
-  badge: {
+  imageCard: {
+    position: 'relative',
+    borderRadius: '12px',
+    overflow: 'hidden',
+    border: '1px solid #222222',
+    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)',
+    marginBottom: '28px'
+  },
+  featuredImage: {
+    width: '100%',
+    height: '280px',
+    objectFit: 'cover',
+    display: 'block',
+    transition: 'transform 0.5s ease',
+  },
+  imageOverlayGradient: {
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%)'
+  },
+  imageTag: {
+    position: 'absolute',
+    bottom: '16px',
+    left: '16px',
     backgroundColor: ACCENT_COLOR,
     color: '#ffffff',
-    padding: '5px 12px',
-    fontSize: '10px',
+    padding: '6px 14px',
+    borderRadius: '4px',
+    fontSize: '11px',
     fontWeight: '800',
-    letterSpacing: '1.5px',
-    borderRadius: '3px'
+    letterSpacing: '1px'
+  },
+  aboutTextContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '12px'
   },
   leftTitle: { 
-    fontSize: '38px', 
+    fontSize: '32px', 
     fontWeight: '900', 
-    margin: '0 0 8px 0', 
+    margin: 0, 
     color: '#ffffff', 
-    letterSpacing: '-0.5px',
-    textShadow: '0 2px 10px rgba(0,0,0,0.5)'
+    letterSpacing: '-0.5px'
   },
   leftSubtitle: { 
     fontSize: '15px', 
-    color: '#cbd5e1', 
-    marginBottom: '32px', 
-    fontWeight: '500',
-    textShadow: '0 1px 5px rgba(0,0,0,0.5)'
+    color: ACCENT_COLOR, 
+    fontWeight: '700',
+    marginBottom: '8px'
   },
-  specBox: {
-    backgroundColor: 'rgba(18, 18, 18, 0.8)',
-    backdropFilter: 'blur(8px)',
-    borderLeft: `4px solid ${ACCENT_COLOR}`,
-    padding: '24px',
-    borderRadius: '6px',
-    marginBottom: '28px',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
-    border: '1px solid #222',
-    borderLeftWidth: '4px'
+  descriptionParagraph: {
+    fontSize: '14px',
+    color: '#cbd5e1',
+    lineHeight: '1.7',
+    margin: 0
   },
-  specHeading: { fontSize: '13px', fontWeight: '800', color: '#ffffff', marginBottom: '16px', letterSpacing: '0.5px', textTransform: 'uppercase' },
-  specGrid: {
+  highlightsGrid: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gap: '16px',
-    marginBottom: '16px',
-    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-    paddingBottom: '16px'
+    marginTop: '16px'
   },
-  specItem: { display: 'flex', flexDirection: 'column' },
-  specLabel: { fontSize: '11px', color: '#94a3b8', fontWeight: '600' },
-  specValue: { fontSize: '14px', color: '#ffffff', fontWeight: '700', marginTop: '2px' },
-  specFooter: { fontSize: '12px', color: '#cbd5e1' },
-  brandCallout: { 
-    fontSize: '13px', 
-    color: '#cbd5e1', 
-    lineHeight: '1.7',
-    textShadow: '0 1px 3px rgba(0,0,0,0.5)'
+  highlightCard: {
+    backgroundColor: '#121212',
+    border: '1px solid #222222',
+    borderLeft: `4px solid ${ACCENT_COLOR}`,
+    padding: '14px 16px',
+    borderRadius: '6px',
+    display: 'flex',
+    flexDirection: 'column'
   },
-  
-  /* Right Half Styles */
+  highlightTitle: {
+    fontSize: '13px',
+    fontWeight: '800',
+    color: '#ffffff'
+  },
+  highlightSub: {
+    fontSize: '11px',
+    color: '#94a3b8',
+    marginTop: '2px'
+  },
+
+  /* RIGHT HALF (FORM & CARDS) */
   rightHalf: {
     flex: '1 1 520px',
     backgroundColor: '#050505',
@@ -425,7 +453,6 @@ const styles = {
     padding: '16px 20px',
     borderRadius: '8px',
     border: '1px solid #1a1a1a',
-    boxShadow: 'none',
     textAlign: 'left'
   },
   cardIconBox: {
