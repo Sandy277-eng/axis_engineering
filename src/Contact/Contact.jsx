@@ -1,10 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 export default function ContactPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const leftContentRef = useRef(null);
+
+  const searchParams = new URLSearchParams(location.search);
+  const initialProduct = searchParams.get('product') || '';
+
+  const [countryCode, setCountryCode] = useState('+91');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    productInterest: initialProduct ? `Detron ${initialProduct}` : 'Detron Rotary Tables',
+    message: initialProduct ? `Hi, I am interested in Detron ${initialProduct}. Please share technical catalog, price quotation and delivery lead time.` : ''
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,16 +30,6 @@ export default function ContactPage() {
       { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out' }
     );
   }, []);
-
-  const [countryCode, setCountryCode] = useState('+91');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    productInterest: 'Detron Rotary Tables',
-    message: ''
-  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,15 +70,15 @@ export default function ContactPage() {
       {/* MAIN TWO-HALF SPLIT VIEW */}
       <div style={styles.splitWrapper}>
         
-        {/* ================= LEFT HALF: FEATURED IMAGE & ABOUT CONTENT ================= */}
+        {/* ================= LEFT HALF: WHITE BACKGROUND CONTENT ================= */}
         <div style={styles.leftHalf}>
           <div ref={leftContentRef} style={styles.leftContentWrapper}>
             
-            {/* FEATURED IMAGE CONTAINER */}
+            {/* FEATURED IMAGE CONTAINER WITH ENHANCED SHADOW */}
             <div style={styles.imageCard}>
               <img
-                src="/images/axis.jpg"
-                alt="Axis Engineering Solutions Facility"
+                src="/logo_axis/axis_industry image.png"
+                alt="Axis Engineering Solutions Industry Showcase"
                 style={styles.featuredImage}
               />
               <div style={styles.imageOverlayGradient} />
@@ -83,7 +87,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* DESCRIPTION CONTENT */}
+            {/* DESCRIPTION CONTENT (WITH CONTAINER BORDER) */}
             <div style={styles.aboutTextContainer}>
               <h2 style={styles.leftTitle}>Axis Engineering Solutions</h2>
               <p style={styles.leftSubtitle}>
@@ -115,7 +119,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* ================= RIGHT HALF: INQUIRY PANEL & CONTACT CARDS ================= */}
+        {/* ================= RIGHT HALF: DARK INQUIRY PANEL & CONTACT CARDS ================= */}
         <div style={styles.rightHalf}>
           <div style={styles.rightContentWrapper}>
             
@@ -318,17 +322,17 @@ const styles = {
     minHeight: 'calc(100vh - 60px)'
   },
   
-  /* LEFT HALF (NEW IMAGE SHOWCASE & DESCRIPTION) */
+  /* LEFT HALF (WHITE BACKGROUND SHOWCASE) */
   leftHalf: {
     flex: '1 1 500px',
     position: 'relative',
-    backgroundColor: '#0a0a0a',
-    color: '#ffffff',
+    backgroundColor: '#ffffff',
+    color: '#1e293b',
     padding: '60px 48px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRight: '1px solid #1a1a1a',
+    borderRight: '1px solid #e2e8f0',
     overflow: 'hidden'
   },
   leftContentWrapper: {
@@ -336,25 +340,27 @@ const styles = {
     width: '100%',
     textAlign: 'left'
   },
+
+  /* IMAGE CONTAINER WITH ENHANCED SHADOW */
   imageCard: {
     position: 'relative',
     borderRadius: '12px',
     overflow: 'hidden',
-    border: '1px solid #222222',
-    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)',
-    marginBottom: '28px'
+    border: '1px solid #e2e8f0',
+    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+    marginBottom: '28px',
   },
   featuredImage: {
     width: '100%',
     height: '280px',
     objectFit: 'cover',
     display: 'block',
-    transition: 'transform 0.5s ease',
+    transition: 'transform 0.5s ease'
   },
   imageOverlayGradient: {
     position: 'absolute',
     inset: 0,
-    background: 'linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%)'
+    background: 'linear-gradient(180deg, rgba(255,255,255,0) 50%, rgba(0,0,0,0.6) 100%)'
   },
   imageTag: {
     position: 'absolute',
@@ -368,16 +374,23 @@ const styles = {
     fontWeight: '800',
     letterSpacing: '1px'
   },
+
+  /* DETAILS CONTAINER WITH BORDER & BACKGROUND */
   aboutTextContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px'
+    gap: '12px',
+    padding: '24px',
+    backgroundColor: '#f8fafc',
+    border: '4px solid #e2e8f0',
+    borderRadius: '12px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.03)'
   },
   leftTitle: { 
     fontSize: '32px', 
     fontWeight: '900', 
     margin: 0, 
-    color: '#ffffff', 
+    color: '#0f172a',
     letterSpacing: '-0.5px'
   },
   leftSubtitle: { 
@@ -388,7 +401,7 @@ const styles = {
   },
   descriptionParagraph: {
     fontSize: '14px',
-    color: '#cbd5e1',
+    color: '#334155',
     lineHeight: '1.7',
     margin: 0
   },
@@ -399,8 +412,8 @@ const styles = {
     marginTop: '16px'
   },
   highlightCard: {
-    backgroundColor: '#121212',
-    border: '1px solid #222222',
+    backgroundColor: '#ffffff',
+    border: '1px solid #e2e8f0',
     borderLeft: `4px solid ${ACCENT_COLOR}`,
     padding: '14px 16px',
     borderRadius: '6px',
@@ -410,15 +423,15 @@ const styles = {
   highlightTitle: {
     fontSize: '13px',
     fontWeight: '800',
-    color: '#ffffff'
+    color: '#0f172a'
   },
   highlightSub: {
     fontSize: '11px',
-    color: '#94a3b8',
+    color: '#64748b',
     marginTop: '2px'
   },
 
-  /* RIGHT HALF (FORM & CARDS) */
+  /* RIGHT HALF (DARK INQUIRY PANEL) */
   rightHalf: {
     flex: '1 1 520px',
     backgroundColor: '#050505',
@@ -500,20 +513,20 @@ const styles = {
   },
   countryDropdown: {
     position: 'relative',
-    backgroundColor: '#161616',
-    borderRight: '1px solid #333333',
+    backgroundColor: '#ffffff', // Set background to clean white
+    borderRight: '1px solid #cbd5e1',
     display: 'flex',
     alignItems: 'center',
     paddingRight: '6px'
   },
   countrySelect: {
     appearance: 'none',
-    backgroundColor: 'transparent',
+    backgroundColor: '#ffffff', // Set select element background to white
     border: 'none',
     padding: '11px 20px 11px 10px',
     fontSize: '12px',
     fontWeight: '700',
-    color: '#ffffff',
+    color: '#000000', // Crisp black text
     outline: 'none',
     cursor: 'pointer'
   },
@@ -521,7 +534,7 @@ const styles = {
     position: 'absolute',
     right: '8px',
     fontSize: '8px',
-    color: '#94a3b8',
+    color: '#333333', // Dark arrow icon for contrast on white
     pointerEvents: 'none'
   },
   phoneInput: {

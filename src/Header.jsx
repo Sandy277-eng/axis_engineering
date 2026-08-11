@@ -11,15 +11,24 @@ export default function Header({ activePage, scrollToProducts }) {
   // Flatten all products for searching
   const allProductsList = useMemo(() => {
     const list = [];
+    const seenProds = new Set();
     Object.entries(PRODUCT_DATABASE).forEach(([catId, catObj]) => {
+      if (catId === 'special-applications') return; // skip alias
       catObj.items.forEach(sizeItem => {
         sizeItem.products.forEach(prod => {
-          list.push({
-            name: prod.name,
-            categoryId: catId,
-            categoryTitle: catObj.title,
-            image: prod.image
-          });
+          const uniqueKey = `${catId}_${prod.name}`;
+          if (!seenProds.has(uniqueKey)) {
+            seenProds.add(uniqueKey);
+            list.push({
+              name: prod.name,
+              badge: prod.badge || '',
+              description: prod.description || '',
+              size: sizeItem.size || '',
+              categoryId: catId,
+              categoryTitle: catObj.title,
+              image: prod.image
+            });
+          }
         });
       });
     });
@@ -27,12 +36,32 @@ export default function Header({ activePage, scrollToProducts }) {
   }, []);
 
   const filteredSuggestions = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
-    if (!query) return [];
-    return allProductsList.filter(prod => 
-      prod.name.toLowerCase().includes(query) ||
-      prod.categoryTitle.toLowerCase().includes(query)
-    ).slice(0, 8);
+    const rawQuery = searchQuery.trim().toLowerCase();
+    if (!rawQuery) return [];
+    
+    // Alphanumeric query without special chars
+    const cleanQuery = rawQuery.replace(/[^a-z0-9]/g, '');
+
+    return allProductsList.filter(prod => {
+      const nameLower = prod.name.toLowerCase();
+      const badgeLower = prod.badge.toLowerCase();
+      const descLower = prod.description.toLowerCase();
+      const sizeLower = prod.size.toLowerCase();
+      const catLower = prod.categoryTitle.toLowerCase();
+      
+      const cleanName = nameLower.replace(/[^a-z0-9]/g, '');
+      const cleanBadge = badgeLower.replace(/[^a-z0-9]/g, '');
+
+      return (
+        nameLower.includes(rawQuery) ||
+        badgeLower.includes(rawQuery) ||
+        descLower.includes(rawQuery) ||
+        sizeLower.includes(rawQuery) ||
+        catLower.includes(rawQuery) ||
+        (cleanQuery.length > 1 && cleanName.includes(cleanQuery)) ||
+        (cleanQuery.length > 1 && cleanBadge.includes(cleanQuery))
+      );
+    }).slice(0, 10);
   }, [searchQuery, allProductsList]);
 
   // Click outside to close dropdown
@@ -53,7 +82,8 @@ export default function Header({ activePage, scrollToProducts }) {
     { title: '4TH / 5TH AXIS', image: '/images/products_detron/5th_axis.png', link: '/products/detron/5-axis' },
     { title: 'PALLET CHANGERS', image: '/images/products_detron/Auto-Pallet-changer.png', link: '/products/detron/auto-pallet-changer' },
     { title: 'SPECIAL APPLICATIONS', image: '/images/products_detron/Special-Application.png', link: '/products/detron/special-application' },
-    { title: 'ACCESSORIES', image: '/images/products_detron/Accessories.png', link: '/products/detron/accessories' }
+    { title: 'ACCESSORIES', image: '/images/products_detron/Accessories.png', link: '/products/detron/accessories' },
+    { title: 'INTELLIGENT CONTROL', image: '/images/products_detron/Intelligent-control.png', link: '/products/detron/intelligent-control' }
   ];
 
   return (
@@ -96,7 +126,7 @@ export default function Header({ activePage, scrollToProducts }) {
                   <div
                     key={idx}
                     onClick={() => {
-                      navigate(`/products/detron/${suggestion.categoryId}/${suggestion.name}`);
+                      navigate(`/products/detron/${suggestion.categoryId}/${encodeURIComponent(suggestion.name)}`);
                       setSearchQuery('');
                       setShowMegaMenu(false);
                     }}

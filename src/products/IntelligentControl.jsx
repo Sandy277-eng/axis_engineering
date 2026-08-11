@@ -34,7 +34,6 @@ export default function IntelligentControl() {
 
   return (
     <div style={styles.container}>
-      {/* CSS STYLES FOR PREMIUM RED ACCENT TRANSITIONS & DARK THEME */}
       <style>{`
         .aishmo-filter-btn {
           background: #121212;
@@ -43,85 +42,69 @@ export default function IntelligentControl() {
           padding: 10px 20px;
           font-weight: 700;
           font-size: 13px;
+          border-radius: 4px;
           cursor: pointer;
           transition: all 0.3s ease;
-          border-radius: 4px;
-          text-transform: uppercase;
         }
-        .aishmo-filter-btn.active, .aishmo-filter-btn:hover {
-          background: #E30613;
-          color: #ffffff;
+        .aishmo-filter-btn:hover {
           border-color: #E30613;
-          box-shadow: 0 4px 10px rgba(227, 6, 19, 0.25);
+          color: #E30613;
         }
+        .aishmo-filter-btn.active {
+          background-color: #E30613;
+          border-color: #E30613;
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(227, 6, 19, 0.4);
+        }
+        
         .aishmo-card {
-          position: relative;
           background: #0a0a0a;
           border: 1px solid #1a1a1a;
           border-radius: 12px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          width: 100%;
-        }
-        .aishmo-card::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 0%;
-          width: 100%;
-          background: #E30613;
-          transition: height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-          z-index: 1;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         .aishmo-card:hover {
+          background-color: #E30613;
+          border-color: #E30613;
           transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-        .aishmo-card:hover::after {
-          height: 100%;
+          box-shadow: 0 20px 35px rgba(227, 6, 19, 0.25);
         }
         .aishmo-card-img-wrapper {
           position: relative;
-          height: 240px;
+          height: 220px;
           background: #111111;
-          overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 2;
-          border-bottom: 1px solid #1a1a1a;
+          padding: 16px;
+          overflow: hidden;
         }
         .aishmo-card-img {
           width: auto;
           max-width: 85%;
           height: auto;
-          max-height: 80%;
+          max-height: 85%;
           object-fit: contain;
           transition: transform 0.4s ease;
-          padding: 16px;
         }
         .aishmo-card:hover .aishmo-card-img {
-          transform: scale(1.07);
+          transform: scale(1.08);
         }
         .aishmo-card-content {
-          position: relative;
-          z-index: 3;
           padding: 24px;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
-          text-align: left;
         }
         .aishmo-card-title {
-          font-size: 20px;
+          font-size: 17px;
           font-weight: 800;
           color: #ffffff;
-          margin: 0 0 6px 0;
+          margin: 0 0 8px 0;
           transition: color 0.3s ease;
         }
         .aishmo-card-badge {
@@ -198,39 +181,16 @@ export default function IntelligentControl() {
           transition: all 0.3s ease;
           border: 1px solid #E30613;
         }
-        .aishmo-card:hover .aishmo-card-title {
-          color: #ffffff;
-        }
-        .aishmo-card:hover .aishmo-card-badge {
-          color: #E30613;
-          background: #ffffff;
-        }
-        .aishmo-card:hover .aishmo-card-desc {
-          color: #f1f5f9;
-        }
-        .aishmo-card:hover .aishmo-card-specs {
-          border-color: rgba(255, 255, 255, 0.2);
-        }
-        .aishmo-card:hover .aishmo-spec-key {
-          color: #e2e8f0;
-        }
-        .aishmo-card:hover .aishmo-spec-val {
-          color: #ffffff;
-        }
-        .aishmo-card:hover .aishmo-btn-view {
-          background: #ffffff;
-          color: #E30613;
-          border-color: #ffffff;
-        }
-        .aishmo-card:hover .aishmo-btn-video {
-          color: #ffffff;
-          border-color: #ffffff;
-        }
-        .aishmo-card:hover .aishmo-btn-video:hover {
-          background: rgba(255, 255, 255, 0.15);
-        }
-
-        /* RELATED PRODUCT CARDS styling */
+        .aishmo-card:hover .aishmo-card-title { color: #ffffff; }
+        .aishmo-card:hover .aishmo-card-badge { color: #E30613; background: #ffffff; }
+        .aishmo-card:hover .aishmo-card-desc { color: #ffffff; }
+        .aishmo-card:hover .aishmo-card-specs { border-color: rgba(255, 255, 255, 0.2); }
+        .aishmo-card:hover .aishmo-spec-key { color: #ffffff; }
+        .aishmo-card:hover .aishmo-spec-val { color: #ffffff; }
+        .aishmo-card:hover .aishmo-btn-view { background: #ffffff; color: #E30613; border-color: #ffffff; }
+        .aishmo-card:hover .aishmo-btn-video { color: #ffffff; border-color: #ffffff; }
+        .aishmo-card:hover .aishmo-btn-video:hover { background: rgba(255, 255, 255, 0.15); }
+        
         .related-card {
           position: relative;
           background: #0a0a0a;
@@ -306,31 +266,27 @@ export default function IntelligentControl() {
 
       <Header activePage="detron" />
 
-      {/* HEADER SPACER */}
       <div style={{ height: '140px' }} />
 
-      {/* HERO BANNER */}
       <section style={styles.heroSection}>
         <div style={styles.heroOverlay} />
         <div style={styles.heroContent}>
           <div style={styles.breadcrumb}>
             <Link to="/" style={styles.breadLink}>Home</Link> &raquo; 
             <Link to="/products/detron" style={styles.breadLink}> Detron Products</Link> &raquo; 
-            <span style={styles.breadActive}> Intelligent Control Systems</span>
+            <span style={styles.breadActive}> Intelligent Control System</span>
           </div>
           <h1 style={styles.heroTitle}>{categoryData.title}</h1>
           <p style={styles.heroSub}>{categoryData.description}</p>
         </div>
       </section>
 
-      {/* DETRON BRAND HEADER BUTTON */}
       <div style={styles.brandButtonContainer}>
         <div style={styles.brandButton}>DETRON IND.</div>
       </div>
 
-      {/* FILTER TABS */}
       <div style={styles.filterSection}>
-        <h3 style={styles.filterHeading}>Filter by Control Type:</h3>
+        <h3 style={styles.filterHeading}>Filter by Control Module:</h3>
         <div style={styles.filterButtonGroup}>
           {sizeFilters.map(size => (
             <button
@@ -338,71 +294,128 @@ export default function IntelligentControl() {
               className={`aishmo-filter-btn ${selectedSize === size ? 'active' : ''}`}
               onClick={() => handleSizeClick(size)}
             >
-              {size === 'All' ? 'All Controllers' : size}
+              {size === 'All' ? 'All Control Modules' : size}
             </button>
           ))}
         </div>
       </div>
 
-      {/* PRODUCT LIST SECTION */}
       <section style={styles.productSection}>
         <div style={styles.productWrapper}>
-          {filteredItems.map((group, groupIdx) => (
-            <div key={groupIdx} style={{ marginBottom: '50px', width: '100%' }}>
-              <div style={styles.groupHeader}>
-                <h2 style={styles.groupHeading}>{group.size}</h2>
-                <div style={styles.groupLine} />
-              </div>
-
-              <div style={styles.cardGrid}>
-                {group.products.map((prod, prodIdx) => (
-                  <div key={prodIdx} className="aishmo-card">
-                    <div className="aishmo-card-img-wrapper">
-                      <img 
-                        src={prod.image} 
-                        alt={prod.name} 
-                        className="aishmo-card-img" 
-                        onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
-                      />
+          {selectedSize === 'All' ? (
+            <div style={styles.cardGrid}>
+              {categoryData.items.flatMap(group => 
+                group.products.map(prod => ({ ...prod, groupSize: group.size }))
+              ).map((prod, prodIdx) => (
+                <div key={prodIdx} className="aishmo-card">
+                  <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} className="aishmo-card-img-wrapper" style={{ display: 'block' }}>
+                    <img 
+                      src={prod.image} 
+                      alt={prod.name} 
+                      className="aishmo-card-img" 
+                      onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
+                    />
+                  </Link>
+                  <div className="aishmo-card-content">
+                    <span style={{ color: '#E30613', fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '6px' }}>
+                      {prod.groupSize}
+                    </span>
+                    <h4 className="aishmo-card-title">
+                      <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        {prod.name}
+                      </Link>
+                    </h4>
+                    <span className="aishmo-card-badge">{prod.badge}</span>
+                    <p className="aishmo-card-desc">{prod.description}</p>
+                    
+                    <div className="aishmo-card-specs">
+                      {Object.entries(prod.specs).slice(0, 3).map(([key, val]) => (
+                        <div key={key} className="aishmo-spec-row">
+                          <span className="aishmo-spec-key">{key}</span>
+                          <span className="aishmo-spec-val">{val}</span>
+                        </div>
+                      ))}
                     </div>
-                    <div className="aishmo-card-content">
-                      <h4 className="aishmo-card-title">{prod.name}</h4>
-                      <span className="aishmo-card-badge">{prod.badge}</span>
-                      <p className="aishmo-card-desc">{prod.description}</p>
-                      
-                      <div className="aishmo-card-specs">
-                        {Object.entries(prod.specs).slice(0, 3).map(([key, val]) => (
-                          <div key={key} className="aishmo-spec-row">
-                            <span className="aishmo-spec-key">{key}</span>
-                            <span className="aishmo-spec-val">{val}</span>
-                          </div>
-                        ))}
-                      </div>
 
-                      <div className="aishmo-btn-group">
-                        <Link 
-                          to={`/products/detron/${CATEGORY_ID}/${prod.name}`} 
-                          className="aishmo-btn-view"
-                        >
-                          View Product
-                        </Link>
-                        <a 
-                          href="/contact" 
-                          className="aishmo-btn-video"
-                        >
-                          Enquire Now
-                        </a>
-                      </div>
+                    <div className="aishmo-btn-group">
+                      <Link 
+                        to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} 
+                        className="aishmo-btn-view"
+                      >
+                        View Product
+                      </Link>
+                      <Link 
+                        to={`/contact?product=${encodeURIComponent(prod.name)}`} 
+                        className="aishmo-btn-video"
+                      >
+                        Enquire Now
+                      </Link>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            filteredItems.map((group, groupIdx) => (
+              <div key={groupIdx} style={{ marginBottom: '50px', width: '100%' }}>
+                <div style={styles.groupHeader}>
+                  <h2 style={styles.groupHeading}>{group.size}</h2>
+                  <div style={styles.groupLine} />
+                </div>
+
+                <div style={styles.cardGrid}>
+                  {group.products.map((prod, prodIdx) => (
+                    <div key={prodIdx} className="aishmo-card">
+                      <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} className="aishmo-card-img-wrapper" style={{ display: 'block' }}>
+                        <img 
+                          src={prod.image} 
+                          alt={prod.name} 
+                          className="aishmo-card-img" 
+                          onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
+                        />
+                      </Link>
+                      <div className="aishmo-card-content">
+                        <h4 className="aishmo-card-title">
+                          <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            {prod.name}
+                          </Link>
+                        </h4>
+                        <span className="aishmo-card-badge">{prod.badge}</span>
+                        <p className="aishmo-card-desc">{prod.description}</p>
+                        
+                        <div className="aishmo-card-specs">
+                          {Object.entries(prod.specs).slice(0, 3).map(([key, val]) => (
+                            <div key={key} className="aishmo-spec-row">
+                              <span className="aishmo-spec-key">{key}</span>
+                              <span className="aishmo-spec-val">{val}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="aishmo-btn-group">
+                          <Link 
+                            to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} 
+                            className="aishmo-btn-view"
+                          >
+                            View Product
+                          </Link>
+                          <Link 
+                            to={`/contact?product=${encodeURIComponent(prod.name)}`} 
+                            className="aishmo-btn-video"
+                          >
+                            Enquire Now
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </section>
 
-      {/* RELATED PRODUCTS */}
       <section style={styles.relatedSection}>
         <div style={styles.relatedWrapper}>
           <h2 style={styles.relatedHeading}>Related Products</h2>

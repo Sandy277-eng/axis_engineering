@@ -16,15 +16,19 @@ export default function FiveAxis() {
 
   // Extract size labels for filters
   const sizeFilters = ['All', ...categoryData.items.map(item => {
-    if (item.size.includes('100-125mm')) return '100-125mm';
+    if (item.size.includes('100mm')) return '100mm';
+    if (item.size.includes('125mm')) return '125mm';
     if (item.size.includes('170mm')) return '170mm';
     if (item.size.includes('210mm')) return '210mm';
     if (item.size.includes('255mm')) return '255mm';
     if (item.size.includes('320mm')) return '320mm';
     if (item.size.includes('410mm')) return '410mm';
     if (item.size.includes('500mm')) return '500mm';
-    if (item.size.includes('Compact')) return 'Compact Multi-Spindle';
-    if (item.size.includes('Trunnion')) return 'Trunnion Multi-Spindle';
+    if (item.size.includes('650') || item.size.includes('720')) return '650-720mm';
+    if (item.size.includes('Compact Type, Multi-Spindle')) return 'Compact Multi-Spindle';
+    if (item.size.includes('GTFA Trunnion Type, Multi-Spindle')) return 'Trunnion Multi-Spindle';
+    if (item.size.includes('RCF') || item.size.includes('RFX')) return 'RCF Series';
+    if (item.size.includes('RCTFE')) return 'RCTFE Series';
     return item.size;
   })];
 
@@ -35,8 +39,19 @@ export default function FiveAxis() {
   const filteredItems = selectedSize === 'All' 
     ? categoryData.items 
     : categoryData.items.filter(item => {
+        if (selectedSize === '100mm') return item.size.includes('100mm');
+        if (selectedSize === '125mm') return item.size.includes('125mm');
+        if (selectedSize === '170mm') return item.size.includes('170mm');
+        if (selectedSize === '210mm') return item.size.includes('210mm');
+        if (selectedSize === '255mm') return item.size.includes('255mm');
+        if (selectedSize === '320mm') return item.size.includes('320mm');
+        if (selectedSize === '410mm') return item.size.includes('410mm');
+        if (selectedSize === '500mm') return item.size.includes('500mm');
+        if (selectedSize === '650-720mm') return item.size.includes('650') || item.size.includes('720');
         if (selectedSize === 'Compact Multi-Spindle') return item.size.includes('Compact');
-        if (selectedSize === 'Trunnion Multi-Spindle') return item.size.includes('Trunnion');
+        if (selectedSize === 'Trunnion Multi-Spindle') return item.size.includes('GTFA Trunnion');
+        if (selectedSize === 'RCF Series') return item.size.includes('RCF') || item.size.includes('RFX');
+        if (selectedSize === 'RCTFE Series') return item.size.includes('RCTFE');
         return item.size.toLowerCase().includes(selectedSize.toLowerCase());
       });
 
@@ -364,64 +379,129 @@ export default function FiveAxis() {
       {/* PRODUCT LIST SECTION */}
       <section style={styles.productSection}>
         <div style={styles.productWrapper}>
-          {filteredItems.map((group, groupIdx) => (
-            <div key={groupIdx} style={{ marginBottom: '50px', width: '100%' }}>
-              <div style={styles.groupHeader}>
-                <h2 style={styles.groupHeading}>{group.size}</h2>
-                <div style={styles.groupLine} />
-              </div>
-
-              <div style={styles.cardGrid}>
-                {group.products.map((prod, prodIdx) => (
-                  <div key={prodIdx} className="aishmo-card">
-                    <div className="aishmo-card-img-wrapper">
-                      <img 
-                        src={prod.image} 
-                        alt={prod.name} 
-                        className="aishmo-card-img" 
-                        onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
-                      />
+          {selectedSize === 'All' ? (
+            <div style={styles.cardGrid}>
+              {categoryData.items.flatMap(group => 
+                group.products.map(prod => ({ ...prod, groupSize: group.size }))
+              ).map((prod, prodIdx) => (
+                <div key={prodIdx} className="aishmo-card">
+                  <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} className="aishmo-card-img-wrapper" style={{ display: 'block' }}>
+                    <img 
+                      src={prod.image} 
+                      alt={prod.name} 
+                      className="aishmo-card-img" 
+                      onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
+                    />
+                  </Link>
+                  <div className="aishmo-card-content">
+                    <span style={{ color: '#E30613', fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '6px' }}>
+                      {prod.groupSize.split('(')[0].trim()}
+                    </span>
+                    <h4 className="aishmo-card-title">
+                      <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        {prod.name}
+                      </Link>
+                    </h4>
+                    <span className="aishmo-card-badge">{prod.badge}</span>
+                    <p className="aishmo-card-desc">{prod.description}</p>
+                    
+                    <div className="aishmo-card-specs">
+                      <div className="aishmo-spec-row">
+                        <span className="aishmo-spec-key">Table Diameter</span>
+                        <span className="aishmo-spec-val">{prod.specs['Worktable Diameter'] || prod.specs['Table Diameter'] || 'N/A'}</span>
+                      </div>
+                      <div className="aishmo-spec-row">
+                        <span className="aishmo-spec-key">Tilt Range</span>
+                        <span className="aishmo-spec-val">{prod.specs['Tilting Angle Range'] || prod.specs['Tilt Range'] || 'N/A'}</span>
+                      </div>
+                      <div className="aishmo-spec-row">
+                        <span className="aishmo-spec-key">Braking Torque</span>
+                        <span className="aishmo-spec-val">{prod.specs['Clamping Torque (Rotary / Tilt)'] || prod.specs['Clamping Torque (Rot / Tilt)'] || prod.specs['Clamping Torque (Rot/Tilt)'] || 'N/A'}</span>
+                      </div>
                     </div>
-                    <div className="aishmo-card-content">
-                      <h4 className="aishmo-card-title">{prod.name}</h4>
-                      <span className="aishmo-card-badge">{prod.badge}</span>
-                      <p className="aishmo-card-desc">{prod.description}</p>
-                      
-                      <div className="aishmo-card-specs">
-                        <div className="aishmo-spec-row">
-                          <span className="aishmo-spec-key">Table Diameter</span>
-                          <span className="aishmo-spec-val">{prod.specs['Table Diameter'] || 'N/A'}</span>
-                        </div>
-                        <div className="aishmo-spec-row">
-                          <span className="aishmo-spec-key">Tilt Range</span>
-                          <span className="aishmo-spec-val">{prod.specs['Tilt Range'] || 'N/A'}</span>
-                        </div>
-                        <div className="aishmo-spec-row">
-                          <span className="aishmo-spec-key">Braking Torque</span>
-                          <span className="aishmo-spec-val">{prod.specs['Clamping Torque (Rot/Tilt)'] || 'N/A'}</span>
-                        </div>
-                      </div>
 
-                      <div className="aishmo-btn-group">
-                        <Link 
-                          to={`/products/detron/${CATEGORY_ID}/${prod.name}`} 
-                          className="aishmo-btn-view"
-                        >
-                          View Product
-                        </Link>
-                        <a 
-                          href="/contact" 
-                          className="aishmo-btn-video"
-                        >
-                          Enquire Now
-                        </a>
-                      </div>
+                    <div className="aishmo-btn-group">
+                      <Link 
+                        to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} 
+                        className="aishmo-btn-view"
+                      >
+                        View Product
+                      </Link>
+                      <Link 
+                        to={`/contact?product=${encodeURIComponent(prod.name)}`} 
+                        className="aishmo-btn-video"
+                      >
+                        Enquire Now
+                      </Link>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            filteredItems.map((group, groupIdx) => (
+              <div key={groupIdx} style={{ marginBottom: '50px', width: '100%' }}>
+                <div style={styles.groupHeader}>
+                  <h2 style={styles.groupHeading}>{group.size}</h2>
+                  <div style={styles.groupLine} />
+                </div>
+
+                <div style={styles.cardGrid}>
+                  {group.products.map((prod, prodIdx) => (
+                    <div key={prodIdx} className="aishmo-card">
+                      <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} className="aishmo-card-img-wrapper" style={{ display: 'block' }}>
+                        <img 
+                          src={prod.image} 
+                          alt={prod.name} 
+                          className="aishmo-card-img" 
+                          onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
+                        />
+                      </Link>
+                      <div className="aishmo-card-content">
+                        <h4 className="aishmo-card-title">
+                          <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            {prod.name}
+                          </Link>
+                        </h4>
+                        <span className="aishmo-card-badge">{prod.badge}</span>
+                        <p className="aishmo-card-desc">{prod.description}</p>
+                        
+                        <div className="aishmo-card-specs">
+                          <div className="aishmo-spec-row">
+                            <span className="aishmo-spec-key">Table Diameter</span>
+                            <span className="aishmo-spec-val">{prod.specs['Worktable Diameter'] || prod.specs['Table Diameter'] || 'N/A'}</span>
+                          </div>
+                          <div className="aishmo-spec-row">
+                            <span className="aishmo-spec-key">Tilt Range</span>
+                            <span className="aishmo-spec-val">{prod.specs['Tilting Angle Range'] || prod.specs['Tilt Range'] || 'N/A'}</span>
+                          </div>
+                          <div className="aishmo-spec-row">
+                            <span className="aishmo-spec-key">Braking Torque</span>
+                            <span className="aishmo-spec-val">{prod.specs['Clamping Torque (Rotary / Tilt)'] || prod.specs['Clamping Torque (Rot / Tilt)'] || prod.specs['Clamping Torque (Rot/Tilt)'] || 'N/A'}</span>
+                          </div>
+                        </div>
+
+                        <div className="aishmo-btn-group">
+                          <Link 
+                            to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} 
+                            className="aishmo-btn-view"
+                          >
+                            View Product
+                          </Link>
+                          <Link 
+                            to={`/contact?product=${encodeURIComponent(prod.name)}`} 
+                            className="aishmo-btn-video"
+                          >
+                            Enquire Now
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </section>
 

@@ -19,31 +19,55 @@ export default function DetronModelDetailPage() {
     window.scrollTo(0, 0);
   }, [productId, modelName]);
 
-  // Find the product in our database
-  const categoryData = PRODUCT_DATABASE[productId];
-  if (!categoryData) {
-    return (
-      <div style={styles.errorContainer}>
-        <h2>Category Not Found</h2>
-        <Link to="/products/detron" style={styles.errorBtn}>Back to Products</Link>
-      </div>
-    );
-  }
+  // Normalize decoded model name
+  const rawModelName = modelName ? decodeURIComponent(modelName).trim() : '';
+  const normalizedModelName = rawModelName.toLowerCase();
 
+  // Find the product in our database
+  let categoryData = PRODUCT_DATABASE[productId];
   let product = null;
   let sizeGroup = null;
 
-  for (const item of categoryData.items) {
-    const found = item.products.find(p => p.name === modelName);
-    if (found) {
-      product = found;
-      sizeGroup = item.size;
-      break;
+  if (categoryData) {
+    for (const item of categoryData.items) {
+      const found = item.products.find(p => 
+        p.name.trim().toLowerCase() === normalizedModelName ||
+        p.name.trim() === rawModelName ||
+        encodeURIComponent(p.name).toLowerCase() === normalizedModelName ||
+        p.name.toLowerCase().includes(normalizedModelName) ||
+        normalizedModelName.includes(p.name.toLowerCase())
+      );
+      if (found) {
+        product = found;
+        sizeGroup = item.size;
+        break;
+      }
+    }
+  }
+
+  // If not found in current category, search all categories in database
+  if (!product) {
+    for (const catVal of Object.values(PRODUCT_DATABASE)) {
+      for (const item of catVal.items) {
+        const found = item.products.find(p => 
+          p.name.trim().toLowerCase() === normalizedModelName ||
+          p.name.trim() === rawModelName ||
+          p.name.toLowerCase().includes(normalizedModelName) ||
+          normalizedModelName.includes(p.name.toLowerCase())
+        );
+        if (found) {
+          product = found;
+          sizeGroup = item.size;
+          categoryData = catVal;
+          break;
+        }
+      }
+      if (product) break;
     }
   }
 
   if (!product) {
-    if (categoryData.items.length > 0 && categoryData.items[0].products.length > 0) {
+    if (categoryData && categoryData.items.length > 0 && categoryData.items[0].products.length > 0) {
       product = categoryData.items[0].products[0];
       sizeGroup = categoryData.items[0].size;
     } else {
@@ -333,7 +357,7 @@ export default function DetronModelDetailPage() {
               {relatedModels.map(rel => (
                 <Link 
                   key={rel.name} 
-                  to={`/products/detron/${productId}/${rel.name}`} 
+                  to={`/products/detron/${productId}/${encodeURIComponent(rel.name)}`} 
                   className="related-card"
                 >
                   <div className="related-card-img-wrapper">

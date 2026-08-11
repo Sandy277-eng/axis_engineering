@@ -348,58 +348,117 @@ export default function SpecialApplications() {
       {/* PRODUCT LIST SECTION */}
       <section style={styles.productSection}>
         <div style={styles.productWrapper}>
-          {filteredItems.map((group, groupIdx) => (
-            <div key={groupIdx} style={{ marginBottom: '50px', width: '100%' }}>
-              <div style={styles.groupHeader}>
-                <h2 style={styles.groupHeading}>{group.size}</h2>
-                <div style={styles.groupLine} />
-              </div>
-
-              <div style={styles.cardGrid}>
-                {group.products.map((prod, prodIdx) => (
-                  <div key={prodIdx} className="aishmo-card">
-                    <div className="aishmo-card-img-wrapper">
-                      <img 
-                        src={prod.image} 
-                        alt={prod.name} 
-                        className="aishmo-card-img" 
-                        onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
-                      />
+          {selectedSize === 'All' ? (
+            <div style={styles.cardGrid}>
+              {categoryData.items.flatMap(group => 
+                group.products.map(prod => ({ ...prod, groupSize: group.size }))
+              ).map((prod, prodIdx) => (
+                <div key={prodIdx} className="aishmo-card">
+                  <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} className="aishmo-card-img-wrapper" style={{ display: 'block' }}>
+                    <img 
+                      src={prod.image} 
+                      alt={prod.name} 
+                      className="aishmo-card-img" 
+                      onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
+                    />
+                  </Link>
+                  <div className="aishmo-card-content">
+                    <span style={{ color: '#E30613', fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '6px' }}>
+                      {prod.groupSize}
+                    </span>
+                    <h4 className="aishmo-card-title">
+                      <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        {prod.name}
+                      </Link>
+                    </h4>
+                    <span className="aishmo-card-badge">{prod.badge}</span>
+                    <p className="aishmo-card-desc">{prod.description}</p>
+                    
+                    <div className="aishmo-card-specs">
+                      {Object.entries(prod.specs).slice(0, 3).map(([key, val]) => (
+                        <div key={key} className="aishmo-spec-row">
+                          <span className="aishmo-spec-key">{key}</span>
+                          <span className="aishmo-spec-val">{val}</span>
+                        </div>
+                      ))}
                     </div>
-                    <div className="aishmo-card-content">
-                      <h4 className="aishmo-card-title">{prod.name}</h4>
-                      <span className="aishmo-card-badge">{prod.badge}</span>
-                      <p className="aishmo-card-desc">{prod.description}</p>
-                      
-                      <div className="aishmo-card-specs">
-                        {Object.entries(prod.specs).slice(0, 3).map(([key, val]) => (
-                          <div key={key} className="aishmo-spec-row">
-                            <span className="aishmo-spec-key">{key}</span>
-                            <span className="aishmo-spec-val">{val}</span>
-                          </div>
-                        ))}
-                      </div>
 
-                      <div className="aishmo-btn-group">
-                        <Link 
-                          to={`/products/detron/${CATEGORY_ID}/${prod.name}`} 
-                          className="aishmo-btn-view"
-                        >
-                          View Product
-                        </Link>
-                        <a 
-                          href="/contact" 
-                          className="aishmo-btn-video"
-                        >
-                          Enquire Now
-                        </a>
-                      </div>
+                    <div className="aishmo-btn-group">
+                      <Link 
+                        to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} 
+                        className="aishmo-btn-view"
+                      >
+                        View Product
+                      </Link>
+                      <Link 
+                        to={`/contact?product=${encodeURIComponent(prod.name)}`} 
+                        className="aishmo-btn-video"
+                      >
+                        Enquire Now
+                      </Link>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            filteredItems.map((group, groupIdx) => (
+              <div key={groupIdx} style={{ marginBottom: '50px', width: '100%' }}>
+                <div style={styles.groupHeader}>
+                  <h2 style={styles.groupHeading}>{group.size}</h2>
+                  <div style={styles.groupLine} />
+                </div>
+
+                <div style={styles.cardGrid}>
+                  {group.products.map((prod, prodIdx) => (
+                    <div key={prodIdx} className="aishmo-card">
+                      <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} className="aishmo-card-img-wrapper" style={{ display: 'block' }}>
+                        <img 
+                          src={prod.image} 
+                          alt={prod.name} 
+                          className="aishmo-card-img" 
+                          onError={(e) => { e.target.src = '/images/detron.jpeg'; }} 
+                        />
+                      </Link>
+                      <div className="aishmo-card-content">
+                        <h4 className="aishmo-card-title">
+                          <Link to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            {prod.name}
+                          </Link>
+                        </h4>
+                        <span className="aishmo-card-badge">{prod.badge}</span>
+                        <p className="aishmo-card-desc">{prod.description}</p>
+                        
+                        <div className="aishmo-card-specs">
+                          {Object.entries(prod.specs).slice(0, 3).map(([key, val]) => (
+                            <div key={key} className="aishmo-spec-row">
+                              <span className="aishmo-spec-key">{key}</span>
+                              <span className="aishmo-spec-val">{val}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="aishmo-btn-group">
+                          <Link 
+                            to={`/products/detron/${CATEGORY_ID}/${encodeURIComponent(prod.name)}`} 
+                            className="aishmo-btn-view"
+                          >
+                            View Product
+                          </Link>
+                          <Link 
+                            to={`/contact?product=${encodeURIComponent(prod.name)}`} 
+                            className="aishmo-btn-video"
+                          >
+                            Enquire Now
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </section>
 

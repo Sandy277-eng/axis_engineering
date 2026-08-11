@@ -244,9 +244,28 @@ export default function DetronProducts() {
             style={styles.appraisalImage}
           />
           <div style={styles.appraisalLeftOverlay} />
-          <h3 style={styles.appraisalLeftText}>
-            Advanced Application<br />Technology
-          </h3>
+          <div style={styles.appraisalLeftContent}>
+            <h3 style={styles.appraisalLeftText}>
+              Advanced Application<br />Technology
+            </h3>
+            <p style={styles.appraisalLeftDesc}>
+              State-of-the-art 4th & 5th axis rotary table integration engineered for precision aerospace, automotive, medical, and die-mold applications.
+            </p>
+            <div style={styles.appraisalBadgeList}>
+              <div style={styles.appraisalBadgeItem}>
+                <span style={styles.appraisalBadgeDot}>✓</span>
+                <span>Dual-Lead Worm & Zero-Backlash Roller Cam Drives</span>
+              </div>
+              <div style={styles.appraisalBadgeItem}>
+                <span style={styles.appraisalBadgeDot}>✓</span>
+                <span>Full FANUC, Mitsubishi, Siemens & Heidenhain Support</span>
+              </div>
+              <div style={styles.appraisalBadgeItem}>
+                <span style={styles.appraisalBadgeDot}>✓</span>
+                <span>High Clamping Torque & Sub-Second Indexing Speeds</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div style={styles.appraisalRight}>
@@ -507,16 +526,46 @@ const styles = {
     inset: 0,
     background: 'linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%)'
   },
-  appraisalLeftText: {
+  appraisalLeftContent: {
     position: 'relative',
     zIndex: 5,
+    padding: '36px 40px',
+    maxWidth: '520px',
+    textAlign: 'left'
+  },
+  appraisalLeftText: {
     color: '#ffffff',
-    fontSize: '26px',
+    fontSize: '24px',
     fontWeight: '900',
-    lineHeight: '1.3',
-    padding: '40px',
-    maxWidth: '360px',
-    textShadow: '0 2px 10px rgba(0,0,0,0.9)'
+    lineHeight: '1.25',
+    margin: '0 0 10px 0',
+    textShadow: '0 2px 10px rgba(0,0,0,0.8)',
+    letterSpacing: '0.5px'
+  },
+  appraisalLeftDesc: {
+    color: '#cbd5e1',
+    fontSize: '13px',
+    lineHeight: '1.55',
+    margin: '0 0 16px 0',
+    textShadow: '0 1px 4px rgba(0,0,0,0.9)'
+  },
+  appraisalBadgeList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px'
+  },
+  appraisalBadgeItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    color: '#f8fafc',
+    fontSize: '12px',
+    fontWeight: '600'
+  },
+  appraisalBadgeDot: {
+    color: '#E30613',
+    fontWeight: '900',
+    fontSize: '13px'
   },
   appraisalRight: {
     position: 'relative',

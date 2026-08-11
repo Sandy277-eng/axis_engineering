@@ -69,6 +69,7 @@ function App() {
           
           {/* Specific model details route */}
           <Route path="/products/detron/:productId/:modelName" element={<DetronModelDetailPage />} />
+          <Route path="/products/detron/:productId/:modelName/*" element={<DetronModelDetailPage />} />
           
           {/* Fallback details route */}
           <Route path="/products/detron/:productId" element={<DetronProductDetailPage />} />

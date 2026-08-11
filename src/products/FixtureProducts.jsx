@@ -226,9 +226,28 @@ export default function FixtureProducts() {
               style={styles.appraisalImage}
             />
             <div style={styles.appraisalLeftGlass} />
-            <h3 style={styles.appraisalLeftText}>
-              Advanced Application<br />Technology
-            </h3>
+            <div style={styles.appraisalLeftContent}>
+              <h3 style={styles.appraisalLeftText}>
+                Advanced Application<br />Technology
+              </h3>
+              <p style={styles.appraisalLeftDesc}>
+                Turnkey custom hydraulic & pneumatic workholding fixture engineering tailored for complex automotive, aerospace, and high-volume machining components.
+              </p>
+              <div style={styles.appraisalBadgeList}>
+                <div style={styles.appraisalBadgeItem}>
+                  <span style={styles.appraisalBadgeDot}>✓</span>
+                  <span>Turnkey Fixture Design & FEA Cutting Force Analysis</span>
+                </div>
+                <div style={styles.appraisalBadgeItem}>
+                  <span style={styles.appraisalBadgeDot}>✓</span>
+                  <span>Direct 4th & 5th Axis CNC Rotary Table Interfacing</span>
+                </div>
+                <div style={styles.appraisalBadgeItem}>
+                  <span style={styles.appraisalBadgeDot}>✓</span>
+                  <span>Zero-Point Clamping & Cycle-Time Optimization</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Right panel: Glassmorphism red card */}
@@ -672,17 +691,46 @@ const styles = {
     background: 'linear-gradient(90deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)',
     backdropFilter: 'blur(4px)'
   },
-  appraisalLeftText: {
+  appraisalLeftContent: {
     position: 'relative',
     zIndex: 5,
+    padding: '36px 40px',
+    maxWidth: '520px',
+    textAlign: 'left'
+  },
+  appraisalLeftText: {
     color: '#ffffff',
-    fontSize: '28px',
+    fontSize: '24px',
     fontWeight: '900',
-    lineHeight: '1.3',
-    padding: '48px',
-    maxWidth: '380px',
-    textAlign: 'left',
-    textShadow: '0 2px 10px rgba(0,0,0,0.8)'
+    lineHeight: '1.25',
+    margin: '0 0 10px 0',
+    textShadow: '0 2px 10px rgba(0,0,0,0.8)',
+    letterSpacing: '0.5px'
+  },
+  appraisalLeftDesc: {
+    color: '#cbd5e1',
+    fontSize: '13px',
+    lineHeight: '1.55',
+    margin: '0 0 16px 0',
+    textShadow: '0 1px 4px rgba(0,0,0,0.9)'
+  },
+  appraisalBadgeList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px'
+  },
+  appraisalBadgeItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    color: '#f8fafc',
+    fontSize: '12px',
+    fontWeight: '600'
+  },
+  appraisalBadgeDot: {
+    color: '#E30613',
+    fontWeight: '900',
+    fontSize: '13px'
   },
   appraisalRight: {
     position: 'relative',
