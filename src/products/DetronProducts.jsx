@@ -14,42 +14,42 @@ const PRODUCTS = [
     tag: 'HIGH ACCURACY',
     title: '4 Axis Standard Indexers',
     desc: 'Premium series designed for rigid, high-performance workpiece indexing on standard CNC milling centers.',
-    img: '/images/products_detron/4th_axis.jpg'
+    img: '/images/products_detron/4th_axis.png'
   },
   {
     id: '5-axis',
     tag: 'MULTI-FACE INDEXING',
     title: '5 Axis Tilt Rotary Tables',
     desc: 'Sophisticated 2-axis tilting systems enabling single-setup multi-face component machining for high complexity.',
-    img: '/images/products_detron/5th_axis.jpg'
+    img: '/images/products_detron/5th_axis.png'
   },
   {
     id: 'auto-pallet-changer',
     tag: 'MAXIMUM PRODUCTIVITY',
     title: 'Auto Pallet Changers',
     desc: 'Fast, reliable pallet changers minimizing spindle downtime and maximizing production run efficiency.',
-    img: '/images/products_detron/Auto-Pallet-changer.jpg'
+    img: '/images/products_detron/Auto-Pallet-changer.png'
   },
   {
     id: 'special-application',
     tag: 'BESPOKE INTEGRATION',
     title: 'Special Applications',
     desc: 'Bespoke indexing and clamping configurations tailored specifically for unique production line requirements.',
-    img: '/images/products_detron/Special-Application.jpg'
+    img: '/images/products_detron/Special-Application.png'
   },
   {
     id: 'accessories',
     tag: 'SYSTEM ACCESSORIES',
     title: 'Detron Accessories',
     desc: 'Genuine sub-plates, tailstocks, manual/pneumatic chucks, and rotary joints to optimize setup versatility.',
-    img: '/images/products_detron/Accessories.jpg'
+    img: '/images/products_detron/Accessories.png'
   },
   {
     id: 'intelligent-control',
     tag: 'INTELLIGENT INTEGRATION',
     title: 'Intelligent Control System',
     desc: 'Advanced control systems and software integration for real-time monitoring, diagnostics and precision tuning.',
-    img: '/images/products_detron/Intelligent-control.jpg'
+    img: '/images/products_detron/Intelligent-control.png'
   }
 ];
 

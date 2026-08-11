@@ -10,7 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HomePage() {
   const navigate = useNavigate();
   const heroSectionRef = useRef(null);
-  const aboutSectionRef = useRef(null); 
+  
+  // Refs for About Section Animation
+  const aboutImageRef = useRef(null); 
+  const aboutTextRef = useRef(null);
+  const aboutContainerRef = useRef(null);
+  
   const cardsContainerRef = useRef(null); 
   const homeAboutPanelRef = useRef(null);
 
@@ -25,17 +30,36 @@ export default function HomePage() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
+    // ABOUT SECTION SLOW SLIDE ANIMATION (Image from Left, Text from Right)
     const aboutCtx = gsap.context(() => {
+      // Left Image Animation
       gsap.fromTo(
-        aboutSectionRef.current,
+        aboutImageRef.current,
+        { x: '-100vw', opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 2.2, // Slower duration
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: aboutContainerRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+
+      // Right Text Animation
+      gsap.fromTo(
+        aboutTextRef.current,
         { x: '100vw', opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 1.2,
-          ease: 'power4.out',
+          duration: 2.2, // Slower duration
+          ease: 'power2.out',
           scrollTrigger: {
-            trigger: aboutSectionRef.current,
+            trigger: aboutContainerRef.current,
             start: 'top 85%',
             toggleActions: 'play none none none'
           }
@@ -138,8 +162,9 @@ export default function HomePage() {
 
       {/* ABOUT / OUR PRODUCTS INTRO SECTION */}
       <div style={styles.aboutWrapperClip}>
-        <section ref={aboutSectionRef} style={styles.aboutSection}>
-          <div style={styles.aboutImageCol}>
+        <section ref={aboutContainerRef} style={styles.aboutSectionBordered}>
+          {/* SLIDE FROM LEFT: IMAGE */}
+          <div ref={aboutImageRef} style={styles.aboutImageCol}>
             <img
               src="/images/axis.jpg"
               alt="Axis Engineering CNC Machine"
@@ -147,7 +172,8 @@ export default function HomePage() {
             />
           </div>
 
-          <div style={styles.aboutTextCol}>
+          {/* SLIDE FROM RIGHT: TEXT */}
+          <div ref={aboutTextRef} style={styles.aboutTextCol}>
             <div style={styles.aboutLogoRow}>
               <span style={styles.aboutLogoIcon}>✛</span>
               <span style={styles.aboutLogoTitle}>
@@ -160,9 +186,11 @@ export default function HomePage() {
               Our strong capabilities in Electrical, Mechatronics and Mechanical engineering, together with domain understanding and product knowledge, enable us to provide solutions from concept and detailed design through manufacturing and sourcing support. Over the years, we have supported our customers.
             </p>
 
-            <button onClick={scrollToProducts} style={styles.aboutKnowMoreBtn}>
-              DISCOVER RANGE &gt;
-            </button>
+            <div>
+              <button onClick={scrollToProducts} style={styles.aboutKnowMoreBtn}>
+                DISCOVER RANGE &gt;
+              </button>
+            </div>
           </div>
         </section>
       </div>
@@ -268,7 +296,7 @@ export default function HomePage() {
 const styles = {
   container: { position: 'relative', width: '100%', fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif', backgroundColor: '#000000', color: '#ffffff', margin: 0, padding: 0 },
   
-  /* COMPACT FIXED HEADER STYLES */
+  /* FIXED HEADER STYLES */
   fixedHeaderGroup: { position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, width: '100%' },
   topBar: { backgroundColor: '#0a0a0a', color: '#ffffff', padding: '6px 28px', fontSize: '11px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1c1c1c' },
   topBarLeft: { display: 'flex', gap: '18px', alignItems: 'center' },
@@ -281,18 +309,6 @@ const styles = {
   searchBtn: { background: 'none', border: 'none', cursor: 'pointer', fontSize: '11px' },
   mainHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 28px', backgroundColor: 'rgba(255, 255, 255, 0.98)', boxShadow: '0 2px 10px rgba(0,0,0,0.15)' },
   
-  /* DUAL LOGO HEADER LAYOUT */
-  dualLogoGroup: { display: 'flex', alignItems: 'center', gap: '16px' },
-  logoLink: { display: 'flex', alignItems: 'center' },
-  logoImage: { height: '32px', width: 'auto', objectFit: 'contain' },
-  logoImageDetron: { height: '28px', width: 'auto', objectFit: 'contain' },
-  logoDivider: { height: '24px', width: '1px', backgroundColor: '#cbd5e1' },
-
-  navMenu: { display: 'flex', alignItems: 'center', gap: '22px' },
-  navLink: { textDecoration: 'none', color: '#0f172a', fontWeight: '700', fontSize: '11px', letterSpacing: '0.3px' },
-  navLinkBtn: { background: 'none', border: 'none', color: '#0f172a', fontWeight: '700', fontSize: '11px', letterSpacing: '0.3px', cursor: 'pointer', padding: 0, fontFamily: 'inherit' },
-  contactHeaderBtn: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', border: 'none', padding: '6px 14px', borderRadius: '2px', cursor: 'pointer', fontWeight: '700', fontSize: '11px' },
-  
   pinnedHeroWrapper: { position: 'relative', height: '100vh', width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#000000', paddingTop: '80px' },
   heroVideo: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none', zIndex: 0 },
   heroVideoOverlay: { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.85) 100%)', zIndex: 1 },
@@ -304,18 +320,35 @@ const styles = {
   heroButtonContainer: { marginTop: '28px', display: 'flex', gap: '16px', justifyContent: 'center' },
   btnRedPrimary: { backgroundColor: '#E30613', color: '#ffffff', padding: '12px 28px', border: 'none', borderRadius: '25px', cursor: 'pointer', textDecoration: 'none', fontWeight: '800', fontSize: '12px' },
   btnOutline: { backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#ffffff', padding: '12px 28px', borderRadius: '25px', fontWeight: '800', fontSize: '12px', border: '2px solid #ffffff', cursor: 'pointer' },
-  aboutWrapperClip: { width: '100%', overflowX: 'hidden', backgroundColor: '#ffffff' },
-  aboutSection: { position: 'relative', zIndex: 20, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '56px', padding: '80px 48px', backgroundColor: '#ffffff', maxWidth: '1200px', margin: '0 auto' },
-  aboutImageCol: { flex: '1 1 340px', minWidth: '300px' },
-  aboutImage: { width: '100%', height: 'auto', borderRadius: '6px', boxShadow: '0 12px 30px rgba(0, 0, 0, 0.18)', display: 'block' },
-  aboutTextCol: { flex: '1 1 380px', minWidth: '300px', color: '#0f172a' },
-  aboutLogoRow: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' },
-  aboutLogoIcon: { color: '#E30613', fontSize: '26px', fontWeight: '900' },
+  
+  /* UPDATED ABOUT SECTION CONTAINER WITH BORDER AND ACCURATE ALIGNMENT */
+  aboutWrapperClip: { width: '100%', overflowX: 'hidden', backgroundColor: '#ffffff', padding: '60px 24px' },
+  aboutSectionBordered: { 
+    position: 'relative', 
+    zIndex: 20, 
+    display: 'flex', 
+    flexWrap: 'wrap', 
+    alignItems: 'center', 
+    gap: '40px', 
+    padding: '48px', 
+    backgroundColor: '#ffffff', 
+    maxWidth: '1300px', 
+    margin: '0 auto',
+    borderRadius: '12px',
+    border: '2px solid #e2e8f0', // Clean border around the entire container
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
+  },
+  aboutImageCol: { flex: '1 1 420px', minWidth: '300px' },
+  aboutImage: { width: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)', display: 'block' },
+  aboutTextCol: { flex: '1 1 420px', minWidth: '300px', color: '#0f172a', display: 'flex', flexDirection: 'column', justifyContent: 'center' },
+  aboutLogoRow: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' },
+  aboutLogoIcon: { color: '#E30613', fontSize: '26px', fontWeight: '900',marginLeft:'80px' },
   aboutLogoTitle: { fontSize: '22px', fontWeight: '900' },
-  aboutLogoAxis: { color: '#E30613' },
-  aboutLogoRest: { color: '#334155' },
-  aboutDescription: { fontSize: '15px', color: '#334155', lineHeight: '1.8', marginBottom: '28px' },
-  aboutKnowMoreBtn: { backgroundColor: '#E30613', color: '#ffffff', border: 'none', padding: '12px 28px', borderRadius: '2px', fontWeight: '800', fontSize: '12px', letterSpacing: '0.5px', cursor: 'pointer' },
+  aboutLogoAxis: { color: '#E30613' ,marginLeft: '0px'},
+  aboutLogoRest: { color: '#334155',marginLeft: '03px' },
+  aboutDescription: { fontSize: '15px', color: '#334155', lineHeight: '1.8', marginBottom: '24px' },
+  aboutKnowMoreBtn: { backgroundColor: '#E30613', color: '#ffffff', border: 'none', padding: '12px 28px', borderRadius: '4px', fontWeight: '800', fontSize: '12px', letterSpacing: '0.5px', cursor: 'pointer' },
+  
   scrollWrapperClip: { width: '100%', overflowX: 'hidden' },
   categorySection: { position: 'relative', zIndex: 20, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px', padding: '60px 32px', backgroundColor: '#000000', borderTop: '1px solid #222' },
   categoryCard: { position: 'relative', borderRadius: '6px', borderTop: '4px solid #E30613', boxShadow: '0 20px 40px rgba(0, 0, 0, 0.8)', overflow: 'hidden', minHeight: '380px', display: 'flex', flexDirection: 'column', cursor: 'pointer' },
@@ -332,53 +365,5 @@ const styles = {
   panelHeading: { fontSize: '36px', fontWeight: '900', margin: '10px 0 5px 0', color: '#ffffff' },
   panelSubheading: { fontSize: '18px', fontWeight: '700', color: '#cccccc', marginBottom: '20px' },
   panelParagraph: { fontSize: '14px', color: '#e2e8f0', lineHeight: '1.7', marginBottom: '16px' },
-  panelButtonContainer: { marginTop: '24px' },
-  suggestionDropdown: {
-    position: 'absolute',
-    top: '100%',
-    right: 0,
-    marginTop: '6px',
-    width: '280px',
-    backgroundColor: '#0a0a0a',
-    border: '1px solid #222222',
-    borderRadius: '4px',
-    boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
-    zIndex: 1000,
-    maxHeight: '320px',
-    overflowY: 'auto'
-  },
-  suggestionItem: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-    padding: '10px 14px',
-    borderBottom: '1px solid #1a1a1a',
-    cursor: 'pointer',
-    textAlign: 'left',
-    backgroundColor: 'transparent'
-  },
-  suggestionImg: {
-    width: '36px',
-    height: '36px',
-    objectFit: 'contain',
-    backgroundColor: '#111111',
-    borderRadius: '4px',
-    padding: '2px'
-  },
-  suggestionDetails: {
-    display: 'flex',
-    flexDirection: 'column',
-    textAlign: 'left'
-  },
-  suggestionName: {
-    fontSize: '12px',
-    fontWeight: '700',
-    color: '#ffffff'
-  },
-  suggestionCat: {
-    fontSize: '10px',
-    color: '#E30613',
-    fontWeight: '600',
-    marginTop: '2px'
-  }
+  panelButtonContainer: { marginTop: '24px' }
 };
