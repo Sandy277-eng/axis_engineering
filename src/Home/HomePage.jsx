@@ -14,8 +14,9 @@ export default function HomePage() {
   // Refs for About Section Animation
   const aboutBgImageRef = useRef(null); // Ref for background industry image (First section)
   const aboutImageRef = useRef(null); 
+  const aboutWorkerRef = useRef(null); // Ref for transparent worker image
   const aboutTextRef = useRef(null);
-  const aboutContainerRef = useRef(null);
+  const aboutContainerRef = useRef(null); 
   
   const cardsContainerRef = useRef(null); 
 
@@ -42,7 +43,7 @@ export default function HomePage() {
         { x: '-100vw', opacity: 0 },
         {
           x: 0,
-          opacity: 0.50, // Subtle background visibility
+          opacity: 0.50,
           duration: 2.2,
           ease: 'power2.out',
           scrollTrigger: {
@@ -53,9 +54,9 @@ export default function HomePage() {
         }
       );
 
-      // 2. Left Image Animation
+      // 2. Left Column: Text Animation (Slides from Left)
       gsap.fromTo(
-        aboutImageRef.current,
+        aboutTextRef.current,
         { x: '-100vw', opacity: 0 },
         {
           x: 0,
@@ -70,13 +71,31 @@ export default function HomePage() {
         }
       );
 
-      // 3. Right Text Animation
+      // 3. Right Column: Machinery Image Animation (Slides from Right)
       gsap.fromTo(
-        aboutTextRef.current,
+        aboutImageRef.current,
         { x: '100vw', opacity: 0 },
         {
           x: 0,
           opacity: 1,
+          duration: 2.2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: aboutContainerRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+
+      // 4. Worker Photo Animation (Slides from Right over picture)
+      gsap.fromTo(
+        aboutWorkerRef.current,
+        { x: '80px', opacity: 0, scale: 0.95 },
+        {
+          x: 0,
+          opacity: 1,
+          scale: 1,
           duration: 2.2,
           ease: 'power2.out',
           scrollTrigger: {
@@ -203,7 +222,7 @@ export default function HomePage() {
       {/* ABOUT / OUR PRODUCTS INTRO SECTION */}
       <div style={styles.aboutWrapperClip}>
         <section ref={aboutContainerRef} style={styles.aboutSectionBordered}>
-          {/* SLIDING BACKGROUND INDUSTRY IMAGE */}
+          {/* 1. SLIDING BACKGROUND INDUSTRY IMAGE (BOTTOM LAYER) */}
           <div ref={aboutBgImageRef} style={styles.aboutBgWrapper}>
             <img
               src="/logo_axis/axis_industry image.png"
@@ -212,19 +231,9 @@ export default function HomePage() {
             />
           </div>
 
-          {/* SLIDE FROM LEFT: IMAGE */}
-          <div ref={aboutImageRef} style={styles.aboutImageCol}>
-            <img
-              src="/images/axis.jpg"
-              alt="Axis Engineering CNC Machine"
-              style={styles.aboutImage}
-            />
-          </div>
-
-          {/* SLIDE FROM RIGHT: TEXT */}
+          {/* 2. LEFT COLUMN: TEXT CONTENT */}
           <div ref={aboutTextRef} style={styles.aboutTextCol}>
             <div style={styles.aboutLogoRow}>
-              <span style={styles.aboutLogoIcon}>✛</span>
               <span style={styles.aboutLogoTitle}>
                 <span style={styles.aboutLogoAxis}>AXIS</span>{' '}
                 <span style={styles.aboutLogoRest}>ENGINEERING SOLUTIONS</span>
@@ -239,6 +248,47 @@ export default function HomePage() {
               <button onClick={scrollToProducts} style={styles.aboutKnowMoreBtn}>
                 DISCOVER RANGE &gt;
               </button>
+            </div>
+          </div>
+
+          {/* 3. RIGHT COLUMN: MACHINERY IMAGE WITH WORKER ON TOP */}
+          <div ref={aboutImageRef} style={styles.aboutImageCol}>
+            <div style={styles.aboutImageCompositeWrapper}>
+              <img
+                src="/images/axis.jpg"
+                alt="Axis Engineering CNC Machine"
+                style={styles.aboutImage}
+              />
+              
+              {/* WORKER PHOTO (RIGHT SIDE ON TOP OF DETRON CNC PICTURE) */}
+              <div
+  ref={aboutWorkerRef}
+  style={{
+    ...styles.aboutWorkerOverImage,
+    animation: 'workerSlideUp 1s ease-out forwards'
+  }}
+>
+  <img
+    src="/images/worker_transparent.png"
+    alt="Axis Engineering Specialist"
+    style={styles.aboutWorkerImage}
+  />
+
+  <style>
+    {`
+      @keyframes workerSlideUp {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    `}
+  </style>
+</div>
             </div>
           </div>
         </section>
@@ -412,16 +462,90 @@ const styles = {
     objectFit: 'cover'
   },
 
-  aboutImageCol: { flex: '1 1 420px', minWidth: '300px', position: 'relative', zIndex: 1 },
-  aboutImage: { width: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)', display: 'block' },
-  aboutTextCol: { flex: '1 1 420px', minWidth: '300px', color: '#0f172a', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 1 },
-  aboutLogoRow: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' },
-  aboutLogoIcon: { color: '#E30613', fontSize: '26px', fontWeight: '900', marginLeft: '80px' },
-  aboutLogoTitle: { fontSize: '22px', fontWeight: '900' },
-  aboutLogoAxis: { color: '#E30613', marginLeft: '0px' },
-  aboutLogoRest: { color: '#334155', marginLeft: '3px' },
-  aboutDescription: { fontSize: '15px', color: '#334155', lineHeight: '1.8', marginBottom: '24px' },
-  aboutKnowMoreBtn: { backgroundColor: '#E30613', color: '#ffffff', border: 'none', padding: '12px 28px', borderRadius: '4px', fontWeight: '800', fontSize: '12px', letterSpacing: '0.5px', cursor: 'pointer' },
+  /* LEFT COLUMN: TEXT */
+  aboutTextCol: { 
+    flex: '1 1 440px', 
+    minWidth: '300px', 
+    color: '#0f172a', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'center', 
+    position: 'relative', 
+    zIndex: 2,
+    padding: '16px 0',
+    textAlign: 'left'
+  },
+  aboutLogoRow: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' },
+  aboutLogoTitle: { fontSize: '26px', fontWeight: '900', letterSpacing: '-0.4px', margin: 0 },
+  aboutLogoAxis: { color: '#E30613' },
+  aboutLogoRest: { color: '#0f172a' },
+  aboutDescription: {
+  fontSize: '15px',
+  lineHeight: '1.8',
+  marginBottom: '28px',
+  fontWeight: '700',
+  color: '#1e293b',
+  maxWidth: '520px'
+},
+  aboutKnowMoreBtn: {
+    backgroundColor: '#E30613',
+    color: '#ffffff',
+    border: 'none',
+    padding: '13px 32px',
+    borderRadius: '4px',
+    fontWeight: '800',
+    fontSize: '12px',
+    letterSpacing: '0.5px',
+    cursor: 'pointer',
+    boxShadow: '0 4px 14px rgba(227, 6, 19, 0.35)',
+    transition: 'background-color 0.2s ease',
+    alignSelf: 'flex-start'
+  },
+
+  /* RIGHT COLUMN: MACHINERY IMAGE + WORKER ON TOP */
+  aboutImageCol: {
+    flex: '1 1 480px',
+    minWidth: '320px',
+    position: 'relative',
+    zIndex: 2,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  aboutImageCompositeWrapper: {
+    position: 'relative',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'flex-end',
+    justifyContent: 'center'
+  },
+  aboutImage: {
+    width: '100%',
+    height: 'auto',
+    borderRadius: '12px',
+    boxShadow: '0 14px 36px rgba(0, 0, 0, 0.2)',
+    display: 'block',
+    border: '1px solid #e2e8f0'
+  },
+  aboutWorkerOverImage: {
+    position: 'absolute',
+    right: '-110px',
+    bottom: '-60px',
+    height: '110%',
+    maxHeight: '440px',
+    zIndex: 3,
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end'
+  },
+  aboutWorkerImage: {
+    height: '100%',
+    width: 'auto',
+    objectFit: 'contain',
+    display: 'block',
+    filter: 'drop-shadow(-6px 12px 20px rgba(0,0,0,0.35))'
+  },
   
   scrollWrapperClip: { width: '100%', overflowX: 'hidden' },
   categorySection: { position: 'relative', zIndex: 20, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px', padding: '60px 32px', backgroundColor: '#000000', borderTop: '1px solid #222' },

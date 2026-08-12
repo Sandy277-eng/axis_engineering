@@ -16,7 +16,9 @@ export default function Footer() {
             style={styles.footerLogo}
           />
           <p style={styles.descriptionText}>
-            Proudly associated with <strong>Detron Machinery Co. Ltd., Taiwan</strong>—the world's largest professional Rotary Table Manufacturer. Established in 2014, Axis Engineering Solutions delivers total turnkey integration, 4th & 5th axis interfacing, DDR integration, and custom hydraulic/jig control systems.
+            Proudly associated with <strong>Detron Machinery Co. Ltd., Taiwan</strong>—the world's largest professional Rotary Table Manufacturer.<br /><br />
+            Established in 2014,<br />
+            <strong>Axis Engineering Solutions</strong> delivers total turnkey integration, 4th & 5th axis interfacing, DDR integration, and custom hydraulic/jig control systems.
           </p>
           <div style={styles.tagline}>
             <span style={styles.tagDot}></span> Official Partner for Detron CNC Products

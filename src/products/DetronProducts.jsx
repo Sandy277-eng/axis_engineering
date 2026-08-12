@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header';
-import ScrollCanvas from '../animation/ScrollCanvas';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -165,13 +164,15 @@ export default function DetronProducts() {
 
   return (
     <div style={styles.container}>
-      {/* FULL FIXED BACKGROUND FOR 3D CANVAS */}
+      {/* FULL FIXED BACKGROUND FOR VIDEO */}
       <div style={styles.fixedBackgroundWrapper}>
-        <ScrollCanvas
-          totalFrames={240}
-          folderPath="/detron_products_page"
-          digits={5}
-          startIndex={1}
+        <video
+          src="/videos/detron_home_page_animation.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={styles.backgroundVideo}
         />
         <div style={styles.backgroundOverlay} />
       </div>
@@ -392,13 +393,22 @@ const styles = {
     height: '100vh',
     zIndex: 0,
     pointerEvents: 'none',
-    opacity: 0.22,
+    overflow: 'hidden',
     backgroundColor: '#000000'
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    opacity: 0.4
   },
   backgroundOverlay: {
     position: 'absolute',
     inset: 0,
-    background: 'radial-gradient(circle at center, transparent 35%, #000000 90%)'
+    background: 'radial-gradient(circle at center, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.85) 90%)'
   },
 
   /* CINEMATIC HERO */

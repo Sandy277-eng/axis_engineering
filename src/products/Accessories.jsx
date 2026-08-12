@@ -325,7 +325,7 @@ export default function Accessories() {
 
       {/* DETRON BRAND HEADER BUTTON */}
       <div style={styles.brandButtonContainer}>
-        <div style={styles.brandButton}>DETRON IND.</div>
+        <div style={styles.brandButton}>DETRON</div>
       </div>
 
       {/* FILTER TABS */}

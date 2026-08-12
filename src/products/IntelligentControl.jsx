@@ -282,7 +282,7 @@ export default function IntelligentControl() {
       </section>
 
       <div style={styles.brandButtonContainer}>
-        <div style={styles.brandButton}>DETRON IND.</div>
+        <div style={styles.brandButton}>DETRON</div>
       </div>
 
       <div style={styles.filterSection}>

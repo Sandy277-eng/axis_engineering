@@ -346,7 +346,7 @@ export default function FourAxis() {
 
       {/* DETRON BRAND HEADER BUTTON */}
       <div style={styles.brandButtonContainer}>
-        <div style={styles.brandButton}>DETRON IND.</div>
+        <div style={styles.brandButton}>DETRON</div>
       </div>
 
       {/* SIZE FILTER TABS (HEAD TOPICS) */}
