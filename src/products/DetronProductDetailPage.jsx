@@ -194,8 +194,8 @@ const styles = {
   container: {
     width: '100%',
     fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif',
-    backgroundColor: '#050505',
-    color: '#ffffff',
+    backgroundColor: '#ffffff',
+    color: '#0f172a',
     margin: 0,
     padding: 0,
     minHeight: '100vh',
@@ -246,7 +246,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '16px 32px',
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    backgroundColor: 'rgba(255, 255, 255, 0.98)',
     borderBottom: '1px solid #e2e8f0'
   },
   logoGroup: { cursor: 'pointer', display: 'flex', alignItems: 'center' },
@@ -295,7 +295,8 @@ const styles = {
     fontWeight: '900',
     letterSpacing: '1.5px',
     color: '#E30613',
-    backgroundColor: 'rgba(227, 6, 19, 0.12)',
+    backgroundColor: '#fef2f2',
+    border: '1px solid #fecaca',
     padding: '6px 14px',
     borderRadius: '30px'
   },
@@ -304,12 +305,12 @@ const styles = {
     fontWeight: '900',
     letterSpacing: '0.5px',
     margin: 0,
-    color: '#ffffff'
+    color: '#0f172a'
   },
   heroDescription: {
     fontSize: '15px',
     lineHeight: '1.6',
-    color: '#cbd5e1',
+    color: '#475569',
     maxWidth: '650px',
     margin: '8px auto 0 auto'
   },
@@ -336,8 +337,8 @@ const styles = {
     left: 0,
     height: 'calc(100vh - 140px)',
     overflow: 'hidden',
-    borderRight: '1px solid #1a1a1a',
-    backgroundColor: '#000000',
+    borderRight: '1px solid #e2e8f0',
+    backgroundColor: '#f8fafc',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -350,8 +351,8 @@ const styles = {
     position: 'relative',
     height: '45vh',
     overflow: 'hidden',
-    borderBottom: '1px solid #1a1a1a',
-    backgroundColor: '#000000',
+    borderBottom: '1px solid #e2e8f0',
+    backgroundColor: '#f8fafc',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -366,7 +367,7 @@ const styles = {
   canvasGradOverlay: {
     position: 'absolute',
     inset: 0,
-    background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.4) 100%)',
+    background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.2) 100%)',
     pointerEvents: 'none'
   },
   canvasLabelOverlay: {
@@ -374,10 +375,10 @@ const styles = {
     bottom: '32px',
     left: '50%',
     transform: 'translateX(-50%)',
-    backgroundColor: 'rgba(10, 10, 10, 0.85)',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
+    backgroundColor: 'rgba(255, 255, 255, 0.92)',
+    border: '1px solid #e2e8f0',
     backdropFilter: 'blur(8px)',
-    color: '#94a3b8',
+    color: '#0f172a',
     padding: '8px 16px',
     borderRadius: '30px',
     fontSize: '10px',
@@ -387,7 +388,7 @@ const styles = {
     alignItems: 'center',
     gap: '8px',
     pointerEvents: 'none',
-    boxShadow: '0 4px 15px rgba(0,0,0,0.5)'
+    boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
   },
   canvasLabelIcon: {
     color: '#E30613',
@@ -403,7 +404,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '36px',
-    backgroundColor: '#050505',
+    backgroundColor: '#ffffff',
     minHeight: 'calc(100vh - 140px)'
   },
 
@@ -415,17 +416,17 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '28px',
-    backgroundColor: '#050505'
+    backgroundColor: '#ffffff'
   },
 
   specificationsHeading: {
     fontSize: '20px',
     fontWeight: '800',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: 0,
     textAlign: 'left',
     letterSpacing: '0.5px',
-    borderBottom: '1px solid #1a1a1a',
+    borderBottom: '1px solid #e2e8f0',
     paddingBottom: '16px'
   },
   lineupList: {
@@ -436,28 +437,29 @@ const styles = {
 
   /* MODEL CARD */
   modelCard: {
-    backgroundColor: '#0a0a0a',
-    border: '1px solid #1a1a1a',
+    backgroundColor: '#ffffff',
+    border: '1px solid #e2e8f0',
     borderRadius: '12px',
     padding: '24px 32px',
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
     textAlign: 'left',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.25)'
+    boxShadow: '0 8px 24px rgba(0,0,0,0.05)'
   },
   modelHeader: {
     display: 'flex',
     alignItems: 'center',
     gap: '16px',
-    borderBottom: '1px solid #1a1a1a',
+    borderBottom: '1px solid #f1f5f9',
     paddingBottom: '12px'
   },
   modelIndex: {
     fontSize: '14px',
     fontWeight: '900',
     color: '#E30613',
-    backgroundColor: 'rgba(227, 6, 19, 0.1)',
+    backgroundColor: '#fef2f2',
+    border: '1px solid #fecaca',
     width: '32px',
     height: '32px',
     borderRadius: '50%',
@@ -468,7 +470,7 @@ const styles = {
   modelSizeTitle: {
     fontSize: '18px',
     fontWeight: '800',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: 0
   },
   modelBody: {
@@ -486,8 +488,8 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '14px 20px',
-    backgroundColor: '#121212',
-    border: '1px solid #222',
+    backgroundColor: '#f8fafc',
+    border: '1px solid #e2e8f0',
     borderRadius: '6px',
     cursor: 'pointer',
     transition: 'all 0.2s ease'
@@ -497,7 +499,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '14px 20px',
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#f1f5f9',
     border: '1px solid #E30613',
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
@@ -509,13 +511,13 @@ const styles = {
   accordionTitle: {
     fontSize: '15px',
     fontWeight: '800',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: 0,
     letterSpacing: '0.5px'
   },
   accordionBadge: {
     fontSize: '11px',
-    color: '#94a3b8',
+    color: '#64748b',
     fontWeight: '600'
   },
   accordionIndicator: {
@@ -525,8 +527,8 @@ const styles = {
     letterSpacing: '1px'
   },
   accordionContent: {
-    backgroundColor: '#0c0c0c',
-    border: '1px solid #222',
+    backgroundColor: '#f8fafc',
+    border: '1px solid #e2e8f0',
     borderTop: 'none',
     borderBottomLeftRadius: '6px',
     borderBottomRightRadius: '6px',
@@ -548,7 +550,7 @@ const styles = {
   modelText: {
     fontSize: '14px',
     lineHeight: '1.6',
-    color: '#cbd5e1',
+    color: '#475569',
     margin: 0
   },
   enquireButton: {
@@ -562,7 +564,8 @@ const styles = {
     fontSize: '11px',
     cursor: 'pointer',
     alignSelf: 'flex-start',
-    textAlign: 'center'
+    textAlign: 'center',
+    boxShadow: '0 2px 8px rgba(227,6,19,0.2)'
   },
   modelImageHalf: {
     flex: '1 1 200px',
@@ -576,9 +579,9 @@ const styles = {
     height: '180px',
     borderRadius: '8px',
     overflow: 'hidden',
-    border: '1px solid #222',
-    backgroundColor: '#000000',
-    boxShadow: '0 4px 15px rgba(0,0,0,0.5)',
+    border: '1px solid #e2e8f0',
+    backgroundColor: '#ffffff',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -600,18 +603,18 @@ const styles = {
     fontSize: '12px'
   },
   specRow: {
-    borderBottom: '1px solid #1f1f1f'
+    borderBottom: '1px solid #e2e8f0'
   },
   specKey: {
     padding: '6px 12px 6px 0',
-    color: '#94a3b8',
+    color: '#64748b',
     fontWeight: '500',
     width: '50%',
     textAlign: 'left'
   },
   specVal: {
     padding: '6px 0 6px 12px',
-    color: '#f8fafc',
+    color: '#0f172a',
     fontWeight: '700',
     textAlign: 'right'
   }

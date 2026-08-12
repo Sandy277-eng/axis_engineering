@@ -111,11 +111,11 @@ export default function DetronModelDetailPage() {
           width: 100%;
           border-collapse: collapse;
           margin-top: 20px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 16px rgba(0,0,0,0.05);
           border-radius: 8px;
           overflow: hidden;
-          background-color: #0a0a0a;
-          border: 1px solid #1a1a1a;
+          background-color: #ffffff;
+          border: 1px solid #e2e8f0;
         }
         .specs-table th {
           background-color: #E30613;
@@ -127,49 +127,50 @@ export default function DetronModelDetailPage() {
         }
         .specs-table td {
           padding: 14px 20px;
-          border-bottom: 1px solid #1a1a1a;
+          border-bottom: 1px solid #f1f5f9;
           font-size: 13px;
-          color: #cbd5e1;
+          color: #334155;
         }
         .specs-table tr:nth-of-type(even) {
-          background-color: #121212;
+          background-color: #f8fafc;
         }
         .specs-table tr:hover {
-          background-color: #1a1a1a;
+          background-color: #f1f5f9;
         }
         .enquiry-form-input {
           width: 100%;
-          border: 1px solid #333333;
-          background-color: #121212;
-          color: #ffffff;
+          border: 1px solid #cbd5e1;
+          background-color: #ffffff;
+          color: #0f172a;
           padding: 12px;
           font-size: 13px;
           border-radius: 4px;
           outline: none;
           box-sizing: border-box;
-          transition: border-color 0.2s;
+          transition: border-color 0.2s, box-shadow 0.2s;
         }
         .enquiry-form-input:focus {
           border-color: #E30613;
+          box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.1);
         }
         
-        /* RELATED PRODUCT CARDS styling */
+        /* RELATED PRODUCT CARDS */
         .related-card {
           position: relative;
-          background: #0a0a0a;
-          border: 1px solid #1a1a1a;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
           border-radius: 12px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           text-decoration: none;
         }
         .related-card-img-wrapper {
           position: relative;
           height: 180px;
-          background: #111111;
+          background: #ffffff;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -183,23 +184,23 @@ export default function DetronModelDetailPage() {
           transition: transform 0.3s ease;
         }
         .related-card-bottom {
-          background: #0a0a0a;
+          background: #f8fafc;
           padding: 16px;
           text-align: center;
-          border-top: 1px solid #1a1a1a;
-          transition: background-color 0.3s ease;
+          border-top: 1px solid #f1f5f9;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
         .related-card-title {
           font-size: 14px;
           font-weight: 800;
-          color: #ffffff;
+          color: #0f172a;
           margin: 0;
           transition: color 0.3s ease;
           text-transform: uppercase;
         }
         .related-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
         }
         .related-card:hover .related-card-img {
           transform: scale(1.07);
@@ -388,8 +389,8 @@ const styles = {
   container: {
     width: '100%',
     fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif',
-    backgroundColor: '#050505',
-    color: '#ffffff',
+    backgroundColor: '#ffffff',
+    color: '#0f172a',
     margin: 0,
     padding: 0,
     minHeight: '100vh',
@@ -508,14 +509,14 @@ const styles = {
     gap: '16px'
   },
   mainImageCard: {
-    backgroundColor: '#111111',
-    border: '1px solid #1a1a1a',
+    backgroundColor: '#f8fafc',
+    border: '1px solid #e2e8f0',
     borderRadius: '12px',
     height: '420px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    boxShadow: '0 10px 25px rgba(0,0,0,0.3)'
+    boxShadow: '0 8px 24px rgba(0,0,0,0.05)'
   },
   mainImage: {
     width: 'auto',
@@ -538,8 +539,9 @@ const styles = {
   },
   productBadge: {
     alignSelf: 'flex-start',
-    backgroundColor: 'rgba(227, 6, 19, 0.1)',
+    backgroundColor: '#fef2f2',
     color: '#E30613',
+    border: '1px solid #fecaca',
     padding: '6px 14px',
     borderRadius: '30px',
     fontSize: '12px',
@@ -551,33 +553,33 @@ const styles = {
     fontSize: '36px',
     fontWeight: '900',
     margin: '0 0 6px 0',
-    color: '#ffffff'
+    color: '#0f172a'
   },
   sizeGroupLabel: {
     fontSize: '14px',
     fontWeight: '600',
-    color: '#94a3b8',
+    color: '#64748b',
     margin: '0 0 16px 0'
   },
   productDescription: {
     fontSize: '15px',
     lineHeight: '1.6',
-    color: '#cbd5e1',
+    color: '#475569',
     margin: '0 0 24px 0'
   },
   enquiryCard: {
-    backgroundColor: '#0a0a0a',
-    border: '1px solid #1a1a1a',
+    backgroundColor: '#ffffff',
+    border: '1px solid #e2e8f0',
     borderRadius: '12px',
     padding: '24px',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
+    boxShadow: '0 8px 24px rgba(0,0,0,0.05)'
   },
   enquiryHeading: {
     fontSize: '16px',
     fontWeight: '800',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: '0 0 20px 0',
-    borderBottom: '1px solid #1a1a1a',
+    borderBottom: '1px solid #e2e8f0',
     paddingBottom: '10px'
   },
   formGroup: {
@@ -600,12 +602,12 @@ const styles = {
     cursor: 'pointer',
     letterSpacing: '1px',
     transition: 'background-color 0.2s',
-    boxShadow: '0 4px 10px rgba(227,6,19,0.25)'
+    boxShadow: '0 4px 12px rgba(227,6,19,0.25)'
   },
   successBox: {
-    backgroundColor: '#064e3b',
-    border: '1px solid #047857',
-    color: '#34d399',
+    backgroundColor: '#ecfdf5',
+    border: '1px solid #a7f3d0',
+    color: '#065f46',
     padding: '20px',
     borderRadius: '8px',
     textAlign: 'center'
@@ -613,9 +615,9 @@ const styles = {
   specsSection: {
     width: '100%',
     padding: '40px 0 60px 0',
-    backgroundColor: '#050505',
-    borderTop: '1px solid #1a1a1a',
-    borderBottom: '1px solid #1a1a1a'
+    backgroundColor: '#f8fafc',
+    borderTop: '1px solid #e2e8f0',
+    borderBottom: '1px solid #e2e8f0'
   },
   specsWrapper: {
     maxWidth: '1200px',
@@ -625,7 +627,7 @@ const styles = {
   specsHeading: {
     fontSize: '24px',
     fontWeight: '900',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: '0 0 10px 0',
     textAlign: 'left'
   },
@@ -638,9 +640,9 @@ const styles = {
   },
   relatedSection: {
     width: '100%',
-    backgroundColor: '#0a0a0a',
+    backgroundColor: '#ffffff',
     padding: '60px 0 80px 0',
-    borderTop: '1px solid #1a1a1a'
+    borderTop: '1px solid #e2e8f0'
   },
   relatedWrapper: {
     maxWidth: '1200px',
@@ -651,7 +653,7 @@ const styles = {
   relatedHeading: {
     fontSize: '24px',
     fontWeight: '900',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: '0 0 10px 0'
   },
   relatedDivider: {

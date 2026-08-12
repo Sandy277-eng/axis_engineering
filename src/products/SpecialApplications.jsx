@@ -34,12 +34,12 @@ export default function SpecialApplications() {
 
   return (
     <div style={styles.container}>
-      {/* CSS STYLES FOR PREMIUM RED ACCENT TRANSITIONS & DARK THEME */}
+      {/* CSS STYLES FOR PREMIUM RED ACCENT TRANSITIONS & WHITE/LIGHT THEME */}
       <style>{`
         .aishmo-filter-btn {
-          background: #121212;
-          color: #ffffff;
-          border: 1px solid #333333;
+          background: #f8fafc;
+          color: #334155;
+          border: 1px solid #e2e8f0;
           padding: 10px 20px;
           font-weight: 700;
           font-size: 13px;
@@ -52,18 +52,18 @@ export default function SpecialApplications() {
           background: #E30613;
           color: #ffffff;
           border-color: #E30613;
-          box-shadow: 0 4px 10px rgba(227, 6, 19, 0.25);
+          box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
         }
         .aishmo-card {
           position: relative;
-          background: #0a0a0a;
-          border: 1px solid #1a1a1a;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
           border-radius: 12px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
           width: 100%;
         }
         .aishmo-card::after {
@@ -75,12 +75,13 @@ export default function SpecialApplications() {
           height: 0%;
           width: 100%;
           background: #E30613;
-          transition: height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition: height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
           z-index: 1;
         }
         .aishmo-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 20px 40px rgba(227, 6, 19, 0.25);
+          border-color: #E30613;
         }
         .aishmo-card:hover::after {
           height: 100%;
@@ -88,13 +89,13 @@ export default function SpecialApplications() {
         .aishmo-card-img-wrapper {
           position: relative;
           height: 240px;
-          background: #111111;
+          background: #f8fafc;
           overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
           z-index: 2;
-          border-bottom: 1px solid #1a1a1a;
+          border-bottom: 1px solid #f1f5f9;
         }
         .aishmo-card-img {
           width: auto;
@@ -120,7 +121,7 @@ export default function SpecialApplications() {
         .aishmo-card-title {
           font-size: 20px;
           font-weight: 800;
-          color: #ffffff;
+          color: #0f172a;
           margin: 0 0 6px 0;
           transition: color 0.3s ease;
         }
@@ -129,7 +130,8 @@ export default function SpecialApplications() {
           font-size: 11px;
           font-weight: 700;
           color: #E30613;
-          background: rgba(227, 6, 19, 0.1);
+          background: #fef2f2;
+          border: 1px solid #fecaca;
           padding: 4px 10px;
           border-radius: 20px;
           margin-bottom: 14px;
@@ -139,13 +141,13 @@ export default function SpecialApplications() {
         .aishmo-card-desc {
           font-size: 13px;
           line-height: 1.6;
-          color: #cbd5e1;
+          color: #475569;
           margin: 0 0 16px 0;
           transition: color 0.3s ease;
           flex-grow: 1;
         }
         .aishmo-card-specs {
-          border-top: 1px solid #1a1a1a;
+          border-top: 1px solid #f1f5f9;
           padding-top: 12px;
           margin-bottom: 20px;
           transition: border-color 0.3s ease;
@@ -157,12 +159,12 @@ export default function SpecialApplications() {
           margin-bottom: 6px;
         }
         .aishmo-spec-key {
-          color: #94a3b8;
+          color: #64748b;
           transition: color 0.3s ease;
         }
         .aishmo-spec-val {
           font-weight: 700;
-          color: #ffffff;
+          color: #0f172a;
           transition: color 0.3s ease;
         }
         .aishmo-btn-group {
@@ -183,20 +185,30 @@ export default function SpecialApplications() {
           text-decoration: none;
           transition: all 0.3s ease;
           border: 1px solid #E30613;
+          box-shadow: 0 2px 8px rgba(227, 6, 19, 0.2);
+        }
+        .aishmo-btn-view:hover {
+          background: #b9050f;
+          border-color: #b9050f;
         }
         .aishmo-btn-video {
           flex: 1;
           display: block;
           text-align: center;
-          background: transparent;
-          color: #E30613;
+          background: #ffffff;
+          color: #0f172a;
           padding: 10px 14px;
           font-size: 12px;
           font-weight: 700;
           border-radius: 4px;
           text-decoration: none;
           transition: all 0.3s ease;
-          border: 1px solid #E30613;
+          border: 1px solid #cbd5e1;
+        }
+        .aishmo-btn-video:hover {
+          background: #f8fafc;
+          border-color: #94a3b8;
+          color: #E30613;
         }
         .aishmo-card:hover .aishmo-card-title {
           color: #ffffff;
@@ -204,15 +216,16 @@ export default function SpecialApplications() {
         .aishmo-card:hover .aishmo-card-badge {
           color: #E30613;
           background: #ffffff;
+          border-color: #ffffff;
         }
         .aishmo-card:hover .aishmo-card-desc {
-          color: #f1f5f9;
+          color: #ffffff;
         }
         .aishmo-card:hover .aishmo-card-specs {
-          border-color: rgba(255, 255, 255, 0.2);
+          border-color: rgba(255, 255, 255, 0.25);
         }
         .aishmo-card:hover .aishmo-spec-key {
-          color: #e2e8f0;
+          color: rgba(255, 255, 255, 0.85);
         }
         .aishmo-card:hover .aishmo-spec-val {
           color: #ffffff;
@@ -221,32 +234,34 @@ export default function SpecialApplications() {
           background: #ffffff;
           color: #E30613;
           border-color: #ffffff;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         .aishmo-card:hover .aishmo-btn-video {
           color: #ffffff;
           border-color: #ffffff;
+          background: transparent;
         }
         .aishmo-card:hover .aishmo-btn-video:hover {
-          background: rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.2);
         }
 
-        /* RELATED PRODUCT CARDS styling */
+        /* RELATED PRODUCT CARDS */
         .related-card {
           position: relative;
-          background: #0a0a0a;
-          border: 1px solid #1a1a1a;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
           border-radius: 12px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           text-decoration: none;
         }
         .related-card-img-wrapper {
           position: relative;
           height: 180px;
-          background: #111111;
+          background: #ffffff;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -272,26 +287,26 @@ export default function SpecialApplications() {
           align-items: center;
           justify-content: center;
           font-weight: 900;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 6px rgba(227, 6, 19, 0.3);
         }
         .related-card-bottom {
-          background: #0a0a0a;
+          background: #f8fafc;
           padding: 16px;
           text-align: center;
-          border-top: 1px solid #1a1a1a;
-          transition: background-color 0.3s ease;
+          border-top: 1px solid #f1f5f9;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
         .related-card-title {
           font-size: 14px;
           font-weight: 800;
-          color: #ffffff;
+          color: #0f172a;
           margin: 0;
           transition: color 0.3s ease;
           text-transform: uppercase;
         }
         .related-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
         }
         .related-card:hover .related-card-img {
           transform: scale(1.07);
@@ -503,8 +518,8 @@ const styles = {
   container: {
     width: '100%',
     fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif',
-    backgroundColor: '#050505',
-    color: '#ffffff',
+    backgroundColor: '#ffffff',
+    color: '#0f172a',
     margin: 0,
     padding: 0,
     minHeight: '100vh',
@@ -663,7 +678,7 @@ const styles = {
   filterHeading: {
     fontSize: '16px',
     fontWeight: '800',
-    color: '#cbd5e1',
+    color: '#0f172a',
     marginBottom: '16px'
   },
   filterButtonGroup: {
@@ -694,14 +709,14 @@ const styles = {
   groupHeading: {
     fontSize: '22px',
     fontWeight: '900',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: 0,
     whiteSpace: 'nowrap'
   },
   groupLine: {
     flexGrow: 1,
     height: '2px',
-    backgroundColor: '#1a1a1a'
+    backgroundColor: '#e2e8f0'
   },
   cardGrid: {
     display: 'grid',
@@ -711,9 +726,9 @@ const styles = {
   },
   relatedSection: {
     width: '100%',
-    backgroundColor: '#0a0a0a',
+    backgroundColor: '#f8fafc',
     padding: '60px 0 80px 0',
-    borderTop: '1px solid #1a1a1a'
+    borderTop: '1px solid #e2e8f0'
   },
   relatedWrapper: {
     maxWidth: '1200px',
@@ -724,7 +739,7 @@ const styles = {
   relatedHeading: {
     fontSize: '28px',
     fontWeight: '900',
-    color: '#ffffff',
+    color: '#0f172a',
     margin: '0 0 10px 0'
   },
   relatedDivider: {

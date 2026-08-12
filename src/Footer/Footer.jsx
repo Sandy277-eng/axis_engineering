@@ -59,7 +59,7 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.columnHeader}>CONTACT & HEADQUARTERS</h4>
           <div style={styles.contactItem}>
-            <span style={styles.icon}>📍</span>
+            <span style={styles.icon}>🏠︎</span>
             <span>
               <strong>Axis Engineering Solutions</strong><br />
               78-B, First Floor, Geason Housing Colony,<br />
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
 
           <div style={styles.contactItem}>
-            <span style={styles.icon}>✉️</span>
+            <span style={styles.icon}>🖂</span>
             <a href="mailto:info@axisengineeringsolutions.in" style={styles.emailLink}>
               info@axisengineeringsolutions.in
             </a>
