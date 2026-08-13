@@ -21,22 +21,36 @@ export default function DetronModelDetailPage() {
 
   // Normalize decoded model name
   const rawModelName = modelName ? decodeURIComponent(modelName).trim() : '';
-  const normalizedModelName = rawModelName.toLowerCase();
+
+  // Exact matching helper
+  const isExactMatch = (pName, target) => {
+    if (!pName || !target) return false;
+    const cleanP = pName.trim().toLowerCase();
+    const cleanTarget = target.trim().toLowerCase();
+    if (cleanP === cleanTarget) return true;
+    if (encodeURIComponent(pName).toLowerCase() === cleanTarget) return true;
+    // Check multi-model slash names, e.g. "GFA-170SII / GFA-170HII"
+    const subModels = cleanP.split('/').map(s => s.trim());
+    if (subModels.includes(cleanTarget)) return true;
+    return false;
+  };
+
+  const isFuzzyMatch = (pName, target) => {
+    if (!pName || !target) return false;
+    const cleanP = pName.trim().toLowerCase();
+    const cleanTarget = target.trim().toLowerCase();
+    return cleanP.includes(cleanTarget) || cleanTarget.includes(cleanP);
+  };
 
   // Find the product in our database
   let categoryData = PRODUCT_DATABASE[productId];
   let product = null;
   let sizeGroup = null;
 
+  // 1. Check exact match in current category
   if (categoryData) {
     for (const item of categoryData.items) {
-      const found = item.products.find(p => 
-        p.name.trim().toLowerCase() === normalizedModelName ||
-        p.name.trim() === rawModelName ||
-        encodeURIComponent(p.name).toLowerCase() === normalizedModelName ||
-        p.name.toLowerCase().includes(normalizedModelName) ||
-        normalizedModelName.includes(p.name.toLowerCase())
-      );
+      const found = item.products.find(p => isExactMatch(p.name, rawModelName));
       if (found) {
         product = found;
         sizeGroup = item.size;
@@ -45,16 +59,39 @@ export default function DetronModelDetailPage() {
     }
   }
 
-  // If not found in current category, search all categories in database
+  // 2. Check exact match across all categories
   if (!product) {
     for (const catVal of Object.values(PRODUCT_DATABASE)) {
       for (const item of catVal.items) {
-        const found = item.products.find(p => 
-          p.name.trim().toLowerCase() === normalizedModelName ||
-          p.name.trim() === rawModelName ||
-          p.name.toLowerCase().includes(normalizedModelName) ||
-          normalizedModelName.includes(p.name.toLowerCase())
-        );
+        const found = item.products.find(p => isExactMatch(p.name, rawModelName));
+        if (found) {
+          product = found;
+          sizeGroup = item.size;
+          categoryData = catVal;
+          break;
+        }
+      }
+      if (product) break;
+    }
+  }
+
+  // 3. Fallback to fuzzy match in current category if exact match was not found
+  if (!product && categoryData) {
+    for (const item of categoryData.items) {
+      const found = item.products.find(p => isFuzzyMatch(p.name, rawModelName));
+      if (found) {
+        product = found;
+        sizeGroup = item.size;
+        break;
+      }
+    }
+  }
+
+  // 4. Fallback to fuzzy match across all categories
+  if (!product) {
+    for (const catVal of Object.values(PRODUCT_DATABASE)) {
+      for (const item of catVal.items) {
+        const found = item.products.find(p => isFuzzyMatch(p.name, rawModelName));
         if (found) {
           product = found;
           sizeGroup = item.size;

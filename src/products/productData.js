@@ -1541,7 +1541,7 @@ export const PRODUCT_DATABASE = {
             name: 'GTFA-650EHB',
             badge: 'Heavy Duty Trunnion 5-Axis (2000 / 3400 N.m)',
             description: 'Heavy duty trunnion 5-axis tilting rotary table with high-rigidity hydraulic clamping, dual-lead worm drive (1:72 / 1:120 ratio), and 300 kg load capacity.',
-            image: '/images/products_detron/5th_axis_pics/500mm/GTFAE-500XB.jpg',
+            image: '/images/products_detron/5th_axis_pics/500mm/GTFA-650EHB.png',
             specs: {
               'Worktable Diameter': 'Ø 650 x 520W mm / Ø 26 x 20W"',
               'Center Bore Diameter': 'Ø 70H7 / Ø 2.76H7',
@@ -1571,7 +1571,7 @@ export const PRODUCT_DATABASE = {
             name: 'GTFAI-650EHB / GTFAI-720EHB',
             badge: 'Inset / Low Center Height Trunnion 5-Axis (2000 / 3400 N.m)',
             description: 'Low-profile inset trunnion 5-axis tilting rotary table offering Ø650x520W / Ø720mm table size options, 250mm ultra-low horizontal table height, and hydraulic clamping.',
-            image: '/images/products_detron/5th_axis_pics/500mm/GTFAE-500XBL.jpg',
+            image: '/images/products_detron/5th_axis_pics/500mm/GTFAI-650EHB.png',
             specs: {
               'Worktable Diameter': 'Ø 650 x 520W mm / Ø 26 x 20W" (Ø 720 mm / Ø 28" for GTFAI-720EHB)',
               'Center Bore Diameter': 'Ø 70H7 / Ø 2.76H7',
