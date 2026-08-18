@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header';
-import ScrollCanvas from '../animation/ScrollCanvas';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -91,9 +90,16 @@ export default function FixtureProducts() {
   return (
     <div ref={pageContainerRef} style={styles.container}>
 
-      {/* FULL-PAGE FIXED BACKDROP (SCROLL CANVAS ANIMATION) */}
+      {/* FULL-PAGE FIXED BACKDROP (BACKGROUND VIDEO) */}
       <div style={styles.fixedBgWrapper}>
-        <ScrollCanvas totalFrames={192} folderPath="/fixture-frames" />
+        <video
+          src="/videos/detron_home_page_animation02.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={styles.bgVideo}
+        />
         <div style={styles.darkOverlay} />
       </div>
 
@@ -117,6 +123,31 @@ export default function FixtureProducts() {
 
         {/* MAIN CARDS TRACK */}
         <div style={styles.cardsContainer}>
+
+          {/* 5. THUMBNAIL SELECTOR BAR */}
+          <div ref={addToCardsRef} style={styles.galleryCard}>
+            <p style={styles.galleryIntro}>Select a model below to preview custom workholding configurations:</p>
+            <div style={styles.galleryRow}>
+              {FIXTURE_IMAGES.map((imgUrl, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => setActiveImageIndex(idx)}
+                  style={{
+                    ...styles.thumbnailWrapper,
+                    border: activeImageIndex === idx ? '3px solid #E30613' : '3px solid rgba(255, 255, 255, 0.1)',
+                    transform: activeImageIndex === idx ? 'scale(1.05)' : 'scale(1)'
+                  }}
+                >
+                  <img
+                    src={imgUrl}
+                    alt={`Fixture Model Thumbnail ${idx + 1}`}
+                    style={styles.thumbnailImg}
+                  />
+                  <div style={styles.thumbnailLabel}>FIXTURE MODEL {idx + 1}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* 2. TECHNICAL SHOWCASE CARD */}
           <div ref={addToCardsRef} style={styles.glassCardWide}>
@@ -186,31 +217,6 @@ export default function FixtureProducts() {
               <p style={styles.bannerHighlight}>
                 Our work holding solutions integrate directly with your machining center
               </p>
-            </div>
-          </div>
-
-          {/* 5. THUMBNAIL SELECTOR BAR */}
-          <div ref={addToCardsRef} style={styles.galleryCard}>
-            <p style={styles.galleryIntro}>Select a model below to preview custom workholding configurations:</p>
-            <div style={styles.galleryRow}>
-              {FIXTURE_IMAGES.map((imgUrl, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setActiveImageIndex(idx)}
-                  style={{
-                    ...styles.thumbnailWrapper,
-                    border: activeImageIndex === idx ? '3px solid #E30613' : '3px solid rgba(255, 255, 255, 0.1)',
-                    transform: activeImageIndex === idx ? 'scale(1.05)' : 'scale(1)'
-                  }}
-                >
-                  <img
-                    src={imgUrl}
-                    alt={`Fixture Model Thumbnail ${idx + 1}`}
-                    style={styles.thumbnailImg}
-                  />
-                  <div style={styles.thumbnailLabel}>FIXTURE MODEL {idx + 1}</div>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -289,7 +295,6 @@ const styles = {
     overflowX: 'hidden'
   },
 
-  /* FIXED BACKGROUND ENGINE */
   fixedBgWrapper: {
     position: 'fixed',
     top: 0,
@@ -298,6 +303,11 @@ const styles = {
     height: '100vh',
     zIndex: 0,
     pointerEvents: 'none'
+  },
+  bgVideo: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover'
   },
   darkOverlay: {
     position: 'absolute',

@@ -107,7 +107,7 @@ export default function About() {
       {/* FIXED FULL-SCREEN BACKGROUND VIDEO WITH LOW OPACITY */}
       <div style={styles.bgVideoWrapper}>
         <video
-          src="/videos/detron_home_page_animation.mp4"
+          src="/videos/detron_home_page_animation03.mp4"
           autoPlay
           loop
           muted
@@ -291,7 +291,7 @@ const styles = {
   container: { position: 'relative', backgroundColor: '#000000', color: '#ffffff', fontFamily: 'Segoe UI, Arial, sans-serif', minHeight: '220vh', overflowX: 'hidden' },
   
   bgVideoWrapper: { position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, overflow: 'hidden', pointerEvents: 'none' },
-  bgVideo: { width: '100%', height: '100%', objectFit: 'cover', opacity: 0.20 }, 
+  bgVideo: { width: '100%', height: '100%', objectFit: 'cover', opacity: 0.50 }, 
   bgVideoOverlay: { position: 'absolute', inset: 0, background: 'radial-gradient(circle, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.9) 100%)' },
 
   /* COMPACT FIXED HEADER STYLES */
