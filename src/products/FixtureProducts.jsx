@@ -3,6 +3,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,15 +167,27 @@ export default function FixtureProducts() {
               {/* Right side: Detailed Description */}
               <div style={styles.infoCol}>
                 <h2 style={styles.cardHeading}>
-                  Improved & Increased Machining Efficiency Through Innovative Fixture Technology
+                  Precision Fixtures Engineered to Work Smarter, Not Harder
                 </h2>
                 <div style={styles.headingDivider} />
                 <p style={styles.cardParagraph}>
-                  AES -Design and Manufacturer of Machining center Fixtures & Jigs,. We specialized in hydraulic and manual fixtures for prismatic work-holding applications in both high and low volume production environments.
+                  At Axis Engineering solutions, we design custom fixtures and jigs for machining centers, made for real production Floor, not just paper specs.
                 </p>
                 <p style={styles.cardParagraph}>
-                  Focusing on reducing your dependency on skilled labor AES Work holding designs "Smart" fixtures with special options like part seating confirmation, part present sensing, datum wash, hydraulic integration to machine tool, and the ability to employ robotic loading and unloading.
+                  We specialize in both hydraulic and manual workholding fixtures for prismatic components, engineered to perform well on both high-volume and low-volume manufacturing environments.
                 </p>
+                <p style={styles.cardParagraph}>
+                  Every AES Fixture is designed to be smart from the ground level with features like part-seating confirmation, part-presence sensing, datum wash systems, and seamless hydraulic integration with your machine tool.
+                </p>
+                <p style={styles.cardParagraph}>
+                  Looking to go fully automated?<br />
+                  Our fixtures are also built to support both robotic loading and unloading, that keeps your line moving with less manual intervention.
+                </p>
+                <div style={{ marginTop: '16px' }}>
+                  <Link to="/contact" style={styles.ctaButton}>
+                    EXPLORE FIXTURE SOLUTIONS &gt;
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -186,7 +199,7 @@ export default function FixtureProducts() {
               <div style={styles.bentoIcon}>✦</div>
               <h3 style={styles.bentoCellTitle}>Target Industries</h3>
               <p style={styles.bentoCellText}>
-                We engineer and deliver workholding fixtures designed to support operations across high-precision fields including:
+                We design and build workholding fixtures for industries that demand precision and reliability, including:
               </p>
               <div style={styles.industriesGrid}>
                 {['Automotive', 'Mining', 'Construction', 'Energy / Power', 'Military / Aerospace', 'Electronics'].map((ind) => (
@@ -195,15 +208,15 @@ export default function FixtureProducts() {
               </div>
             </div>
 
-            {/* Cell B: Design Philosophy */}
+            {/* Cell B: In-House Manufacturing */}
             <div ref={addToCardsRef} style={styles.bentoCellHalf}>
               <div style={styles.bentoIcon}>⚙</div>
               <h3 style={styles.bentoCellTitle}>In-House Manufacturing</h3>
               <p style={styles.bentoCellText}>
-                From the largest assemblies to the smallest custom workholding parts, every customer's project is designed, verified, and built in-house to guarantee the highest level of Quality, Price competitiveness, and prompt Delivery.
+                From large assemblies to the smallest custom parts, we design, check, and build everything in-house. This helps us keep quality high, prices competitive, and delivery on time.
               </p>
               <p style={{ ...styles.bentoCellText, fontWeight: '700', color: '#ffffff' }}>
-                AES Work holding is truly a global leader in providing your custom fixturing and work holding needs.
+                At AES, workholding isn't just a product, it's a solution built around your exact needs.
               </p>
             </div>
           </div>
@@ -528,6 +541,21 @@ const styles = {
     lineHeight: '1.8',
     color: '#cbd5e1',
     margin: 0
+  },
+  ctaButton: {
+    backgroundColor: '#E30613',
+    color: '#ffffff',
+    padding: '12px 24px',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    fontWeight: '800',
+    fontSize: '12px',
+    letterSpacing: '1px',
+    boxShadow: '0 4px 14px rgba(227, 6, 19, 0.4)',
+    display: 'inline-block',
+    transition: 'background-color 0.2s, transform 0.2s'
   },
 
   /* BENTO GRID ROW */

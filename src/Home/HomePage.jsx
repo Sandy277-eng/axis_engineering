@@ -496,6 +496,19 @@ export default function HomePage() {
           .supply-card:hover p {
             color: #ffffff !important;
           }
+          .supply-card:hover .supply-icon-circle {
+            background-color: #000000 !important;
+            border-color: #000000 !important;
+          }
+          .supply-card:hover svg {
+            stroke: #ffffff !important;
+          }
+          .supply-card:hover svg * {
+            stroke: #ffffff !important;
+          }
+          .supply-card:hover svg [fill="#E30613"] {
+            fill: #ffffff !important;
+          }
 
           /* Default text colors for Specialties items */
           .specialty-item span {
@@ -505,6 +518,9 @@ export default function HomePage() {
           .specialty-item svg {
             stroke: #E30613 !important;
             transition: stroke 0.4s ease;
+          }
+          .specialtyIconWrapper, .choose-icon-circle, .supply-icon-circle {
+            transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
           }
 
           /* Hover state for Specialties items */
@@ -516,8 +532,18 @@ export default function HomePage() {
           .specialty-item:hover span {
             color: #ffffff !important;
           }
+          .specialty-item:hover .specialtyIconWrapper {
+            background-color: #000000 !important;
+            border-color: #000000 !important;
+          }
           .specialty-item:hover svg {
             stroke: #ffffff !important;
+          }
+          .specialty-item:hover svg * {
+            stroke: #ffffff !important;
+          }
+          .specialty-item:hover svg [fill="#E30613"] {
+            fill: #ffffff !important;
           }
 
           /* Default text colors for Choose Cards */
@@ -543,6 +569,33 @@ export default function HomePage() {
           .choose-card:hover h4,
           .choose-card:hover p {
             color: #ffffff !important;
+          }
+          .choose-card:hover .choose-icon-circle {
+            background-color: #000000 !important;
+            border-color: #000000 !important;
+          }
+          .choose-card:hover svg {
+            stroke: #ffffff !important;
+          }
+          .choose-card:hover svg * {
+            stroke: #ffffff !important;
+          }
+          
+          /* Connecting Line Hover Animation */
+          .section-box:hover .choose-grid-line {
+            background-color: rgba(227, 6, 19, 0.6) !important;
+            transform: scaleY(1.5);
+          }
+          .choose-card:hover ~ .choose-grid-line {
+            background-color: rgba(227, 6, 19, 0.8) !important;
+          }
+          
+          .section-box:hover .specialty-grid-line {
+            background-color: rgba(227, 6, 19, 0.6) !important;
+            transform: scaleY(1.5);
+          }
+          .specialty-item:hover ~ .specialty-grid-line {
+            background-color: rgba(227, 6, 19, 0.8) !important;
           }
         `}
       </style>
@@ -701,19 +754,18 @@ export default function HomePage() {
 
               <div style={styles.aboutMissionBox}>
                 <p style={styles.aboutMissionText}>
-                  <strong>Our mission has stayed simple since day one:</strong> cutting-edge
-                  technology, at an affordable price, backed by world-class service.
-                  Every product we recommend is chosen because it's the right fit
-                  for your application — not just the one we have on the shelf.
+                  <strong>Our mission has stayed simple since day one:</strong> deliver cutting-edge
+                  technology at a fair price, backed by world-class service. Every product
+                  we recommend is chosen because it's the right fit for your application —
+                  not just the one we have on the shelf.
                 </p>
               </div>
 
               <p style={styles.aboutDescription}>
-                We're proud to be the sole Indian distributor for Detron Machinery
-                Co. Ltd., Taiwan — the largest NC rotary table manufacturer in the
-                world by volume. Detron manufactures every element in-house under
-                strict quality control, so what you get is precision that's been
-                verified, not just promised on a spec sheet.
+                We are proud to be the sole Indian distributor for Detron Machinery Co. Ltd., Taiwan —
+                the world's leading manufacturer of NC rotary tables. Detron products are engineered
+                in-house under strict quality control, ensuring every component meets the precision
+                and reliability our customers expect.
               </p>
 
               <div style={{ marginTop: "24px" }}>
@@ -738,10 +790,9 @@ export default function HomePage() {
                 style={styles.aboutImageWithBorder}
               />
               <p style={styles.aboutRightDescription}>
-                Since 2014, we've stocked fast-moving models to meet urgent delivery
-                demands, and our team — spanning electrical, electronics, mechatronics,
-                and mechanical engineering — is built to solve real integration
-                problems, not just move boxes.
+                Since 2014, we've focused on providing fast-moving solutions to meet urgent delivery
+                demands. Our team of electrical, electronics, mechatronics, and mechanical engineers
+                works together to solve real integration challenges — not just move boxes.
               </p>
             </div>
           </div>
@@ -752,93 +803,110 @@ export default function HomePage() {
       <div style={styles.sectionWrapperClip}>
         <section ref={supplySectionRef} style={styles.sectionBoxCard} className="section-box">
           <div style={styles.sectionHeader}>
-            <span style={styles.panelBadge}>ONE-POINT SOLUTION</span>
+            <span style={styles.panelBadge}>OUR SOLUTIONS</span>
+            <div style={styles.badgeLineCentered} />
             <h2 style={styles.sectionTitle}>
               One-Point Solution for Automation & Integration
             </h2>
             <p style={styles.sectionSubtext}>
-              Based in Ambattur Industrial Estate, Chennai, Axis Engineering Solutions
-              is the sole distributor for Detron (Taiwan) across India, supplying:
+              Based in Andamur robotral base, Chennai, Axis Engineering Solutions is the sole distributor for Detron (Taiwan) across India, supplying.
             </p>
           </div>
 
           <div style={styles.supplyGrid}>
-            {/* Item 1 */}
-            <Link to="/products/detron/4-axis" style={styles.supplyCard} className="supply-card">
-              <div>
-                <span style={styles.supplyCardNum}>01</span>
-                <h4 style={styles.supplyCardTitle}>4th Axis NC Rotary Tables</h4>
-                <p style={styles.supplyCardDesc}>
-                  Ø125–800mm, 82 models, pneumatic & hydraulic
-                </p>
-              </div>
-              <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
-            </Link>
-
-            {/* Item 2 */}
-            <Link to="/products/detron/5-axis" style={styles.supplyCard} className="supply-card">
-              <div>
-                <span style={styles.supplyCardNum}>02</span>
-                <h4 style={styles.supplyCardTitle}>5th Axis Tilting Rotary Tables</h4>
-                <p style={styles.supplyCardDesc}>Ø100–630mm, 26 models</p>
-              </div>
-              <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
-            </Link>
-
-            {/* Item 3 */}
-            <Link to="/products/detron/auto-pallet-changer" style={styles.supplyCard} className="supply-card">
-              <div>
-                <span style={styles.supplyCardNum}>03</span>
-                <h4 style={styles.supplyCardTitle}>B-Axis Systems</h4>
-                <p style={styles.supplyCardDesc}>For HMC Auto Pallet Changers</p>
-              </div>
-              <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
-            </Link>
-
-            {/* Item 4 */}
-            <Link to="/products/detron/intelligent-control" style={styles.supplyCard} className="supply-card">
-              <div>
-                <span style={styles.supplyCardNum}>04</span>
-                <h4 style={styles.supplyCardTitle}>Direct Drive Motors</h4>
-                <p style={styles.supplyCardDesc}>
-                  Direct Drive Motor Tilting Rotary Tables
-                </p>
-              </div>
-              <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
-            </Link>
-
-            {/* Item 5 */}
-            <Link to="/products/detron/accessories" style={styles.supplyCard} className="supply-card">
-              <div>
-                <span style={styles.supplyCardNum}>05</span>
-                <h4 style={styles.supplyCardTitle}>Rotary Joints & Accessories</h4>
-                <p style={styles.supplyCardDesc}>
-                  Tailstocks, Support Tables, Chucks with Cradle System & SKT Rotary Joints
-                </p>
-              </div>
-              <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
-            </Link>
-
-            {/* Item 6 */}
-            <Link to="/products/fixtures" style={styles.supplyCard} className="supply-card">
-              <div>
-                <span style={styles.supplyCardNum}>06</span>
-                <h4 style={styles.supplyCardTitle}>Custom Fixtures</h4>
-                <p style={styles.supplyCardDesc}>
-                  Bespoke workholding engineered around part geometry
-                </p>
-              </div>
-              <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
-            </Link>
+            {[
+              {
+                title: "4th Axis NC Rotary Tables",
+                desc: "High precision rotary solutions for versatile applications.",
+                link: "/products/detron/4-axis",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" strokeDasharray="3 2" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" fill="#E30613" fillOpacity="0.1" />
+                    <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
+                  </svg>
+                )
+              },
+              {
+                title: "5th Axis Tilting Rotary Tables",
+                desc: "Built for complex 5-axis machining operations.",
+                link: "/products/detron/5-axis",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <path d="M4 19h16" />
+                    <path d="M6 19c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+                    <circle cx="12" cy="8" r="3" />
+                    <path d="M12 5V2M10 2h4M9 13l6-5" />
+                  </svg>
+                )
+              },
+              {
+                title: "R-Axis Systems",
+                desc: "For high-accuracy indexing and positioning.",
+                link: "/products/detron/auto-pallet-changer",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <rect x="5" y="5" width="14" height="14" rx="2" />
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v3M12 19v3" />
+                  </svg>
+                )
+              },
+              {
+                title: "Direct Drive Motors",
+                desc: "Direct Drive Rotary Torque Motors for superior performance.",
+                link: "/products/detron/intelligent-control",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <rect x="4" y="6" width="16" height="12" rx="2" />
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M2 12h2M20 12h2M12 4v2M12 18v2" />
+                  </svg>
+                )
+              },
+              {
+                title: "Rotary Joints & Accessories",
+                desc: "Durable, high-quality Rotary Joints and accessories for reliable systems.",
+                link: "/products/detron/accessories",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <path d="M8 5h8v14H8z" />
+                    <path d="M3 12h5M16 12h5" />
+                    <circle cx="12" cy="12" r="2" fill="#E30613" />
+                  </svg>
+                )
+              },
+              {
+                title: "Custom Fixtures",
+                desc: "Designed and engineered to meet your unique requirements.",
+                link: "/products/fixtures",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <path d="M4 8h16v12H4z" />
+                    <path d="M8 8V4h8v4" />
+                    <path d="M12 12v4" />
+                  </svg>
+                )
+              }
+            ].map((card, idx) => (
+              <Link key={idx} to={card.link} style={styles.supplyCard} className="supply-card">
+                <div style={styles.supplyCardContent}>
+                  <div style={styles.supplyIconBox} className="supply-icon-circle">{card.icon}</div>
+                  <h4 style={styles.supplyCardTitle}>{card.title}</h4>
+                  <p style={styles.supplyCardDesc}>{card.desc}</p>
+                </div>
+                <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
+              </Link>
+            ))}
           </div>
 
           <div style={styles.supplyBottomBox}>
             <p style={styles.supplyBottomText}>
-              We handle the full picture — supply, integration, and application support
-              — so you get total control over your automation, not just a component.
+              We handle the full picture — supply, integration, and application support — so you get total control over your automation, not just a component.
             </p>
             <Link to="/products/detron" style={styles.btnRedPrimary}>
-              VIEW ALL PRODUCTS &gt;
+              VIEW ALL PRODUCTS &rarr;
             </Link>
           </div>
         </section>
@@ -848,31 +916,84 @@ export default function HomePage() {
       <div style={styles.sectionWrapperClip}>
         <section ref={specialtiesRef} style={styles.sectionBoxCard} className="section-box">
           <div style={styles.sectionHeader}>
-            <span style={styles.panelBadge}>OUR EXPERTISE</span>
+            <span style={styles.panelBadge}>OUR STRENGTH</span>
+            <div style={styles.badgeLineCentered} />
             <h2 style={styles.sectionTitle}>What We Bring to Every Project</h2>
             <p style={styles.sectionSubtext}>
-              Our engineering capabilities span beyond standard distribution, providing
-              manufacturers with deep technical value.
+              Our engineering capabilities span beyond standard solutions, providing end-to-end manufacturing with deep technical value.
             </p>
           </div>
 
           <div style={styles.specialtiesGrid}>
+            <div className="specialty-grid-line line-1" style={{ ...styles.specialtyGridLine, top: "28%" }} />
+            <div className="specialty-grid-line line-2" style={{ ...styles.specialtyGridLine, top: "72%" }} />
             {[
-              "4th & 5th Axis CNC Interfacing",
-              "Fanuc, Mitsubishi, Siemens & Heidenhain Controls",
-              "Direct Drive (DDR) Integration",
-              "Hydraulic Fixture & Rotary Systems",
-              "Jig Control Logic & Safety Interlocks",
-              "Servo Tuning & Cable Management",
+              {
+                text: "On-Site & In-House CNC Machining",
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" fill="#E30613" />
+                    <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
+                  </svg>
+                )
+              },
+              {
+                text: "Press, Shearing, Bending & Mechanical Controls",
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                  </svg>
+                )
+              },
+              {
+                text: "Robust Servo (M&I) Integration",
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 3" />
+                    <circle cx="12" cy="12" r="2" fill="#E30613" />
+                  </svg>
+                )
+              },
+              {
+                text: "Hydraulic Fixture & Rotary Systems",
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 11 2 2 4-4" />
+                  </svg>
+                )
+              },
+              {
+                text: "PLC Control Logic & Safety Interlocks",
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+                  </svg>
+                )
+              },
+              {
+                text: "Servo Tuning & Cable Management",
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m14.7 6.3-1.1-1.1c-1-1-2.6-1-3.6 0L4 11.2V15h3.8l6-6c1-1 1-2.6.9-3.7z" />
+                    <path d="m16 8 4 4" />
+                    <path d="m18 10-3 3" />
+                    <path d="m9 15-5 5" />
+                  </svg>
+                )
+              }
             ].map((specialty, idx) => (
               <div key={idx} style={styles.specialtyItem} className="specialty-item">
-                <div style={styles.specialtyIconWrapper}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                  </svg>
+                <div style={styles.specialtyIconWrapper} className="specialtyIconWrapper">
+                  {specialty.icon}
                 </div>
-                <span style={styles.specialtyText}>{specialty}</span>
+                <span style={styles.specialtyText}>{specialty.text}</span>
               </div>
             ))}
           </div>
@@ -883,93 +1004,195 @@ export default function HomePage() {
       <div style={styles.sectionWrapperClip}>
         <section ref={whyChooseUsRef} style={styles.sectionBoxCard} className="section-box">
           <div style={styles.sectionHeader}>
-            <span style={styles.panelBadge}>THE AXIS ADVANTAGE</span>
+            <div style={styles.badgeContainerCentered}>
+              <div style={styles.badgeLineHorizontal} />
+              <span style={styles.panelBadge}>THE AXIS ADVANTAGE</span>
+              <div style={styles.badgeLineHorizontal} />
+            </div>
             <h2 style={styles.sectionTitle}>Why Manufacturers Choose Axis</h2>
+            <div style={styles.badgeLineCentered} />
+            <p style={styles.sectionSubtext}>
+              We combine ready inventory, engineering expertise, and trusted partnerships to deliver real value to your machining operations.
+            </p>
           </div>
 
           <div style={styles.chooseGrid}>
-            <div style={styles.chooseCard} className="choose-card">
-              <h4 style={styles.chooseCardTitle}>Stock on Hand, Not on Paper</h4>
-              <p style={styles.chooseCardText}>
-                Fast-moving Detron models ready for immediate delivery, minimizing
-                your lead times.
-              </p>
-            </div>
-
-            <div style={styles.chooseCard} className="choose-card">
-              <h4 style={styles.chooseCardTitle}>Turnkey Integration</h4>
-              <p style={styles.chooseCardText}>
-                Interfacing, controls, and safety logic—we don't just drop off a box,
-                we make it run.
-              </p>
-            </div>
-
-            <div style={styles.chooseCard} className="choose-card">
-              <h4 style={styles.chooseCardTitle}>A Decade of Proof</h4>
-              <p style={styles.chooseCardText}>
-                Trusted by STM, BFW, Hurco, LMW, AMS, and Phillips since 2014 across
-                thousands of machines.
-              </p>
-            </div>
-
-            <div style={styles.chooseCard} className="choose-card">
-              <h4 style={styles.chooseCardTitle}>Senior Engineering Attention</h4>
-              <p style={styles.chooseCardText}>
-                A focused 11–50 person team that understands your machining
-                application inside-out.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* 7. ADVANCED APPLICATION TECHNOLOGY (BEST PRACTICES) */}
-      <div style={styles.sectionWrapperClip}>
-        <section style={styles.sectionBoxCard} className="section-box">
-          <div style={styles.sectionHeader}>
-            <span style={styles.panelBadge}>QUALITY STANDARDS</span>
-            <h2 style={styles.sectionTitle}>We Follow Best Practices</h2>
-          </div>
-
-          <div style={styles.practicesGrid}>
+            <div className="choose-grid-line" style={styles.chooseGridLine} />
             {[
-              { title: "Latest Designs", desc: "Using advanced engineering CAD standards." },
-              { title: "Modern Technology", desc: "Precision CNC hardware and electrical control design." },
-              { title: "Projects Delivered On Time", desc: "Rigorous milestone scheduling and delivery support." },
-              { title: "Improved Machine Processes", desc: "Engineered to increase machining efficiency and tool life." },
-            ].map((practice, idx) => (
-              <div key={idx} style={styles.practiceItem}>
-                <div style={styles.practicePoint} />
-                <h4 style={styles.practiceTitle}>{practice.title}</h4>
-                <p style={styles.practiceDesc}>{practice.desc}</p>
+              {
+                title: "Stock on Hand, Not on Paper",
+                desc: "Fast-moving Detron models ready for immediate delivery, minimizing your lead times.",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                  </svg>
+                )
+              },
+              {
+                title: "Turnkey Integration",
+                desc: "Interfacing, controls, and safety logic—we don't just drop off a box, we make it run.",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+                  </svg>
+                )
+              },
+              {
+                title: "A Decade of Proof",
+                desc: "Trusted by STM, BFW, Hurco, LMW, AMS, and Phillips since 2014 across thousands of machines.",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 11 2 2 4-4" />
+                  </svg>
+                )
+              },
+              {
+                title: "Senior Engineering Attention",
+                desc: "A focused 11–50 person team that understands your machining application inside-out.",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                )
+              }
+            ].map((card, idx) => (
+              <div key={idx} style={styles.chooseCard} className="choose-card">
+                <div style={styles.chooseIconCircle} className="choose-icon-circle">
+                  {card.icon}
+                </div>
+                <h4 style={styles.chooseCardTitle}>{card.title}</h4>
+                <p style={styles.chooseCardText}>{card.desc}</p>
               </div>
             ))}
           </div>
         </section>
       </div>
 
-      {/* 8. TRUSTED BY */}
+      {/* 7. QUALITY STANDARDS & TRUSTED BUILDERS SIDE-BY-SIDE */}
       <div style={styles.sectionWrapperClip}>
-        <section style={styles.sectionBoxCard} className="section-box">
-          <div style={styles.trustedByContainer}>
-            <h3 style={styles.trustedByTitle}>
-              Trusted by India's Leading Machine Tool Builders
-            </h3>
-            <div style={styles.marqueeWrapper}>
-              <span style={styles.marqueeItem}>STM</span>
-              <span style={styles.marqueeDot}>·</span>
-              <span style={styles.marqueeItem}>BFW</span>
-              <span style={styles.marqueeDot}>·</span>
-              <span style={styles.marqueeItem}>Hurco</span>
-              <span style={styles.marqueeDot}>·</span>
-              <span style={styles.marqueeItem}>LMW</span>
-              <span style={styles.marqueeDot}>·</span>
-              <span style={styles.marqueeItem}>AMS</span>
-              <span style={styles.marqueeDot}>·</span>
-              <span style={styles.marqueeItem}>Phillips</span>
+        <div style={styles.sideBySideWrapper}>
+          
+          {/* Left card: Best Practices */}
+          <section style={styles.leftCard} className="section-box">
+            <div style={styles.sectionHeaderLeft}>
+              <span style={styles.panelBadge}>QUALITY STANDARDS</span>
+              <div style={styles.panelBadgeLine} />
+              <h2 style={styles.sectionTitleLeft}>We Follow Best Practices</h2>
             </div>
-          </div>
-        </section>
+
+            <div style={styles.verticalPracticesGrid}>
+              {[
+                { 
+                  title: "Latest Designs", 
+                  desc: "Using advanced engineering CAD standards.",
+                  icon: (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                      <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                      <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: "Modern Technology", 
+                  desc: "Precision CNC hardware and electrical control design.",
+                  icon: (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                      <rect x="9" y="9" width="6" height="6" />
+                      <line x1="9" y1="1" x2="9" y2="4" />
+                      <line x1="15" y1="1" x2="15" y2="4" />
+                      <line x1="9" y1="20" x2="9" y2="23" />
+                      <line x1="15" y1="20" x2="15" y2="23" />
+                      <line x1="20" y1="9" x2="23" y2="9" />
+                      <line x1="20" y1="15" x2="23" y2="15" />
+                      <line x1="1" y1="9" x2="4" y2="9" />
+                      <line x1="1" y1="15" x2="4" y2="15" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: "Projects Delivered On Time", 
+                  desc: "Rigorous milestone scheduling and delivery support.",
+                  icon: (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                      <polyline points="8 14 10 16 16 11" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: "Improved Machine Processes", 
+                  desc: "Engineered to increase machining efficiency and tool life.",
+                  icon: (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10" />
+                      <line x1="12" y1="20" x2="12" y2="4" />
+                      <line x1="6" y1="20" x2="6" y2="14" />
+                      <polyline points="12 4 18 10 18 4" />
+                      <path d="M4 20h16" />
+                    </svg>
+                  )
+                },
+              ].map((practice, idx) => (
+                <div key={idx}>
+                  <div style={styles.practiceFlexItem}>
+                    <div style={styles.practiceIconCircle}>
+                      {practice.icon}
+                    </div>
+                    <div style={styles.practiceTextWrapper}>
+                      <h4 style={styles.practiceTitle}>{practice.title}</h4>
+                      <p style={styles.practiceDesc}>{practice.desc}</p>
+                    </div>
+                  </div>
+                  {idx < 3 && <div style={styles.practiceDivider} />}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Right card: Trusted Machine Tool Builders */}
+          <section style={styles.rightCard} className="section-box">
+            <div style={styles.rightCardDivider} />
+            <div style={styles.trustedByContainer}>
+              <h3 style={styles.trustedByTitle}>
+                Trusted by India's Leading Machine Tool Builders
+              </h3>
+              
+              <div style={styles.logoLayout}>
+                {/* Row 1 */}
+                <div style={styles.logoRow}>
+                  <img src="/logo_axis/STM.png" alt="STM" style={styles.logoImg} />
+                  <div style={styles.logoDivider} />
+                  <img src="/logo_axis/BFW.png" alt="BFW" style={styles.logoImg} />
+                  <div style={styles.logoDivider} />
+                  <img src="/logo_axis/HURCO.png" alt="HURCO" style={styles.logoImg} />
+                  <div style={styles.logoDivider} />
+                  <img src="/logo_axis/LMW.png" alt="LMW" style={styles.logoImg} />
+                </div>
+                
+                {/* Row 2 */}
+                <div style={styles.logoRow}>
+                  <img src="/logo_axis/AMS.png" alt="AMS" style={styles.logoImg} />
+                  <div style={styles.logoDivider} />
+                  <img src="/logo_axis/PHILLIPS.png" alt="PHILLIPS" style={styles.logoImg} />
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
       </div>
 
       {/* 9. STATS BAR */}
@@ -1259,6 +1482,131 @@ const styles = {
     boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
     overflow: "hidden",
   },
+  sideBySideWrapper: {
+    maxWidth: "1300px",
+    margin: "0 auto",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "stretch",
+    gap: "32px",
+    boxSizing: "border-box",
+  },
+  leftCard: {
+    flex: "1 1 550px",
+    position: "relative",
+    zIndex: 20,
+    display: "flex",
+    flexDirection: "column",
+    gap: "28px",
+    padding: "48px",
+    backgroundColor: "#ffffff",
+    borderRadius: "12px",
+    border: "3px solid #cbd5e1",
+    boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
+    boxSizing: "border-box",
+  },
+  rightCard: {
+    flex: "1 1 450px",
+    position: "relative",
+    zIndex: 20,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: "48px",
+    backgroundColor: "#ffffff",
+    borderRadius: "12px",
+    border: "3px solid #cbd5e1",
+    boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
+    boxSizing: "border-box",
+  },
+  sectionHeaderLeft: {
+    maxWidth: "100%",
+    margin: "0 0 12px 0",
+    textAlign: "left",
+  },
+  sectionTitleLeft: {
+    fontSize: "32px",
+    fontWeight: "900",
+    color: "#0f172a",
+    margin: "0 0 16px 0",
+    letterSpacing: "-0.5px",
+  },
+  verticalPracticesGrid: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "24px",
+    width: "100%",
+  },
+  panelBadgeLine: {
+    width: "40px",
+    height: "3px",
+    backgroundColor: "#E30613",
+    marginTop: "4px",
+    marginBottom: "16px",
+  },
+  practiceFlexItem: {
+    display: "flex",
+    alignItems: "center",
+    gap: "20px",
+    textAlign: "left",
+  },
+  practiceIconCircle: {
+    width: "48px",
+    height: "48px",
+    borderRadius: "50%",
+    backgroundColor: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexShrink: 0,
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+  },
+  practiceTextWrapper: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "4px",
+  },
+  practiceDivider: {
+    height: "1px",
+    backgroundColor: "#f1f5f9",
+    margin: "12px 0 12px 48px",
+    width: "calc(100% - 48px)",
+  },
+  rightCardDivider: {
+    width: "60px",
+    height: "4px",
+    backgroundColor: "#E30613",
+    margin: "0 auto 32px auto",
+  },
+  logoLayout: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "48px",
+    marginTop: "48px",
+    alignItems: "center",
+    width: "100%",
+  },
+  logoRow: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "36px",
+    flexWrap: "wrap",
+    width: "100%",
+  },
+  logoImg: {
+    height: "42px",
+    width: "auto",
+    maxWidth: "140px",
+    objectFit: "contain",
+  },
+  logoDivider: {
+    width: "1px",
+    height: "32px",
+    backgroundColor: "#cbd5e1",
+  },
   aboutSectionBordered: {
     position: "relative",
     zIndex: 20,
@@ -1478,46 +1826,64 @@ const styles = {
     width: "100%",
   },
   supplyCard: {
-    backgroundColor: "#f8fafc",
+    backgroundColor: "#ffffff",
     border: "2px solid #e2e8f0",
     borderRadius: "6px",
-    padding: "32px",
+    padding: "28px",
     textAlign: "left",
     textDecoration: "none",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    height: "220px",
+    height: "260px",
     boxSizing: "border-box",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.02)",
+    transition: "transform 0.2s, box-shadow 0.2s",
   },
-  supplyCardNum: {
-    fontSize: "14px",
-    fontWeight: "900",
-    color: "#E30613",
-    fontFamily: "monospace",
+  badgeLineCentered: {
+    width: "40px",
+    height: "3px",
+    backgroundColor: "#E30613",
+    margin: "4px auto 16px auto",
+  },
+  supplyCardContent: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+  },
+  supplyIconBox: {
+    width: "48px",
+    height: "48px",
+    borderRadius: "50%",
+    backgroundColor: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "8px",
+    flexShrink: 0,
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
   },
   supplyCardTitle: {
-    fontSize: "20px",
+    fontSize: "18px",
     fontWeight: "800",
     color: "#0f172a",
-    margin: "12px 0 8px 0",
+    margin: 0,
   },
   supplyCardDesc: {
     fontSize: "13px",
     color: "#475569",
-    lineHeight: "1.5",
+    lineHeight: "1.55",
     margin: 0,
-    flexGrow: 1,
   },
   supplyCardLink: {
     fontSize: "12px",
     fontWeight: "800",
     color: "#E30613",
-    marginTop: "16px",
     display: "block",
   },
   supplyBottomBox: {
-    marginTop: "12px",
+    marginTop: "24px",
     textAlign: "center",
   },
   supplyBottomText: {
@@ -1536,31 +1902,46 @@ const styles = {
     gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
     gap: "20px",
     width: "100%",
+    position: "relative",
+    zIndex: 1,
+  },
+  specialtyGridLine: {
+    position: "absolute",
+    left: "5%",
+    width: "90%",
+    height: "2px",
+    backgroundColor: "rgba(227, 6, 19, 0.2)",
+    zIndex: 0,
+    transition: "background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+    pointerEvents: "none",
   },
   specialtyItem: {
-    backgroundColor: "#f8fafc",
+    backgroundColor: "#ffffff",
     border: "2px solid #e2e8f0",
     borderRadius: "6px",
-    padding: "24px 28px",
+    padding: "20px 24px",
     display: "flex",
     alignItems: "center",
-    gap: "16px",
+    gap: "20px",
     textAlign: "left",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.02)",
+    zIndex: 2,
   },
   specialtyIconWrapper: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "40px",
-    height: "40px",
-    backgroundColor: "rgba(227, 6, 19, 0.05)",
+    width: "48px",
+    height: "48px",
+    backgroundColor: "#f8fafc",
+    border: "1px solid #e2e8f0",
     borderRadius: "50%",
     flexShrink: 0,
   },
   specialtyText: {
-    fontSize: "14px",
-    fontWeight: "700",
-    color: "#1e293b",
+    fontSize: "14.5px",
+    fontWeight: "750",
+    color: "#0f172a",
   },
 
   chooseSection: {
@@ -1572,25 +1953,72 @@ const styles = {
     gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
     gap: "24px",
     width: "100%",
+    position: "relative",
+    zIndex: 1,
+  },
+  chooseGridLine: {
+    position: "absolute",
+    top: "84px",
+    left: "8%",
+    width: "84%",
+    height: "2px",
+    backgroundColor: "rgba(227, 6, 19, 0.2)",
+    zIndex: 0,
+    transition: "background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+    pointerEvents: "none",
   },
   chooseCard: {
-    backgroundColor: "#f8fafc",
+    backgroundColor: "#ffffff",
     border: "2px solid #e2e8f0",
+    borderTop: "4px solid #E30613",
     borderRadius: "6px",
-    padding: "32px",
+    padding: "32px 24px",
     textAlign: "left",
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
+    position: "relative",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.02)",
+    boxSizing: "border-box",
+    zIndex: 2,
+  },
+  chooseIconCircle: {
+    width: "48px",
+    height: "48px",
+    borderRadius: "50%",
+    backgroundColor: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "8px",
+    flexShrink: 0,
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+    zIndex: 2,
   },
   chooseCardTitle: {
     fontSize: "18px",
     fontWeight: "850",
     color: "#0f172a",
-    margin: "0 0 12px 0",
+    margin: 0,
   },
   chooseCardText: {
     fontSize: "13.5px",
     color: "#475569",
     lineHeight: "1.6",
     margin: 0,
+  },
+  badgeContainerCentered: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "12px",
+    marginBottom: "12px",
+  },
+  badgeLineHorizontal: {
+    width: "30px",
+    height: "2px",
+    backgroundColor: "#E30613",
   },
 
   practicesSection: {
@@ -1639,12 +2067,12 @@ const styles = {
     textAlign: "center",
   },
   trustedByTitle: {
-    fontSize: "12px",
+    fontSize: "14.5px",
     fontWeight: "900",
     color: "#64748b",
-    letterSpacing: "1.5px",
+    letterSpacing: "2.5px",
     textTransform: "uppercase",
-    marginBottom: "24px",
+    marginBottom: "36px",
   },
   marqueeWrapper: {
     display: "flex",
