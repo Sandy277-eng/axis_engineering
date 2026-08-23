@@ -929,7 +929,7 @@ export default function HomePage() {
             <div className="specialty-grid-line line-2" style={{ ...styles.specialtyGridLine, top: "72%" }} />
             {[
               {
-                text: "On-Site & In-House CNC Machining",
+                text: "4th & 5th Axis CNC Interfacing",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
@@ -940,7 +940,7 @@ export default function HomePage() {
                 )
               },
               {
-                text: "Press, Shearing, Bending & Mechanical Controls",
+                text: "Fanuc, Mitsubishi, Siemens & Heidenhain Integration",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="3" />
@@ -949,7 +949,7 @@ export default function HomePage() {
                 )
               },
               {
-                text: "Robust Servo (M&I) Integration",
+                text: "Direct Drive (DDR) Integration",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="9" />
@@ -968,7 +968,7 @@ export default function HomePage() {
                 )
               },
               {
-                text: "PLC Control Logic & Safety Interlocks",
+                text: "Jig Control Logic & Safety Interlocks",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="4" y="4" width="16" height="16" rx="2" />
