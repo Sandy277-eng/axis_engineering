@@ -842,7 +842,7 @@ export default function HomePage() {
                 )
               },
               {
-                title: "R-Axis Systems",
+                title: "B-Axis Systems",
                 desc: "For high-accuracy indexing and positioning.",
                 link: "/products/detron/auto-pallet-changer",
                 icon: (
