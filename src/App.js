@@ -19,6 +19,7 @@ import Accessories from './products/Accessories';
 import IntelligentControl from './products/IntelligentControl';
 import DetronModelDetailPage from './products/DetronModelDetailPage';
 import IntroSplash from './IntroSplash';
+import AxisChatbot from './Chatbot/AxisChatbot';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -49,6 +50,7 @@ function App() {
     <BrowserRouter>
       {showSplash && <IntroSplash onComplete={handleSplashComplete} />}
       <ScrollToTop />
+      <AxisChatbot />
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />

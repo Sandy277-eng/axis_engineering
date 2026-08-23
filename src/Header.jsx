@@ -294,7 +294,7 @@ const styles = {
     top: 0,
     left: 0,
     right: 0,
-    zIndex: 100,
+    zIndex: 10500,
     width: '100%'
   },
   topBar: {
@@ -363,7 +363,7 @@ const styles = {
     border: '1px solid #222222',
     borderRadius: '4px',
     boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
-    zIndex: 1000,
+    zIndex: 11000,
     maxHeight: '320px',
     overflowY: 'auto'
   },
