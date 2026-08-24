@@ -48,25 +48,29 @@ const Icon = ({ name, size = 14, color = 'currentColor', style = {} }) => {
 
 /* ─── Option button icon map ────────────────────────────────────────── */
 const OPTION_ICON = {
-  browse_products:    'search',
-  location_info:      'location',
-  contact_info:       'phone',
-  hours_info:         'clock',
-  faq_info:           'chat',
-  main_menu:          'menu',
-  contact_form:       'mail',
-  whatsapp_chat:      'phone',
-  view_map:           'map',
-  cat_4axis:          'product',
-  cat_5axis:          'product',
-  cat_fixtures:       'tool',
-  cat_access:         'plug',
-  go_5axis_page:      'external',
-  go_fixtures_page:   'external',
-  go_accessories_page:'external',
-  faq_detron:         'users',
-  faq_quote:          'filetext',
-  faq_service:        'settings',
+  browse_products:         'search',
+  location_info:           'location',
+  contact_info:            'phone',
+  hours_info:              'clock',
+  faq_info:                'chat',
+  main_menu:               'menu',
+  contact_form:            'mail',
+  whatsapp_chat:           'phone',
+  view_map:                'map',
+  cat_4axis:               'product',
+  cat_5axis:               'product',
+  cat_pallet:              'product',
+  cat_special:             'product',
+  cat_fixtures:            'tool',
+  cat_access:              'plug',
+  go_5axis_page:           'external',
+  go_pallet_page:          'external',
+  go_special_page:         'external',
+  go_fixtures_page:        'external',
+  go_accessories_page:     'external',
+  faq_detron:              'users',
+  faq_quote:               'filetext',
+  faq_service:             'settings',
 };
 
 export default function AxisChatbot() {
@@ -123,8 +127,10 @@ export default function AxisChatbot() {
           bot.options = [
             { label: '4-Axis Rotary Tables',             value: 'cat_4axis' },
             { label: '5-Axis Tilting Rotary Tables',     value: 'cat_5axis' },
-            { label: 'Custom Workholding Fixtures',      value: 'cat_fixtures' },
+            { label: 'Auto Pallet Changer',              value: 'cat_pallet' },
+            { label: 'Special Applications',             value: 'cat_special' },
             { label: 'Intelligent Control & Accessories',value: 'cat_access' },
+            { label: 'Custom Workholding Fixtures',      value: 'cat_fixtures' },
             { label: 'Return to Main Menu',              value: 'main_menu' },
           ];
           break;
@@ -151,6 +157,22 @@ export default function AxisChatbot() {
           ];
           break;
 
+        case 'cat_pallet':
+          bot.text = "**Auto Pallet Changer Systems** — Detron's automatic pallet changers maximize CNC machine uptime by enabling unattended part loading and continuous production cycles.";
+          bot.options = [
+            { label: 'Browse Auto Pallet Changer Catalogue', value: 'go_pallet_page' },
+            { label: 'Return to Categories',                 value: 'browse_products' },
+          ];
+          break;
+
+        case 'cat_special':
+          bot.text = "**Special Applications** — Custom-engineered Detron rotary table configurations for non-standard applications including large-bore, high-load, and unique axis-orientation requirements.";
+          bot.options = [
+            { label: 'Browse Special Applications Catalogue', value: 'go_special_page' },
+            { label: 'Return to Categories',                  value: 'browse_products' },
+          ];
+          break;
+
         case 'cat_fixtures':
           bot.text = "**Custom Workholding Fixtures** — Bespoke hydraulic and pneumatic clamping fixtures engineered to your component specifications at our Chennai manufacturing facility.";
           bot.options = [
@@ -160,16 +182,18 @@ export default function AxisChatbot() {
           break;
 
         case 'cat_access':
-          bot.text = "**Intelligent Control Systems & Accessories** — Genuine Detron control interfaces, auto pallet changers, rotary joints, and certified spare parts.";
+          bot.text = "**Intelligent Control Systems & Accessories** — Genuine Detron control interfaces, rotary joints, and certified spare parts.";
           bot.options = [
             { label: 'View Accessories Catalogue', value: 'go_accessories_page' },
             { label: 'Return to Categories',       value: 'browse_products' },
           ];
           break;
 
-        case 'go_5axis_page':       setIsOpen(false); navigate('/products/detron/5-axis');    return;
-        case 'go_fixtures_page':    setIsOpen(false); navigate('/products/fixtures');          return;
-        case 'go_accessories_page': setIsOpen(false); navigate('/products/detron/accessories'); return;
+        case 'go_5axis_page':       setIsOpen(false); navigate('/products/detron/5-axis');              return;
+        case 'go_pallet_page':      setIsOpen(false); navigate('/products/detron/auto-pallet-changer'); return;
+        case 'go_special_page':     setIsOpen(false); navigate('/products/detron/special-applications');return;
+        case 'go_fixtures_page':    setIsOpen(false); navigate('/products/fixtures');                   return;
+        case 'go_accessories_page': setIsOpen(false); navigate('/products/detron/accessories');         return;
         case 'whatsapp_chat':
           window.open('https://wa.me/919003224117', '_blank');
           return;

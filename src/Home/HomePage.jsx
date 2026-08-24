@@ -8,6 +8,47 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HomePage() {
+  // ─── SEO: set page-level meta on mount ───────────────────────────────────
+  useEffect(() => {
+    const prevTitle = document.title;
+
+    // Page title – primary keyword first
+    document.title =
+      "CNC Rotary Tables India | Axis Engineering Solutions – Detron Distributor";
+
+    // Helper to set / create a <meta> tag
+    const setMeta = (selector, attr, value) => {
+      let el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement("meta");
+        const [attrName, attrVal] = attr.split("=");
+        el.setAttribute(attrName, attrVal.replace(/"/g, ""));
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", value);
+      return el;
+    };
+
+    setMeta('meta[name="description"]', 'name=description',
+      "Axis Engineering Solutions – India's trusted supplier of CNC rotary tables, " +
+      "4th axis and 5th axis CNC rotary table systems from Detron (Taiwan). We deliver " +
+      "direct drive rotary tables, custom CNC fixtures, and complete CNC workholding " +
+      "solutions with expert integration support across India."
+    );
+
+    setMeta('meta[name="keywords"]', 'name=keywords',
+      "CNC Rotary Tables India, CNC rotary table, 4th axis CNC rotary table, " +
+      "5th axis CNC rotary table, CNC rotary table supplier India, CNC rotary table solutions, " +
+      "CNC rotary table integration, custom CNC fixtures, CNC workholding solutions, " +
+      "direct drive rotary table, Detron rotary table India"
+    );
+
+    return () => {
+      document.title = prevTitle;
+    };
+  }, []);
+  // ─────────────────────────────────────────────────────────────────────────
+
   const heroSectionRef = useRef(null);
 
   // Refs for About Section Animation
@@ -620,13 +661,14 @@ export default function HomePage() {
             INDIA'S TRUSTED PARTNER FOR CNC ROTARY TABLE SOLUTIONS
           </span>
           <h1 style={styles.heroTitle} className="hero-fade-in">
-            PRECISION SYSTEMS FOR <br />
-            <span style={styles.heroRedHighlight}>INDUSTRIAL EXCELLENCE</span>
+            CNC ROTARY TABLES &amp; <br />
+            <span style={styles.heroRedHighlight}>WORKHOLDING SOLUTIONS</span>
           </h1>
           <p style={styles.heroDescription} className="hero-fade-in">
-            Every system we deliver — Detron rotary table or custom fixture — passes
-            through the same rigorous discipline: engineered for the application,
-            assembled with precision, tested under load, and verified before it ships.
+            From 4th axis and 5th axis CNC rotary tables to direct drive systems
+            and custom workholding fixtures — every Detron product we deliver is
+            engineered for precision, tested under load, and backed by expert
+            integration support across India.
           </p>
 
           <div style={styles.heroButtonContainer} className="hero-fade-in">
@@ -763,7 +805,7 @@ export default function HomePage() {
 
               <p style={styles.aboutDescription}>
                 We are proud to be the sole Indian distributor for Detron Machinery Co. Ltd., Taiwan —
-                the world's leading manufacturer of NC rotary tables. Detron products are engineered
+                the world's leading manufacturer of CNC rotary tables. Detron products are engineered
                 in-house under strict quality control, ensuring every component meets the precision
                 and reliability our customers expect.
               </p>
