@@ -172,7 +172,7 @@ export default function ContactPage() {
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                       </svg>
                     </div>
-                    <h4 style={styles.refHeading}>OUR MAIN OFFICE</h4>
+                    <h4 style={styles.refHeading}>Head OFFICE</h4>
                     <p style={styles.refText}>
                       No. 78-B, 1st Floor, Geason Housing Colony,<br />
                       Ayanambakkam, Chennai - 600095, TN, India
@@ -189,7 +189,8 @@ export default function ContactPage() {
                     <h4 style={styles.refHeading}>PHONE NUMBER</h4>
                     <p style={styles.refText}>
                       +91 98849 12279<br />
-                      +91 98849 12280
+                      +91 98849 12280<br/>
+                      +91 9003224117
                     </p>
                   </div>
 

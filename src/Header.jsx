@@ -173,6 +173,25 @@ export default function Header({ activePage, scrollToProducts }) {
         <nav style={styles.navMenu}>
           {activePage === 'home' ? (
             <>
+              {/* HOME — triggers intro splash */}
+              <span
+                role="button"
+                tabIndex={0}
+                style={{ ...styles.navLink, cursor: 'pointer' }}
+                onMouseEnter={() => setShowMegaMenu(false)}
+                onClick={() => {
+                  window.dispatchEvent(new CustomEvent('showAxisSplash'));
+                  navigate('/');
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    window.dispatchEvent(new CustomEvent('showAxisSplash'));
+                    navigate('/');
+                  }
+                }}
+              >
+                HOME
+              </span>
               <button 
                 onClick={scrollToProducts} 
                 style={styles.navLinkBtn}
@@ -194,13 +213,24 @@ export default function Header({ activePage, scrollToProducts }) {
             </>
           ) : (
             <>
-              <Link 
-                to="/" 
-                style={styles.navLink}
+              <span
+                role="button"
+                tabIndex={0}
+                style={{ ...styles.navLink, cursor: 'pointer' }}
                 onMouseEnter={() => setShowMegaMenu(false)}
+                onClick={() => {
+                  window.dispatchEvent(new CustomEvent('showAxisSplash'));
+                  navigate('/');
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    window.dispatchEvent(new CustomEvent('showAxisSplash'));
+                    navigate('/');
+                  }
+                }}
               >
                 HOME
-              </Link>
+              </span>
               <div
                 onMouseEnter={() => setShowMegaMenu(true)}
                 style={{ display: 'flex', alignItems: 'center' }}

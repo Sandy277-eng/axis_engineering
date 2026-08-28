@@ -69,10 +69,10 @@ export default function FourAxis() {
           text-transform: uppercase;
         }
         .aishmo-filter-btn.active, .aishmo-filter-btn:hover {
-          background: #E30613;
+          background: #1d4ed8;
           color: #ffffff;
-          border-color: #E30613;
-          box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
+          border-color: #1d4ed8;
+          box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
         }
         .aishmo-card {
           position: relative;
@@ -94,14 +94,14 @@ export default function FourAxis() {
           right: 0;
           height: 0%;
           width: 100%;
-          background: #E30613;
+          background: #1d4ed8;
           transition: height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
           z-index: 1;
         }
         .aishmo-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(227, 6, 19, 0.25);
-          border-color: #E30613;
+          box-shadow: 0 20px 40px rgba(29, 78, 216, 0.25);
+          border-color: #1d4ed8;
         }
         .aishmo-card:hover::after {
           height: 100%;
@@ -149,9 +149,9 @@ export default function FourAxis() {
           display: inline-block;
           font-size: 11px;
           font-weight: 700;
-          color: #E30613;
-          background: #fef2f2;
-          border: 1px solid #fecaca;
+          color: #1d4ed8;
+          background: #eff6ff;
+          border: 1px solid #bfdbfe;
           padding: 4px 10px;
           border-radius: 20px;
           margin-bottom: 14px;
@@ -196,7 +196,7 @@ export default function FourAxis() {
           flex: 1;
           display: block;
           text-align: center;
-          background: #E30613;
+          background: #1d4ed8;
           color: #ffffff;
           padding: 10px 14px;
           font-size: 12px;
@@ -204,12 +204,12 @@ export default function FourAxis() {
           border-radius: 4px;
           text-decoration: none;
           transition: all 0.3s ease;
-          border: 1px solid #E30613;
-          box-shadow: 0 2px 8px rgba(227, 6, 19, 0.2);
+          border: 1px solid #1d4ed8;
+          box-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
         }
         .aishmo-btn-view:hover {
-          background: #b9050f;
-          border-color: #b9050f;
+          background: #1e40af;
+          border-color: #1e40af;
         }
         .aishmo-btn-video {
           flex: 1;
@@ -228,13 +228,16 @@ export default function FourAxis() {
         .aishmo-btn-video:hover {
           background: #f8fafc;
           border-color: #94a3b8;
-          color: #E30613;
+          color: #1d4ed8;
         }
         .aishmo-card:hover .aishmo-card-title {
           color: #ffffff;
         }
+        .aishmo-card:hover .aishmo-group-tag {
+          color: #ffffff !important;
+        }
         .aishmo-card:hover .aishmo-card-badge {
-          color: #E30613;
+          color: #1d4ed8;
           background: #ffffff;
           border-color: #ffffff;
         }
@@ -252,7 +255,7 @@ export default function FourAxis() {
         }
         .aishmo-card:hover .aishmo-btn-view {
           background: #ffffff;
-          color: #E30613;
+          color: #1d4ed8;
           border-color: #ffffff;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
@@ -298,7 +301,7 @@ export default function FourAxis() {
           position: absolute;
           top: 14px;
           right: 14px;
-          background: #E30613;
+          background: #1d4ed8;
           color: #ffffff;
           width: 32px;
           height: 32px;
@@ -307,7 +310,7 @@ export default function FourAxis() {
           align-items: center;
           justify-content: center;
           font-weight: 900;
-          box-shadow: 0 2px 6px rgba(227, 6, 19, 0.3);
+          box-shadow: 0 2px 6px rgba(29, 78, 216, 0.3);
         }
         .related-card-bottom {
           background: #f8fafc;
@@ -330,6 +333,9 @@ export default function FourAxis() {
         }
         .related-card:hover .related-card-img {
           transform: scale(1.07);
+        }
+        .related-card:hover .related-card-bottom {
+          background: #1d4ed8;
         }
         .related-card:hover .related-card-title {
           color: #ffffff;
@@ -395,7 +401,7 @@ export default function FourAxis() {
                       />
                     </Link>
                     <div className="aishmo-card-content">
-                      <span style={{ color: '#E30613', fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '6px' }}>
+                      <span className="aishmo-group-tag" style={{ color: '#1d4ed8', fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '6px' }}>
                         {prod.groupSize.split('(')[0].trim()}
                       </span>
                       <h4 className="aishmo-card-title">

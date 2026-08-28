@@ -44,7 +44,15 @@ function App() {
   const handleSplashComplete = () => {
     sessionStorage.setItem('axis_splash_shown', 'true');
     setShowSplash(false);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
+
+  // Listen for HOME button triggering the splash
+  useEffect(() => {
+    const handleShowSplash = () => setShowSplash(true);
+    window.addEventListener('showAxisSplash', handleShowSplash);
+    return () => window.removeEventListener('showAxisSplash', handleShowSplash);
+  }, []);
 
   return (
     <BrowserRouter>

@@ -155,11 +155,11 @@ export default function DetronModelDetailPage() {
           border: 1px solid #e2e8f0;
         }
         .specs-table th {
-          background-color: #E30613;
+          background-color: #1e3a5f;
           color: white;
           padding: 14px 20px;
           font-weight: 700;
-          text-align: left;
+          text-align: center;
           font-size: 14px;
         }
         .specs-table td {
@@ -167,12 +167,13 @@ export default function DetronModelDetailPage() {
           border-bottom: 1px solid #f1f5f9;
           font-size: 13px;
           color: #334155;
+          text-align: center;
         }
         .specs-table tr:nth-of-type(even) {
           background-color: #f8fafc;
         }
         .specs-table tr:hover {
-          background-color: #f1f5f9;
+          background-color: #eff6ff;
         }
         .enquiry-form-input {
           width: 100%;
@@ -187,10 +188,44 @@ export default function DetronModelDetailPage() {
           transition: border-color 0.2s, box-shadow 0.2s;
         }
         .enquiry-form-input:focus {
-          border-color: #E30613;
-          box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.1);
+          border-color: #1d4ed8;
+          box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
         }
         
+        /* MAIN PRODUCT IMAGE CARD STYLES */
+        .main-product-image-card {
+          position: relative;
+          background-color: #ffffff;
+          border: 2px solid #bfdbfe !important;
+          border-radius: 12px;
+          height: 420px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 10px 30px rgba(29, 78, 216, 0.18) !important;
+          overflow: hidden;
+          transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          cursor: zoom-in;
+        }
+        .main-product-image-card:hover {
+          border-color: #1d4ed8 !important;
+          box-shadow: 0 20px 45px rgba(29, 78, 216, 0.32) !important;
+          transform: translateY(-4px);
+        }
+        .main-product-image {
+          width: auto;
+          max-width: 85%;
+          height: auto;
+          max-height: 85%;
+          object-fit: contain;
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .main-product-image-card:hover .main-product-image {
+          transform: scale(1.14);
+        }
+
         /* RELATED PRODUCT CARDS */
         .related-card {
           position: relative;
@@ -243,7 +278,7 @@ export default function DetronModelDetailPage() {
           transform: scale(1.07);
         }
         .related-card:hover .related-card-bottom {
-          background: #E30613;
+          background: #1d4ed8;
         }
         .related-card:hover .related-card-title {
           color: #ffffff;
@@ -271,11 +306,12 @@ export default function DetronModelDetailPage() {
           
           {/* LEFT SIDE: PRODUCT IMAGE */}
           <div style={styles.leftCol}>
-            <div style={styles.mainImageCard}>
+            <div style={styles.mainImageCard} className="main-product-image-card">
               <img 
                 src={product.image} 
                 alt={product.name} 
                 style={styles.mainImage}
+                className="main-product-image"
                 onError={(e) => { e.target.src = '/images/detron.jpeg'; }}
               />
             </div>
@@ -369,14 +405,14 @@ export default function DetronModelDetailPage() {
             <thead>
               <tr>
                 <th>Parameters</th>
-                <th style={{ textAlign: 'right' }}>Specification Value</th>
+                <th>Specification Value</th>
               </tr>
             </thead>
             <tbody>
               {Object.entries(product.specs).map(([key, val]) => (
                 <tr key={key}>
-                  <td style={{ fontWeight: '600' }}>{key}</td>
-                  <td style={{ textAlign: 'right', fontWeight: '700', color: '#E30613' }}>{val}</td>
+                  <td style={{ fontWeight: '600', textAlign: 'center' }}>{key}</td>
+                  <td style={{ textAlign: 'center', fontWeight: '700', color: '#1d4ed8' }}>{val}</td>
                 </tr>
               ))}
             </tbody>
@@ -576,9 +612,9 @@ const styles = {
   },
   productBadge: {
     alignSelf: 'flex-start',
-    backgroundColor: '#fef2f2',
-    color: '#E30613',
-    border: '1px solid #fecaca',
+    backgroundColor: '#eff6ff',
+    color: '#1d4ed8',
+    border: '1px solid #bfdbfe',
     padding: '6px 14px',
     borderRadius: '30px',
     fontSize: '12px',
@@ -629,7 +665,7 @@ const styles = {
     gap: '16px'
   },
   submitBtn: {
-    backgroundColor: '#E30613',
+    backgroundColor: '#1d4ed8',
     color: '#ffffff',
     border: 'none',
     padding: '12px',
@@ -639,7 +675,7 @@ const styles = {
     cursor: 'pointer',
     letterSpacing: '1px',
     transition: 'background-color 0.2s',
-    boxShadow: '0 4px 12px rgba(227,6,19,0.25)'
+    boxShadow: '0 4px 12px rgba(29,78,216,0.25)'
   },
   successBox: {
     backgroundColor: '#ecfdf5',

@@ -364,6 +364,31 @@ export default function HomePage() {
             animation: color_anim 1s infinite 0.4s;
           }
 
+          .slide-card:hover .cta {
+            transition: 0.5s;
+            box-shadow: 10px 10px 0 black;
+            background: #E30613;
+          }
+
+          .slide-card:hover .cta .second {
+            transition: 0.5s;
+            margin-right: 25px;
+          }
+
+          .slide-card:hover .cta .three {
+            animation: color_anim 1s infinite 0.2s;
+          }
+
+          .slide-card:hover .cta .one {
+            transform: translateX(0%);
+            animation: color_anim 1s infinite 0.6s;
+          }
+
+          .slide-card:hover .cta .two {
+            transform: translateX(0%);
+            animation: color_anim 1s infinite 0.4s;
+          }
+
           @keyframes color_anim {
             0% {
               fill: white;
@@ -461,20 +486,6 @@ export default function HomePage() {
             animation: color_anim_dark 1s infinite 0.4s;
           }
 
-          @keyframes color_anim_dark {
-            0% {
-              fill: white;
-            }
-
-            50% {
-              fill: #E30613;
-            }
-
-            100% {
-              fill: white;
-            }
-          }
-
           /* Premium Hover Red Cover Transition for Cards */
           .supply-card, .choose-card, .specialty-item {
             position: relative !important;
@@ -508,7 +519,7 @@ export default function HomePage() {
             z-index: 1 !important;
           }
 
-          /* Default text colors for Supply Cards */
+          /* Default text & static accent colors for Supply Cards */
           .supply-card .supplyCardNum {
             color: #E30613 !important;
             transition: color 0.4s ease;
@@ -541,6 +552,11 @@ export default function HomePage() {
             background-color: #000000 !important;
             border-color: #000000 !important;
           }
+          .supply-card:hover .supply-card-img-box {
+            background-color: #ffffff !important;
+            border-color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+          }
           .supply-card:hover svg {
             stroke: #ffffff !important;
           }
@@ -551,7 +567,7 @@ export default function HomePage() {
             fill: #ffffff !important;
           }
 
-          /* Default text colors for Specialties items */
+          /* Default text & static accent colors for Specialties items */
           .specialty-item span {
             color: #1e293b !important;
             transition: color 0.4s ease;
@@ -587,7 +603,7 @@ export default function HomePage() {
             fill: #ffffff !important;
           }
 
-          /* Default text colors for Choose Cards */
+          /* Default text & static top-border colors for Choose Cards */
           .choose-card {
             border-top: 4px solid #E30613 !important;
           }
@@ -722,15 +738,22 @@ export default function HomePage() {
             <div style={styles.cardContentOverlay}>
               <div>
                 <span style={styles.cardTag}>BRAND PARTNER</span>
-                <h2 style={styles.cardTitle}>Detron Technology</h2>
+                <h2 style={styles.cardTitle}>Detron</h2>
                 <p style={styles.cardText}>
                   Ultra-rigid 4th and 5th axis CNC rotary tables engineered in Taiwan
                   for one job: hold tight tolerances at high load, shift after shift,
                   without drifting.
                 </p>
               </div>
-              <span style={styles.cardRedButton}>
-                DISCOVER DETRON RANGE &gt;
+              <span className="cta" style={{ marginTop: "24px", width: "fit-content" }}>
+                <span className="span">DISCOVER DETRON RANGE</span>
+                <span className="second">
+                  <svg width="20px" height="10px" viewBox="0 0 20 10">
+                    <path d="M2 1 L5 5 L2 9 H5 L8 5 L5 1 Z" className="one" />
+                    <path d="M8 1 L11 5 L8 9 H11 L14 5 L11 1 Z" className="two" />
+                    <path d="M14 1 L17 5 L14 9 H17 L20 5 L17 1 Z" className="three" />
+                  </svg>
+                </span>
               </span>
             </div>
           </Link>
@@ -765,8 +788,15 @@ export default function HomePage() {
                   — so cycle time and accuracy both go up.
                 </p>
               </div>
-              <span style={styles.cardRedButton}>
-                EXPLORE FIXTURE SOLUTIONS &gt;
+              <span className="cta" style={{ marginTop: "24px", width: "fit-content" }}>
+                <span className="span">EXPLORE FIXTURE SOLUTIONS</span>
+                <span className="second">
+                  <svg width="20px" height="10px" viewBox="0 0 20 10">
+                    <path d="M2 1 L5 5 L2 9 H5 L8 5 L5 1 Z" className="one" />
+                    <path d="M8 1 L11 5 L8 9 H11 L14 5 L11 1 Z" className="two" />
+                    <path d="M14 1 L17 5 L14 9 H17 L20 5 L17 1 Z" className="three" />
+                  </svg>
+                </span>
               </span>
             </div>
           </Link>
@@ -851,94 +881,111 @@ export default function HomePage() {
               One-Point Solution for Automation & Integration
             </h2>
             <p style={styles.sectionSubtext}>
-              Based in Andamur robotral base, Chennai, Axis Engineering Solutions is the sole distributor for Detron (Taiwan) across India, supplying.
+              Based in Ambattur Industrial Estate, Chennai, Axis Engineering Solutions is the sole distributor for Detron (Taiwan) across India.
             </p>
           </div>
 
           <div style={styles.supplyGrid}>
             {[
               {
-                title: "4th Axis NC Rotary Tables",
-                desc: "High precision rotary solutions for versatile applications.",
+                num: "01",
+                title: "4th Axis Rotary Tables",
+                desc: "High-precision single and multi-spindle tables for VMCs, horizontal centers, and 5-axis machines.",
                 link: "/products/detron/4-axis",
+                img: "/images/products_detron/4th_axis.png",
                 icon: (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10" strokeDasharray="3 2" />
-                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 3v18M3 12h18" />
                     <circle cx="12" cy="12" r="2" fill="#E30613" fillOpacity="0.1" />
-                    <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
                   </svg>
                 )
               },
               {
+                num: "02",
                 title: "5th Axis Tilting Rotary Tables",
-                desc: "Built for complex 5-axis machining operations.",
+                desc: "Simultaneous 5-axis capability with high clamping torque for complex aerospace and medical components.",
                 link: "/products/detron/5-axis",
+                img: "/images/products_detron/5th_axis.png",
                 icon: (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
-                    <path d="M4 19h16" />
-                    <path d="M6 19c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-                    <circle cx="12" cy="8" r="3" />
-                    <path d="M12 5V2M10 2h4M9 13l6-5" />
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M7 17l10-10M17 17L7 7" />
                   </svg>
                 )
               },
               {
-                title: "B-Axis Systems",
-                desc: "For high-accuracy indexing and positioning.",
+                num: "03",
+                title: "Auto Pallet Changers (APC)",
+                desc: "180° swing exchange and front-loading pallet changers for high-mix batch automation.",
                 link: "/products/detron/auto-pallet-changer",
+                img: "/images/products_detron/Auto-Pallet-changer.png",
                 icon: (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
-                    <rect x="5" y="5" width="14" height="14" rx="2" />
-                    <circle cx="12" cy="12" r="4" />
-                    <path d="M12 2v3M12 19v3" />
+                    <rect x="2" y="3" width="9" height="9" rx="1" />
+                    <rect x="13" y="3" width="9" height="9" rx="1" />
+                    <rect x="2" y="14" width="9" height="9" rx="1" />
+                    <rect x="13" y="14" width="9" height="9" rx="1" />
                   </svg>
                 )
               },
               {
-                title: "Direct Drive Motors",
-                desc: "Direct Drive Rotary Torque Motors for superior performance.",
+                num: "04",
+                title: "Intelligent Control Systems",
+                desc: "Standalone indexer controllers, multi-axis drives, and wireless interface modules.",
                 link: "/products/detron/intelligent-control",
+                img: "/images/products_detron/Intelligent-control.png",
                 icon: (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
-                    <rect x="4" y="6" width="16" height="12" rx="2" />
-                    <circle cx="12" cy="12" r="4" />
-                    <path d="M2 12h2M20 12h2M12 4v2M12 18v2" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
                   </svg>
                 )
               },
               {
-                title: "Rotary Joints & Accessories",
-                desc: "Durable, high-quality Rotary Joints and accessories for reliable systems.",
+                num: "05",
+                title: "Precision Accessories",
+                desc: "Manual and pneumatic tailstocks, support tables, faceplates, and high-pressure rotary joints.",
                 link: "/products/detron/accessories",
+                img: "/images/products_detron/Accessories.png",
                 icon: (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
-                    <path d="M8 5h8v14H8z" />
-                    <path d="M3 12h5M16 12h5" />
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                     <circle cx="12" cy="12" r="2" fill="#E30613" />
                   </svg>
                 )
               },
               {
-                title: "Custom Fixtures",
-                desc: "Designed and engineered to meet your unique requirements.",
+                num: "06",
+                title: "Custom Hydraulic Fixturing",
+                desc: "Engineered hydraulic fixture plates, tombstone fixtures, and leak-proof rotary oil distributors.",
                 link: "/products/fixtures",
+                img: "/images/products_fixture/fixturecoverpic.jpg",
                 icon: (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
-                    <path d="M4 8h16v12H4z" />
-                    <path d="M8 8V4h8v4" />
-                    <path d="M12 12v4" />
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                   </svg>
                 )
               }
             ].map((card, idx) => (
               <Link key={idx} to={card.link} style={styles.supplyCard} className="supply-card">
+                {/* LEFT — icon + text */}
                 <div style={styles.supplyCardContent}>
                   <div style={styles.supplyIconBox} className="supply-icon-circle">{card.icon}</div>
                   <h4 style={styles.supplyCardTitle}>{card.title}</h4>
                   <p style={styles.supplyCardDesc}>{card.desc}</p>
+                  <span style={styles.supplyCardLink}>EXPLORE RANGE &rarr;</span>
                 </div>
-                <span style={styles.supplyCardLink}>EXPLORE RANGE →</span>
+                {/* RIGHT — product image */}
+                <div style={styles.supplyCardImage} className="supply-card-img-box">
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    style={styles.supplyCardImg}
+                    onError={(e) => { e.target.src = '/images/detron.jpeg'; }}
+                  />
+                </div>
               </Link>
             ))}
           </div>
@@ -974,10 +1021,9 @@ export default function HomePage() {
                 text: "4th & 5th Axis CNC Interfacing",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 3v18M3 12h18" />
                     <circle cx="12" cy="12" r="2" fill="#E30613" />
-                    <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
                   </svg>
                 )
               },
@@ -985,8 +1031,8 @@ export default function HomePage() {
                 text: "Fanuc, Mitsubishi, Siemens & Heidenhain Integration",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <path d="M9 9h6v6H9z" />
                   </svg>
                 )
               },
@@ -995,8 +1041,8 @@ export default function HomePage() {
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="9" />
-                    <path d="M12 7v5l3 3" />
-                    <circle cx="12" cy="12" r="2" fill="#E30613" />
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
                   </svg>
                 )
               },
@@ -1005,7 +1051,7 @@ export default function HomePage() {
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <path d="m9 11 2 2 4-4" />
+                    <path d="m9 12 2 2 4-4" />
                   </svg>
                 )
               },
@@ -1013,9 +1059,8 @@ export default function HomePage() {
                 text: "Jig Control Logic & Safety Interlocks",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="4" y="4" width="16" height="16" rx="2" />
-                    <rect x="9" y="9" width="6" height="6" />
-                    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                   </svg>
                 )
               },
@@ -1023,10 +1068,7 @@ export default function HomePage() {
                 text: "Servo Tuning & Cable Management",
                 icon: (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m14.7 6.3-1.1-1.1c-1-1-2.6-1-3.6 0L4 11.2V15h3.8l6-6c1-1 1-2.6.9-3.7z" />
-                    <path d="m16 8 4 4" />
-                    <path d="m18 10-3 3" />
-                    <path d="m9 15-5 5" />
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                   </svg>
                 )
               }
@@ -1045,7 +1087,27 @@ export default function HomePage() {
       {/* 6. WHY MANUFACTURERS CHOOSE AXIS */}
       <div style={styles.sectionWrapperClip}>
         <section ref={whyChooseUsRef} style={styles.sectionBoxCard} className="section-box">
-          <div style={styles.sectionHeader}>
+          {/* BACKGROUND ANIMATION VIDEO INSIDE SECTION */}
+          <video
+            src="/videos/detron_home_page_animation03.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.75,
+              zIndex: 0,
+              pointerEvents: "none"
+            }}
+          />
+
+          <div style={{ ...styles.sectionHeader, position: "relative", zIndex: 1 }}>
             <div style={styles.badgeContainerCentered}>
               <div style={styles.badgeLineHorizontal} />
               <span style={styles.panelBadge}>THE AXIS ADVANTAGE</span>
@@ -1208,6 +1270,16 @@ export default function HomePage() {
           <section style={styles.rightCard} className="section-box">
             <div style={styles.rightCardDivider} />
             <div style={styles.trustedByContainer}>
+              {/* Axis Industry Photo at Top of Div */}
+              <div style={{ marginBottom: "28px", width: "100%", borderRadius: "8px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.08)" }}>
+                <img
+                  src="/logo_axis/axis_industry%20image.png"
+                  alt="Axis Industry Facility"
+                  style={{ width: "100%", height: "220px", objectFit: "cover", display: "block" }}
+                />
+              </div>
+
+              {/* Company logos and text moved down */}
               <h3 style={styles.trustedByTitle}>
                 Trusted by India's Leading Machine Tool Builders
               </h3>
@@ -1485,14 +1557,18 @@ const styles = {
     textShadow: "0 1px 5px rgba(0,0,0,0.9)",
   },
   cardRedButton: {
-    color: "#E30613",
+    backgroundColor: "#E30613",
+    color: "#ffffff",
+    padding: "12px 24px",
+    borderRadius: "4px",
     fontWeight: "800",
-    fontSize: "13px",
-    letterSpacing: "0.5px",
-    textDecoration: "none",
+    fontSize: "12px",
+    letterSpacing: "1px",
+    boxShadow: "0 4px 14px rgba(227, 6, 19, 0.4)",
     display: "inline-block",
     marginTop: "24px",
-    textShadow: "0 1px 4px rgba(0,0,0,0.9)",
+    width: "fit-content",
+    transition: "background-color 0.2s, transform 0.2s, box-shadow 0.2s",
   },
 
   aboutWrapperClip: {
@@ -1863,21 +1939,23 @@ const styles = {
   },
   supplyGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
     gap: "24px",
     width: "100%",
   },
   supplyCard: {
     backgroundColor: "#ffffff",
     border: "2px solid #e2e8f0",
-    borderRadius: "6px",
-    padding: "28px",
+    borderRadius: "8px",
+    padding: "24px",
     textAlign: "left",
     textDecoration: "none",
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
-    height: "260px",
+    gap: "16px",
+    minHeight: "220px",
     boxSizing: "border-box",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.02)",
     transition: "transform 0.2s, box-shadow 0.2s",
@@ -1891,23 +1969,44 @@ const styles = {
   supplyCardContent: {
     display: "flex",
     flexDirection: "column",
-    gap: "12px",
+    gap: "8px",
+    flex: "1 1 60%",
+  },
+  supplyCardImage: {
+    flex: "0 0 110px",
+    width: "110px",
+    height: "110px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+    borderRadius: "8px",
+    backgroundColor: "#ffffff",
+    border: "1px solid #e2e8f0",
+    padding: "6px",
+    boxSizing: "border-box",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
+  },
+  supplyCardImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
   },
   supplyIconBox: {
-    width: "48px",
-    height: "48px",
+    width: "44px",
+    height: "44px",
     borderRadius: "50%",
     backgroundColor: "#f8fafc",
     border: "1px solid #e2e8f0",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: "8px",
+    marginBottom: "4px",
     flexShrink: 0,
     boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
   },
   supplyCardTitle: {
-    fontSize: "18px",
+    fontSize: "17px",
     fontWeight: "800",
     color: "#0f172a",
     margin: 0,
@@ -1915,7 +2014,7 @@ const styles = {
   supplyCardDesc: {
     fontSize: "13px",
     color: "#475569",
-    lineHeight: "1.55",
+    lineHeight: "1.5",
     margin: 0,
   },
   supplyCardLink: {
@@ -1923,6 +2022,7 @@ const styles = {
     fontWeight: "800",
     color: "#E30613",
     display: "block",
+    marginTop: "4px",
   },
   supplyBottomBox: {
     marginTop: "24px",

@@ -77,7 +77,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 99999,
+    zIndex: 2147483647,
     transition: 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
     overflow: 'hidden',
   }
