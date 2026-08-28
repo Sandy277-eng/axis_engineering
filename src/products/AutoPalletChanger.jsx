@@ -331,8 +331,19 @@ export default function AutoPalletChanger() {
         .related-card:hover .related-card-title {
           color: #ffffff;
         }
+
+        @keyframes bounceDown {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(5px); }
+        }
+        .glowing-left-down-btn:hover {
+          transform: scale(1.12);
+          background-color: #cc0010 !important;
+          box-shadow: 0 0 0 8px rgba(227, 6, 19, 0.3), 0 6px 25px rgba(227, 6, 19, 0.75) !important;
+        }
       `}</style>
 
+      {/* HEADER SECTION (WITH DUAL LOGOS) */}
       <Header activePage="detron" />
 
       {/* HEADER SPACER */}
@@ -357,8 +368,108 @@ export default function AutoPalletChanger() {
         <div style={styles.brandButton}>DETRON</div>
       </div>
 
+      {/* DETRON APC OVERVIEW & TECHNOLOGY SECTION */}
+      <section style={{ backgroundColor: '#ffffff', padding: '48px 24px', borderBottom: '1px solid #e2e8f0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'left' }}>
+          <span style={{ fontSize: '12px', fontWeight: '900', color: '#E30613', letterSpacing: '2px', textTransform: 'uppercase' }}>
+            AUTOMATION & UNINTERRUPTED PRODUCTION
+          </span>
+          <h2 style={{ fontSize: '28px', fontWeight: '900', color: '#0f172a', margin: '8px 0 20px 0', lineHeight: '1.3' }}>
+            Maximizing Spindle Uptime: detron Automatic Pallet Changers (APC) by Axis Engineering
+          </h2>
+          <div style={{ width: '60px', height: '4px', backgroundColor: '#E30613', marginBottom: '24px', borderRadius: '2px' }} />
+          
+          {/* CONTENT LAYOUT WITH VERTICAL GLOWING LEFT SIDEBAR TIMELINE */}
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'stretch' }}>
+            {/* VERTICAL GLOWING TIMELINE SIDEBAR ON THE LEFT */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '4px 0', flexShrink: 0, width: '48px' }}>
+              {/* TOP GLOWING DOWN ARROW BUTTON */}
+              <button
+                onClick={() => {
+                  const section = document.getElementById('products-grid-section');
+                  if (section) section.scrollIntoView({ behavior: 'smooth' });
+                }}
+                title="Click to view products below"
+                className="glowing-left-down-btn"
+                style={{
+                  width: '46px',
+                  height: '46px',
+                  borderRadius: '50%',
+                  backgroundColor: '#E30613',
+                  color: '#ffffff',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 0 5px rgba(227, 6, 19, 0.22), 0 4px 20px rgba(227, 6, 19, 0.6)',
+                  transition: 'all 0.3s ease',
+                  zIndex: 2
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'bounceDown 1.5s infinite' }}>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <polyline points="7 5 12 10 17 5" opacity="0.6"></polyline>
+                </svg>
+              </button>
+
+              {/* VERTICAL LINE WITH DOT NODES */}
+              <div style={{ flex: 1, width: '3px', backgroundColor: '#E30613', margin: '10px 0', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center', boxShadow: '0 0 8px rgba(227, 6, 19, 0.4)' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#E30613', boxShadow: '0 0 8px rgba(227, 6, 19, 0.9)' }} />
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#E30613', boxShadow: '0 0 8px rgba(227, 6, 19, 0.9)' }} />
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#E30613', boxShadow: '0 0 8px rgba(227, 6, 19, 0.9)' }} />
+              </div>
+
+              {/* BOTTOM DIAMOND BADGE */}
+              <div style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '50%',
+                backgroundColor: '#E30613',
+                color: '#ffffff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 0 0 5px rgba(227, 6, 19, 0.18), 0 4px 16px rgba(227, 6, 19, 0.5)',
+                zIndex: 2
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 9l10 13 10-13-10-7zm0 3.8L18.6 9 12 17.6 5.4 9 12 5.8z"/>
+                </svg>
+              </div>
+            </div>
+
+            {/* TWO PARAGRAPH CARDS GRID */}
+            <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '28px', fontSize: '15px', lineHeight: '1.75', color: '#334155' }}>
+              <div style={{ backgroundColor: '#f8fafc', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #E30613', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
+                <p style={{ margin: '0 0 16px 0' }}>
+                  To eliminate non-cutting idle time and maximize spindle utilization, <strong>Axis Engineering</strong> integrates Detron Automatic Pallet Changer (APC) systems directly onto your machining centers. Our APC units deliver rapid, reliable A/B pallet exchanges, enabling continuous production runs while operators load and unload workpieces offline.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Mounted directly to the machine base to conserve valuable shop floor space, Axis Engineering customizes APC integrations to fit diverse vertical and traveling column machine configurations across high-volume production lines.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: '#f8fafc', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #E30613', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
+                <h4 style={{ fontSize: '16px', fontWeight: '800', color: '#0f172a', margin: '0 0 12px 0' }}>
+                  APC Series & Mechanical Specifications:
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '20px', listStyleType: 'disc' }}>
+                  <li style={{ marginBottom: '12px' }}>
+                    <strong>CVR Series (Hydraulic Driven):</strong> Accommodates pallet sizes from <strong>660×500 mm to 1000×500 mm</strong> with a payload capacity of up to 300 kg per side. Features a 180° hydraulic exchange and high-precision taper positioning mechanism guaranteeing <strong>±0.005 mm repeatability</strong>.
+                  </li>
+                  <li>
+                    <strong>SVC Series (Roller Cam Driven):</strong> Tailored for traveling column centers, using a zero-backlash, wear-free roller cam drive for ultra-fast <strong>3.5-second pallet swaps</strong> and absolute encoder feedback for ultimate stability.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SIZE FILTER TABS */}
-      <div style={styles.filterSection}>
+      <div id="products-grid-section" style={styles.filterSection}>
         <h3 style={styles.filterHeading}>Filter by Layout / Series:</h3>
         <div style={styles.filterButtonGroup}>
           {sizeFilters.map(size => (

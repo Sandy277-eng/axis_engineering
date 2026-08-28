@@ -198,7 +198,7 @@ export default function DetronModelDetailPage() {
           background-color: #ffffff;
           border: 2px solid #bfdbfe !important;
           border-radius: 12px;
-          height: 420px;
+          height: 405px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -317,6 +317,11 @@ export default function DetronModelDetailPage() {
             </div>
             <div style={styles.referenceText}>
               ◈ TECHNICAL REFERENCE DESIGN - 100% SPEC COMPLIANT
+            </div>
+            <div style={styles.trustBanner}>
+              <p style={styles.trustBannerText}>
+                Engineered for ultra-high rigidity, continuous precision, and maximum machining uptime. Backed by Axis Engineering’s expert technical team and nationwide service support.
+              </p>
             </div>
           </div>
 
@@ -585,7 +590,7 @@ const styles = {
     backgroundColor: '#f8fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '12px',
-    height: '420px',
+    height: '405px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -603,6 +608,24 @@ const styles = {
     color: '#64748b',
     fontWeight: '800',
     letterSpacing: '1px',
+    textAlign: 'center'
+  },
+  trustBanner: {
+    backgroundColor: '#f8fafc',
+    border: '1px solid #e2e8f0',
+    borderLeft: '4px solid #E30613',
+    borderRadius: '8px',
+    padding: '12px 16px',
+    marginTop: '4px',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)',
+    boxSizing: 'border-box'
+  },
+  trustBannerText: {
+    margin: 0,
+    fontSize: '12px',
+    lineHeight: '1.5',
+    color: '#334155',
+    fontWeight: '600',
     textAlign: 'center'
   },
   rightCol: {

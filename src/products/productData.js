@@ -1075,6 +1075,62 @@ export const PRODUCT_DATABASE = {
               'Net Weight (Servo Motor Excluded)': '142 kg / 312.4 lbs',
               'Allowable Cutting Torque': '85 N.m / 62.69 ft.lbs'
             }
+          },
+          {
+            name: 'DTFS-125P',
+            badge: 'Pneumatic Tilting Table, Air Cooled (100 / 400 N.m)',
+            description: 'Compact pneumatic 5-axis tilting rotary table with air cooling, Ø160mm worktable diameter, 200/50 min⁻¹ max speed, and high precision indexing.',
+            image: '/images/products_detron/4th_axis_pics/new products/dtfs-125p.png',
+            specs: {
+              'Worktable Diameter': 'Ø 160 mm / Ø 6.29"',
+              'Center Bore Diameter': 'Ø 30H7 / Ø 1.18H7',
+              'Height of Table (Horizontal)': '210 mm / 8"',
+              'Height of Center (Vertical)': '210 mm / 8"',
+              'Width of T-slot': '12H7 / 0.47H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Pneumatic 0.6~0.7 MPa / 87~101.5 psi',
+              'Max Table Speed (Rotary / Tilt)': '200 min⁻¹ / 50 min⁻¹',
+              'Clamping Torque (Rotary / Tilt)': '100 N.m (73.76 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Capacity (Horizontal / Tilting 0~90°)': '20 kg (44.10 lbs) / 20 kg (44.10 lbs)',
+              'Allowable Unbalancing Work Moment (WxL)': '6.4 N.m / 4.72 ft.lbs',
+              'Allowable Force F': '9700 N / 2180.6 lbs',
+              'Allowable Cutting Torque FxL (Rotary / Tilt)': '100 N.m (73.76 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Inertia': '0.05 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy (Rotary / Tilt)': '20 sec / 30 sec',
+              'Repeatability (Rotary / Tilt)': '4 sec / 4 sec',
+              'Tilting Angle Range': '+30° ~ -120°',
+              'Net Weight (Motor Incl.)': '105 kg / 231.49 lbs',
+              'Cooling System': 'Air Cooling'
+            }
+          },
+          {
+            name: 'DTFE-125P',
+            badge: 'Pneumatic Tilting Table, Air Cooled (240mm Table Height)',
+            description: 'Pneumatic 5-axis tilting rotary table with 240mm horizontal table height, air cooling, 226kg weight, and high precision.',
+            image: '/images/products_detron/4th_axis_pics/new products/dtfe-125p.png',
+            specs: {
+              'Worktable Diameter': 'Ø 160 mm / Ø 6.29"',
+              'Center Bore Diameter': 'Ø 30H7 / Ø 1.18H7',
+              'Height of Table (Horizontal)': '240 mm / 9"',
+              'Height of Center (Vertical)': '210 mm / 8"',
+              'Width of T-slot': '12H7 / 0.47H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Pneumatic 0.6~0.7 MPa / 87~101.5 psi',
+              'Max Table Speed (Rotary / Tilt)': '200 min⁻¹ / 50 min⁻¹',
+              'Clamping Torque (Rotary / Tilt)': '100 N.m (73.76 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Capacity (Horizontal / Tilting 0~90°)': '20 kg (44.10 lbs) / 20 kg (44.10 lbs)',
+              'Allowable Unbalancing Work Moment (WxL)': '6.4 N.m / 4.72 ft.lbs',
+              'Allowable Force F': '9700 N / 2180.6 lbs',
+              'Allowable Cutting Torque FxL (Rotary / Tilt)': '100 N.m (73.76 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Inertia': '0.05 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy (Rotary / Tilt)': '20 sec / 30 sec',
+              'Repeatability (Rotary / Tilt)': '4 sec / 4 sec',
+              'Tilting Angle Range': '+30° ~ -120°',
+              'Net Weight (Motor Incl.)': '226 kg / 498.24 lbs',
+              'Cooling System': 'Air Cooling'
+            }
           }
         ]
       },
@@ -1161,6 +1217,90 @@ export const PRODUCT_DATABASE = {
               'Allowable Load (Horiz / Tilting)': '75 kg / 50 kg (165 / 110 lbs)',
               'Allowable Cutting Torque': '200 N.m / 147.4 ft.lbs',
               'Net Weight (Servo Motor Excluded)': '275 kg / 606.3 lbs'
+            }
+          },
+          {
+            name: 'DTFS-170P',
+            badge: 'Pneumatic Tilting Table, Air Cooled (230 / 400 N.m)',
+            description: '170mm pneumatic 5-axis tilting rotary table with air cooling, 250 min⁻¹ max rotary speed, and 230/400 N.m torque.',
+            image: '/images/products_detron/4th_axis_pics/new products/dtfs-170P.png',
+            specs: {
+              'Worktable Diameter': 'Ø 170 mm / Ø 6.69"',
+              'Center Bore Diameter': 'Ø 40H7 / Ø 1.57H7',
+              'Height of Table (Horizontal)': '280 mm / 11"',
+              'Height of Center (Vertical)': '280 mm / 11"',
+              'Width of T-slot': '12H7 / 0.47H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Pneumatic 0.6~0.7 MPa / 87~101.5 psi',
+              'Max Table Speed (Rotary / Tilt)': '250 min⁻¹ / 100 min⁻¹',
+              'Clamping Torque (Rotary / Tilt)': '230 N.m (169.64 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Capacity (Horizontal / Tilting 0~90°)': '30 kg (66.14 lbs) / 30 kg (66.14 lbs)',
+              'Allowable Unbalancing Work Moment (WxL)': '30 N.m / 14.74 ft.lbs',
+              'Allowable Force F': '12700 N / 2855.07 lbs',
+              'Allowable Cutting Torque FxL (Rotary / Tilt)': '230 N.m (169.64 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Inertia': '0.12 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy (Rotary / Tilt)': '20 sec / 30 sec',
+              'Repeatability (Rotary / Tilt)': '4 sec / 4 sec',
+              'Tilting Angle Range': '+30° ~ -120°',
+              'Net Weight (Motor Incl.)': '215 kg / 474 lbs',
+              'Cooling System': 'Air Cooling'
+            }
+          },
+          {
+            name: 'DTFE-170P',
+            badge: 'Pneumatic Tilting Table, Air Cooled (310mm Table Height)',
+            description: 'Heavy-duty 170mm pneumatic 5-axis tilting rotary table with 310mm table height, air cooling, and 296kg net weight.',
+            image: '/images/products_detron/4th_axis_pics/new products/dtfe-170p.png',
+            specs: {
+              'Worktable Diameter': 'Ø 170 mm / Ø 6.69"',
+              'Center Bore Diameter': 'Ø 40H7 / Ø 1.57H7',
+              'Height of Table (Horizontal)': '310 mm / 12"',
+              'Height of Center (Vertical)': '280 mm / 11"',
+              'Width of T-slot': '12H7 / 0.47H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Pneumatic 0.6~0.7 MPa / 87~101.5 psi',
+              'Max Table Speed (Rotary / Tilt)': '250 min⁻¹ / 100 min⁻¹',
+              'Clamping Torque (Rotary / Tilt)': '230 N.m (169.64 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Capacity (Horizontal / Tilting 0~90°)': '30 kg (66.14 lbs) / 30 kg (66.14 lbs)',
+              'Allowable Unbalancing Work Moment (WxL)': '30 N.m / 14.74 ft.lbs',
+              'Allowable Force F': '12700 N / 2855.07 lbs',
+              'Allowable Cutting Torque FxL (Rotary / Tilt)': '230 N.m (169.64 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Inertia': '0.12 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy (Rotary / Tilt)': '20 sec / 30 sec',
+              'Repeatability (Rotary / Tilt)': '4 sec / 4 sec',
+              'Tilting Angle Range': '+30° ~ -120°',
+              'Net Weight (Motor Incl.)': '296 kg / 652.56 lbs',
+              'Cooling System': 'Air Cooling'
+            }
+          },
+          {
+            name: 'DTFE-171P',
+            badge: 'Pneumatic Tilting Table, Oil Cooled (336kg)',
+            description: '170mm pneumatic 5-axis tilting rotary table equipped with oil cooling system for high-duty continuous machining operations.',
+            image: '/images/products_detron/4th_axis_pics/new products/dtfe-171p.png',
+            specs: {
+              'Worktable Diameter': 'Ø 170 mm / Ø 6.69"',
+              'Center Bore Diameter': 'Ø 40H7 / Ø 1.57H7',
+              'Height of Table (Horizontal)': '310 mm / 12"',
+              'Height of Center (Vertical)': '280 mm / 11"',
+              'Width of T-slot': '12H7 / 0.47H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Pneumatic 0.6~0.7 MPa / 87~101.5 psi',
+              'Max Table Speed (Rotary / Tilt)': '250 min⁻¹ / 100 min⁻¹',
+              'Clamping Torque (Rotary / Tilt)': '230 N.m (169.64 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Capacity (Horizontal / Tilting 0~90°)': '30 kg (66.14 lbs) / 30 kg (66.14 lbs)',
+              'Allowable Unbalancing Work Moment (WxL)': '30 N.m / 14.74 ft.lbs',
+              'Allowable Force F': '12700 N / 2855.07 lbs',
+              'Allowable Cutting Torque FxL (Rotary / Tilt)': '230 N.m (169.64 ft.lbs) / 400 N.m (295.02 ft.lbs)',
+              'Allowable Loading Inertia': '0.12 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy (Rotary / Tilt)': '20 sec / 30 sec',
+              'Repeatability (Rotary / Tilt)': '4 sec / 4 sec',
+              'Tilting Angle Range': '+30° ~ -120°',
+              'Net Weight (Motor Incl.)': '336 kg / 740.75 lbs',
+              'Cooling System': 'Oil Cooling'
             }
           }
         ]
@@ -1595,6 +1735,65 @@ export const PRODUCT_DATABASE = {
               'Net Weight (Servo Motor Excluded)': '1178 kg / 2597 lbs',
               'Allowable Cutting Torque': '1700 N.m / 1254 ft.lbs',
               'Allowable Max Rotary Joint': '6 Port'
+            }
+          },
+          {
+            name: 'DTFAI-650H',
+            badge: 'Hydraulic Tilting Table, Oil Cooled (2500 / 4500 N.m)',
+            description: '650mm large-diameter hydraulic 5-axis tilting rotary table with 300kg loading capacity, oil cooling, and high clamping torque.',
+            image: '/images/products_detron/4th_axis_pics/new products/dtfai-650h.png',
+            specs: {
+              'Worktable Diameter': 'Ø 650 mm / Ø 25.59"',
+              'Center Bore Diameter': 'Ø 70H7 / Ø 2.76H7',
+              'Height of Table': '250 mm / 9.84"',
+              'Width of T-slot': '18H7 / 0.71H7',
+              'Clamping Method / Pressure': 'Hydraulic 4 MPa / 580 psi',
+              'Max Table Speed (Rotary / Tilt)': '100 min⁻¹ / 50 min⁻¹',
+              'Clamping Torque (Rotary / Tilt)': '2500 N.m (1843.91 ft.lbs) / 4500 N.m (3319.03 ft.lbs)',
+              'Allowable Loading Capacity (Horizontal)': '300 kg / 661.39 lbs',
+              'Allowable Loading Capacity (Tilting 0~90°)': '300 kg / 661.39 lbs',
+              'Allowable Unbalancing Work Moment (WxL)': '300 N.m / 221.27 ft.lbs',
+              'Allowable Force F': '40000 N / 8992.36 lbs',
+              'Allowable Cutting Torque FxL (Rotary / Tilt)': '2500 N.m (1843.91 ft.lbs) / 4500 N.m (3319.03 ft.lbs)',
+              'Allowable Loading Inertia': '9.4 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy (Rotary / Tilt)': '10 sec / 20 sec',
+              'Repeatability (Rotary / Tilt)': '4 sec / 4 sec',
+              'Tilting Angle Range': '+110° ~ -110°',
+              'Net Weight (Motor Incl.)': '1450 kg / 3196.7 lbs',
+              'Cooling System': 'Oil Cooling'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 800mm',
+        products: [
+          {
+            name: 'D2TF-800H',
+            badge: 'Heavy-Duty Hydraulic 800mm Tilting Table (1000kg Load)',
+            description: 'Ultra-heavy-duty 800mm hydraulic 5-axis tilting rotary table with 1000kg loading capacity, 3000 / 6000 N.m clamping torque, and oil cooling.',
+            image: '/images/products_detron/4th_axis_pics/new products/d2tf-800h.png',
+            specs: {
+              'Worktable Diameter': 'Ø 800 mm',
+              'Center Bore Diameter': 'Ø 60H7',
+              'Height of Table': '225 mm',
+              'Width of T-slot': '14H7',
+              'Clamping Method / Pressure': 'Hydraulic 4 MPa / 580 psi',
+              'Max Table Speed (Rotary / Tilt)': '100 min⁻¹ / 50 min⁻¹',
+              'Clamping Torque (Rotary / Tilt)': '3000 N.m / 6000 N.m',
+              'Allowable Loading Capacity (Horizontal)': '1000 kg',
+              'Allowable Loading Capacity (Tilting 0~90°)': '1000 kg',
+              'Allowable Unbalancing Work Moment (WxL)': '800 N.m',
+              'Allowable Force F': '50,000 N',
+              'Allowable Cutting Torque FxL (Rotary / Tilt)': '3000 N.m / 6000 N.m',
+              'Allowable Loading Inertia': '20 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy (Rotary / Tilt)': '10 sec / 20 sec',
+              'Repeatability (Rotary / Tilt)': '4 sec / 4 sec',
+              'Tilting Angle Range': '-120° ~ +30°',
+              'Net Weight (Motor Incl.)': '2500 kg',
+              'Cooling System': 'Oil Cooling'
             }
           }
         ]

@@ -340,6 +340,16 @@ export default function FourAxis() {
         .related-card:hover .related-card-title {
           color: #ffffff;
         }
+
+        @keyframes bounceDown {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(5px); }
+        }
+        .glowing-left-down-btn:hover {
+          transform: scale(1.12);
+          background-color: #cc0010 !important;
+          box-shadow: 0 0 0 8px rgba(227, 6, 19, 0.3), 0 6px 25px rgba(227, 6, 19, 0.75) !important;
+        }
       `}</style>
 
       {/* HEADER SECTION (WITH DUAL LOGOS) */}
@@ -367,8 +377,103 @@ export default function FourAxis() {
         <div style={styles.brandButton}>DETRON</div>
       </div>
 
+      {/* DETRON 4-AXIS OVERVIEW & TECHNOLOGY SECTION */}
+      <section style={{ backgroundColor: '#ffffff', padding: '48px 24px', borderBottom: '1px solid #e2e8f0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'left' }}>
+          <span style={{ fontSize: '12px', fontWeight: '900', color: '#E30613', letterSpacing: '2px', textTransform: 'uppercase' }}>
+            AXIS ENGINEERING & DETRON PARTNERSHIP
+          </span>
+          <h2 style={{ fontSize: '28px', fontWeight: '900', color: '#0f172a', margin: '8px 0 20px 0', lineHeight: '1.3' }}>
+            Elevating Machining Performance: detron 4-Axis Rotary Tables by Axis Engineering
+          </h2>
+          <div style={{ width: '60px', height: '4px', backgroundColor: '#E30613', marginBottom: '24px', borderRadius: '2px' }} />
+          
+          {/* CONTENT LAYOUT WITH VERTICAL GLOWING LEFT SIDEBAR TIMELINE */}
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'stretch' }}>
+            {/* VERTICAL GLOWING TIMELINE SIDEBAR ON THE LEFT */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '4px 0', flexShrink: 0, width: '48px' }}>
+              {/* TOP GLOWING DOWN ARROW BUTTON */}
+              <button
+                onClick={() => {
+                  const section = document.getElementById('products-grid-section');
+                  if (section) section.scrollIntoView({ behavior: 'smooth' });
+                }}
+                title="Click to view products below"
+                className="glowing-left-down-btn"
+                style={{
+                  width: '46px',
+                  height: '46px',
+                  borderRadius: '50%',
+                  backgroundColor: '#E30613',
+                  color: '#ffffff',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 0 5px rgba(227, 6, 19, 0.22), 0 4px 20px rgba(227, 6, 19, 0.6)',
+                  transition: 'all 0.3s ease',
+                  zIndex: 2
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'bounceDown 1.5s infinite' }}>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <polyline points="7 5 12 10 17 5" opacity="0.6"></polyline>
+                </svg>
+              </button>
+
+              {/* VERTICAL LINE WITH DOT NODES */}
+              <div style={{ flex: 1, width: '3px', backgroundColor: '#E30613', margin: '10px 0', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center', boxShadow: '0 0 8px rgba(227, 6, 19, 0.4)' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#E30613', boxShadow: '0 0 8px rgba(227, 6, 19, 0.9)' }} />
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#E30613', boxShadow: '0 0 8px rgba(227, 6, 19, 0.9)' }} />
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#E30613', boxShadow: '0 0 8px rgba(227, 6, 19, 0.9)' }} />
+              </div>
+
+              {/* BOTTOM DIAMOND BADGE */}
+              <div style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '50%',
+                backgroundColor: '#E30613',
+                color: '#ffffff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 0 0 5px rgba(227, 6, 19, 0.18), 0 4px 16px rgba(227, 6, 19, 0.5)',
+                zIndex: 2
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 9l10 13 10-13-10-7zm0 3.8L18.6 9 12 17.6 5.4 9 12 5.8z"/>
+                </svg>
+              </div>
+            </div>
+
+            {/* TWO PARAGRAPH CARDS GRID */}
+            <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '28px', fontSize: '15px', lineHeight: '1.75', color: '#334155' }}>
+              <div style={{ backgroundColor: '#f8fafc', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #E30613', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
+                <p style={{ margin: '0 0 16px 0' }}>
+                  At <strong>Axis Engineering</strong>, we deliver Detron’s premier 4-axis rotary tables to empower vertical machining centers across India, breaking through 3-axis limitations to achieve a massive leap in production capacity. Featuring faceplate diameters from <strong>Ø125 mm to Ø800 mm</strong>, our 4-axis solutions seamlessly upgrade standard machines into high-efficiency multi-sided machining centers, drastically reducing repetitive workpiece re-clamping and eliminating human error.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Tailored for demanding manufacturing applications, our 4-axis lineup offers versatile drive technologies: the <strong>Dual-Lead Worm Gear Series</strong> for heavy-duty, high-torque cutting in automotive and machinery production; the zero-backlash <strong>Roller Cam Series</strong> for long-term mold and electronic component precision; and the <strong>Direct Drive Motor (DDM) Series</strong> for ultra-fast, zero-wear dynamic indexing.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: '#f8fafc', padding: '24px', borderRadius: '8px', borderLeft: '4px solid #E30613', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
+                <p style={{ margin: '0 0 16px 0' }}>
+                  The core advantage lies in Detron’s patented high-pressure clamping mechanism and large-diameter radial-axial bearings, ensuring rock-solid stability under intense cutting forces. This effectively suppresses chatter, protects cutting tools, and guarantees optimal surface finish during continuous heavy machining. Before delivery, all units undergo rigorous accuracy verification, meeting international positioning and repeatability standards.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Backed by Axis Engineering’s nationwide technical support, turnkey installation, and application engineering, implementing our 4-axis solutions helps manufacturers shorten cycle times by over 30%, delivering uncompromised precision and maximum spindle uptime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SIZE FILTER TABS (HEAD TOPICS) */}
-      <div style={styles.filterSection}>
+      <div id="products-grid-section" style={styles.filterSection}>
         <h3 style={styles.filterHeading}>Filter by Size / Table Diameter:</h3>
         <div style={styles.filterButtonGroup}>
           {sizeFilters.map(size => (

@@ -1933,10 +1933,11 @@ const styles = {
     letterSpacing: "-0.5px",
   },
   sectionSubtext: {
-    fontSize: "15px",
-    color: "#475569",
-    lineHeight: "1.6",
-  },
+  fontSize: "15px",
+  color: "#1e293b",
+  fontWeight: "600",
+  lineHeight: "1.6",
+},
   supplyGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
