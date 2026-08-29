@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header';
+import ProgressiveImage from '../components/ProgressiveImage';
 
 const PRODUCTS = [
   {
@@ -370,14 +371,14 @@ export default function DetronProducts() {
                     </p>
                   </div>
 
-                  {/* RIGHT: PRODUCT IMAGE */}
+                  {/* RIGHT: PRODUCT IMAGE WITH SKELETON LOADING */}
                   <div style={{ width: '220px', height: '180px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '6px' }}>
-                    <img
+                    <ProgressiveImage
                       src={product.img}
                       alt={`${product.titleTop} ${product.titleBottom}`}
                       style={{
-                        maxWidth: '100%',
-                        maxHeight: '100%',
+                        width: '100%',
+                        height: '100%',
                         objectFit: 'contain',
                         filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.08))',
                         transition: 'transform 0.3s ease',
