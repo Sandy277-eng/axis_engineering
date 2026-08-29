@@ -14,7 +14,7 @@ export default function HomePage() {
 
     // Page title – primary keyword first
     document.title =
-      "CNC Rotary Tables India | Axis Engineering Solutions – Detron Distributor";
+      "CNC Rotary Tables India | AXIS ENGINEERING SOLUTIONS – Detron Distributor";
 
     // Helper to set / create a <meta> tag
     const setMeta = (selector, attr, value) => {
@@ -30,7 +30,7 @@ export default function HomePage() {
     };
 
     setMeta('meta[name="description"]', 'name=description',
-      "Axis Engineering Solutions – India's trusted supplier of CNC rotary tables, " +
+      "AXIS ENGINEERING SOLUTIONS – India's trusted supplier of CNC rotary tables, " +
       "4th axis and 5th axis CNC rotary table systems from Detron (Taiwan). We deliver " +
       "direct drive rotary tables, custom CNC fixtures, and complete CNC workholding " +
       "solutions with expert integration support across India."
@@ -821,7 +821,7 @@ export default function HomePage() {
               <span style={styles.panelBadge}>COMPANY PROFILE</span>
               <h2 style={styles.aboutTitle}>About Us</h2>
               <h3 style={styles.aboutSubheading}>
-                Welcome to Axis Engineering Solutions
+                Welcome to AXIS ENGINEERING SOLUTIONS
               </h3>
 
               <div style={styles.aboutMissionBox}>
@@ -881,7 +881,7 @@ export default function HomePage() {
               One-Point Solution for Automation & Integration
             </h2>
             <p style={styles.sectionSubtext}>
-              Based in Ambattur Industrial Estate, Chennai, Axis Engineering Solutions is the sole distributor for Detron (Taiwan) across India.
+              Based in Ambattur Industrial Estate, Chennai, AXIS ENGINEERING SOLUTIONS is the sole distributor for Detron (Taiwan) across India.
             </p>
           </div>
 
