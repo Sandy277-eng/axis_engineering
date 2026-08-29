@@ -156,8 +156,8 @@ const PRODUCTS = [
   {
     num: '05',
     id: 'intelligent-control',
-    titleTop: 'Intelligent Control',
-    titleBottom: 'Smart Equipment',
+    titleTop: 'External Control',
+    titleBottom: 'System',
     desc: "Equipped with detron perception and computing, detron's Smart Control and AIoT solutions empower rotary tables to drive factory digital transformation.",
     img: '/images/products_detron/Intelligent-control.png',
     features: [
@@ -193,7 +193,6 @@ const PRODUCTS = [
   {
     num: '06',
     id: 'special-application',
-    titleTop: 'Bespoke Solutions',
     titleBottom: 'Special Applications',
     desc: 'detron offers bespoke Special Application Services for complex machining conditions tailored to your specific workpiece geometry and automation needs.',
     img: '/images/products_detron/Special-Application.png',
