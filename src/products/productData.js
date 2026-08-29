@@ -2497,10 +2497,10 @@ export const PRODUCT_DATABASE = {
         size: 'Hydraulic Distributors & Rotary Joints',
         products: [
           {
-            name: 'GXA Spindle with Kitagawa Chuck & Rotary Joint Distributor',
+            name: 'GXA Spindle with 5C Chuck & Rotary Joint Distributor',
             badge: 'Multi-Port Rotary Joint Fluid Distributor',
             description: 'Rotary table equipped with 2-port to 6-port rotary joints for passing hydraulic or pneumatic pressure through the rotating spindle to actuate chucks or fixtures.',
-            image: '/images/products_detron/special_application/GXA-wit-interface-for-Kitakawa-chuck-and-2P-distributor.jpg',
+            image: '/images/products_detron/special_application/GXA-wit-interface-for-5C-chuck-and-2P-distributor.jpg',
             specs: {
               'Fluid Ports': '2 / 4 / 6 / 8 ports',
               'Max Fluid Pressure': '15.0 MPa (Hydraulic) / 1.0 MPa (Air)',
