@@ -553,7 +553,7 @@ const styles = {
     color: '#ffffff'
   },
   mapLinkBtn: {
-    color: '#38bdf8',
+    color: '#94a3b8',
     fontSize: '11px',
     fontWeight: '700',
     textDecoration: 'none'

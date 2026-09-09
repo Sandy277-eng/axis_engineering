@@ -278,7 +278,7 @@ export default function DetronProducts() {
             AXIS ENGINEERING & DETRON PARTNERSHIP
           </div>
           <h1 style={{ fontSize: '38px', fontWeight: '900', color: '#ffffff', margin: '0 0 12px 0', letterSpacing: '-0.5px', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-            DETRON <span style={{ color: '#38bdf8' }}>PRODUCTS RANGE</span>
+            DETRON <span style={{ color: '#E30613' }}>PRODUCTS RANGE</span>
           </h1>
           <p style={{ fontSize: '16px', color: '#e2e8f0', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6', textShadow: '0 1px 5px rgba(0,0,0,0.5)' }}>
             Explore Axis Engineering's premier lineup of Detron 4 & 5 Axis rotary tables, high-speed pallet changers, smart equipment, and bespoke workholding solutions across India.
@@ -521,15 +521,15 @@ export default function DetronProducts() {
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', fontWeight: '700', color: '#ffffff' }}>
-                <span style={{ color: '#38bdf8', fontWeight: '900', fontSize: '15px' }}>✓</span>
+                <span style={{ color: '#E30613', fontWeight: '900', fontSize: '15px' }}>✓</span>
                 <span>Dual-Lead Worm & Zero-Backlash Roller Cam Drives</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', fontWeight: '700', color: '#ffffff' }}>
-                <span style={{ color: '#38bdf8', fontWeight: '900', fontSize: '15px' }}>✓</span>
+                <span style={{ color: '#E30613', fontWeight: '900', fontSize: '15px' }}>✓</span>
                 <span>Full FANUC, Mitsubishi, Siemens & Heidenhain Support</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', fontWeight: '700', color: '#ffffff' }}>
-                <span style={{ color: '#38bdf8', fontWeight: '900', fontSize: '15px' }}>✓</span>
+                <span style={{ color: '#E30613', fontWeight: '900', fontSize: '15px' }}>✓</span>
                 <span>High Clamping Torque & Sub-Second Indexing Speeds</span>
               </div>
             </div>
@@ -550,7 +550,7 @@ export default function DetronProducts() {
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
               {BEST_PRACTICES.map((item) => (
                 <li key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px', fontWeight: '700', color: '#e2e8f0' }}>
-                  <span style={{ fontSize: '16px', color: '#38bdf8' }}>{item.icon}</span>
+                  <span style={{ fontSize: '16px', color: '#E30613' }}>{item.icon}</span>
                   <span>{item.label}</span>
                 </li>
               ))}

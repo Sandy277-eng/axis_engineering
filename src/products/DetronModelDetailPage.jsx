@@ -188,21 +188,21 @@ export default function DetronModelDetailPage() {
           transition: border-color 0.2s, box-shadow 0.2s;
         }
         .enquiry-form-input:focus {
-          border-color: #1d4ed8;
-          box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+          border-color: #E30613;
+          box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.1);
         }
         
         /* MAIN PRODUCT IMAGE CARD STYLES */
         .main-product-image-card {
           position: relative;
           background-color: #ffffff;
-          border: 2px solid #bfdbfe !important;
+          border: 2px solid #e2e8f0 !important;
           border-radius: 12px;
           height: 405px;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 10px 30px rgba(29, 78, 216, 0.18) !important;
+          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
           overflow: hidden;
           transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                       box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -210,8 +210,8 @@ export default function DetronModelDetailPage() {
           cursor: zoom-in;
         }
         .main-product-image-card:hover {
-          border-color: #1d4ed8 !important;
-          box-shadow: 0 20px 45px rgba(29, 78, 216, 0.32) !important;
+          border-color: #0f172a !important;
+          box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18) !important;
           transform: translateY(-4px);
         }
         .main-product-image {
@@ -278,7 +278,7 @@ export default function DetronModelDetailPage() {
           transform: scale(1.07);
         }
         .related-card:hover .related-card-bottom {
-          background: #1d4ed8;
+          background: #0f172a;
         }
         .related-card:hover .related-card-title {
           color: #ffffff;
@@ -417,7 +417,7 @@ export default function DetronModelDetailPage() {
               {Object.entries(product.specs).map(([key, val]) => (
                 <tr key={key}>
                   <td style={{ fontWeight: '600', textAlign: 'center' }}>{key}</td>
-                  <td style={{ textAlign: 'center', fontWeight: '700', color: '#1d4ed8' }}>{val}</td>
+                  <td style={{ textAlign: 'center', fontWeight: '700', color: '#E30613' }}>{val}</td>
                 </tr>
               ))}
             </tbody>
@@ -635,9 +635,9 @@ const styles = {
   },
   productBadge: {
     alignSelf: 'flex-start',
-    backgroundColor: '#eff6ff',
-    color: '#1d4ed8',
-    border: '1px solid #bfdbfe',
+    backgroundColor: '#f1f5f9',
+    color: '#0f172a',
+    border: '1px solid #cbd5e1',
     padding: '6px 14px',
     borderRadius: '30px',
     fontSize: '12px',
@@ -688,7 +688,7 @@ const styles = {
     gap: '16px'
   },
   submitBtn: {
-    backgroundColor: '#1d4ed8',
+    backgroundColor: '#0f172a',
     color: '#ffffff',
     border: 'none',
     padding: '12px',

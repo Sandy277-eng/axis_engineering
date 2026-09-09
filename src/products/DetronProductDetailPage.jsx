@@ -294,9 +294,9 @@ const styles = {
     fontSize: '10px',
     fontWeight: '900',
     letterSpacing: '1.5px',
-    color: '#1d4ed8',
-    backgroundColor: '#eff6ff',
-    border: '1px solid #bfdbfe',
+    color: '#0f172a',
+    backgroundColor: '#f1f5f9',
+    border: '1px solid #cbd5e1',
     padding: '6px 14px',
     borderRadius: '30px'
   },

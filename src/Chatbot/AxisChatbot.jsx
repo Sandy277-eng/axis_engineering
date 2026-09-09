@@ -211,9 +211,9 @@ export default function AxisChatbot() {
           break;
 
         case 'contact_info':
-          bot.text = "**Sales & Technical Support Channels**\n\nMobile:   +91 98849 12279  |  +91 98849 12280\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nWhatsApp:  +91 90032 24117  (wa.me/919003224117)\n\nOur team responds to all technical inquiries within 24 business hours.";
+          bot.text = "**Sales & Technical Support Channels**\n\nMobile:   +91 98849 12279  |  +91 98849 12280\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nOur team responds to all technical inquiries within 24 business hours.";
           bot.options = [
-            { label: 'Chat on WhatsApp',        value: 'whatsapp_chat' },
+            { label: 'Contact Us Now',          value: 'whatsapp_chat' },
             { label: 'Submit an Inquiry Form',   value: 'contact_form' },
             { label: 'Return to Main Menu',      value: 'main_menu' },
           ];
@@ -369,9 +369,9 @@ export default function AxisChatbot() {
     // Contact
     if (['phone','mobile','email','mail','contact','sales','call','number','reach','fax','tel'].some(k => q.includes(k))) {
       return {
-        text: "**Sales & Technical Support Channels**\n\nMobile:   +91 98849 12279  |  +91 98849 12280\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nWhatsApp:  +91 90032 24117  (wa.me/919003224117)\n\nAll inquiries are responded to within 24 business hours.",
+        text: "**Sales & Technical Support Channels**\n\nMobile:   +91 98849 12279  |  +91 98849 12280\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nAll inquiries are responded to within 24 business hours.",
         options: [
-          { label: 'Chat on WhatsApp',       value: 'whatsapp_chat' },
+          { label: 'Contact Us Now',         value: 'whatsapp_chat' },
           { label: 'Submit Inquiry Form',    value: 'contact_form' },
           { label: 'Return to Main Menu',    value: 'main_menu' },
         ]
@@ -614,7 +614,7 @@ export default function AxisChatbot() {
         href="https://wa.me/919003224117"
         target="_blank"
         rel="noopener noreferrer"
-        title="Chat on WhatsApp"
+        title="Contact Us"
         style={S.waFab}
       >
         <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff">
