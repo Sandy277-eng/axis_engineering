@@ -130,7 +130,7 @@ export default function CustomCursor() {
           will-change: transform;
         }
         .custom-cursor-dot.is-pressed {
-          background-color: #E30613;
+          background-color: #0f172a;
         }
 
         .custom-cursor-ring {
@@ -140,7 +140,7 @@ export default function CustomCursor() {
           width: 36px;
           height: 36px;
           border-radius: 50%;
-          border: 1.5px solid rgba(255, 255, 255, 0.6);
+          border: 1.5px solid rgba(15, 23, 42, 0.35);
           background-color: transparent;
           pointer-events: none;
           z-index: 9998;
@@ -155,8 +155,9 @@ export default function CustomCursor() {
         .custom-cursor-ring.is-pointer {
           width: 58px;
           height: 58px;
-          border-color: #E30613;
-          background-color: rgba(227, 6, 19, 0.1);
+          border-color: rgba(15, 23, 42, 0.5);
+          background-color: rgba(15, 23, 42, 0.08);
+          backdrop-filter: blur(2px);
         }
         .custom-cursor-ring.is-pressed {
           width: 30px;

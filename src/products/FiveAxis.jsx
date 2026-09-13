@@ -107,14 +107,14 @@ export default function FiveAxis() {
           right: 0;
           height: 0%;
           width: 100%;
-          background: #E30613;
+          background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
           transition: height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
           z-index: 1;
         }
         .aishmo-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(29, 78, 216, 0.25);
-          border-color: #E30613;
+          box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+          border-color: #334155;
         }
         .aishmo-card:hover::after {
           height: 100%;
@@ -218,11 +218,11 @@ export default function FiveAxis() {
           text-decoration: none;
           transition: all 0.3s ease;
           border: 1px solid #E30613;
-          box-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
+          box-shadow: 0 2px 8px rgba(227, 6, 19, 0.25);
         }
         .aishmo-btn-view:hover {
-          background: #1e40af;
-          border-color: #1e40af;
+          background: #b9050f;
+          border-color: #b9050f;
         }
         .aishmo-btn-video {
           flex: 1;
@@ -241,44 +241,50 @@ export default function FiveAxis() {
         .aishmo-btn-video:hover {
           background: #f8fafc;
           border-color: #94a3b8;
-          color: #E30613;
+          color: #0f172a;
         }
         .aishmo-card:hover .aishmo-card-title {
           color: #ffffff;
         }
         .aishmo-card:hover .aishmo-group-tag {
-          color: #ffffff !important;
+          color: #cbd5e1 !important;
         }
         .aishmo-card:hover .aishmo-card-badge {
-          color: #E30613;
-          background: #ffffff;
-          border-color: #ffffff;
-        }
-        .aishmo-card:hover .aishmo-card-desc {
           color: #ffffff;
-        }
-        .aishmo-card:hover .aishmo-card-specs {
+          background: rgba(255, 255, 255, 0.12);
           border-color: rgba(255, 255, 255, 0.25);
         }
+        .aishmo-card:hover .aishmo-card-desc {
+          color: #cbd5e1;
+        }
+        .aishmo-card:hover .aishmo-card-specs {
+          border-color: rgba(255, 255, 255, 0.15);
+        }
         .aishmo-card:hover .aishmo-spec-key {
-          color: rgba(255, 255, 255, 0.85);
+          color: #94a3b8;
         }
         .aishmo-card:hover .aishmo-spec-val {
           color: #ffffff;
         }
         .aishmo-card:hover .aishmo-btn-view {
-          background: #ffffff;
-          color: #E30613;
-          border-color: #ffffff;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          background: #E30613;
+          color: #ffffff;
+          border-color: #E30613;
+          box-shadow: 0 4px 14px rgba(227, 6, 19, 0.45);
+        }
+        .aishmo-card:hover .aishmo-btn-view:hover {
+          background: #b9050f;
+          border-color: #b9050f;
         }
         .aishmo-card:hover .aishmo-btn-video {
           color: #ffffff;
-          border-color: #ffffff;
-          background: transparent;
+          border-color: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.08);
         }
         .aishmo-card:hover .aishmo-btn-video:hover {
           background: rgba(255, 255, 255, 0.2);
+          border-color: #ffffff;
+          color: #ffffff;
         }
 
         /* RELATED PRODUCT CARDS */
@@ -342,13 +348,13 @@ export default function FiveAxis() {
         }
         .related-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 12px 28px rgba(15, 23, 42, 0.15);
         }
         .related-card:hover .related-card-img {
           transform: scale(1.07);
         }
         .related-card:hover .related-card-bottom {
-          background: #E30613;
+          background: #0f172a;
         }
         .related-card:hover .related-card-title {
           color: #ffffff;
