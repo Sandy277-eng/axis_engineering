@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCT_DATABASE } from './productData';
+import { getSpecificationUnit } from '../utils/specUnits';
 import Footer from '../Footer/Footer';
 import Header from '../Header';
 
@@ -139,10 +140,18 @@ export default function DetronProductDetailPage() {
                               <p style={styles.modelText}>{prod.description}</p>
                               
                               <table style={styles.specTable}>
+                                <thead>
+                                  <tr style={styles.specHeaderRow}>
+                                    <th style={styles.specHeaderParam}>MODEL</th>
+                                    <th style={styles.specHeaderUnit}>Unit</th>
+                                    <th style={styles.specHeaderVal}>{prod.name}</th>
+                                  </tr>
+                                </thead>
                                 <tbody>
                                   {Object.entries(prod.specs).map(([key, val]) => (
                                     <tr key={key} style={styles.specRow}>
                                       <td style={styles.specKey}>{key}</td>
+                                      <td style={styles.specUnit}>{getSpecificationUnit(key, val)}</td>
                                       <td style={styles.specVal}>{val}</td>
                                     </tr>
                                   ))}
@@ -598,24 +607,69 @@ const styles = {
   specTable: {
     width: '100%',
     borderCollapse: 'collapse',
-    marginTop: '8px',
-    marginBottom: '8px',
-    fontSize: '12px'
+    marginTop: '10px',
+    marginBottom: '10px',
+    fontSize: '12px',
+    backgroundColor: '#ffffff',
+    borderRadius: '6px',
+    overflow: 'hidden',
+    border: '1px solid #e2e8f0',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.03)'
+  },
+  specHeaderRow: {
+    color: '#ffffff'
+  },
+  specHeaderParam: {
+    backgroundColor: '#2c2d30',
+    color: '#ffffff',
+    padding: '8px 12px',
+    fontWeight: '700',
+    textAlign: 'left',
+    fontSize: '11.5px',
+    letterSpacing: '0.3px',
+    width: '44%',
+    borderRight: '1px solid rgba(255, 255, 255, 0.08)'
+  },
+  specHeaderUnit: {
+    backgroundColor: '#4c5056',
+    color: '#ffffff',
+    padding: '8px 12px',
+    fontWeight: '700',
+    textAlign: 'left',
+    fontSize: '11.5px',
+    letterSpacing: '0.3px',
+    width: '20%',
+    borderRight: '1px solid rgba(255, 255, 255, 0.08)'
+  },
+  specHeaderVal: {
+    backgroundColor: '#6c717a',
+    color: '#ffffff',
+    padding: '8px 12px',
+    fontWeight: '700',
+    textAlign: 'left',
+    fontSize: '11.5px',
+    letterSpacing: '0.3px',
+    width: '36%'
   },
   specRow: {
-    borderBottom: '1px solid #e2e8f0'
+    borderBottom: '1px solid #f1f5f9'
   },
   specKey: {
-    padding: '6px 12px 6px 0',
+    padding: '7px 12px',
+    color: '#1e293b',
+    fontWeight: '600',
+    textAlign: 'left'
+  },
+  specUnit: {
+    padding: '7px 12px',
     color: '#64748b',
     fontWeight: '500',
-    width: '50%',
     textAlign: 'left'
   },
   specVal: {
-    padding: '6px 0 6px 12px',
+    padding: '7px 12px',
     color: '#0f172a',
     fontWeight: '700',
-    textAlign: 'right'
+    textAlign: 'left'
   }
 };

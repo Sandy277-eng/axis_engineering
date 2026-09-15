@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCT_DATABASE } from './productData';
+import { getSpecificationUnit } from '../utils/specUnits';
 import Footer from '../Footer/Footer';
 import Header from '../Header';
 
@@ -147,33 +148,62 @@ export default function DetronModelDetailPage() {
         .specs-table {
           width: 100%;
           border-collapse: collapse;
-          margin-top: 20px;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+          margin-top: 24px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.06);
           border-radius: 8px;
           overflow: hidden;
           background-color: #ffffff;
           border: 1px solid #e2e8f0;
         }
         .specs-table th {
-          background-color: #1e3a5f;
-          color: white;
-          padding: 14px 20px;
+          color: #ffffff;
+          padding: 14px 22px;
           font-weight: 700;
-          text-align: center;
-          font-size: 14px;
+          font-size: 13.5px;
+          letter-spacing: 0.5px;
+        }
+        .specs-table th.param-col {
+          background-color: #2c2d30;
+          text-align: left;
+          width: 44%;
+          border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .specs-table th.unit-col {
+          background-color: #4c5056;
+          text-align: left;
+          width: 20%;
+          border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .specs-table th.val-col {
+          background-color: #6c717a;
+          text-align: left;
+          width: 36%;
         }
         .specs-table td {
-          padding: 14px 20px;
+          padding: 13px 22px;
           border-bottom: 1px solid #f1f5f9;
           font-size: 13px;
-          color: #334155;
-          text-align: center;
+        }
+        .specs-table td.param-cell {
+          font-weight: 600;
+          color: #1e293b;
+          text-align: left;
+        }
+        .specs-table td.unit-cell {
+          color: #64748b;
+          font-weight: 500;
+          text-align: left;
+        }
+        .specs-table td.val-cell {
+          font-weight: 700;
+          color: #0f172a;
+          text-align: left;
         }
         .specs-table tr:nth-of-type(even) {
-          background-color: #f8fafc;
+          background-color: #fafbfc;
         }
         .specs-table tr:hover {
-          background-color: #eff6ff;
+          background-color: #f1f5f9;
         }
         .enquiry-form-input {
           width: 100%;
@@ -409,15 +439,17 @@ export default function DetronModelDetailPage() {
           <table className="specs-table">
             <thead>
               <tr>
-                <th>Parameters</th>
-                <th>Specification Value</th>
+                <th className="param-col">MODEL</th>
+                <th className="unit-col">Unit</th>
+                <th className="val-col">{product.name}</th>
               </tr>
             </thead>
             <tbody>
               {Object.entries(product.specs).map(([key, val]) => (
                 <tr key={key}>
-                  <td style={{ fontWeight: '600', textAlign: 'center' }}>{key}</td>
-                  <td style={{ textAlign: 'center', fontWeight: '700', color: '#E30613' }}>{val}</td>
+                  <td className="param-cell">{key}</td>
+                  <td className="unit-cell">{getSpecificationUnit(key, val)}</td>
+                  <td className="val-cell">{val}</td>
                 </tr>
               ))}
             </tbody>

@@ -1,4 +1,5 @@
 import { PRODUCT_DATABASE } from '../products/productData';
+import { getSpecificationUnit } from './specUnits';
 
 export function downloadBrochure() {
   // Generate comprehensive HTML catalog document from exact product data
@@ -125,12 +126,14 @@ export function downloadBrochure() {
           margin-top: 10px;
         }
         table.specs-table th {
-          background-color: #0f172a;
           color: #ffffff;
-          padding: 6px 10px;
+          padding: 7px 10px;
           text-align: left;
           font-weight: 700;
         }
+        table.specs-table th.th-param { width: 44%; background-color: #2c2d30; border-right: 1px solid rgba(255, 255, 255, 0.08); }
+        table.specs-table th.th-unit { width: 20%; background-color: #4c5056; border-right: 1px solid rgba(255, 255, 255, 0.08); }
+        table.specs-table th.th-val { width: 36%; background-color: #6c717a; }
         table.specs-table td {
           padding: 6px 10px;
           border-bottom: 1px solid #e2e8f0;
@@ -140,8 +143,11 @@ export function downloadBrochure() {
         }
         table.specs-table td.spec-key {
           font-weight: 600;
-          color: #475569;
-          width: 45%;
+          color: #1e293b;
+        }
+        table.specs-table td.spec-unit {
+          color: #64748b;
+          font-weight: 500;
         }
         table.specs-table td.spec-val {
           font-weight: 700;
@@ -155,44 +161,31 @@ export function downloadBrochure() {
           background-color: #E30613;
           color: #ffffff;
           border: none;
-          padding: 12px 24px;
-          border-radius: 6px;
-          font-size: 14px;
-          font-weight: 800;
+          padding: 10px 18px;
+          font-weight: 700;
+          font-size: 13px;
+          border-radius: 4px;
           cursor: pointer;
-          box-shadow: 0 4px 14px rgba(227, 6, 19, 0.4);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         @media print {
           .no-print { display: none; }
           body { padding: 0; }
+          .product-card { break-inside: avoid; }
         }
       </style>
     </head>
     <body>
-      <button class="no-print" onclick="window.print()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;">
-          <polyline points="6 9 6 2 18 2 18 9"></polyline>
-          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-          <rect x="6" y="14" width="12" height="8"></rect>
-        </svg>
-        <span>Print / Save as PDF Catalog</span>
-      </button>
+      <button class="no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
       <div class="header-banner">
-        <div>
-          <div class="company-title">AXIS</div>
-          <div class="company-sub">ENGINEERING SOLUTIONS</div>
-        </div>
-        <div class="contact-info-head">
-          <strong>Official Technical Product Catalog</strong><br>
-          Phone: +91 98849 12279 / +91 98849 12280<br>
-          Email: info@axisengineeringsolutions.in<br>
-          Web: www.axisengineeringsolutions.in
-        </div>
+        <div class="brand-title">AXIS ENGINEERING SOLUTIONS</div>
+        <div class="brand-sub">Exclusive Detron Rotary Tables & Advanced Automation Solutions</div>
       </div>
 
-      <div class="partnership-badge">
-        <strong>Proud Partner:</strong> Associated with <strong>Detron Machinery Co. Ltd., Taiwan</strong>— the world's largest professional Rotary Table Manufacturer. Established in 2014, Axis Engineering Solutions delivers total turnkey integration, 4th & 5th axis interfacing, DDR integration, and custom hydraulic/jig control systems across India.
+      <div class="doc-header">
+        <h1 class="doc-title">Detron High-Precision Machine Tool Accessories & CNC Rotary Tables</h1>
+        <div class="doc-meta">Comprehensive Product Lineup, Engineering Specifications, and Technical Dimensions</div>
       </div>
   `;
 
@@ -221,8 +214,9 @@ export function downloadBrochure() {
             <table class="specs-table">
               <thead>
                 <tr>
-                  <th>Technical Parameter</th>
-                  <th>Specification Value</th>
+                  <th class="th-param">MODEL</th>
+                  <th class="th-unit">Unit</th>
+                  <th class="th-val">${prod.name}</th>
                 </tr>
               </thead>
               <tbody>
@@ -232,6 +226,7 @@ export function downloadBrochure() {
             catalogHTML += `
               <tr>
                 <td class="spec-key">${k}</td>
+                <td class="spec-unit">${getSpecificationUnit(k, v)}</td>
                 <td class="spec-val">${v}</td>
               </tr>
             `;
