@@ -74,14 +74,14 @@ export default function SpecialApplications() {
           right: 0;
           height: 0%;
           width: 100%;
-          background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+          background: linear-gradient(180deg, #E30613 0%, #a8000a 100%);
           transition: height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
           z-index: 1;
         }
         .aishmo-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
-          border-color: #334155;
+          box-shadow: 0 20px 40px rgba(227, 6, 19, 0.28);
+          border-color: #E30613;
         }
         .aishmo-card:hover::after {
           height: 100%;
@@ -214,42 +214,43 @@ export default function SpecialApplications() {
           color: #ffffff;
         }
         .aishmo-card:hover .aishmo-group-tag {
-          color: #cbd5e1 !important;
+          color: #ffffff !important;
         }
         .aishmo-card:hover .aishmo-card-badge {
           color: #ffffff;
-          background: rgba(255, 255, 255, 0.12);
-          border-color: rgba(255, 255, 255, 0.25);
+          background: rgba(0, 0, 0, 0.25);
+          border-color: rgba(255, 255, 255, 0.4);
         }
         .aishmo-card:hover .aishmo-card-desc {
-          color: #cbd5e1;
+          color: #ffffff;
         }
         .aishmo-card:hover .aishmo-card-specs {
-          border-color: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.25);
         }
         .aishmo-card:hover .aishmo-spec-key {
-          color: #94a3b8;
+          color: rgba(255, 255, 255, 0.85);
         }
         .aishmo-card:hover .aishmo-spec-val {
           color: #ffffff;
         }
         .aishmo-card:hover .aishmo-btn-view {
-          background: #E30613;
-          color: #ffffff;
-          border-color: #E30613;
-          box-shadow: 0 4px 14px rgba(227, 6, 19, 0.45);
+          background: #ffffff;
+          color: #E30613;
+          border-color: #ffffff;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
         }
         .aishmo-card:hover .aishmo-btn-view:hover {
-          background: #b9050f;
-          border-color: #b9050f;
+          background: #f1f5f9;
+          color: #b9050f;
+          border-color: #f1f5f9;
         }
         .aishmo-card:hover .aishmo-btn-video {
           color: #ffffff;
-          border-color: rgba(255, 255, 255, 0.3);
-          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.6);
+          background: rgba(0, 0, 0, 0.2);
         }
         .aishmo-card:hover .aishmo-btn-video:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(0, 0, 0, 0.4);
           border-color: #ffffff;
           color: #ffffff;
         }
@@ -321,7 +322,7 @@ export default function SpecialApplications() {
           transform: scale(1.07);
         }
         .related-card:hover .related-card-bottom {
-          background: #0f172a;
+          background: #E30613;
         }
         .related-card:hover .related-card-title {
           color: #ffffff;

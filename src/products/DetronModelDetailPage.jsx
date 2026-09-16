@@ -308,7 +308,7 @@ export default function DetronModelDetailPage() {
           transform: scale(1.07);
         }
         .related-card:hover .related-card-bottom {
-          background: #0f172a;
+          background: #E30613;
         }
         .related-card:hover .related-card-title {
           color: #ffffff;
