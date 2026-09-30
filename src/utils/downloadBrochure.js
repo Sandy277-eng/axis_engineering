@@ -248,7 +248,7 @@ export function downloadBrochure() {
       <div style="margin-top: 40px; padding: 20px; background-color: #0f172a; color: #ffffff; border-radius: 8px; font-size: 12px; line-height: 1.6;">
         <strong style="font-size: 14px; color: #E30613;">Axis Engineering Solutions — Technical & Sales Headquarters</strong><br>
         78-B, First Floor, Geason Housing Colony, 1st Main Road, Ayanambakkam, Chennai, Tamil Nadu 600095, India<br>
-        Contact Numbers: +91 98849 12279 / +91 98849 12280 | Direct: +91 90032 24117<br>
+        Contact Numbers: +91 90032 24117 / +91 98849 12280 / +91 98946 96637<br>
         Email: info@axisengineeringsolutions.in | Website: www.axisengineeringsolutions.in<br>
         <em>© ${new Date().getFullYear()} Axis Engineering Solutions. All Rights Reserved.</em>
       </div>

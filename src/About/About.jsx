@@ -121,7 +121,7 @@ export default function About() {
       <div style={styles.fixedHeaderGroup}>
         <div style={styles.topBar}>
           <div style={styles.topBarLeft}>
-            <span style={styles.contactItem}>🕿 <strong>+91 98849 12279</strong></span>
+            <span style={styles.contactItem}>🕿 <strong>+91 90032 24117 / +91 98849 12280 / +91 98946 96637</strong></span>
             <span style={styles.contactItem}>
               🌐 <Link to="/contact" style={styles.topContactLink}>CONTACT US</Link>
             </span>

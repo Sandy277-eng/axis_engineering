@@ -188,9 +188,9 @@ export default function ContactPage() {
                     </div>
                     <h4 style={styles.refHeading}>PHONE NUMBER</h4>
                     <p style={styles.refText}>
-                      +91 98849 12279<br />
+                      +91 90032 24117<br />
                       +91 98849 12280<br/>
-                      +91 9003224117
+                      +91 98946 96637
                     </p>
                   </div>
 

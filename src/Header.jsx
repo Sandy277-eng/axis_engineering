@@ -110,6 +110,16 @@ export default function Header({ activePage, scrollToProducts }) {
           ]
         },
         {
+          name: 'RCF Series (Roller Gear Cam)',
+          link: '/products/detron/rcf-series',
+          products: [
+            { name: 'RCF-170S / RCF-170H', badge: 'Zero-Backlash Roller Cam', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
+            { name: 'RCF-210S / RCF-210H', badge: 'Roller Cam Tilt Table', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
+            { name: 'RCF-255H', badge: 'Hydraulic 1000/1270 N.m', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
+            { name: 'RCF-320H', badge: 'Hydraulic 1270/1600 N.m', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' }
+          ]
+        },
+        {
           name: 'Auto Pallet Changers (APC)',
           link: '/products/detron/auto-pallet-changer',
           products: [
@@ -203,14 +213,12 @@ export default function Header({ activePage, scrollToProducts }) {
           ]
         },
         {
-          name: 'RCX / RCF Series (Rear Motor)',
+          name: 'RCX Series (Rear Motor)',
           link: '/products/detron/4-axis',
           products: [
             { name: 'RCX-210S / RCX-210H', badge: 'Rear Motor Compact', image: '/images/products_detron/4th_axis_pics/210mm/GXA-210S.jpg', categoryId: '4-axis' },
             { name: 'RCX-255S / RCX-255H', badge: 'Rear Motor Compact', image: '/images/products_detron/4th_axis_pics/255mm/GXA-255S.jpg', categoryId: '4-axis' },
-            { name: 'RCX-320S / RCX-320H', badge: 'Rear Motor Compact', image: '/images/products_detron/4th_axis_pics/320mm/GXA-320S.jpg', categoryId: '4-axis' },
-            { name: 'RCF-210S / RCF-210H', badge: 'Rear Motor Flanged', image: '/images/products_detron/4th_axis_pics/210mm/GXA-210S.jpg', categoryId: '4-axis' },
-            { name: 'RCF-255S / RCF-255H', badge: 'Rear Motor Flanged', image: '/images/products_detron/4th_axis_pics/255mm/GXA-255S.jpg', categoryId: '4-axis' }
+            { name: 'RCX-320S / RCX-320H', badge: 'Rear Motor Compact', image: '/images/products_detron/4th_axis_pics/320mm/GXA-320S.jpg', categoryId: '4-axis' }
           ]
         },
         {
@@ -277,12 +285,30 @@ export default function Header({ activePage, scrollToProducts }) {
           ]
         },
         {
-          name: 'RCX-T / RCF-T / RCTFE Series',
+          name: 'RCX-T / RCTFE Series',
           link: '/products/detron/5-axis',
           products: [
             { name: 'RCX-210T', badge: 'Rear Motor Tilting 5-Axis', image: '/images/products_detron/5th_axis_pics/210mm/RCX-210T.jpg', categoryId: '5-axis' },
             { name: 'RCX-255T', badge: 'Rear Motor Tilting 5-Axis', image: '/images/products_detron/5th_axis_pics/255mm/RCX-255T.jpg', categoryId: '5-axis' },
             { name: 'RCTFE-170', badge: 'Compact Multi-Axis Tilt', image: '/images/products_detron/5th_axis_pics/RXCFE/RCTFE-170.jpg', categoryId: '5-axis' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'rcf-series',
+      title: 'RCF Series',
+      link: '/products/detron/rcf-series',
+      hasArrow: true,
+      series: [
+        {
+          name: 'RCF Series (Roller Gear Cam)',
+          link: '/products/detron/rcf-series',
+          products: [
+            { name: 'RCF-170S / RCF-170H', badge: 'Zero-Backlash Roller Cam', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
+            { name: 'RCF-210S / RCF-210H', badge: 'Roller Cam Tilt Table', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
+            { name: 'RCF-255H', badge: 'Hydraulic 1000/1270 N.m', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
+            { name: 'RCF-320H', badge: 'Hydraulic 1270/1600 N.m', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' }
           ]
         }
       ]
@@ -435,7 +461,7 @@ export default function Header({ activePage, scrollToProducts }) {
     <div style={styles.fixedHeaderGroup} onMouseLeave={() => setShowMegaMenu(false)}>
       <div style={styles.topBar}>
         <div style={styles.topBarLeft}>
-          <span style={styles.contactItem}>🕿 <strong>+91 98849 12279</strong></span>
+          <span style={styles.contactItem}>🕿 <strong>+91 90032 24117 / +91 98849 12280 / +91 98946 96637</strong></span>
           <span style={styles.contactItem}>
             🌐 <Link to="/contact" style={styles.topContactLink} onMouseEnter={() => setShowMegaMenu(false)}>CONTACT US</Link>
           </span>

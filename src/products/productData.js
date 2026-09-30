@@ -878,100 +878,6 @@ export const PRODUCT_DATABASE = {
             }
           }
         ]
-      },
-      {
-        size: 'RCF / RFX Series (Roller Gear Cam Tilting 4th/5th Axis)',
-        products: [
-          {
-            name: 'RCF-170S / RCF-170H',
-            badge: 'Roller Gear Cam Drive, Zero-Backlash Tilting Table',
-            description: 'Zero-backlash roller gear cam drive tilting rotary table with dual lead cam shaft mechanism on both axes. -30° to +120° tilt range and 50 RPM rotary speed.',
-            image: '/images/products_detron/5th_axis.png',
-            specs: {
-              'Table Diameter': 'Ø 170 mm (6.69")',
-              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
-              'Table Height (Horizontal)': '270 mm (10.6")',
-              'Center Height (Vertical)': '200 mm (7.87")',
-              'Tilting Angle Range': '-30° to +120°',
-              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
-              'Clamping Torque (Rot / Tilt)': 'P: 300 / 400 N.m (H: 450 / 700 N.m)',
-              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:90',
-              'Max Table Speed (Rot / Tilt)': '50.0 / 33.3 min⁻¹',
-              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
-              'Repeatability (Rot / Tilt)': '6 / 8 sec',
-              'Allowable Load (Horiz / Tilting)': '75 kg / 50 kg (165 / 110 lbs)',
-              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
-              'Net Weight': '221 kg (487 lbs)',
-              
-            }
-          },
-          {
-            name: 'RCF-210S / RCF-210H',
-            badge: 'Roller Gear Cam Drive Tilting Table (P: 400/600 N.m / H: 600/800 N.m)',
-            description: 'Zero-backlash roller gear cam drive 210mm tilting rotary table with Ø65H7 center bore, delivering 50 RPM rotary speed and -30° to +120° tilt angle.',
-            image: '/images/products_detron/5th_axis.png',
-            specs: {
-              'Table Diameter': 'Ø 210 mm (8.27")',
-              'Center Bore Diameter': 'Ø 65H7 (Ø 2.56H7)',
-              'Table Height (Horizontal)': '286 mm (11.26")',
-              'Center Height (Vertical)': '210 mm (8.27")',
-              'Tilting Angle Range': '-30° to +120°',
-              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
-              'Clamping Torque (Rot / Tilt)': 'P: 400 / 600 N.m (H: 600 / 800 N.m)',
-              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:90',
-              'Max Table Speed (Rot / Tilt)': '50.0 / 33.3 min⁻¹',
-              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
-              'Repeatability (Rot / Tilt)': '6 / 8 sec',
-              'Allowable Load (Horiz / Tilting)': '100 kg / 70 kg (220 / 154 lbs)',
-              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
-              'Net Weight': '250 kg (551 lbs)'
-            }
-          },
-          {
-            name: 'RCF-255H',
-            badge: 'Roller Gear Cam Drive, Hydraulic 1000 / 1270 N.m',
-            description: 'Heavy duty roller gear cam tilting rotary table with Ø140H7 center bore and optional BT / HSK / CAPTO tool holder interface.',
-            image: '/images/products_detron/5th_axis.png',
-            specs: {
-              'Table Diameter': 'Ø 255 mm (10.04")',
-              'Center Bore Diameter': 'Ø 140H7x15L (Ø 5.51H7x15L)',
-              'Table Height (Horizontal)': '335 mm (13.18")',
-              'Center Height (Vertical)': '235 mm (9.25")',
-              'Tilting Angle Range': '-30° to +120°',
-              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
-              'Clamping Torque (Rot / Tilt)': '1000 N.m / 1270 N.m (738 / 937 ft.lbs)',
-              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:90',
-              'Max Table Speed (Rot / Tilt)': '44.4 / 33.3 min⁻¹',
-              'Indexing Accuracy (Rot / Tilt)': '20 / 50 sec',
-              'Repeatability (Rot / Tilt)': '6 / 8 sec',
-              'Allowable Load (Horiz / Tilting)': '120 kg / 90 kg (265 / 198 lbs)',
-              'Cam Allowable Torque': '800 N.m (590 ft.lbs)',
-              'Net Weight': '355 kg (782 lbs)'
-            }
-          },
-          {
-            name: 'RCF-320H',
-            badge: 'Roller Gear Cam Drive, Hydraulic 1270 / 1600 N.m',
-            description: 'Large scale roller gear cam drive tilting rotary table with 1270/1600 N.m hydraulic clamping torque and -30° to +120° tilt travel.',
-            image: '/images/products_detron/5th_axis.png',
-            specs: {
-              'Table Diameter': 'Ø 320 mm (12.59")',
-              'Center Bore Diameter': 'Ø 140H7x15L (Ø 5.51H7x15L)',
-              'Table Height (Horizontal)': '355 mm (13.97")',
-              'Center Height (Vertical)': '255 mm (10.03")',
-              'Tilting Angle Range': '-30° to +120°',
-              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
-              'Clamping Torque (Rot / Tilt)': '1270 N.m / 1600 N.m (937 / 1180 ft.lbs)',
-              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:48',
-              'Max Table Speed (Rot / Tilt)': '44.4 / 33.3 min⁻¹',
-              'Indexing Accuracy (Rot / Tilt)': '20 / 50 sec',
-              'Repeatability (Rot / Tilt)': '6 / 8 sec',
-              'Allowable Load (Horiz / Tilting)': '200 kg / 150 kg (440 / 330 lbs)',
-              'Cam Allowable Torque': '800 N.m (590 ft.lbs)',
-              'Net Weight': '488 kg (1076 lbs)'
-            }
-          }
-        ]
       }
     ]
   },
@@ -2526,7 +2432,125 @@ export const PRODUCT_DATABASE = {
         ]
       }
     ]
+  },
+  'rcf-series': {
+    title: 'RCF Series (Roller Gear Cam Tilting Rotary Tables)',
+    description: 'Zero-backlash roller gear cam drive tilting rotary tables engineered for high-precision 5-face indexing, ultra-rigid machining, and compact machine envelopes.',
+    folderPath: '/detron-frames/5th_axis',
+    totalFrames: 240,
+    items: [
+      {
+        size: 'Ø 170mm (Roller Gear Cam)',
+        products: [
+          {
+            name: 'RCF-170S / RCF-170H',
+            badge: 'Roller Gear Cam Drive, Zero-Backlash Tilting Table',
+            description: 'Zero-backlash roller gear cam drive tilting rotary table with dual lead cam shaft mechanism on both axes. -30° to +120° tilt range and 50 RPM rotary speed.',
+            image: '/images/products_detron/5th_axis.png',
+            specs: {
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Table Height (Horizontal)': '270 mm (10.6")',
+              'Center Height (Vertical)': '200 mm (7.87")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
+              'Clamping Torque (Rot / Tilt)': 'P: 300 / 400 N.m (H: 450 / 700 N.m)',
+              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '50.0 / 33.3 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '75 kg / 50 kg (165 / 110 lbs)',
+              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
+              'Net Weight': '221 kg (487 lbs)'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 210mm (Roller Gear Cam)',
+        products: [
+          {
+            name: 'RCF-210S / RCF-210H',
+            badge: 'Roller Gear Cam Drive Tilting Table (P: 400/600 N.m / H: 600/800 N.m)',
+            description: 'Zero-backlash roller gear cam drive 210mm tilting rotary table with Ø65H7 center bore, delivering 50 RPM rotary speed and -30° to +120° tilt angle.',
+            image: '/images/products_detron/5th_axis.png',
+            specs: {
+              'Table Diameter': 'Ø 210 mm (8.27")',
+              'Center Bore Diameter': 'Ø 65H7 (Ø 2.56H7)',
+              'Table Height (Horizontal)': '286 mm (11.26")',
+              'Center Height (Vertical)': '210 mm (8.27")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa / H: 2.5 MPa (363 psi)',
+              'Clamping Torque (Rot / Tilt)': 'P: 400 / 600 N.m (H: 600 / 800 N.m)',
+              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '50.0 / 33.3 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 60 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '100 kg / 70 kg (220 / 154 lbs)',
+              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
+              'Net Weight': '250 kg (551 lbs)'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 255mm (Roller Gear Cam)',
+        products: [
+          {
+            name: 'RCF-255H',
+            badge: 'Roller Gear Cam Drive, Hydraulic 1000 / 1270 N.m',
+            description: 'Heavy duty roller gear cam tilting rotary table with Ø140H7 center bore and optional BT / HSK / CAPTO tool holder interface.',
+            image: '/images/products_detron/5th_axis.png',
+            specs: {
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Bore Diameter': 'Ø 140H7x15L (Ø 5.51H7x15L)',
+              'Table Height (Horizontal)': '335 mm (13.18")',
+              'Center Height (Vertical)': '235 mm (9.25")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque (Rot / Tilt)': '1000 N.m / 1270 N.m (738 / 937 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:90',
+              'Max Table Speed (Rot / Tilt)': '44.4 / 33.3 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 50 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '120 kg / 90 kg (265 / 198 lbs)',
+              'Cam Allowable Torque': '800 N.m (590 ft.lbs)',
+              'Net Weight': '355 kg (782 lbs)'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 320mm (Roller Gear Cam)',
+        products: [
+          {
+            name: 'RCF-320H',
+            badge: 'Roller Gear Cam Drive, Hydraulic 1270 / 1600 N.m',
+            description: 'Large scale roller gear cam drive tilting rotary table with 1270/1600 N.m hydraulic clamping torque and -30° to +120° tilt travel.',
+            image: '/images/products_detron/5th_axis.png',
+            specs: {
+              'Table Diameter': 'Ø 320 mm (12.59")',
+              'Center Bore Diameter': 'Ø 140H7x15L (Ø 5.51H7x15L)',
+              'Table Height (Horizontal)': '355 mm (13.97")',
+              'Center Height (Vertical)': '255 mm (10.03")',
+              'Tilting Angle Range': '-30° to +120°',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa (725 psi)',
+              'Clamping Torque (Rot / Tilt)': '1270 N.m / 1600 N.m (937 / 1180 ft.lbs)',
+              'Transmission Ratio (Rot / Tilt)': '1:60 / 1:48',
+              'Max Table Speed (Rot / Tilt)': '44.4 / 33.3 min⁻¹',
+              'Indexing Accuracy (Rot / Tilt)': '20 / 50 sec',
+              'Repeatability (Rot / Tilt)': '6 / 8 sec',
+              'Allowable Load (Horiz / Tilting)': '200 kg / 150 kg (440 / 330 lbs)',
+              'Cam Allowable Torque': '800 N.m (590 ft.lbs)',
+              'Net Weight': '488 kg (1076 lbs)'
+            }
+          }
+        ]
+      }
+    ]
   }
 };
 
 PRODUCT_DATABASE['special-applications'] = PRODUCT_DATABASE['special-application'];
+PRODUCT_DATABASE['rcf'] = PRODUCT_DATABASE['rcf-series'];
+

@@ -47,28 +47,65 @@ export default function Footer() {
         >
           {/* COLUMN 1: LOGO & OVERVIEW */}
           <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+            <style>{`
+              @keyframes grayToWhiteTransition {
+                0%, 100% {
+                  color: #737373;
+                }
+                50% {
+                  color: #ffffff;
+                  text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+                }
+              }
+              .footer-brand-shine {
+                animation: grayToWhiteTransition 3s ease-in-out infinite;
+                transition: color 0.3s ease;
+              }
+            `}</style>
+
             <div
               style={{
                 display: 'flex',
-                alignItems: 'flex-start',
+                alignItems: 'center',
                 margin: '0 0 6px 0',
               }}
             >
-              <Link to="/" onClick={() => window.scrollTo(0, 0)} style={{ display: 'inline-block' }}>
+              <Link
+                to="/"
+                onClick={() => window.scrollTo(0, 0)}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  flexWrap: 'nowrap',
+                }}
+              >
                 <img
                   src="/logo_axis/axis%20logo%20no%20background.png"
-                  alt="Axis Engineering Solutions"
+                  alt="Axis Logo"
                   style={{
-                    height: 'auto',
-                    maxHeight: '100px',
+                    height: '32px',
                     width: 'auto',
-                    maxWidth: '300px',
                     objectFit: 'contain',
-                    objectPosition: 'left top',
                     display: 'block',
-                    cursor: 'pointer',
+                    flexShrink: 0,
                   }}
                 />
+                <span
+                  className="footer-brand-shine"
+                  style={{
+                    fontFamily: '"Times New Roman", Times, Georgia, serif',
+                    fontWeight: '900',
+                    fontSize: '18px',
+                    letterSpacing: '0.2px',
+                    whiteSpace: 'nowrap',
+                    lineHeight: '1',
+                  }}
+                >
+                  AXIS ENGINEERING SOLUTIONS
+                </span>
               </Link>
             </div>
 
@@ -78,7 +115,7 @@ export default function Footer() {
                 height: '2px',
                 backgroundColor: '#E30613',
                 borderRadius: '1px',
-                margin: '8px 0 16px 0',
+                margin: '10px 0 16px 0',
               }}
             />
                 
@@ -117,47 +154,34 @@ export default function Footer() {
                 backgroundColor: '#0a0e17',
                 border: '1px solid #1e293b',
                 borderRadius: '8px',
-                padding: '10px 14px',
+                padding: '10px 18px',
                 display: 'flex',
-                justifyContent: 'space-between',
+                justifyContent: 'space-around',
                 alignItems: 'center',
-                gap: '6px',
+                gap: '12px',
                 fontSize: '11px',
                 color: '#94a3b8',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
                   <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
                 </svg>
                 <div>
                   <div style={{ fontSize: '8.5px', color: '#64748b', textTransform: 'uppercase', fontWeight: '700' }}>Industry</div>
-                  <div style={{ fontWeight: '700', color: '#e2e8f0', fontSize: '10px' }}>Automation Machinery</div>
+                  <div style={{ fontWeight: '700', color: '#e2e8f0', fontSize: '10.5px' }}>Automation Machinery</div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
                 <div>
                   <div style={{ fontSize: '8.5px', color: '#64748b', textTransform: 'uppercase', fontWeight: '700' }}>Founded</div>
-                  <div style={{ fontWeight: '700', color: '#e2e8f0', fontSize: '10px' }}>2014</div>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-                <div>
-                  <div style={{ fontSize: '8.5px', color: '#64748b', textTransform: 'uppercase', fontWeight: '700' }}>Employees</div>
-                  <div style={{ fontWeight: '700', color: '#e2e8f0', fontSize: '10px' }}>11-50</div>
+                  <div style={{ fontWeight: '700', color: '#e2e8f0', fontSize: '10.5px' }}>2014</div>
                 </div>
               </div>
             </div>
@@ -327,7 +351,8 @@ export default function Footer() {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
                 <div>
-                  +91 98849 12279 / +91 98849 12280<br />
+                  +91 90032 24117 / +91 98849 12280<br />
+                  +91 98946 96637<br />
                   044 - 4746 8749
                 </div>
               </div>

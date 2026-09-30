@@ -24,7 +24,6 @@ export default function FourAxis() {
     if (item.size.includes('400-500mm')) return '400-500mm';
     if (item.size.includes('630-800mm')) return '630-800mm';
     if (item.size.includes('RCX')) return 'RCX Series';
-    if (item.size.includes('RCF') || item.size.includes('RFX')) return 'RCF Series';
     return item.size;
   })];
 
@@ -39,13 +38,13 @@ export default function FourAxis() {
         if (selectedSize === '125mm') return item.size.includes('125mm');
         if (selectedSize === '170mm') return item.size.includes('170mm');
         if (selectedSize === 'RCX Series') return item.size.includes('RCX');
-        if (selectedSize === 'RCF Series') return item.size.includes('RCF') || item.size.includes('RFX');
         return item.size.toLowerCase().includes(selectedSize.toLowerCase());
       });
 
   // Other categories for Related Products
   const RELATED_CATEGORIES = [
     { id: '5-axis', title: '5 Axis Tilt Rotary Tables', img: '/images/products_detron/5th_axis.png' },
+    { id: 'rcf-series', title: 'RCF Series (Roller Cam)', img: '/images/products_detron/5th_axis.png' },
     { id: 'auto-pallet-changer', title: 'Auto Pallet Changers', img: '/images/products_detron/Auto-Pallet-changer.png' },
     { id: 'special-application', title: 'Special Applications', img: '/images/products_detron/Special-Application.png' },
     { id: 'accessories', title: 'Detron Accessories', img: '/images/products_detron/Accessories.png' },

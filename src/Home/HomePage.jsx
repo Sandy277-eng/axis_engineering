@@ -7,6 +7,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const BUILDER_PARTNER_LOGOS = [
+  { name: 'Ace Micromatic', src: '/logo_axis/Ace.png' },
+  { name: 'AMS', src: '/logo_axis/AMS.png' },
+  { name: 'BFW', src: '/logo_axis/BFW.png' },
+  { name: 'Cosmos', src: '/logo_axis/cosmos.png' },
+  { name: 'Feeler', src: '/logo_axis/feeler.png' },
+  { name: 'Hision', src: '/logo_axis/hision.png' },
+  { name: 'HURCO', src: '/logo_axis/HURCO.png' },
+  { name: 'LMW', src: '/logo_axis/LMW.png' },
+  { name: 'Lokesh', src: '/logo_axis/lokesh.png' },
+  { name: 'M2NXT', src: '/logo_axis/m2nxt.png' },
+  { name: 'Makino', src: '/logo_axis/makimo.jpg' },
+  { name: 'PHILLIPS', src: '/logo_axis/PHILLIPS.png' },
+  { name: 'Precision', src: '/logo_axis/precision.png' },
+  { name: 'STM', src: '/logo_axis/STM.png' },
+  { name: 'VMT', src: '/logo_axis/vmt.png' }
+];
+
 export default function HomePage() {
   // ─── SEO: set page-level meta on mount ───────────────────────────────────
   useEffect(() => {
@@ -654,6 +672,111 @@ export default function HomePage() {
           .specialty-item:hover ~ .specialty-grid-line {
             background-color: rgba(227, 6, 19, 0.8) !important;
           }
+
+          /* Continuous Sliding Marquee from Left to Right */
+          @keyframes slideLogosLeftToRight {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0%);
+            }
+          }
+          .partner-logo-marquee-track {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 28px;
+            animation: slideLogosLeftToRight 35s linear infinite;
+          }
+          .partner-logo-marquee-track:hover {
+            animation-play-state: paused;
+          }
+          .partner-logo-box {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            height: 78px;
+            min-width: 170px;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+          }
+          .partner-logo-box:hover {
+            transform: translateY(-4px);
+            border-color: #E30613;
+            box-shadow: 0 10px 24px rgba(227, 6, 19, 0.15);
+          }
+          .partner-logo-img {
+            max-height: 48px;
+            max-width: 130px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+          }
+          .partner-logo-box:hover .partner-logo-img {
+            transform: scale(1.08);
+          }
+
+          /* Horizontal Practice Cards */
+          .practice-horizontal-card {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-top: 4px solid #E30613;
+            border-radius: 8px;
+            padding: 28px 22px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            box-sizing: border-box;
+            transition: all 0.35s ease;
+          }
+          .practice-horizontal-card:hover {
+            transform: translateY(-6px);
+            border-color: #E30613;
+            box-shadow: 0 16px 36px rgba(227, 6, 19, 0.14);
+          }
+          .practice-horizontal-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0%;
+            background-color: #E30613;
+            transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 0;
+            border-radius: 0 0 6px 6px;
+          }
+          .practice-horizontal-card:hover::before {
+            height: 100%;
+          }
+          .practice-horizontal-card > * {
+            position: relative;
+            z-index: 1;
+          }
+          .practice-horizontal-card:hover h4,
+          .practice-horizontal-card:hover p {
+            color: #ffffff !important;
+          }
+          .practice-horizontal-card:hover .practice-icon-circle-big {
+            background-color: #000000 !important;
+            border-color: #000000 !important;
+          }
+          .practice-horizontal-card:hover svg {
+            stroke: #ffffff !important;
+          }
+          .practice-horizontal-card:hover svg * {
+            stroke: #ffffff !important;
+          }
         `}
       </style>
 
@@ -663,7 +786,7 @@ export default function HomePage() {
       {/* 1. VIDEO HERO SECTION */}
       <div ref={heroSectionRef} style={styles.pinnedHeroWrapper}>
         <video
-          src="/videos/detron_home_page_animation01.mp4"
+          src="/videos/detron_home_page_animation009.mp4"
           autoPlay
           loop
           muted
@@ -916,6 +1039,19 @@ export default function HomePage() {
               },
               {
                 num: "03",
+                title: "RCF Series (Roller Gear Cam)",
+                desc: "Zero-backlash roller gear cam tilting tables with rear-motor configuration for compact envelopes.",
+                link: "/products/detron/rcf-series",
+                img: "/images/products_detron/5th_axis.png",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a10 10 0 0 1 10 10M12 12l5 5"/>
+                  </svg>
+                )
+              },
+              {
+                num: "04",
                 title: "Auto Pallet Changers (APC)",
                 desc: "180° swing exchange and front-loading pallet changers for high-mix batch automation.",
                 link: "/products/detron/auto-pallet-changer",
@@ -930,7 +1066,7 @@ export default function HomePage() {
                 )
               },
               {
-                num: "04",
+                num: "05",
                 title: "Intelligent Control Systems",
                 desc: "Standalone indexer controllers, multi-axis drives, and wireless interface modules.",
                 link: "/products/detron/intelligent-control",
@@ -944,7 +1080,7 @@ export default function HomePage() {
                 )
               },
               {
-                num: "05",
+                num: "06",
                 title: "Precision Accessories",
                 desc: "Manual and pneumatic tailstocks, support tables, faceplates, and high-pressure rotary joints.",
                 link: "/products/detron/accessories",
@@ -957,7 +1093,7 @@ export default function HomePage() {
                 )
               },
               {
-                num: "06",
+                num: "07",
                 title: "Custom Hydraulic Fixturing",
                 desc: "Engineered hydraulic fixture plates, tombstone fixtures, and leak-proof rotary oil distributors.",
                 link: "/products/fixtures",
@@ -1180,133 +1316,122 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* 7. QUALITY STANDARDS & TRUSTED BUILDERS SIDE-BY-SIDE */}
+      {/* 7. QUALITY STANDARDS (UP SECTION) */}
       <div style={styles.sectionWrapperClip}>
-        <div style={styles.sideBySideWrapper}>
-          
-          {/* Left card: Best Practices */}
-          <section style={styles.leftCard} className="section-box">
-            <div style={styles.sectionHeaderLeft}>
+        <section style={styles.sectionBoxCard} className="section-box">
+          <div style={styles.sectionHeader}>
+            <div style={styles.badgeContainerCentered}>
+              <div style={styles.badgeLineHorizontal} />
               <span style={styles.panelBadge}>QUALITY STANDARDS</span>
-              <div style={styles.panelBadgeLine} />
-              <h2 style={styles.sectionTitleLeft}>We Follow Best Practices</h2>
+              <div style={styles.badgeLineHorizontal} />
             </div>
+            <h2 style={styles.sectionTitle}>We Follow Best Practices</h2>
+            <div style={styles.badgeLineCentered} />
+            <p style={styles.sectionSubtext}>
+              Rigorous design protocols, standard compliance, and continuous manufacturing excellence embedded across every engineering solution.
+            </p>
+          </div>
 
-            <div style={styles.verticalPracticesGrid}>
-              {[
-                { 
-                  title: "Latest Designs", 
-                  desc: "Using advanced engineering CAD standards.",
-                  icon: (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                      <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                      <line x1="12" y1="22.08" x2="12" y2="12" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: "Modern Technology", 
-                  desc: "Precision CNC hardware and electrical control design.",
-                  icon: (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-                      <rect x="9" y="9" width="6" height="6" />
-                      <line x1="9" y1="1" x2="9" y2="4" />
-                      <line x1="15" y1="1" x2="15" y2="4" />
-                      <line x1="9" y1="20" x2="9" y2="23" />
-                      <line x1="15" y1="20" x2="15" y2="23" />
-                      <line x1="20" y1="9" x2="23" y2="9" />
-                      <line x1="20" y1="15" x2="23" y2="15" />
-                      <line x1="1" y1="9" x2="4" y2="9" />
-                      <line x1="1" y1="15" x2="4" y2="15" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: "Projects Delivered On Time", 
-                  desc: "Rigorous milestone scheduling and delivery support.",
-                  icon: (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                      <line x1="16" y1="2" x2="16" y2="6" />
-                      <line x1="8" y1="2" x2="8" y2="6" />
-                      <line x1="3" y1="10" x2="21" y2="10" />
-                      <polyline points="8 14 10 16 16 11" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: "Improved Machine Processes", 
-                  desc: "Engineered to increase machining efficiency and tool life.",
-                  icon: (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="20" x2="18" y2="10" />
-                      <line x1="12" y1="20" x2="12" y2="4" />
-                      <line x1="6" y1="20" x2="6" y2="14" />
-                      <polyline points="12 4 18 10 18 4" />
-                      <path d="M4 20h16" />
-                    </svg>
-                  )
-                },
-              ].map((practice, idx) => (
-                <div key={idx}>
-                  <div style={styles.practiceFlexItem}>
-                    <div style={styles.practiceIconCircle}>
-                      {practice.icon}
-                    </div>
-                    <div style={styles.practiceTextWrapper}>
-                      <h4 style={styles.practiceTitle}>{practice.title}</h4>
-                      <p style={styles.practiceDesc}>{practice.desc}</p>
-                    </div>
-                  </div>
-                  {idx < 3 && <div style={styles.practiceDivider} />}
+          <div style={styles.horizontalPracticesGrid}>
+            {[
+              { 
+                title: "Latest Designs", 
+                desc: "Using advanced engineering CAD standards.",
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                  </svg>
+                )
+              },
+              { 
+                title: "Modern Technology", 
+                desc: "Precision CNC hardware and electrical control design.",
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <line x1="9" y1="1" x2="9" y2="4" />
+                    <line x1="15" y1="1" x2="15" y2="4" />
+                    <line x1="9" y1="20" x2="9" y2="23" />
+                    <line x1="15" y1="20" x2="15" y2="23" />
+                    <line x1="20" y1="9" x2="23" y2="9" />
+                    <line x1="20" y1="15" x2="23" y2="15" />
+                    <line x1="1" y1="9" x2="4" y2="9" />
+                    <line x1="1" y1="15" x2="4" y2="15" />
+                  </svg>
+                )
+              },
+              { 
+                title: "Projects Delivered On Time", 
+                desc: "Rigorous milestone scheduling and delivery support.",
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                    <polyline points="8 14 10 16 16 11" />
+                  </svg>
+                )
+              },
+              { 
+                title: "Improved Machine Processes", 
+                desc: "Engineered to increase machining efficiency and tool life.",
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                    <polyline points="12 4 18 10 18 4" />
+                    <path d="M4 20h16" />
+                  </svg>
+                )
+              },
+            ].map((practice, idx) => (
+              <div key={idx} className="practice-horizontal-card">
+                <div style={styles.practiceIconCircleBig} className="practice-icon-circle-big">
+                  {practice.icon}
+                </div>
+                <h4 style={styles.practiceHorizontalTitle}>{practice.title}</h4>
+                <p style={styles.practiceHorizontalDesc}>{practice.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* 8. TRUSTED MACHINE TOOL BUILDERS (DOWN SECTION) */}
+      <div style={styles.sectionWrapperClip}>
+        <section style={styles.sectionBoxCard} className="section-box">
+          <div style={styles.sectionHeader}>
+            <div style={styles.badgeContainerCentered}>
+              <div style={styles.badgeLineHorizontal} />
+              <span style={styles.panelBadge}>INDUSTRY PARTNERSHIPS</span>
+              <div style={styles.badgeLineHorizontal} />
+            </div>
+            <h2 style={styles.sectionTitle}>Trusted by India's Leading Machine Tool Builders</h2>
+            <div style={styles.badgeLineCentered} />
+            <p style={styles.sectionSubtext}>
+              Collaborating with India’s foremost machine tool manufacturers, OEMs, and automated production leaders.
+            </p>
+          </div>
+
+          <div style={styles.marqueeContainer}>
+            <div className="partner-logo-marquee-track">
+              {[...BUILDER_PARTNER_LOGOS, ...BUILDER_PARTNER_LOGOS].map((partner, idx) => (
+                <div key={idx} className="partner-logo-box">
+                  <img
+                    src={partner.src}
+                    alt={partner.name}
+                    className="partner-logo-img"
+                  />
                 </div>
               ))}
             </div>
-          </section>
-
-          {/* Right card: Trusted Machine Tool Builders */}
-          <section style={styles.rightCard} className="section-box">
-            <div style={styles.rightCardDivider} />
-            <div style={styles.trustedByContainer}>
-              {/* Axis Industry Photo at Top of Div */}
-              <div style={{ marginBottom: "28px", width: "100%", borderRadius: "8px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.08)" }}>
-                <img
-                  src="/logo_axis/axis_industry%20image.png"
-                  alt="Axis Industry Facility"
-                  style={{ width: "100%", height: "220px", objectFit: "cover", display: "block" }}
-                />
-              </div>
-
-              {/* Company logos and text moved down */}
-              <h3 style={styles.trustedByTitle}>
-                Trusted by India's Leading Machine Tool Builders
-              </h3>
-              
-              <div style={styles.logoLayout}>
-                {/* Row 1 */}
-                <div style={styles.logoRow}>
-                  <img src="/logo_axis/STM.png" alt="STM" style={styles.logoImg} />
-                  <div style={styles.logoDivider} />
-                  <img src="/logo_axis/BFW.png" alt="BFW" style={styles.logoImg} />
-                  <div style={styles.logoDivider} />
-                  <img src="/logo_axis/HURCO.png" alt="HURCO" style={styles.logoImg} />
-                  <div style={styles.logoDivider} />
-                  <img src="/logo_axis/LMW.png" alt="LMW" style={styles.logoImg} />
-                </div>
-                
-                {/* Row 2 */}
-                <div style={styles.logoRow}>
-                  <img src="/logo_axis/AMS.png" alt="AMS" style={styles.logoImg} />
-                  <div style={styles.logoDivider} />
-                  <img src="/logo_axis/PHILLIPS.png" alt="PHILLIPS" style={styles.logoImg} />
-                </div>
-              </div>
-            </div>
-          </section>
-
-        </div>
+          </div>
+        </section>
       </div>
 
       {/* 9. STATS BAR */}
@@ -2174,6 +2299,40 @@ const styles = {
     gap: "32px",
     width: "100%",
   },
+  horizontalPracticesGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+    gap: "24px",
+    width: "100%",
+  },
+  practiceIconCircleBig: {
+    width: "52px",
+    height: "52px",
+    borderRadius: "50%",
+    backgroundColor: "#f8fafc",
+    border: "1.5px solid #e2e8f0",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "4px",
+    flexShrink: 0,
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+    transition: "all 0.3s ease",
+  },
+  practiceHorizontalTitle: {
+    fontSize: "17px",
+    fontWeight: "800",
+    color: "#0f172a",
+    margin: 0,
+    transition: "color 0.3s ease",
+  },
+  practiceHorizontalDesc: {
+    fontSize: "13.5px",
+    color: "#475569",
+    lineHeight: "1.6",
+    margin: 0,
+    transition: "color 0.3s ease",
+  },
   practiceItem: {
     textAlign: "left",
     position: "relative",
@@ -2216,6 +2375,14 @@ const styles = {
     letterSpacing: "2.5px",
     textTransform: "uppercase",
     marginBottom: "36px",
+  },
+  marqueeContainer: {
+    width: "100%",
+    overflow: "hidden",
+    padding: "16px 0",
+    position: "relative",
+    maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+    WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
   },
   marqueeWrapper: {
     display: "flex",

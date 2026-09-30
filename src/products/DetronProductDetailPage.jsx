@@ -12,6 +12,8 @@ export default function DetronProductDetailPage() {
     const mapping = {
       '4-axis': '/videos/4th_axis.mp4',
       '5-axis': '/videos/5th_axis.mp4',
+      'rcf-series': '/videos/5th_axis.mp4',
+      'rcf': '/videos/5th_axis.mp4',
       'auto-pallet-changer': '/videos/auto_pallet_changer.mp4',
       'special-application': '/videos/special_applications.mp4',
       'special-applications': '/videos/special_applications.mp4',

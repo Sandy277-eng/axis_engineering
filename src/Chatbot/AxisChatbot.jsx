@@ -59,11 +59,13 @@ const OPTION_ICON = {
   view_map:                'map',
   cat_4axis:               'product',
   cat_5axis:               'product',
+  cat_rcf:                 'product',
   cat_pallet:              'product',
   cat_special:             'product',
   cat_fixtures:            'tool',
   cat_access:              'plug',
   go_5axis_page:           'external',
+  go_rcf_page:             'external',
   go_pallet_page:          'external',
   go_special_page:         'external',
   go_fixtures_page:        'external',
@@ -123,10 +125,11 @@ export default function AxisChatbot() {
           break;
 
         case 'browse_products':
-          bot.text = "Please select a product category to explore, or type a model reference (e.g. GXA-170S, RCX, Direct Drive) to search our catalogue.";
+          bot.text = "Please select a product category to explore, or type a model reference (e.g. GXA-170S, RCF-210H, Direct Drive) to search our catalogue.";
           bot.options = [
             { label: 'Rotary Table 4 Axis',             value: 'cat_4axis' },
             { label: '5-Axis Tilting Rotary Tables',     value: 'cat_5axis' },
+            { label: 'RCF Series (Roller Gear Cam)',     value: 'cat_rcf' },
             { label: 'Auto Pallet Changer',              value: 'cat_pallet' },
             { label: 'Special Applications',             value: 'cat_special' },
             { label: 'Intelligent Control & Accessories',value: 'cat_access' },
@@ -142,7 +145,7 @@ export default function AxisChatbot() {
             { label: 'GXA-170S / GXA-170H  |  300 / 450 N.m',   value: 'prod_GXA-170S / GXA-170H' },
             { label: 'GXA-210S / GXA-210H  |  400 / 600 N.m',   value: 'prod_GXA-210S / GXA-210H' },
             { label: 'GXA-255H  |  Ultra Bore, 900 N.m',         value: 'prod_GXA-255H' },
-            { label: 'RCX-170S  |  Roller Gear Cam, Zero Backlash', value: 'prod_RCX-170S / RCX-170H' },
+            { label: 'RCX-210S / RCX-210H  |  Rear Motor Compact', value: 'prod_RCX-210S / RCX-210H' },
             { label: 'DV-170P  |  Direct Drive, 250 RPM',        value: 'prod_DV-170P' },
             { label: 'Return to Categories',                      value: 'browse_products' },
           ];
@@ -154,6 +157,18 @@ export default function AxisChatbot() {
             { label: 'GXA-170S-2W  |  Dual Spindle, 250mm Pitch', value: 'prod_GXA-170S-2W-250' },
             { label: 'Browse Full 5-Axis Catalogue',               value: 'go_5axis_page' },
             { label: 'Return to Categories',                       value: 'browse_products' },
+          ];
+          break;
+
+        case 'cat_rcf':
+          bot.text = "**RCF / RFX Series Tilting Rotary Tables** — Zero-backlash roller gear cam drive mechanism delivering exceptional rigidity and high-accuracy indexing for compact machining envelopes.";
+          bot.options = [
+            { label: 'RCF-170S / RCF-170H  |  Ø170mm Roller Cam', value: 'prod_RCF-170S / RCF-170H' },
+            { label: 'RCF-210S / RCF-210H  |  Ø210mm Roller Cam', value: 'prod_RCF-210S / RCF-210H' },
+            { label: 'RCF-255H  |  Ø255mm Hydraulic Cam Tilt',   value: 'prod_RCF-255H' },
+            { label: 'RCF-320H  |  Ø320mm Hydraulic Cam Tilt',   value: 'prod_RCF-320H' },
+            { label: 'Browse Full RCF Series Catalogue',         value: 'go_rcf_page' },
+            { label: 'Return to Categories',                     value: 'browse_products' },
           ];
           break;
 
@@ -190,6 +205,7 @@ export default function AxisChatbot() {
           break;
 
         case 'go_5axis_page':       setIsOpen(false); navigate('/products/detron/5-axis');              return;
+        case 'go_rcf_page':         setIsOpen(false); navigate('/products/detron/rcf-series');          return;
         case 'go_pallet_page':      setIsOpen(false); navigate('/products/detron/auto-pallet-changer'); return;
         case 'go_special_page':     setIsOpen(false); navigate('/products/detron/special-applications');return;
         case 'go_fixtures_page':    setIsOpen(false); navigate('/products/fixtures');                   return;
@@ -211,7 +227,7 @@ export default function AxisChatbot() {
           break;
 
         case 'contact_info':
-          bot.text = "**Sales & Technical Support Channels**\n\nMobile:   +91 98849 12279  |  +91 98849 12280\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nOur team responds to all technical inquiries within 24 business hours.";
+          bot.text = "**Sales & Technical Support Channels**\n\nMobile:   +91 90032 24117  |  +91 98849 12280  |  +91 98946 96637\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nOur team responds to all technical inquiries within 24 business hours.";
           bot.options = [
             { label: 'Contact Us Now',          value: 'whatsapp_chat' },
             { label: 'Submit an Inquiry Form',   value: 'contact_form' },
@@ -369,7 +385,7 @@ export default function AxisChatbot() {
     // Contact
     if (['phone','mobile','email','mail','contact','sales','call','number','reach','fax','tel'].some(k => q.includes(k))) {
       return {
-        text: "**Sales & Technical Support Channels**\n\nMobile:   +91 98849 12279  |  +91 98849 12280\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nAll inquiries are responded to within 24 business hours.",
+        text: "**Sales & Technical Support Channels**\n\nMobile:   +91 90032 24117  |  +91 98849 12280  |  +91 98946 96637\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nAll inquiries are responded to within 24 business hours.",
         options: [
           { label: 'Contact Us Now',         value: 'whatsapp_chat' },
           { label: 'Submit Inquiry Form',    value: 'contact_form' },
@@ -426,6 +442,18 @@ export default function AxisChatbot() {
         options: [
           { label: 'View Fixtures Catalogue', value: 'go_fixtures_page' },
           { label: 'Return to Main Menu',     value: 'main_menu' },
+        ]
+      };
+    }
+
+    // RCF / Roller Gear Cam
+    if (['rcf', 'rfx', 'roller cam', 'roller gear'].some(k => q.includes(k))) {
+      return {
+        text: "**RCF / RFX Series Rotary Tables**\n\nEquipped with zero-backlash roller gear cam mechanisms and rear-motor layout, Detron RCF series tables deliver superior rigidity, high repeatability, and space savings on multi-axis CNC machines.",
+        options: [
+          { label: 'View RCF Series Catalogue', value: 'go_rcf_page' },
+          { label: 'Browse All Categories',     value: 'browse_products' },
+          { label: 'Return to Main Menu',      value: 'main_menu' },
         ]
       };
     }

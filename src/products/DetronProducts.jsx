@@ -81,6 +81,43 @@ const PRODUCTS = [
   },
   {
     num: '03',
+    id: 'rcf-series',
+    titleTop: 'Roller Gear Cam',
+    titleBottom: 'RCF Series',
+    desc: 'Zero-backlash roller gear cam drive tilting rotary tables delivering ultra-precise indexing, high rigidity, and maximum CNC machine envelope savings.',
+    img: '/images/products_detron/5th_axis.png',
+    features: [
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          </svg>
+        ),
+        title: 'Zero Backlash',
+        sub: 'Patented roller gear cam drive'
+      },
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        ),
+        title: 'Rear Motor Design',
+        sub: 'Compact envelope layout'
+      },
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 12l3-3"/><path d="M12 6v2"/><path d="M18 12h-2"/><path d="M6 12H4"/>
+          </svg>
+        ),
+        title: 'High Clamping',
+        sub: 'Hydraulic & Pneumatic brake'
+      }
+    ]
+  },
+  {
+    num: '04',
     id: 'auto-pallet-changer',
     titleTop: 'Automatic Pallet',
     titleBottom: 'Changer (APC)',
@@ -117,7 +154,7 @@ const PRODUCTS = [
     ]
   },
   {
-    num: '04',
+    num: '05',
     id: 'accessories',
     titleTop: 'System Accessories',
     titleBottom: 'Detron Range',
@@ -154,7 +191,7 @@ const PRODUCTS = [
     ]
   },
   {
-    num: '05',
+    num: '06',
     id: 'intelligent-control',
     titleTop: 'External Control',
     titleBottom: 'System',
@@ -191,7 +228,7 @@ const PRODUCTS = [
     ]
   },
   {
-    num: '06',
+    num: '07',
     id: 'special-application',
     titleBottom: 'Special Applications',
     desc: 'detron offers bespoke Special Application Services for complex machining conditions tailored to your specific workpiece geometry and automation needs.',
