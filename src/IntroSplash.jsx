@@ -10,21 +10,28 @@ export default function IntroSplash({ onComplete }) {
     setTimeout(() => {
       setVisible(false);
       if (onComplete) onComplete();
-    }, 600);
+    }, 350);
   }, [onComplete]);
 
-  useEffect(() => {
-    // Attempt playback when mounted
+  const applySpeed = () => {
     if (videoRef.current) {
+      videoRef.current.playbackRate = 1.75; // Increased speed for snappy intro
+    }
+  };
+
+  useEffect(() => {
+    // Attempt playback when mounted with increased speed
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.75;
       videoRef.current.play().catch(() => {
         // In case autoplay is blocked, wait fallback time
       });
     }
 
-    // Safety fallback timeout (e.g., 10 seconds max) in case video fails or gets stuck
+    // Safety fallback timeout (e.g. 5 seconds max)
     const safetyTimer = setTimeout(() => {
       handleFinish();
-    }, 10000);
+    }, 5000);
 
     return () => {
       clearTimeout(safetyTimer);
@@ -35,6 +42,7 @@ export default function IntroSplash({ onComplete }) {
 
   return (
     <div
+      onClick={handleFinish}
       style={{
         ...styles.overlay,
         opacity: fadeOut ? 0 : 1,
@@ -48,7 +56,34 @@ export default function IntroSplash({ onComplete }) {
           object-fit: cover;
           display: block;
         }
+        .intro-skip-btn {
+          position: absolute;
+          top: 24px;
+          right: 28px;
+          background: rgba(0, 0, 0, 0.55);
+          color: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.35);
+          border-radius: 20px;
+          padding: 8px 18px;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          cursor: pointer;
+          backdrop-filter: blur(8px);
+          transition: all 0.25s ease;
+          z-index: 10;
+        }
+        .intro-skip-btn:hover {
+          background: #E30613;
+          border-color: #E30613;
+          color: #ffffff;
+          box-shadow: 0 0 15px rgba(227, 6, 19, 0.6);
+        }
       `}</style>
+
+      <button className="intro-skip-btn" onClick={(e) => { e.stopPropagation(); handleFinish(); }}>
+        SKIP INTRO &gt;
+      </button>
 
       <video
         ref={videoRef}
@@ -57,6 +92,8 @@ export default function IntroSplash({ onComplete }) {
         autoPlay
         muted
         playsInline
+        onLoadedMetadata={applySpeed}
+        onPlay={applySpeed}
         onEnded={handleFinish}
         onError={handleFinish}
       />
@@ -78,8 +115,9 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 2147483647,
-    transition: 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
+    transition: 'opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1)',
     overflow: 'hidden',
+    cursor: 'pointer'
   }
 };
 

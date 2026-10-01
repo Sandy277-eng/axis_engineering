@@ -32,13 +32,12 @@ export default function PageTransition({ children }) {
         }
         .page-fade-in {
           opacity: 1;
-          transform: translateY(0);
-          transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+          transform: none;
+          transition: opacity 0.25s ease-out;
         }
         .page-fade-out {
-          opacity: 0.2;
-          transform: translateY(6px);
-          transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+          opacity: 0.3;
+          transition: opacity 0.2s ease-in;
         }
       `}</style>
 

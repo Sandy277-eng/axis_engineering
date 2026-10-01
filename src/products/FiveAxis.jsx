@@ -59,7 +59,8 @@ export default function FiveAxis() {
 
   const RELATED_CATEGORIES = [
     { id: '4-axis', title: '4 Axis Standard Indexers', img: '/images/products_detron/4th_axis.png' },
-    { id: 'rcf-series', title: 'RCF Series (Roller Cam)', img: '/images/products_detron/5th_axis.png' },
+    { id: 'rcx-series', title: 'RCX Series (Roller Cam 4th Axis)', img: '/images/products_detron/4th_axis.png' },
+    { id: 'rcf-series', title: 'RCF Series (Roller Cam 5-Axis)', img: '/images/products_detron/5th_axis.png' },
     { id: 'auto-pallet-changer', title: 'Auto Pallet Changers', img: '/images/products_detron/Auto-Pallet-changer.png' },
     { id: 'special-application', title: 'Special Applications', img: '/images/products_detron/Special-Application.png' },
     { id: 'accessories', title: 'Detron Accessories', img: '/images/products_detron/Accessories.png' },

@@ -14,6 +14,7 @@ import AboutPage from './About/About';
 import FourAxis from './products/FourAxis';
 import FiveAxis from './products/FiveAxis';
 import RcfSeries from './products/RcfSeries';
+import RcxSeries from './products/RcxSeries';
 import AutoPalletChanger from './products/AutoPalletChanger';
 import SpecialApplications from './products/SpecialApplications';
 import Accessories from './products/Accessories';
@@ -83,6 +84,9 @@ function App() {
               <Route path="/products/detron/5-axis" element={<FiveAxis />} />
               <Route path="/products/detron/rcf-series" element={<RcfSeries />} />
               <Route path="/products/detron/rcf" element={<RcfSeries />} />
+              <Route path="/products/detron/rcx-series" element={<RcxSeries />} />
+              <Route path="/products/detron/rcx" element={<RcxSeries />} />
+              <Route path="/products/detron/rcs" element={<RcxSeries />} />
               <Route path="/products/detron/auto-pallet-changer" element={<AutoPalletChanger />} />
               <Route path="/products/detron/special-application" element={<SpecialApplications />} />
               <Route path="/products/detron/special-applications" element={<SpecialApplications />} />

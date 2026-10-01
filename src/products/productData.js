@@ -688,196 +688,6 @@ export const PRODUCT_DATABASE = {
             }
           }
         ]
-      },
-      {
-        size: 'RCX Series (Roller Gear Cam Drive 4th Axis)',
-        products: [
-          {
-            name: 'RCX-170S / RCX-170H',
-            badge: 'Roller Gear Cam Drive, Zero-Backlash, 83.3 RPM',
-            description: 'Zero-backlash roller gear cam drive table with dual lead cam shaft mechanism. Preload adjustment completely eliminates backlash while delivering >80% transmission rate and ultra-low wear.',
-            image: '/images/products_detron/4th_axis.png',
-            specs: {
-              'Table Diameter': 'Ø 170 mm (6.69")',
-              'Center Height (Vertical)': '135 mm (5.31")',
-              'Table Height (Horizontal)': '192 mm (7.6")',
-              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
-              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
-              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
-              'Clamping Torque': 'P: 300 N.m (221 ft.lbs) / H: 450 N.m (332 ft.lbs)',
-              'Transmission Ratio': '1 / 20',
-              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
-              'Indexing Accuracy': '20 sec',
-              'Repeatability': '6 sec',
-              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
-              'Cam Allowable Torque': '206 N.m (152 ft.lbs)',
-              'Allowable Max Rotary Joint': '4 Port',
-              'Net Weight': '55 kg (121 lbs)'
-            }
-          },
-          {
-            name: 'RCX-210S / RCX-210H',
-            badge: 'Roller Gear Cam Drive, Zero-Backlash, 83.3 RPM',
-            description: 'Medium size roller gear cam drive table with dual lead cam shaft mechanism, zero backlash, high rigidity consolidated spindle, and pneumatic or hydraulic clamping.',
-            image: '/images/products_detron/4th_axis.png',
-            specs: {
-              'Table Diameter': 'Ø 210 mm (8.27")',
-              'Center Height (Vertical)': '160 mm (6.30")',
-              'Table Height (Horizontal)': '192 mm (7.6")',
-              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
-              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
-              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
-              'Clamping Torque': 'P: 400 N.m (295 ft.lbs) / H: 600 N.m (443 ft.lbs)',
-              'Transmission Ratio': '1 / 24',
-              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
-              'Indexing Accuracy': '20 sec',
-              'Repeatability': '6 sec',
-              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
-              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
-              'Allowable Max Rotary Joint': '4 Port',
-              'Net Weight': '70 kg (154 lbs)'
-            }
-          },
-          {
-            name: 'RCX-250ES / RCX-250EH',
-            badge: 'Roller Gear Cam Drive, Enlarged Table (Ø255mm)',
-            description: 'Enlarged Ø255mm worktable with roller gear cam drive technology. Provides 83.3 RPM high-speed rotation and zero backlash for multi-face component indexing.',
-            image: '/images/products_detron/4th_axis.png',
-            specs: {
-              'Table Diameter': 'Ø 255 mm (10.04")',
-              'Center Height (Vertical)': '160 mm (6.30")',
-              'Table Height (Horizontal)': '207 mm (8.15")',
-              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
-              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
-              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
-              'Clamping Torque': 'P: 400 N.m (295 ft.lbs) / H: 600 N.m (443 ft.lbs)',
-              'Transmission Ratio': '1 / 24',
-              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
-              'Indexing Accuracy': '20 sec',
-              'Repeatability': '6 sec',
-              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
-              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
-              'Allowable Max Rotary Joint': '4 Port',
-              'Net Weight': '78 kg (172 lbs)'
-            }
-          },
-          {
-            name: 'RCX-255H',
-            badge: 'Roller Gear Cam Drive, Big Bore (Ø100mm Thru), Hydraulic 1270 N.m',
-            description: 'Roller gear cam drive table with Ø100mm through bore and YRT bearing consolidated spindle. 1270 N.m hydraulic braking force and 50 RPM speed.',
-            image: '/images/products_detron/4th_axis.png',
-            specs: {
-              'Worktable Diameter': 'Ø 255 mm / Ø 10.04"',
-              'Center Bore Diameter': 'Ø 140H7 / Ø 5.51H7',
-              'Through-Bore Diameter': 'Ø 100 mm / Ø 3.9"',
-              'Height of Table (Horizontal)': '216.5 mm / 8.5"',
-              'Height of Center (Vertical)': '190 mm / 7.49"',
-              'Width of T-slot': '12H7 / 0.47H7',
-              'Width of Guide Block': '18 mm / 0.71"',
-              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
-              'Clamping Torque': '1270 N.m / 937 ft.lbs',
-              'Transmission Ratio': '1 / 48',
-              'Max Table Speed': '50 min⁻¹ (at 2400 rpm motor speed)',
-              'Standard Loading Inertia': '2.43 kg.m²',
-              'Resolution': '0.001 deg',
-              'Indexing Accuracy': '20 sec',
-              'Repeatability': '6 sec',
-              'Net Weight (Servo Motor Excluded)': '126 kg / 278 lbs',
-              'Allowable Load (Vert / Horiz / Tailstock)': '150 kg / 300 kg / 300 kg (331 / 661 / 661 lbs)',
-              'Allowable Cutting Force F': '20,000 N / 4496 lbs',
-              'Allowable Cutting Torque FxL (Horiz / Vert)': '1700 N.m (1254 ft.lbs) / 1270 N.m (937 ft.lbs)',
-              'Cam Allowable Torque': '800 N.m / 590 ft.lbs',
-              'Allowable Max Rotary Joint': '6 Port'
-            }
-          },
-          {
-            name: 'RCX-320H',
-            badge: 'Roller Gear Cam Drive, Big Bore (Ø140mm Thru), Hydraulic 1600 N.m',
-            description: 'Large roller gear cam drive table featuring Ø140mm through bore, 1600 N.m hydraulic clamping torque, and 50 RPM max table speed.',
-            image: '/images/products_detron/4th_axis.png',
-            specs: {
-              'Worktable Diameter': 'Ø 320 mm / Ø 12.59"',
-              'Center Bore Diameter': 'Ø 180H7 / Ø 7.08H7',
-              'Through-Bore Diameter': 'Ø 140 mm / Ø 5.5"',
-              'Height of Table (Horizontal)': '235 mm / 9.25"',
-              'Height of Center (Vertical)': '210 mm / 8.26"',
-              'Width of T-slot': '14H7 / 0.55H7',
-              'Width of Guide Block': '18 mm / 0.71"',
-              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
-              'Clamping Torque': '1600 N.m / 1180 ft.lbs',
-              'Transmission Ratio': '1 / 48',
-              'Max Table Speed': '50 min⁻¹ (at 2400 rpm motor speed)',
-              'Standard Loading Inertia': '5.12 kg.m²',
-              'Resolution': '0.001 deg',
-              'Indexing Accuracy': '20 sec',
-              'Repeatability': '6 sec',
-              'Net Weight (Servo Motor Excluded)': '161 kg / 355 lbs',
-              'Allowable Load (Vert / Horiz / Tailstock)': '200 kg / 400 kg / 400 kg (440 / 881 / 881 lbs)',
-              'Allowable Cutting Force F': '28,000 N / 6294 lbs',
-              'Allowable Cutting Torque FxL (Horiz / Vert)': '3000 N.m (2212 ft.lbs) / 1600 N.m (1180 ft.lbs)',
-              'Cam Allowable Torque': '1098 N.m / 809 ft.lbs',
-              'Allowable Max Rotary Joint': '6 Port'
-            }
-          },
-          {
-            name: 'RCX-400H',
-            badge: 'Roller Gear Cam Drive, Big Bore (Ø180mm Thru), Hydraulic 3000 N.m',
-            description: 'Heavy duty roller gear cam table with Ø180mm large through bore, 3000 N.m hydraulic clamping, and 40 RPM rapid indexing speed.',
-            image: '/images/products_detron/4th_axis.png',
-            specs: {
-              'Worktable Diameter': 'Ø 400 mm / Ø 15.75"',
-              'Center Bore Diameter': 'Ø 220H7 / Ø 8.66H7',
-              'Through-Bore Diameter': 'Ø 180 mm / Ø 7.09"',
-              'Height of Table (Horizontal)': '255 mm / 10.04"',
-              'Height of Center (Vertical)': '255 mm / 10.04"',
-              'Width of T-slot': '14H7 / 0.55H7',
-              'Width of Guide Block': '18 mm / 0.71"',
-              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
-              'Clamping Torque': '3000 N.m / 2211 ft.lbs',
-              'Transmission Ratio': '1 / 60',
-              'Max Table Speed': '40 min⁻¹ (at 2400 rpm motor speed)',
-              'Standard Loading Inertia': '15 kg.m²',
-              'Resolution': '0.001 deg',
-              'Indexing Accuracy': '20 sec',
-              'Repeatability': '6 sec',
-              'Net Weight (Servo Motor Excluded)': '243 kg / 536 lbs',
-              'Allowable Load (Vert / Horiz / Tailstock)': '250 kg / 500 kg / 500 kg (550 / 1100 / 1100 lbs)',
-              'Allowable Cutting Force F': '38,000 N / 8527.2 lbs',
-              'Allowable Cutting Torque FxL (Horiz / Vert)': '5400 N.m (3983 ft.lbs) / 3000 N.m (2212 ft.lbs)',
-              'Cam Allowable Torque': '1772 N.m / 1307 ft.lbs',
-              'Allowable Max Rotary Joint': '6 Port'
-            }
-          },
-          {
-            name: 'RCX-500H / RCX-500HL',
-            badge: 'Roller Gear Cam Drive Giant (Ø220mm Thru), Hydraulic 3600 N.m',
-            description: 'Ultra heavy roller gear cam rotary table with Ø220mm through bore, 3600 N.m hydraulic clamping, and available in right (RCX-500H) or left (RCX-500HL) motor configurations.',
-            image: '/images/products_detron/4th_axis.png',
-            specs: {
-              'Worktable Diameter': 'Ø 500 mm',
-              'Center Bore Diameter': 'Ø 260H7',
-              'Through-Bore Diameter': 'Ø 220 mm',
-              'Height of Table (Horizontal)': '280 mm',
-              'Height of Center (Vertical)': '310 mm',
-              'Width of T-slot': '18H7',
-              'Width of Guide Block': '18 mm',
-              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
-              'Clamping Torque': '3600 N.m / 2655 ft.lbs',
-              'Transmission Ratio': '1 / 90',
-              'Max Table Speed': '25 min⁻¹ (at 3750 rpm motor speed)',
-              'Standard Loading Inertia': '25 kg.m²',
-              'Resolution': '0.001 deg',
-              'Indexing Accuracy': '15 sec',
-              'Repeatability': '6 sec',
-              'Net Weight (Servo Motor Excluded)': '395 kg',
-              'Allowable Load (Vert / Horiz / Tailstock)': '400 kg / 800 kg / 800 kg',
-              'Allowable Cutting Force F': '40,000 N',
-              'Allowable Cutting Torque FxL (Horiz / Vert)': '5000 N.m / 3600 N.m',
-              'Cam Allowable Torque': '1968 N.m',
-              'Allowable Max Rotary Joint': '6 Port'
-            }
-          }
-        ]
       }
     ]
   },
@@ -2548,9 +2358,234 @@ export const PRODUCT_DATABASE = {
         ]
       }
     ]
+  },
+  'rcx-series': {
+    title: 'RCX Series (Roller Gear Cam 4th Axis Rotary Tables)',
+    description: 'Zero-backlash roller gear cam drive 4th axis rotary tables delivering ultra-fast indexing up to 83.3 RPM, high cutting rigidity, and permanent wear-free accuracy.',
+    folderPath: '/detron-frames/4th_axis',
+    totalFrames: 240,
+    items: [
+      {
+        size: 'Ø 170mm (RCX-170)',
+        products: [
+          {
+            name: 'RCX-170S / RCX-170H',
+            badge: 'Roller Gear Cam Drive, Zero-Backlash, 83.3 RPM',
+            description: 'Zero-backlash roller gear cam drive table with dual lead cam shaft mechanism. Preload adjustment completely eliminates backlash while delivering >80% transmission rate and ultra-low wear.',
+            image: '/images/products_detron/4th_axis.png',
+            specs: {
+              'Table Diameter': 'Ø 170 mm (6.69")',
+              'Center Height (Vertical)': '135 mm (5.31")',
+              'Table Height (Horizontal)': '192 mm (7.6")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 300 N.m (221 ft.lbs) / H: 450 N.m (332 ft.lbs)',
+              'Transmission Ratio': '1 / 20',
+              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
+              'Cam Allowable Torque': '206 N.m (152 ft.lbs)',
+              'Allowable Max Rotary Joint': '4 Port',
+              'Net Weight': '55 kg (121 lbs)'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 210mm (RCX-210)',
+        products: [
+          {
+            name: 'RCX-210S / RCX-210H',
+            badge: 'Roller Gear Cam Drive, Zero-Backlash, 83.3 RPM',
+            description: 'Medium size roller gear cam drive table with dual lead cam shaft mechanism, zero backlash, high rigidity consolidated spindle, and pneumatic or hydraulic clamping.',
+            image: '/images/products_detron/4th_axis.png',
+            specs: {
+              'Table Diameter': 'Ø 210 mm (8.27")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Table Height (Horizontal)': '192 mm (7.6")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 400 N.m (295 ft.lbs) / H: 600 N.m (443 ft.lbs)',
+              'Transmission Ratio': '1 / 24',
+              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
+              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
+              'Allowable Max Rotary Joint': '4 Port',
+              'Net Weight': '70 kg (154 lbs)'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 250mm / Ø 255mm (RCX-250 / RCX-255)',
+        products: [
+          {
+            name: 'RCX-250ES / RCX-250EH',
+            badge: 'Roller Gear Cam Drive, Enlarged Table (Ø255mm)',
+            description: 'Enlarged Ø255mm worktable with roller gear cam drive technology. Provides 83.3 RPM high-speed rotation and zero backlash for multi-face component indexing.',
+            image: '/images/products_detron/4th_axis.png',
+            specs: {
+              'Table Diameter': 'Ø 255 mm (10.04")',
+              'Center Height (Vertical)': '160 mm (6.30")',
+              'Table Height (Horizontal)': '207 mm (8.15")',
+              'Center Bore Diameter': 'Ø 40H7 (Ø 1.57H7)',
+              'Through-Bore Diameter': 'Ø 40 mm (Ø 1.57")',
+              'Clamping Method / Pressure': 'P: 0.55~0.7 MPa (79.8~101.5 psi) / H: 2.5 MPa (363 psi)',
+              'Clamping Torque': 'P: 400 N.m (295 ft.lbs) / H: 600 N.m (443 ft.lbs)',
+              'Transmission Ratio': '1 / 24',
+              'Max Table Speed': '83.3 min⁻¹ (at 2000 rpm motor speed)',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Allowable Load (Vert / Horiz)': '100 kg / 200 kg (220 / 441 lbs)',
+              'Cam Allowable Torque': '280 N.m (207 ft.lbs)',
+              'Allowable Max Rotary Joint': '4 Port',
+              'Net Weight': '78 kg (172 lbs)'
+            }
+          },
+          {
+            name: 'RCX-255H',
+            badge: 'Roller Gear Cam Drive, Big Bore (Ø100mm Thru), Hydraulic 1270 N.m',
+            description: 'Roller gear cam drive table with Ø100mm through bore and YRT bearing consolidated spindle. 1270 N.m hydraulic braking force and 50 RPM speed.',
+            image: '/images/products_detron/4th_axis.png',
+            specs: {
+              'Worktable Diameter': 'Ø 255 mm / Ø 10.04"',
+              'Center Bore Diameter': 'Ø 140H7 / Ø 5.51H7',
+              'Through-Bore Diameter': 'Ø 100 mm / Ø 3.9"',
+              'Height of Table (Horizontal)': '216.5 mm / 8.5"',
+              'Height of Center (Vertical)': '190 mm / 7.49"',
+              'Width of T-slot': '12H7 / 0.47H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
+              'Clamping Torque': '1270 N.m / 937 ft.lbs',
+              'Transmission Ratio': '1 / 48',
+              'Max Table Speed': '50 min⁻¹ (at 2400 rpm motor speed)',
+              'Standard Loading Inertia': '2.43 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Net Weight (Servo Motor Excluded)': '126 kg / 278 lbs',
+              'Allowable Load (Vert / Horiz / Tailstock)': '150 kg / 300 kg / 300 kg (331 / 661 / 661 lbs)',
+              'Allowable Cutting Force F': '20,000 N / 4496 lbs',
+              'Allowable Cutting Torque FxL (Horiz / Vert)': '1700 N.m (1254 ft.lbs) / 1270 N.m (937 ft.lbs)',
+              'Cam Allowable Torque': '800 N.m / 590 ft.lbs',
+              'Allowable Max Rotary Joint': '6 Port'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 320mm (RCX-320)',
+        products: [
+          {
+            name: 'RCX-320H',
+            badge: 'Roller Gear Cam Drive, Big Bore (Ø140mm Thru), Hydraulic 1600 N.m',
+            description: 'Large roller gear cam drive table featuring Ø140mm through bore, 1600 N.m hydraulic clamping torque, and 50 RPM max table speed.',
+            image: '/images/products_detron/4th_axis.png',
+            specs: {
+              'Worktable Diameter': 'Ø 320 mm / Ø 12.59"',
+              'Center Bore Diameter': 'Ø 180H7 / Ø 7.08H7',
+              'Through-Bore Diameter': 'Ø 140 mm / Ø 5.5"',
+              'Height of Table (Horizontal)': '235 mm / 9.25"',
+              'Height of Center (Vertical)': '210 mm / 8.26"',
+              'Width of T-slot': '14H7 / 0.55H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
+              'Clamping Torque': '1600 N.m / 1180 ft.lbs',
+              'Transmission Ratio': '1 / 48',
+              'Max Table Speed': '50 min⁻¹ (at 2400 rpm motor speed)',
+              'Standard Loading Inertia': '5.12 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Net Weight (Servo Motor Excluded)': '161 kg / 355 lbs',
+              'Allowable Load (Vert / Horiz / Tailstock)': '200 kg / 400 kg / 400 kg (440 / 881 / 881 lbs)',
+              'Allowable Cutting Force F': '28,000 N / 6294 lbs',
+              'Allowable Cutting Torque FxL (Horiz / Vert)': '3000 N.m (2212 ft.lbs) / 1600 N.m (1180 ft.lbs)',
+              'Cam Allowable Torque': '1098 N.m / 809 ft.lbs',
+              'Allowable Max Rotary Joint': '6 Port'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 400mm (RCX-400)',
+        products: [
+          {
+            name: 'RCX-400H',
+            badge: 'Roller Gear Cam Drive, Big Bore (Ø180mm Thru), Hydraulic 3000 N.m',
+            description: 'Heavy duty roller gear cam table with Ø180mm large through bore, 3000 N.m hydraulic clamping, and 40 RPM rapid indexing speed.',
+            image: '/images/products_detron/4th_axis.png',
+            specs: {
+              'Worktable Diameter': 'Ø 400 mm / Ø 15.75"',
+              'Center Bore Diameter': 'Ø 220H7 / Ø 8.66H7',
+              'Through-Bore Diameter': 'Ø 180 mm / Ø 7.09"',
+              'Height of Table (Horizontal)': '255 mm / 10.04"',
+              'Height of Center (Vertical)': '255 mm / 10.04"',
+              'Width of T-slot': '14H7 / 0.55H7',
+              'Width of Guide Block': '18 mm / 0.71"',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
+              'Clamping Torque': '3000 N.m / 2211 ft.lbs',
+              'Transmission Ratio': '1 / 60',
+              'Max Table Speed': '40 min⁻¹ (at 2400 rpm motor speed)',
+              'Standard Loading Inertia': '15 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy': '20 sec',
+              'Repeatability': '6 sec',
+              'Net Weight (Servo Motor Excluded)': '243 kg / 536 lbs',
+              'Allowable Load (Vert / Horiz / Tailstock)': '250 kg / 500 kg / 500 kg (550 / 1100 / 1100 lbs)',
+              'Allowable Cutting Force F': '38,000 N / 8527.2 lbs',
+              'Allowable Cutting Torque FxL (Horiz / Vert)': '5400 N.m (3983 ft.lbs) / 3000 N.m (2212 ft.lbs)',
+              'Cam Allowable Torque': '1772 N.m / 1307 ft.lbs',
+              'Allowable Max Rotary Joint': '6 Port'
+            }
+          }
+        ]
+      },
+      {
+        size: 'Ø 500mm (RCX-500)',
+        products: [
+          {
+            name: 'RCX-500H / RCX-500HL',
+            badge: 'Roller Gear Cam Drive Giant (Ø220mm Thru), Hydraulic 3600 N.m',
+            description: 'Ultra heavy roller gear cam rotary table with Ø220mm through bore, 3600 N.m hydraulic clamping, and available in right (RCX-500H) or left (RCX-500HL) motor configurations.',
+            image: '/images/products_detron/4th_axis.png',
+            specs: {
+              'Worktable Diameter': 'Ø 500 mm',
+              'Center Bore Diameter': 'Ø 260H7',
+              'Through-Bore Diameter': 'Ø 220 mm',
+              'Height of Table (Horizontal)': '280 mm',
+              'Height of Center (Vertical)': '310 mm',
+              'Width of T-slot': '18H7',
+              'Width of Guide Block': '18 mm',
+              'Clamping Method / Pressure': 'Hydraulic 5 MPa / 725 psi',
+              'Clamping Torque': '3600 N.m / 2655 ft.lbs',
+              'Transmission Ratio': '1 / 90',
+              'Max Table Speed': '25 min⁻¹ (at 3750 rpm motor speed)',
+              'Standard Loading Inertia': '25 kg.m²',
+              'Resolution': '0.001 deg',
+              'Indexing Accuracy': '15 sec',
+              'Repeatability': '6 sec',
+              'Net Weight (Servo Motor Excluded)': '395 kg',
+              'Allowable Load (Vert / Horiz / Tailstock)': '400 kg / 800 kg / 800 kg',
+              'Allowable Cutting Force F': '40,000 N',
+              'Allowable Cutting Torque FxL (Horiz / Vert)': '5000 N.m / 3600 N.m',
+              'Cam Allowable Torque': '1968 N.m',
+              'Allowable Max Rotary Joint': '6 Port'
+            }
+          }
+        ]
+      }
+    ]
   }
 };
 
 PRODUCT_DATABASE['special-applications'] = PRODUCT_DATABASE['special-application'];
 PRODUCT_DATABASE['rcf'] = PRODUCT_DATABASE['rcf-series'];
+PRODUCT_DATABASE['rcx'] = PRODUCT_DATABASE['rcx-series'];
+PRODUCT_DATABASE['rcs'] = PRODUCT_DATABASE['rcx-series'];
 

@@ -786,7 +786,7 @@ export default function HomePage() {
       {/* 1. VIDEO HERO SECTION */}
       <div ref={heroSectionRef} style={styles.pinnedHeroWrapper}>
         <video
-          src="/videos/detron_home_page_animation009.mp4"
+          src="/videos/detron_home_page_animation01.mp4"
           autoPlay
           loop
           muted
@@ -1026,6 +1026,19 @@ export default function HomePage() {
               },
               {
                 num: "02",
+                title: "RCX Series (Roller Gear Cam)",
+                desc: "Zero-backlash roller gear cam 4th axis tables delivering rapid 83.3 RPM indexing and wear-free precision.",
+                link: "/products/detron/rcx-series",
+                img: "/images/products_detron/4th_axis.png",
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E30613" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                )
+              },
+              {
+                num: "03",
                 title: "5th Axis Tilting Rotary Tables",
                 desc: "Simultaneous 5-axis capability with high clamping torque for complex aerospace and medical components.",
                 link: "/products/detron/5-axis",
@@ -1038,8 +1051,8 @@ export default function HomePage() {
                 )
               },
               {
-                num: "03",
-                title: "RCF Series (Roller Gear Cam)",
+                num: "04",
+                title: "RCF Series (Roller Cam 5-Axis)",
                 desc: "Zero-backlash roller gear cam tilting tables with rear-motor configuration for compact envelopes.",
                 link: "/products/detron/rcf-series",
                 img: "/images/products_detron/5th_axis.png",
@@ -1051,7 +1064,7 @@ export default function HomePage() {
                 )
               },
               {
-                num: "04",
+                num: "05",
                 title: "Auto Pallet Changers (APC)",
                 desc: "180° swing exchange and front-loading pallet changers for high-mix batch automation.",
                 link: "/products/detron/auto-pallet-changer",
@@ -1066,7 +1079,7 @@ export default function HomePage() {
                 )
               },
               {
-                num: "05",
+                num: "06",
                 title: "Intelligent Control Systems",
                 desc: "Standalone indexer controllers, multi-axis drives, and wireless interface modules.",
                 link: "/products/detron/intelligent-control",
@@ -1080,7 +1093,7 @@ export default function HomePage() {
                 )
               },
               {
-                num: "06",
+                num: "07",
                 title: "Precision Accessories",
                 desc: "Manual and pneumatic tailstocks, support tables, faceplates, and high-pressure rotary joints.",
                 link: "/products/detron/accessories",
@@ -1093,7 +1106,7 @@ export default function HomePage() {
                 )
               },
               {
-                num: "07",
+                num: "08",
                 title: "Custom Hydraulic Fixturing",
                 desc: "Engineered hydraulic fixture plates, tombstone fixtures, and leak-proof rotary oil distributors.",
                 link: "/products/fixtures",

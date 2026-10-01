@@ -9,6 +9,44 @@ export default function Header({ activePage, scrollToProducts }) {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSeriesIndex, setActiveSeriesIndex] = useState(null);
   const dropdownRef = useRef(null);
+  const leaveTimeoutRef = useRef(null);
+
+  const handleMouseEnterMenu = () => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
+    setShowMegaMenu(true);
+  };
+
+  const handleMouseLeaveMenu = () => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+    }
+    leaveTimeoutRef.current = setTimeout(() => {
+      setShowMegaMenu(false);
+      setActiveCategory(null);
+      setActiveSeriesIndex(null);
+    }, 280);
+  };
+
+  const handleCloseMenuImmediately = () => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
+    setShowMegaMenu(false);
+    setActiveCategory(null);
+    setActiveSeriesIndex(null);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (leaveTimeoutRef.current) {
+        clearTimeout(leaveTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Flatten all products for searching
   const allProductsList = useMemo(() => {
@@ -117,6 +155,19 @@ export default function Header({ activePage, scrollToProducts }) {
             { name: 'RCF-210S / RCF-210H', badge: 'Roller Cam Tilt Table', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
             { name: 'RCF-255H', badge: 'Hydraulic 1000/1270 N.m', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' },
             { name: 'RCF-320H', badge: 'Hydraulic 1270/1600 N.m', image: '/images/products_detron/5th_axis.png', categoryId: 'rcf-series' }
+          ]
+        },
+        {
+          name: 'RCX Series (Roller Cam 4th Axis)',
+          link: '/products/detron/rcx-series',
+          products: [
+            { name: 'RCX-170S / RCX-170H', badge: 'Zero-Backlash Roller Cam 83.3 RPM', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-210S / RCX-210H', badge: 'Roller Cam 400/600 N.m', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-250ES / RCX-250EH', badge: 'Enlarged Ø255mm 83.3 RPM', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-255H', badge: 'Hydraulic 1270 N.m (Ø100 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-320H', badge: 'Hydraulic 1600 N.m (Ø140 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-400H', badge: 'Hydraulic 3000 N.m (Ø180 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-500H / RCX-500HL', badge: 'Hydraulic 3600 N.m (Ø220 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' }
           ]
         },
         {
@@ -238,6 +289,27 @@ export default function Header({ activePage, scrollToProducts }) {
             { name: 'DV-170P', badge: 'Direct Drive (250 RPM)', image: '/images/products_detron/4th_axis_pics/170mm/Dv170p.jpg', categoryId: '4-axis' },
             { name: 'DV-210P', badge: 'Direct Drive (250 RPM)', image: '/images/products_detron/4th_axis_pics/210mm/DV-210P.jpg', categoryId: '4-axis' },
             { name: 'DV-255P', badge: 'Direct Drive (200 RPM)', image: '/images/products_detron/4th_axis_pics/255mm/DV-255P.jpg', categoryId: '4-axis' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'rcx-series',
+      title: 'RCX Series',
+      link: '/products/detron/rcx-series',
+      hasArrow: true,
+      series: [
+        {
+          name: 'RCX Series (Roller Gear Cam 4th Axis)',
+          link: '/products/detron/rcx-series',
+          products: [
+            { name: 'RCX-170S / RCX-170H', badge: 'Zero-Backlash Roller Cam 83.3 RPM', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-210S / RCX-210H', badge: 'Roller Cam 400/600 N.m', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-250ES / RCX-250EH', badge: 'Enlarged Ø255mm 83.3 RPM', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-255H', badge: 'Hydraulic 1270 N.m (Ø100 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-320H', badge: 'Hydraulic 1600 N.m (Ø140 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-400H', badge: 'Hydraulic 3000 N.m (Ø180 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' },
+            { name: 'RCX-500H / RCX-500HL', badge: 'Hydraulic 3600 N.m (Ø220 Thru)', image: '/images/products_detron/4th_axis.png', categoryId: 'rcx-series' }
           ]
         }
       ]
@@ -549,7 +621,7 @@ export default function Header({ activePage, scrollToProducts }) {
                 role="button"
                 tabIndex={0}
                 style={{ ...styles.navLink, cursor: 'pointer' }}
-                onMouseEnter={() => setShowMegaMenu(false)}
+                onMouseEnter={handleCloseMenuImmediately}
                 onClick={() => {
                   window.dispatchEvent(new CustomEvent('showAxisSplash'));
                   navigate('/');
@@ -566,7 +638,7 @@ export default function Header({ activePage, scrollToProducts }) {
               <button 
                 onClick={scrollToProducts} 
                 style={styles.navLinkBtn}
-                onMouseEnter={() => setShowMegaMenu(false)}
+                onMouseEnter={handleCloseMenuImmediately}
               >
                 DISCOVER AXIS
               </button>
@@ -576,7 +648,7 @@ export default function Header({ activePage, scrollToProducts }) {
               role="button"
               tabIndex={0}
               style={{ ...styles.navLink, cursor: 'pointer' }}
-              onMouseEnter={() => setShowMegaMenu(false)}
+              onMouseEnter={handleCloseMenuImmediately}
               onClick={() => {
                 window.dispatchEvent(new CustomEvent('showAxisSplash'));
                 navigate('/');
@@ -595,8 +667,8 @@ export default function Header({ activePage, scrollToProducts }) {
           {/* PRODUCT RANGE WITH CASCADING MULTI-LEVEL DROPDOWN */}
           <div
             style={{ position: 'relative', display: 'flex', alignItems: 'center' }}
-            onMouseEnter={() => setShowMegaMenu(true)}
-            onMouseLeave={() => setShowMegaMenu(false)}
+            onMouseEnter={handleMouseEnterMenu}
+            onMouseLeave={handleMouseLeaveMenu}
           >
             <Link 
               to="/products/detron" 
@@ -610,12 +682,8 @@ export default function Header({ activePage, scrollToProducts }) {
             {showMegaMenu && (
               <div 
                 style={styles.cascadingDropdown}
-                onMouseEnter={() => setShowMegaMenu(true)}
-                onMouseLeave={() => {
-                  setShowMegaMenu(false);
-                  setActiveCategory(null);
-                  setActiveSeriesIndex(null);
-                }}
+                onMouseEnter={handleMouseEnterMenu}
+                onMouseLeave={handleMouseLeaveMenu}
               >
                 <style>{`
                   .cascading-cat-item {
@@ -795,22 +863,14 @@ export default function Header({ activePage, scrollToProducts }) {
           <Link 
             to="/products/fixtures" 
             style={activePage === 'fixtures' ? styles.navLinkActive : styles.navLink}
-            onMouseEnter={() => {
-              setShowMegaMenu(false);
-              setActiveCategory(null);
-              setActiveSeriesIndex(null);
-            }}
+            onMouseEnter={handleCloseMenuImmediately}
           >
             CUSTOM FIXTURES
           </Link>
           <Link 
             to="/contact" 
             style={styles.contactHeaderBtn}
-            onMouseEnter={() => {
-              setShowMegaMenu(false);
-              setActiveCategory(null);
-              setActiveSeriesIndex(null);
-            }}
+            onMouseEnter={handleCloseMenuImmediately}
           >
             CONTACT PANEL &gt;
           </Link>
@@ -933,7 +993,7 @@ const styles = {
     position: 'absolute',
     top: '100%',
     right: 0,
-    marginTop: '6px',
+    paddingTop: '8px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',

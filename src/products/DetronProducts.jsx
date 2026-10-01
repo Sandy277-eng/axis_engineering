@@ -118,6 +118,43 @@ const PRODUCTS = [
   },
   {
     num: '04',
+    id: 'rcx-series',
+    titleTop: 'Roller Gear Cam',
+    titleBottom: 'RCX Series',
+    desc: 'Zero-backlash roller gear cam drive 4th axis rotary tables delivering ultra-fast indexing up to 83.3 RPM, high cutting rigidity, and permanent wear-free accuracy.',
+    img: '/images/products_detron/4th_axis.png',
+    features: [
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        ),
+        title: '83.3 RPM Speed',
+        sub: 'Ultra-fast rapid indexing'
+      },
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          </svg>
+        ),
+        title: 'Zero Backlash',
+        sub: 'Preloaded dual lead cam'
+      },
+      {
+        icon: (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        ),
+        title: '3600 N.m Torque',
+        sub: 'Rigid hydraulic clamping'
+      }
+    ]
+  },
+  {
+    num: '05',
     id: 'auto-pallet-changer',
     titleTop: 'Automatic Pallet',
     titleBottom: 'Changer (APC)',
@@ -154,7 +191,7 @@ const PRODUCTS = [
     ]
   },
   {
-    num: '05',
+    num: '06',
     id: 'accessories',
     titleTop: 'System Accessories',
     titleBottom: 'Detron Range',
@@ -191,7 +228,7 @@ const PRODUCTS = [
     ]
   },
   {
-    num: '06',
+    num: '07',
     id: 'intelligent-control',
     titleTop: 'External Control',
     titleBottom: 'System',
@@ -228,7 +265,7 @@ const PRODUCTS = [
     ]
   },
   {
-    num: '07',
+    num: '08',
     id: 'special-application',
     titleBottom: 'Special Applications',
     desc: 'detron offers bespoke Special Application Services for complex machining conditions tailored to your specific workpiece geometry and automation needs.',

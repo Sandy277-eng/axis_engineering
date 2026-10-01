@@ -58,6 +58,7 @@ const OPTION_ICON = {
   whatsapp_chat:           'phone',
   view_map:                'map',
   cat_4axis:               'product',
+  cat_rcx:                 'product',
   cat_5axis:               'product',
   cat_rcf:                 'product',
   cat_pallet:              'product',
@@ -66,6 +67,7 @@ const OPTION_ICON = {
   cat_access:              'plug',
   go_5axis_page:           'external',
   go_rcf_page:             'external',
+  go_rcx_page:             'external',
   go_pallet_page:          'external',
   go_special_page:         'external',
   go_fixtures_page:        'external',
@@ -125,9 +127,10 @@ export default function AxisChatbot() {
           break;
 
         case 'browse_products':
-          bot.text = "Please select a product category to explore, or type a model reference (e.g. GXA-170S, RCF-210H, Direct Drive) to search our catalogue.";
+          bot.text = "Please select a product category to explore, or type a model reference (e.g. GXA-170S, RCX-210H, RCF-210H, Direct Drive) to search our catalogue.";
           bot.options = [
             { label: 'Rotary Table 4 Axis',             value: 'cat_4axis' },
+            { label: 'RCX Series (Roller Cam 4th Axis)', value: 'cat_rcx' },
             { label: '5-Axis Tilting Rotary Tables',     value: 'cat_5axis' },
             { label: 'RCF Series (Roller Gear Cam)',     value: 'cat_rcf' },
             { label: 'Auto Pallet Changer',              value: 'cat_pallet' },
@@ -144,10 +147,23 @@ export default function AxisChatbot() {
             { label: 'GXA-125S  |  Pneumatic 140 N.m',           value: 'prod_GXA-125S' },
             { label: 'GXA-170S / GXA-170H  |  300 / 450 N.m',   value: 'prod_GXA-170S / GXA-170H' },
             { label: 'GXA-210S / GXA-210H  |  400 / 600 N.m',   value: 'prod_GXA-210S / GXA-210H' },
-            { label: 'GXA-255H  |  Ultra Bore, 900 N.m',         value: 'prod_GXA-255H' },
-            { label: 'RCX-210S / RCX-210H  |  Rear Motor Compact', value: 'prod_RCX-210S / RCX-210H' },
+            { label: 'GXA-255S / GXA-255H  |  700 / 1000 N.m',  value: 'prod_GXA-255S / GXA-255H' },
+            { label: 'GXA-320S / GXA-320H  |  1100 / 1500 N.m', value: 'prod_GXA-320S / GXA-320H' },
             { label: 'DV-170P  |  Direct Drive, 250 RPM',        value: 'prod_DV-170P' },
             { label: 'Return to Categories',                      value: 'browse_products' },
+          ];
+          break;
+
+        case 'cat_rcx':
+          bot.text = "**RCX Series 4th Axis Rotary Tables** — Zero-backlash roller gear cam drive mechanism delivering ultra-fast indexing up to 83.3 RPM, heavy cutting rigidity, and wear-free accuracy.";
+          bot.options = [
+            { label: 'RCX-170S / RCX-170H  |  Ø170mm Roller Cam', value: 'prod_RCX-170S / RCX-170H' },
+            { label: 'RCX-210S / RCX-210H  |  Ø210mm Roller Cam', value: 'prod_RCX-210S / RCX-210H' },
+            { label: 'RCX-250ES / RCX-250EH  |  Ø255mm 83.3 RPM', value: 'prod_RCX-250ES / RCX-250EH' },
+            { label: 'RCX-255H  |  Hydraulic 1270 N.m',           value: 'prod_RCX-255H' },
+            { label: 'RCX-320H  |  Hydraulic 1600 N.m',           value: 'prod_RCX-320H' },
+            { label: 'Browse Full RCX Series Catalogue',         value: 'go_rcx_page' },
+            { label: 'Return to Categories',                     value: 'browse_products' },
           ];
           break;
 
@@ -206,6 +222,7 @@ export default function AxisChatbot() {
 
         case 'go_5axis_page':       setIsOpen(false); navigate('/products/detron/5-axis');              return;
         case 'go_rcf_page':         setIsOpen(false); navigate('/products/detron/rcf-series');          return;
+        case 'go_rcx_page':         setIsOpen(false); navigate('/products/detron/rcx-series');          return;
         case 'go_pallet_page':      setIsOpen(false); navigate('/products/detron/auto-pallet-changer'); return;
         case 'go_special_page':     setIsOpen(false); navigate('/products/detron/special-applications');return;
         case 'go_fixtures_page':    setIsOpen(false); navigate('/products/fixtures');                   return;
@@ -446,10 +463,22 @@ export default function AxisChatbot() {
       };
     }
 
-    // RCF / Roller Gear Cam
-    if (['rcf', 'rfx', 'roller cam', 'roller gear'].some(k => q.includes(k))) {
+    // RCX / RCS / Roller Gear Cam 4-Axis
+    if (['rcx', 'rcs', 'roller gear 4th', 'roller cam 4th', 'roller cam 4 axis', 'rcx-170', 'rcx-210', 'rcx-250', 'rcx-255', 'rcx-320', 'rcx-400', 'rcx-500'].some(k => q.includes(k))) {
       return {
-        text: "**RCF / RFX Series Rotary Tables**\n\nEquipped with zero-backlash roller gear cam mechanisms and rear-motor layout, Detron RCF series tables deliver superior rigidity, high repeatability, and space savings on multi-axis CNC machines.",
+        text: "**RCX Series 4th Axis Rotary Tables**\n\nEquipped with zero-backlash roller gear cam mechanisms and high-speed transmission (>80%), Detron RCX series tables deliver ultra-fast indexing up to 83.3 RPM, heavy cutting rigidity, and permanent wear-free accuracy.",
+        options: [
+          { label: 'View RCX Series Catalogue', value: 'go_rcx_page' },
+          { label: 'Browse All Categories',     value: 'browse_products' },
+          { label: 'Return to Main Menu',      value: 'main_menu' },
+        ]
+      };
+    }
+
+    // RCF / Roller Gear Cam 5-Axis Tilting
+    if (['rcf', 'rfx', 'roller cam 5th', 'roller cam 5 axis', 'roller cam tilt'].some(k => q.includes(k))) {
+      return {
+        text: "**RCF / RFX Series Rotary Tables**\n\nEquipped with zero-backlash roller gear cam mechanisms and dual-axis tilting layout, Detron RCF series tables deliver superior rigidity, high repeatability, and space savings on multi-axis CNC machines.",
         options: [
           { label: 'View RCF Series Catalogue', value: 'go_rcf_page' },
           { label: 'Browse All Categories',     value: 'browse_products' },
