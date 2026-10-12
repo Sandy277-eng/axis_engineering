@@ -72,6 +72,7 @@ const OPTION_ICON = {
   go_special_page:         'external',
   go_fixtures_page:        'external',
   go_accessories_page:     'external',
+  go_service_page:         'external',
   faq_detron:              'users',
   faq_quote:               'filetext',
   faq_service:             'settings',
@@ -227,6 +228,7 @@ export default function AxisChatbot() {
         case 'go_special_page':     setIsOpen(false); navigate('/products/detron/special-applications');return;
         case 'go_fixtures_page':    setIsOpen(false); navigate('/products/fixtures');                   return;
         case 'go_accessories_page': setIsOpen(false); navigate('/products/detron/accessories');         return;
+        case 'go_service_page':     setIsOpen(false); navigate('/services');                            return;
         case 'whatsapp_chat':
           window.open('https://wa.me/919003224117', '_blank');
           return;
@@ -284,8 +286,9 @@ export default function AxisChatbot() {
           break;
 
         case 'faq_service':
-          bot.text = "**Technical Service & After-Sales Support**\n\nOur Chennai-based engineering team — qualified in Mechanical, Electrical, Electronics, and Mechatronics — provides:\n\n• On-site commissioning and CNC integration\n• Genuine manufacturer warranty administration\n• Preventive maintenance scheduling\n• Pan-India field service deployment";
+          bot.text = "**Technical Service & Workshop Gallery**\n\nOur engineering centers provide:\n\n• Spindle rebuilds & dual-lead worm backlash zeroing\n• Sub-micron granite plate runout audits (≤ 0.003 mm)\n• On-site CNC integration across India\n• 100% genuine Detron OEM parts\n\nExplore our workshop documentation gallery showcasing our service operations.";
           bot.options = [
+            { label: 'View Service Gallery', value: 'go_service_page' },
             { label: 'Contact Technical Support', value: 'contact_info' },
             { label: 'Return to FAQs',            value: 'faq_info' },
           ];
@@ -441,11 +444,12 @@ export default function AxisChatbot() {
       };
     }
 
-    // Service / Warranty
-    if (['warranty','service','support','maintenance','installation','commissioning','repair','after-sales'].some(k => q.includes(k))) {
+    // Service / Warranty / Gallery
+    if (['warranty','service','services','gallery','support','maintenance','installation','commissioning','repair','reconditioning','runout','calibration','photo','photos'].some(k => q.includes(k))) {
       return {
-        text: "**Technical Service & After-Sales Support**\n\nOur qualified engineering team provides:\n• CNC machine integration and commissioning\n• Genuine manufacturer warranty support\n• Preventive and corrective maintenance\n• Pan-India on-site field service",
+        text: "**Technical Service & Workshop Gallery**\n\nOur qualified engineering team provides:\n• CNC rotary table spindle rebuilds & backlash zeroing\n• Sub-micron granite plate metrology & runout audits (≤ 0.003 mm)\n• Pan-India field integration (Fanuc, Siemens, Mitsubishi)\n• 100% genuine Detron OEM parts and warranty\n\nExplore our live workshop documentation gallery showcasing our service operations.",
         options: [
+          { label: 'View Service Gallery',      value: 'go_service_page' },
           { label: 'Contact Technical Support', value: 'contact_info' },
           { label: 'Return to Main Menu',       value: 'main_menu' },
         ]

@@ -664,6 +664,15 @@ export default function Header({ activePage, scrollToProducts }) {
             </span>
           )}
 
+          {/* GALLERY / SERVICE LINK NEAR HOME AND DETRON PRODUCTS */}
+          <Link 
+            to="/services" 
+            style={(activePage === 'services' || activePage === 'gallery') ? styles.navLinkActive : styles.navLink}
+            onMouseEnter={handleCloseMenuImmediately}
+          >
+            GALLERY
+          </Link>
+
           {/* PRODUCT RANGE WITH CASCADING MULTI-LEVEL DROPDOWN */}
           <div
             style={{ position: 'relative', display: 'flex', alignItems: 'center' }}

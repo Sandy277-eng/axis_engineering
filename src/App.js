@@ -20,6 +20,7 @@ import SpecialApplications from './products/SpecialApplications';
 import Accessories from './products/Accessories';
 import IntelligentControl from './products/IntelligentControl';
 import DetronModelDetailPage from './products/DetronModelDetailPage';
+import ServiceGallery from './services/ServiceGallery';
 import IntroSplash from './IntroSplash';
 import AxisChatbot from './Chatbot/AxisChatbot';
 
@@ -75,6 +76,9 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/services" element={<ServiceGallery />} />
+              <Route path="/gallery" element={<ServiceGallery />} />
+              <Route path="/service" element={<ServiceGallery />} />
               
               {/* Main Detron category listing */}
               <Route path="/products/detron" element={<DetronProducts />} />

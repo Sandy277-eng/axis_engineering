@@ -96,6 +96,7 @@ export default function HomePage() {
 
   const [detronZoom, setDetronZoom] = useState({ scale: 1, x: 50, y: 50 });
   const [fixtureZoom, setFixtureZoom] = useState({ scale: 1, x: 50, y: 50 });
+  const [serviceZoom, setServiceZoom] = useState({ scale: 1, x: 50, y: 50 });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -504,6 +505,56 @@ export default function HomePage() {
             animation: color_anim_dark 1s infinite 0.4s;
           }
 
+          /* Red/White Accent Service CTA button styling */
+          .cta-service {
+            display: inline-flex;
+            align-items: center;
+            padding: 11px 28px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            color: #ffffff;
+            background: #E30613;
+            transition: 0.5s;
+            box-shadow: 6px 6px 0 #ffffff;
+            transform: skewX(-15deg);
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            width: fit-content;
+          }
+
+          .cta-service:focus {
+            outline: none;
+          }
+
+          .cta-service:hover {
+            transition: 0.5s;
+            box-shadow: 10px 10px 0 #000000;
+            background: #b5040f;
+          }
+
+          .cta-service .span {
+            transform: skewX(15deg);
+            display: inline-block;
+          }
+
+          .cta-service .second {
+            width: 20px;
+            margin-left: 15px;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.5s;
+          }
+
+          .cta-service:hover .second {
+            margin-right: 25px;
+          }
+
+          .cta-service .one, .cta-service .two, .cta-service .three {
+            fill: #ffffff;
+          }
+
           /* Premium Hover Red Cover Transition for Cards */
           .supply-card, .choose-card, .specialty-item {
             position: relative !important;
@@ -821,6 +872,16 @@ export default function HomePage() {
                 </svg>
               </span>
             </Link>
+            <Link to="/services" className="cta-service">
+              <span className="span">SERVICE &amp; GALLERY</span>
+              <span className="second">
+                <svg width="20px" height="10px" viewBox="0 0 22 10" fill="none">
+                  <path d="M2 1 L5 5 L2 9 H5 L8 5 L5 1 Z" className="one" />
+                  <path d="M8 1 L11 5 L8 9 H11 L14 5 L11 1 Z" className="two" />
+                  <path d="M14 1 L17 5 L14 9 H17 L20 5 L17 1 Z" className="three" />
+                </svg>
+              </span>
+            </Link>
             <Link to="/contact" className="cta-dark">
               <span className="span">TALK TO OUR ENGINEERS</span>
               <span className="second">
@@ -835,7 +896,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 2. TWO-CARD SECTION */}
+      {/* 2. THREE-CARD SECTION: DETRON, FIXTURES, AND SERVICE GALLERY */}
       <div style={styles.scrollWrapperClip}>
         <section ref={cardsContainerRef} style={styles.categorySection}>
           {/* DETRON PRODUCT CARD */}
@@ -913,6 +974,47 @@ export default function HomePage() {
               </div>
               <span className="cta" style={{ marginTop: "24px", width: "fit-content" }}>
                 <span className="span">EXPLORE FIXTURE SOLUTIONS</span>
+                <span className="second">
+                  <svg width="20px" height="10px" viewBox="0 0 20 10">
+                    <path d="M2 1 L5 5 L2 9 H5 L8 5 L5 1 Z" className="one" />
+                    <path d="M8 1 L11 5 L8 9 H11 L14 5 L11 1 Z" className="two" />
+                    <path d="M14 1 L17 5 L14 9 H17 L20 5 L17 1 Z" className="three" />
+                  </svg>
+                </span>
+              </span>
+            </div>
+          </Link>
+
+          {/* SERVICE & GALLERY CARD */}
+          <Link
+            to="/services"
+            className="slide-card"
+            style={{ ...styles.categoryCard, textDecoration: "none" }}
+            onMouseMove={(e) => handleMouseMove(e, setServiceZoom)}
+            onMouseLeave={() => handleMouseLeave(setServiceZoom)}
+          >
+            <div style={styles.imageWrapper}>
+              <img
+                src="/gallery/WhatsApp%20Image%202026-10-10%20at%2011.39.46.jpeg"
+                alt="Detron Rotary Table Service & Metrology Workshop"
+                style={{
+                  ...styles.zoomableImage,
+                  transform: `scale(${serviceZoom.scale})`,
+                  transformOrigin: `${serviceZoom.x}% ${serviceZoom.y}%`,
+                }}
+              />
+            </div>
+
+            <div style={styles.cardContentOverlay}>
+              <div>
+                <span style={styles.cardTag}>AUTHORIZED SERVICE FACILITY</span>
+                <h2 style={styles.cardTitle}>Service &amp; Gallery</h2>
+                <p style={styles.cardText}>
+                  Sub-micron runout metrology on Class-00 granite plates, dual-lead worm backlash zeroing, and factory-certified mechanical overhaul operations.
+                </p>
+              </div>
+              <span className="cta" style={{ marginTop: "24px", width: "fit-content" }}>
+                <span className="span">VIEW SERVICE GALLERY</span>
                 <span className="second">
                   <svg width="20px" height="10px" viewBox="0 0 20 10">
                     <path d="M2 1 L5 5 L2 9 H5 L8 5 L5 1 Z" className="one" />

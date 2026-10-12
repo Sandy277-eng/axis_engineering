@@ -195,6 +195,7 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               {[
                 { label: 'Home', path: '/' },
+                { label: 'Service & Gallery', path: '/services' },
                 { label: 'Detron Rotary Tables', path: '/products/detron' },
                 { label: 'Custom Fixtures', path: '/products/fixtures' },
                 { label: 'About Axis Engineering', path: '/about' },
