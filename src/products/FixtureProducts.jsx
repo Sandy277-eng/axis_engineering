@@ -299,7 +299,7 @@ const styles = {
   container: {
     position: 'relative',
     width: '100%',
-    fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif',
+    fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
     backgroundColor: '#000000',
     color: '#ffffff',
     margin: 0,

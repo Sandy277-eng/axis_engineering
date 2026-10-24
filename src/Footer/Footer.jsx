@@ -30,7 +30,7 @@ export default function Footer() {
       style={{
         backgroundColor: '#05070a',
         color: '#e2e8f0',
-        fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif',
+        fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
         width: '100%',
         boxSizing: 'border-box',
         borderTop: '1px solid #1e293b',

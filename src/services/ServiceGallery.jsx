@@ -445,7 +445,6 @@ export default function ServiceGallery() {
               <span style={styles.sectionEyebrow}>WORKSHOP ACTIVITY</span>
               <h3 style={styles.marqueeTitle}>TECHNICAL SERVICE PREVIEW</h3>
             </div>
-            <span style={styles.marqueeHint}>SLIDING LEFT TO RIGHT &bull; CLICK ANY IMAGE TO ENLARGE</span>
           </div>
         </div>
 
@@ -639,7 +638,7 @@ const styles = {
   page: {
     backgroundColor: '#ffffff',
     color: '#0f172a',
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+    fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
     minHeight: '100vh',
     overflowX: 'hidden'
   },

@@ -404,7 +404,7 @@ const styles = {
     minHeight: '100vh',
     width: '100%',
     backgroundColor: '#0a0a0a',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
     color: '#ffffff',
     display: 'flex',
     flexDirection: 'column',

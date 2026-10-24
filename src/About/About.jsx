@@ -288,7 +288,7 @@ export default function About() {
 }
 
 const styles = {
-  container: { position: 'relative', backgroundColor: '#000000', color: '#ffffff', fontFamily: 'Segoe UI, Arial, sans-serif', minHeight: '220vh', overflowX: 'hidden' },
+  container: { position: 'relative', backgroundColor: '#000000', color: '#ffffff', fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)", minHeight: '220vh', overflowX: 'hidden' },
   
   bgVideoWrapper: { position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, overflow: 'hidden', pointerEvents: 'none' },
   bgVideo: { width: '100%', height: '100%', objectFit: 'cover', opacity: 0.50 }, 

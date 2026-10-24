@@ -679,7 +679,7 @@ export default function FiveAxis() {
 const styles = {
   container: {
     width: '100%',
-    fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif',
+    fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
     backgroundColor: '#ffffff',
     color: '#0f172a',
     margin: 0,

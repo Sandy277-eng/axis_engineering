@@ -318,7 +318,7 @@ export default function DetronProducts() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh', fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif', color: '#0f172a' }}>
+    <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh', fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)", color: '#0f172a' }}>
       {/* HEADER SECTION */}
       <Header activePage="detron" />
 

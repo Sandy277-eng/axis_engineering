@@ -757,7 +757,7 @@ const S = {
     boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
     overflow: 'hidden',
     zIndex: 99999,
-    fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif',
+    fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
   },
 
   header: {

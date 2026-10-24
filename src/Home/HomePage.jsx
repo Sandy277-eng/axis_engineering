@@ -96,7 +96,6 @@ export default function HomePage() {
 
   const [detronZoom, setDetronZoom] = useState({ scale: 1, x: 50, y: 50 });
   const [fixtureZoom, setFixtureZoom] = useState({ scale: 1, x: 50, y: 50 });
-  const [serviceZoom, setServiceZoom] = useState({ scale: 1, x: 50, y: 50 });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -984,47 +983,6 @@ export default function HomePage() {
               </span>
             </div>
           </Link>
-
-          {/* SERVICE & GALLERY CARD */}
-          <Link
-            to="/services"
-            className="slide-card"
-            style={{ ...styles.categoryCard, textDecoration: "none" }}
-            onMouseMove={(e) => handleMouseMove(e, setServiceZoom)}
-            onMouseLeave={() => handleMouseLeave(setServiceZoom)}
-          >
-            <div style={styles.imageWrapper}>
-              <img
-                src="/gallery/WhatsApp%20Image%202026-10-10%20at%2011.39.46.jpeg"
-                alt="Detron Rotary Table Service & Metrology Workshop"
-                style={{
-                  ...styles.zoomableImage,
-                  transform: `scale(${serviceZoom.scale})`,
-                  transformOrigin: `${serviceZoom.x}% ${serviceZoom.y}%`,
-                }}
-              />
-            </div>
-
-            <div style={styles.cardContentOverlay}>
-              <div>
-                <span style={styles.cardTag}>AUTHORIZED SERVICE FACILITY</span>
-                <h2 style={styles.cardTitle}>Service &amp; Gallery</h2>
-                <p style={styles.cardText}>
-                  Sub-micron runout metrology on Class-00 granite plates, dual-lead worm backlash zeroing, and factory-certified mechanical overhaul operations.
-                </p>
-              </div>
-              <span className="cta" style={{ marginTop: "24px", width: "fit-content" }}>
-                <span className="span">VIEW SERVICE GALLERY</span>
-                <span className="second">
-                  <svg width="20px" height="10px" viewBox="0 0 20 10">
-                    <path d="M2 1 L5 5 L2 9 H5 L8 5 L5 1 Z" className="one" />
-                    <path d="M8 1 L11 5 L8 9 H11 L14 5 L11 1 Z" className="two" />
-                    <path d="M14 1 L17 5 L14 9 H17 L20 5 L17 1 Z" className="three" />
-                  </svg>
-                </span>
-              </span>
-            </div>
-          </Link>
         </section>
       </div>
 
@@ -1624,7 +1582,7 @@ const styles = {
   container: {
     position: "relative",
     width: "100%",
-    fontFamily: "Segoe UI, Helvetica, Arial, sans-serif",
+    fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
     backgroundColor: "#f8fafc",
     color: "#0f172a",
     margin: 0,

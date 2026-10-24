@@ -11,7 +11,7 @@ export default function NotFoundPage() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#0f172a', minHeight: '100vh', color: '#ffffff', fontFamily: 'Segoe UI, Helvetica, Arial, sans-serif' }}>
+    <div style={{ backgroundColor: '#0f172a', minHeight: '100vh', color: '#ffffff', fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)" }}>
       <Header />
       <div style={{ height: '82px' }} />
 

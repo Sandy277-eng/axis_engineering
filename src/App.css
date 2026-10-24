@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+/* ─── TYPOGRAPHY DESIGN SYSTEM REFINEMENTS ─── */
+/* Applied automatically across all components without layout disturbance */
+
+/* Enhanced typographic smoothing & optical sharpness */
+body, input, textarea, select, button {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "kern", "liga";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Sharp heading typographic hierarchy */
+h1 {
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h3 {
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  text-wrap: balance;
 }
 
-.App-link {
-  color: #61dafb;
+h4, h5, h6 {
+  letter-spacing: -0.01em;
+  line-height: 1.35;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Paragraph reading flow */
+p {
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* Technical specifications, dimension data, tables */
+table, tr, td, th, .tabular-nums, code, pre {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Eyebrows, uppercase badges, micro tags */
+.badge, [class*="badge"], [style*="letterSpacing: '2px'"], [style*="letter-spacing: 2px"] {
+  font-feature-settings: "case" 1;
+}
+
+/* Subtle link underlines with clean spacing */
+a {
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
 }
