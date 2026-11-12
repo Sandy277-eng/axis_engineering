@@ -46,22 +46,12 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [showSplash, setShowSplash] = useState(() => {
-    const hasShown = sessionStorage.getItem('axis_splash_shown');
-    return !hasShown;
-  });
+  const [showSplash, setShowSplash] = useState(true);
 
   const handleSplashComplete = () => {
-    sessionStorage.setItem('axis_splash_shown', 'true');
     setShowSplash(false);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
-
-  useEffect(() => {
-    const handleShowSplash = () => setShowSplash(true);
-    window.addEventListener('showAxisSplash', handleShowSplash);
-    return () => window.removeEventListener('showAxisSplash', handleShowSplash);
-  }, []);
 
   return (
     <ErrorBoundary>

@@ -8,21 +8,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const BUILDER_PARTNER_LOGOS = [
-  { name: 'Ace Micromatic', src: '/logo_axis/Ace.png' },
-  { name: 'AMS', src: '/logo_axis/AMS.png' },
-  { name: 'BFW', src: '/logo_axis/BFW.png' },
-  { name: 'Cosmos', src: '/logo_axis/cosmos.png' },
-  { name: 'Feeler', src: '/logo_axis/feeler.png' },
-  { name: 'Hision', src: '/logo_axis/hision.png' },
   { name: 'HURCO', src: '/logo_axis/HURCO.png' },
+  { name: 'Hision', src: '/logo_axis/hision.png' },
+  { name: 'MAZAK', src: '/logo_axis/MAZAK.png' },
   { name: 'LMW', src: '/logo_axis/LMW.png' },
   { name: 'Lokesh', src: '/logo_axis/lokesh.png' },
-  { name: 'M2NXT', src: '/logo_axis/m2nxt.png' },
-  { name: 'Makino', src: '/logo_axis/makimo.jpg' },
-  { name: 'PHILLIPS', src: '/logo_axis/PHILLIPS.png' },
-  { name: 'Precision', src: '/logo_axis/precision.png' },
   { name: 'STM', src: '/logo_axis/STM.png' },
-  { name: 'VMT', src: '/logo_axis/vmt.png' }
+  { name: 'Tsugami', src: '/logo_axis/tsugami.png' },
+  { name: 'PHILLIPS', src: '/logo_axis/PHILLIPS.png' }
 ];
 
 export default function HomePage() {

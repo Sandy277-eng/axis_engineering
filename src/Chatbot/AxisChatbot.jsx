@@ -246,7 +246,7 @@ export default function AxisChatbot() {
           break;
 
         case 'contact_info':
-          bot.text = "**Sales & Technical Support Channels**\n\nMobile:   +91 90032 24117  |  +91 98849 12280  |  +91 98946 96637\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nOur team responds to all technical inquiries within 24 business hours.";
+          bot.text = "**Sales & Technical Support Channels**\n\nMobile:   +91 90032 24117  |  +91 98849 12278  |  +91 98946 96637\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nOur team responds to all technical inquiries within 24 business hours.";
           bot.options = [
             { label: 'Contact Us Now',          value: 'whatsapp_chat' },
             { label: 'Submit an Inquiry Form',   value: 'contact_form' },
@@ -405,7 +405,7 @@ export default function AxisChatbot() {
     // Contact
     if (['phone','mobile','email','mail','contact','sales','call','number','reach','fax','tel'].some(k => q.includes(k))) {
       return {
-        text: "**Sales & Technical Support Channels**\n\nMobile:   +91 90032 24117  |  +91 98849 12280  |  +91 98946 96637\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nAll inquiries are responded to within 24 business hours.",
+        text: "**Sales & Technical Support Channels**\n\nMobile:   +91 90032 24117  |  +91 98849 12278  |  +91 98946 96637\nTel / Fax:  044 – 4746 8749\nEmail:    info@axisengineeringsolutions.in\nContact Us:  +91 90032 24117  (wa.me/919003224117)\n\nAll inquiries are responded to within 24 business hours.",
         options: [
           { label: 'Contact Us Now',         value: 'whatsapp_chat' },
           { label: 'Submit Inquiry Form',    value: 'contact_form' },

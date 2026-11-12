@@ -533,7 +533,7 @@ export default function Header({ activePage, scrollToProducts }) {
     <div style={styles.fixedHeaderGroup} onMouseLeave={() => setShowMegaMenu(false)}>
       <div style={styles.topBar}>
         <div style={styles.topBarLeft}>
-          <span style={styles.contactItem}>🕿 <strong>+91 90032 24117 / +91 98849 12280 / +91 98946 96637</strong></span>
+          <span style={styles.contactItem}>🕿 <strong>+91 90032 24117 / +91 98849 12278 / +91 98946 96637</strong></span>
           <span style={styles.contactItem}>
             🌐 <Link to="/contact" style={styles.topContactLink} onMouseEnter={() => setShowMegaMenu(false)}>CONTACT US</Link>
           </span>
@@ -616,27 +616,19 @@ export default function Header({ activePage, scrollToProducts }) {
         <nav style={styles.navMenu}>
           {activePage === 'home' ? (
             <>
-              {/* HOME — triggers intro splash */}
-              <span
-                role="button"
-                tabIndex={0}
-                style={{ ...styles.navLink, cursor: 'pointer' }}
+              {/* HOME */}
+              <Link
+                to="/"
+                style={styles.navLinkActive}
                 onMouseEnter={handleCloseMenuImmediately}
                 onClick={() => {
-                  window.dispatchEvent(new CustomEvent('showAxisSplash'));
-                  navigate('/');
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    window.dispatchEvent(new CustomEvent('showAxisSplash'));
-                    navigate('/');
-                  }
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               >
                 HOME
-              </span>
-              <button 
-                onClick={scrollToProducts} 
+              </Link>
+              <button
+                onClick={scrollToProducts}
                 style={styles.navLinkBtn}
                 onMouseEnter={handleCloseMenuImmediately}
               >
@@ -644,24 +636,13 @@ export default function Header({ activePage, scrollToProducts }) {
               </button>
             </>
           ) : (
-            <span
-              role="button"
-              tabIndex={0}
-              style={{ ...styles.navLink, cursor: 'pointer' }}
+            <Link
+              to="/"
+              style={styles.navLink}
               onMouseEnter={handleCloseMenuImmediately}
-              onClick={() => {
-                window.dispatchEvent(new CustomEvent('showAxisSplash'));
-                navigate('/');
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  window.dispatchEvent(new CustomEvent('showAxisSplash'));
-                  navigate('/');
-                }
-              }}
             >
               HOME
-            </span>
+            </Link>
           )}
 
           {/* GALLERY / SERVICE LINK NEAR HOME AND DETRON PRODUCTS */}
