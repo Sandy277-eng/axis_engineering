@@ -21,6 +21,7 @@ import Accessories from './products/Accessories';
 import IntelligentControl from './products/IntelligentControl';
 import DetronModelDetailPage from './products/DetronModelDetailPage';
 import ServiceGallery from './services/ServiceGallery';
+import GalleryComingSoon from './services/GalleryComingSoon';
 import IntroSplash from './IntroSplash';
 import AxisChatbot from './Chatbot/AxisChatbot';
 
@@ -69,6 +70,13 @@ function App() {
               <Route path="/services" element={<ServiceGallery />} />
               <Route path="/gallery" element={<ServiceGallery />} />
               <Route path="/service" element={<ServiceGallery />} />
+              <Route path="/gallery/service-gallery-2026" element={<ServiceGallery />} />
+              <Route path="/gallery/service-gallery" element={<ServiceGallery />} />
+              <Route path="/services/service-gallery-2026" element={<ServiceGallery />} />
+              <Route path="/gallery/technical-seminar" element={<GalleryComingSoon type="seminar" />} />
+              <Route path="/services/technical-seminar" element={<GalleryComingSoon type="seminar" />} />
+              <Route path="/gallery/exhibitions" element={<GalleryComingSoon type="exhibitions" />} />
+              <Route path="/services/exhibitions" element={<GalleryComingSoon type="exhibitions" />} />
               
               {/* Main Detron category listing */}
               <Route path="/products/detron" element={<DetronProducts />} />

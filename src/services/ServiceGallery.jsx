@@ -156,7 +156,7 @@ export default function ServiceGallery() {
   });
 
   useEffect(() => {
-    document.title = "Service | Axis Engineering Solutions — Detron Technical Center";
+    document.title = "Service Gallery (2026) | Axis Engineering Solutions — Detron Technical Center";
     window.scrollTo(0, 0);
   }, []);
 
@@ -312,7 +312,7 @@ export default function ServiceGallery() {
 
       {/* ─── MIDDLE TOP SERVICE BRAND BADGE ─── */}
       <div style={styles.brandButtonContainer}>
-        <div style={styles.brandButton}>SERVICE</div>
+        <div style={styles.brandButton}>SERVICE GALLERY (2026)</div>
       </div>
 
       {/* ─── 2. AXIS ENGINEERING DETAILS & SERVICE CAPABILITIES ─── */}

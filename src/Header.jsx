@@ -11,11 +11,42 @@ export default function Header({ activePage, scrollToProducts }) {
   const dropdownRef = useRef(null);
   const leaveTimeoutRef = useRef(null);
 
+  // Gallery Dropdown State
+  const [showGalleryMenu, setShowGalleryMenu] = useState(false);
+  const galleryLeaveTimeoutRef = useRef(null);
+
+  const handleMouseEnterGallery = () => {
+    if (galleryLeaveTimeoutRef.current) {
+      clearTimeout(galleryLeaveTimeoutRef.current);
+      galleryLeaveTimeoutRef.current = null;
+    }
+    setShowMegaMenu(false);
+    setShowGalleryMenu(true);
+  };
+
+  const handleMouseLeaveGallery = () => {
+    if (galleryLeaveTimeoutRef.current) {
+      clearTimeout(galleryLeaveTimeoutRef.current);
+    }
+    galleryLeaveTimeoutRef.current = setTimeout(() => {
+      setShowGalleryMenu(false);
+    }, 280);
+  };
+
+  const handleCloseGalleryImmediately = () => {
+    if (galleryLeaveTimeoutRef.current) {
+      clearTimeout(galleryLeaveTimeoutRef.current);
+      galleryLeaveTimeoutRef.current = null;
+    }
+    setShowGalleryMenu(false);
+  };
+
   const handleMouseEnterMenu = () => {
     if (leaveTimeoutRef.current) {
       clearTimeout(leaveTimeoutRef.current);
       leaveTimeoutRef.current = null;
     }
+    handleCloseGalleryImmediately();
     setShowMegaMenu(true);
   };
 
@@ -38,12 +69,16 @@ export default function Header({ activePage, scrollToProducts }) {
     setShowMegaMenu(false);
     setActiveCategory(null);
     setActiveSeriesIndex(null);
+    handleCloseGalleryImmediately();
   };
 
   useEffect(() => {
     return () => {
       if (leaveTimeoutRef.current) {
         clearTimeout(leaveTimeoutRef.current);
+      }
+      if (galleryLeaveTimeoutRef.current) {
+        clearTimeout(galleryLeaveTimeoutRef.current);
       }
     };
   }, []);
@@ -645,14 +680,186 @@ export default function Header({ activePage, scrollToProducts }) {
             </Link>
           )}
 
-          {/* GALLERY / SERVICE LINK NEAR HOME AND DETRON PRODUCTS */}
-          <Link 
-            to="/services" 
-            style={(activePage === 'services' || activePage === 'gallery') ? styles.navLinkActive : styles.navLink}
-            onMouseEnter={handleCloseMenuImmediately}
+          {/* GALLERY DROPDOWN (SERVICE GALLERY 2026, TECHNICAL SEMINAR, EXHIBITIONS) */}
+          <div
+            style={{ position: 'relative', display: 'flex', alignItems: 'center' }}
+            onMouseEnter={handleMouseEnterGallery}
+            onMouseLeave={handleMouseLeaveGallery}
           >
-            GALLERY
-          </Link>
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => {
+                setShowGalleryMenu(prev => !prev);
+                setShowMegaMenu(false);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  setShowGalleryMenu(prev => !prev);
+                  setShowMegaMenu(false);
+                }
+              }}
+              style={
+                showGalleryMenu
+                  ? styles.navLinkOpenTab
+                  : ((activePage === 'services' || activePage === 'gallery' || activePage === 'seminar' || activePage === 'exhibitions')
+                    ? styles.navLinkActive
+                    : styles.navLink)
+              }
+            >
+              <span>GALLERY</span>
+              <svg
+                width="9"
+                height="5"
+                viewBox="0 0 10 6"
+                fill="none"
+                style={{
+                  marginLeft: '6px',
+                  transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transform: showGalleryMenu ? 'rotate(180deg)' : 'rotate(0deg)'
+                }}
+              >
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* GALLERY DROPDOWN MENU */}
+            {showGalleryMenu && (
+              <div
+                style={styles.galleryDropdown}
+                onMouseEnter={handleMouseEnterGallery}
+                onMouseLeave={handleMouseLeaveGallery}
+              >
+                <style>{`
+                  @keyframes galleryDropdownAnim {
+                    0% {
+                      opacity: 0;
+                      transform: translateY(8px);
+                    }
+                    100% {
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
+                  }
+                  .gallery-drop-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 11px 13px;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+                    border: 1px solid transparent;
+                    box-sizing: border-box;
+                  }
+                  .gallery-drop-item:hover {
+                    background-color: #f8fafc;
+                    border-color: #e2e8f0;
+                    transform: translateX(3px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+                  }
+                  .gallery-drop-item:hover .gallery-item-title {
+                    color: #E30613 !important;
+                  }
+                  .gallery-drop-item:hover .gallery-item-icon-box {
+                    background-color: #E30613 !important;
+                    color: #ffffff !important;
+                    border-color: #E30613 !important;
+                    transform: scale(1.04);
+                  }
+                  .gallery-drop-item:hover .gallery-item-arrow {
+                    opacity: 1 !important;
+                    transform: translateX(2px);
+                    color: #E30613 !important;
+                  }
+                `}</style>
+
+                <div style={styles.galleryDropdownCard}>
+                  <div style={styles.galleryDropdownHeader}>GALLERY &amp; EVENTS</div>
+
+                  {/* 1. Service Gallery (2026) */}
+                  <Link
+                    to="/gallery/service-gallery-2026"
+                    className="gallery-drop-item"
+                    onClick={handleCloseGalleryImmediately}
+                  >
+                    <div className="gallery-item-icon-box" style={styles.galleryItemIconBox}>
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <polyline points="21 15 16 10 5 21" />
+                      </svg>
+                    </div>
+                    <div style={{ flexGrow: 1, minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                        <span className="gallery-item-title" style={styles.galleryItemTitle}>
+                          Service Gallery (2026)
+                        </span>
+                        <span style={styles.galleryBadgeActive}>2026</span>
+                      </div>
+                      <span style={styles.galleryItemSubtitle}>
+                        Workshop &amp; Metrology Lab Photo Records
+                      </span>
+                    </div>
+                    <span className="gallery-item-arrow" style={styles.galleryItemArrow}>&gt;</span>
+                  </Link>
+
+                  {/* 2. Technical Seminar */}
+                  <Link
+                    to="/gallery/technical-seminar"
+                    className="gallery-drop-item"
+                    onClick={handleCloseGalleryImmediately}
+                  >
+                    <div className="gallery-item-icon-box" style={styles.galleryItemIconBox}>
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                      </svg>
+                    </div>
+                    <div style={{ flexGrow: 1, minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                        <span className="gallery-item-title" style={styles.galleryItemTitle}>
+                          Technical Seminar
+                        </span>
+                        <span style={styles.galleryBadgeSoon}>COMING SOON</span>
+                      </div>
+                      <span style={styles.galleryItemSubtitle}>
+                        Engineering Masterclasses &amp; Integration
+                      </span>
+                    </div>
+                    <span className="gallery-item-arrow" style={styles.galleryItemArrow}>&gt;</span>
+                  </Link>
+
+                  {/* 3. Exhibitions */}
+                  <Link
+                    to="/gallery/exhibitions"
+                    className="gallery-drop-item"
+                    onClick={handleCloseGalleryImmediately}
+                  >
+                    <div className="gallery-item-icon-box" style={styles.galleryItemIconBox}>
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="8" r="6" />
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                      </svg>
+                    </div>
+                    <div style={{ flexGrow: 1, minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                        <span className="gallery-item-title" style={styles.galleryItemTitle}>
+                          Exhibitions
+                        </span>
+                        <span style={styles.galleryBadgeSoon}>COMING SOON</span>
+                      </div>
+                      <span style={styles.galleryItemSubtitle}>
+                        IMTEX, Engimach &amp; Machine Tool Expos
+                      </span>
+                    </div>
+                    <span className="gallery-item-arrow" style={styles.galleryItemArrow}>&gt;</span>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* PRODUCT RANGE WITH CASCADING MULTI-LEVEL DROPDOWN */}
           <div
@@ -910,6 +1117,101 @@ const styles = {
   navLinkActive: { textDecoration: 'none', color: '#E30613', fontWeight: '800', fontSize: '12px', letterSpacing: '0.3px', padding: '6px 12px', border: '1px solid transparent' },
   navLinkBtn: { background: 'none', border: 'none', color: '#0f172a', fontWeight: '700', fontSize: '12px', letterSpacing: '0.3px', cursor: 'pointer', padding: '6px 12px', fontFamily: 'inherit' },
   contactHeaderBtn: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', border: 'none', padding: '6px 14px', borderRadius: '2px', cursor: 'pointer', fontWeight: '700', fontSize: '11px' },
+  
+  /* GALLERY DROPDOWN STYLES */
+  galleryDropdown: {
+    position: 'absolute',
+    top: '100%',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    paddingTop: '8px',
+    zIndex: 12500,
+    textAlign: 'left'
+  },
+  galleryDropdownCard: {
+    width: '320px',
+    backgroundColor: '#ffffff',
+    border: '1px solid #e2e8f0',
+    borderTop: '3px solid #E30613',
+    borderRadius: '8px',
+    boxShadow: '0 20px 40px -4px rgba(15, 23, 42, 0.16), 0 8px 16px -2px rgba(15, 23, 42, 0.08)',
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
+    padding: '8px',
+    boxSizing: 'border-box',
+    animation: 'galleryDropdownAnim 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+  },
+  galleryDropdownHeader: {
+    padding: '8px 12px 6px',
+    fontSize: '10px',
+    fontWeight: '800',
+    letterSpacing: '1px',
+    color: '#94a3b8',
+    textTransform: 'uppercase',
+    borderBottom: '1px solid #f1f5f9',
+    marginBottom: '4px'
+  },
+  galleryItemIconBox: {
+    width: '36px',
+    height: '36px',
+    borderRadius: '6px',
+    backgroundColor: '#f1f5f9',
+    border: '1px solid #e2e8f0',
+    color: '#0f172a',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+    transition: 'all 0.18s cubic-bezier(0.16, 1, 0.3, 1)'
+  },
+  galleryItemTitle: {
+    fontSize: '13px',
+    fontWeight: '700',
+    color: '#0f172a',
+    lineHeight: '1.3',
+    transition: 'color 0.18s ease'
+  },
+  galleryItemSubtitle: {
+    fontSize: '11px',
+    color: '#64748b',
+    display: 'block',
+    marginTop: '2px',
+    lineHeight: '1.35',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  },
+  galleryBadgeActive: {
+    fontSize: '9.5px',
+    fontWeight: '800',
+    color: '#15803d',
+    backgroundColor: '#f0fdf4',
+    border: '1px solid #bbf7d0',
+    padding: '2px 7px',
+    borderRadius: '12px',
+    letterSpacing: '0.4px',
+    flexShrink: 0
+  },
+  galleryBadgeSoon: {
+    fontSize: '9px',
+    fontWeight: '800',
+    color: '#b45309',
+    backgroundColor: '#fffbeb',
+    border: '1px solid #fde68a',
+    padding: '2px 7px',
+    borderRadius: '12px',
+    letterSpacing: '0.4px',
+    flexShrink: 0
+  },
+  galleryItemArrow: {
+    color: '#94a3b8',
+    fontSize: '14px',
+    fontWeight: '700',
+    opacity: 0,
+    transition: 'all 0.18s ease',
+    flexShrink: 0
+  },
   
   navLinkOpenTab: {
     color: '#E30613',
