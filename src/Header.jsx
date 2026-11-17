@@ -568,7 +568,7 @@ export default function Header({ activePage, scrollToProducts }) {
     <div style={styles.fixedHeaderGroup} onMouseLeave={() => setShowMegaMenu(false)}>
       <div style={styles.topBar}>
         <div style={styles.topBarLeft}>
-          <span style={styles.contactItem}>🕿 <strong>+91 90032 24117 / +91 98849 12278 / +91 98946 96637</strong></span>
+          <span style={styles.contactItem}>🕿 <strong>+91 90032 24117 / +91 98849 12280 / +91 98946 96637</strong></span>
           <span style={styles.contactItem}>
             🌐 <Link to="/contact" style={styles.topContactLink} onMouseEnter={() => setShowMegaMenu(false)}>CONTACT US</Link>
           </span>
