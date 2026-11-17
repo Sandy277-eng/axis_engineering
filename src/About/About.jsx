@@ -282,13 +282,17 @@ export default function About() {
         </section>
       </div>
 
-      <Footer />
+      {/* SEAMLESS BLENDED FOOTER */}
+      <div style={styles.footerBlendContainer}>
+        <div style={styles.footerBlendGradient} />
+        <Footer borderTop="none" style={{ backgroundColor: '#05070a' }} />
+      </div>
     </div>
   );
 }
 
 const styles = {
-  container: { position: 'relative', backgroundColor: '#000000', color: '#ffffff', fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)", minHeight: '220vh', overflowX: 'hidden' },
+  container: { position: 'relative', backgroundColor: '#000000', color: '#ffffff', fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)", minHeight: '100vh', display: 'flex', flexDirection: 'column', overflowX: 'hidden' },
   
   bgVideoWrapper: { position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, overflow: 'hidden', pointerEvents: 'none' },
   bgVideo: { width: '100%', height: '100%', objectFit: 'cover', opacity: 0.50 }, 
@@ -314,7 +318,7 @@ const styles = {
   navLink: { textDecoration: 'none', color: '#0f172a', fontWeight: '700', fontSize: '11px', letterSpacing: '0.3px' },
   contactHeaderBtn: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', padding: '6px 14px', borderRadius: '2px', fontWeight: '700', fontSize: '11px' },
   
-  scrollableContent: { position: 'relative', zIndex: 10, maxWidth: '1100px', margin: '0 auto', paddingBottom: '120px' },
+  scrollableContent: { position: 'relative', zIndex: 10, maxWidth: '1100px', width: '100%', margin: '0 auto', paddingBottom: '80px', flex: '1 0 auto' },
   heroSection: { padding: '80px 24px 50px 24px', textAlign: 'center' },
   heroContent: { maxWidth: '800px', margin: '0 auto' },
   heroBadge: { fontSize: '10px', color: '#E30613', letterSpacing: '2.5px', fontWeight: '900', backgroundColor: 'rgba(0,0,0,0.6)', padding: '5px 12px', borderRadius: '2px', border: '1px solid rgba(227,6,19,0.3)' },
@@ -347,5 +351,23 @@ const styles = {
   dirTag: { fontSize: '10px', color: '#E30613', fontWeight: '800', letterSpacing: '1.5px' },
   dirCardTitle: { fontSize: '20px', fontWeight: '900', color: '#ffffff', margin: '8px 0 10px 0' },
   dirCardDesc: { fontSize: '13px', color: '#e2e8f0', lineHeight: '1.6' },
-  dirLink: { display: 'inline-block', marginTop: '20px', color: '#E30613', fontWeight: '800', fontSize: '12px', letterSpacing: '0.5px' }
+  dirLink: { display: 'inline-block', marginTop: '20px', color: '#E30613', fontWeight: '800', fontSize: '12px', letterSpacing: '0.5px' },
+
+  /* SEAMLESS FOOTER BLEND STYLES */
+  footerBlendContainer: {
+    position: 'relative',
+    zIndex: 10,
+    width: '100%',
+    backgroundColor: '#05070a',
+    marginTop: 'auto'
+  },
+  footerBlendGradient: {
+    position: 'absolute',
+    bottom: '100%',
+    left: 0,
+    right: 0,
+    height: '180px',
+    background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(5, 7, 10, 0.45) 40%, rgba(5, 7, 10, 0.9) 75%, #05070a 100%)',
+    pointerEvents: 'none'
+  }
 };

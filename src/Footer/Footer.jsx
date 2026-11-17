@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { downloadBrochure } from '../utils/downloadBrochure';
 
-export default function Footer() {
+export default function Footer({ style = {}, borderTop } = {}) {
   const redBar = (
     <div
       style={{
@@ -28,12 +28,15 @@ export default function Footer() {
   return (
     <footer
       style={{
+        position: 'relative',
+        zIndex: 10,
         backgroundColor: '#05070a',
         color: '#e2e8f0',
         fontFamily: "var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif)",
         width: '100%',
         boxSizing: 'border-box',
-        borderTop: '1px solid #1e293b',
+        borderTop: borderTop !== undefined ? borderTop : '1px solid #1e293b',
+        ...style
       }}
     >
       <div style={{ maxWidth: '1360px', margin: '0 auto', padding: '54px 32px 40px 32px' }}>
